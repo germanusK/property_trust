@@ -1,0 +1,68 @@
+<div class="w-full h-85sc bg-black text-white relative align-bottom items-baseline justify-center">
+            <!-- Slider -->
+            <div class="carousel absolute shadow-2xl bg-white h-full z-0">
+                 <div class="carousel-inner relative overflow-hidden w-full h-full">
+                    <!--Slide 1-->
+                    <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+                    <div class="carousel-item absolute opacity-0 h-full w-full">
+                        <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center items-center align-middle justify-center">
+                            <img src="{{ asset('img/COGO.jpg') }}" alt="YOUR NICE HOME" class="min-w-full min-h-full overflow-clip object-cover">
+                        </div>
+                    </div>
+                    <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                    <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+                    <!-- end of slide 1 -->
+                    
+                    <!--Slide 2-->
+                    <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+                    <div class="carousel-item absolute opacity-0 h-full w-full">
+                        <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center items-center align-middle justify-center">
+                            <img src="{{ asset('img/contemporary.jpg') }}" alt="YOUR NICE HOME" class="min-w-full min-h-full overflow-clip object-cover">
+                        </div>
+                    </div>
+                    <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                    <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label> 
+                    <!-- end of slide 2 -->
+
+                    <!--Slide 3-->
+                    <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+                    <div class="carousel-item absolute opacity-0 h-full w-full">
+                        <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center items-center align-middle justify-center">
+                            <img src="{{ asset('img/home2.jpg') }}" alt="YOUR NICE HOME" class="min-w-full min-h-full overflow-clip object-cover">
+                        </div>
+                    </div>
+                    <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                    <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+                    <!-- end of slide 3 -->
+
+                    <!-- Add additional indicators for each slide-->
+                    <ol class="carousel-indicators">
+                        <li class="inline-block mr-3">
+                            <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"><div class="w-fit h-fit px-2 bg-white border-2 border-blue-800 text-lg text-blue-800 rounded-full">1</div></label>
+                        </li>
+                        <li class="inline-block mr-3">
+                            <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"><div class="w-fit h-fit px-2 bg-white border-2 border-blue-800 text-lg text-blue-800 rounded-full">2</div></label>
+                        </li>
+                        <li class="inline-block mr-3">
+                            <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700"><div class="w-fit h-fit px-2 bg-white border-2 border-blue-800 text-lg text-blue-800 rounded-full">3</div></label>
+                        </li>
+                    </ol>
+                    <!-- end of indicators -->
+                </div>
+            </div>
+            <!-- end of slider -->
+            
+            <div class="bg-black bg-opacity-70 w-5/6 md:w-1/2 h-auto py-6 absolute flex flex-wrap align-middle items-center justify-center rounded-md bottom-16 left-0  right-0 mx-auto">
+                 <div class="text-center py-4">
+                     <div class="py-2 text-white text-3xl md:text-4xl font-semibold italic text-ellipsis flex-wrap">Welcome To <span class="text-pink-700">Property Trust</span></div>
+                     <div class="text-2xl text-slate-200 italic text-center flex-wrap">Where real property is made real</div>
+                 </div>
+                 <div class="w-full flex items-center justify-center py-4">
+                     <div class="grid sm:grid-cols-2 gap-5 text-xl font-semibold">
+                         <a href="" class=" inline-flex flex-auto sm:inline-block px-5 py-2 rounded text-center text-ellipsis w-auto bg-white text-blue-800 ">View Property</a>
+                         <a href="" class=" inline-flex flex-auto sm:inline-block px-5 py-2 rounded text-center text-ellipsis w-auto bg-white text-blue-800">Real Market</a>
+                     </div>
+                 </div>
+             </div>
+        
+         </div>

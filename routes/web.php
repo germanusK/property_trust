@@ -1,0 +1,113 @@
+<?php
+
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\dashboard\customers;
+use App\Http\Controllers\dashboard\main;
+use App\Http\Controllers\dashboard\messages;
+use App\Http\Controllers\dashboard\property as DashboardProperty;
+use App\Http\Controllers\dashboard\schedules;
+use App\Http\Controllers\dashboard\siteInfo;
+use App\Http\Controllers\Market;
+use App\Http\Controllers\MarketDetails;
+use App\Http\Controllers\Messenger;
+use App\Http\Controllers\Others;
+use App\Http\Controllers\Property;
+use App\Http\Controllers\PropertyDetails;
+use App\Http\Controllers\VisitBooker;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', [Controller::class, '_index']);
+Route::get('/search', [Controller::class, '_search'])->name('search');
+Route::get('/property', [Property::class, 'index']);
+Route::get('/services', [Property::class, 'services_index'])->name('public.services');
+Route::get('/services/{id}/details', [Property::class, 'service_details'])->name('public.services.details');
+Route::get('/propertyDetails/{id}', [PropertyDetails::class, 'index'])->name('assets.show');
+Route::get('/marketDetails/{id}', [MarketDetails::class, 'index']);
+Route::get('/bookVisit/{id}', [VisitBooker::class, 'index']);
+Route::post('/bookVisit/{id}', [VisitBooker::class, 'submit']);
+Route::get('/about', [Others::class, 'about']);
+Route::get('/contact', [Others::class, 'contact'])->name('public.contacts');
+
+Route::post('/submitSchedule', [VisitBooker::class, 'submit']);
+Route::post('/submitMessage', [Messenger::class, 'submit']);//handle submision of orders, problem reports and messages
+Route::post('/subscribe', [Others::class, 'subscribe']);
+
+
+Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
+    Route::get('/', [main::class, 'index'])->name('dashboard');
+    Route::name('assets.')->prefix('property')->group(function(){
+        Route::get('/', [DashboardProperty::class, 'index'])->name('index');
+        Route::get('/create', [DashboardProperty::class, 'create'])->name('create');
+        Route::post('/create', [DashboardProperty::class, 'store']);
+        Route::get('/edit/{id}', [DashboardProperty::class, 'edit'])->name('edit');
+        Route::post('/edit/{id}', [DashboardProperty::class, 'update']);
+        Route::get('/preview/{id}', [DashboardProperty::class, 'preview'])->name('show');
+        Route::post('/delete/{id}', [DashboardProperty::class, 'delete'])->name('delete');
+    });
+    Route::name('schedules.')->prefix('schedules')->group(function(){
+        Route::get('/', [schedules::class, 'index'])->name('index');
+        Route::get('/preview/{id}', [schedules::class, 'preview'])->name('show');
+        Route::get('/edit/{id}', [schedules::class, 'edit'])->name('edit');
+        Route::post('/edit/{id}', [schedules::class, 'update']);
+        Route::post('/delete/{id}', [schedules::class, 'delete'])->name('delete');
+    });
+    Route::name('customers.')->prefix('customers')->group(function(){
+        Route::get('/', [customers::class, 'index'])->name('index');
+        Route::get('/preview/{id}', [customers::class, 'preview'])->name('show');
+        Route::get('/edit/{id}', [customers::class, 'edit'])->name('edit');
+        Route::post('/edit/{id}', [customers::class, 'update']);
+        Route::post('/delete/{id}', [customers::class, 'delete'])->name('delete');
+    });
+    Route::name('info.')->prefix('info')->group(function(){
+        Route::get('/', [siteInfo::class, 'index'])->name('index');
+        Route::get('/preview/{id}', [siteInfo::class, 'preview'])->name('show');
+        Route::get('/edit/{id}', [siteInfo::class, 'edit'])->name('edit');
+        Route::post('/edit/{id}', [siteInfo::class, 'update']);
+        Route::post('/delete/{id}', [siteInfo::class, 'delete'])->name('delete');
+    });
+    Route::name('messages.')->prefix('messages')->group(function(){
+        Route::get('/', [messages::class, 'index'])->name('index');
+        Route::get('/create', [messages::class, 'create'])->name('create');
+        Route::post('/create', [messages::class, 'store']);
+        Route::get('/preview/{id}', [messages::class, 'preview'])->name('show');
+        Route::get('/reply/{id}', [messages::class, 'reply'])->name('reply');
+        Route::post('/reply/{id}', [messages::class, 'respond']);
+        Route::post('/delete/{id}', [messages::class, 'delete'])->name('delete');
+    });
+    Route::name('categories.')->prefix('categories')->group(function(){
+        Route::get('/', [Controller::class, 'category_index'])->name('index');
+        Route::get('/create', [Controller::class, 'category_create'])->name('create');
+        Route::post('/create', [Controller::class, 'category_store']);
+        Route::get('/edit/{id}', [Controller::class, 'category_edit'])->name('edit');
+        Route::post('/edit/{id}', [Controller::class, 'category_update']);
+        Route::post('/delete/{id}', [Controller::class, 'category_delete'])->name('delete');
+    });
+    Route::name('grades.')->prefix('grades')->group(function(){
+        Route::get('/', [Controller::class, 'grade_index'])->name('index');
+        Route::get('/create', [Controller::class, 'grade_create'])->name('create');
+        Route::post('/create', [Controller::class, 'grade_store']);
+        Route::get('/edit/{id}', [Controller::class, 'grade_edit'])->name('edit');
+        Route::post('/edit/{id}', [Controller::class, 'grade_edit']);
+        Route::post('/delete/{id}', [Controller::class, 'grade_delete'])->name('delete');
+    });
+});
+
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
