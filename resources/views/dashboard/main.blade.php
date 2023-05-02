@@ -5,17 +5,15 @@
                 <div class="md:col-span-1 flex md:h-full overflow-y-scroll no-scrollbar">
                     <x-dashboard.navbar />
                 </div>
-                <div class="md:col-span-4 md:h-full md:flex items-center align-top overflow-y-scroll no-scrollbar px-3 bg-white" >
-                    @if (session()->has('message') || session()->has('success') || session()->has('error'))
-                    @switch(session(''))
-                        @case()
-                            
-                            @break
-                    
-                        @default
-                            
-                    @endswitch
-                        <div class="bg-sky-100 py-3 text-center"></div>
+                <div class="md:col-span-4 md:h-full md:flex items-center align-top overflow-y-scroll no-scrollbar px-3 bg-slate-100" >
+                    @if (session()->has('message'))
+                        <div class="bg-green-100 text-green-600 py-3 text-center">{{session('message')}} </div>
+                    @endif
+                    @if (session()->has('success'))
+                        <div class="bg-blue-100 text-blue-600 py-3 text-center">{{session('success')}} </div>
+                    @endif
+                    @if ( session()->has('error'))
+                        <div class="bg-red-100 text-red-600 py-3 text-center">{{session('error')}} </div>
                     @endif
                     @yield('content') 
                 </div>

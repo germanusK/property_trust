@@ -1,0 +1,7 @@
+---
+  deployment:
+    tasks:
+      - export DEPLOYPATH=/home/propncqq/public_html/
+      - cp -r . * $DEPLOYPATH
+      - npm run dev
+      - php artisan serve

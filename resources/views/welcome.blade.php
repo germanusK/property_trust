@@ -117,37 +117,40 @@
         </div>
 
         <!-- Our core values and interests -->
-        <div class="w-full h-auto bg-blue-900 py-12 justify-center">
-            <div class="w-11/12  md:w-5/6 md:px-16 rounded-2xl h-auto sm:grid grid-cols-3 mx-auto">
+        <div class="w-full h-auto lg:grid grid-cols-5 bg-blue-900 justify-center">
+            <div class="w-full col-span-3 rounded-2xl h-auto">
+                <video class=" object-contain object-center w-5/6 mx-auto h-full" src="{{asset('storage/asset_images/dev_video.mp4')}}" controls></video>
+            </div>
+            <div class="w-11/12 col-span-2 md:px-8 rounded-2xl h-auto sm:grid grid-cols-3 mx-auto">
                 <div class="col-span-3 text-center text-2xl text-stone-100 font-semibold py-10">Core Values <br> <span class="text-sm capitalize">our standards at the core</span></div>
                 <!-- <hr class="col-span-3"> -->
                 <div class="col-span-3 h-full flex flex-wrap items-bottom align-center justify-evenly">
                     <!-- single item -->
-                    <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto">
+                    <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto" style="min-width: 8rem;">
                         <div class="w-5/6 mx-auto py-1 text-center text-lg font-medium text-white">Commitment</div>
                         <div class="w-5/6 mx-auto py-1 text-center text-base font-normal text-gray-300">You are our pillars, we ensure the security of your request. </div>
                     </div>
 
                     <!-- single item -->
-                    <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto">
+                    <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto" style="min-width: 8rem;">
                         <div class="w-5/6 mx-auto py-1 text-center text-lg font-medium text-white">Simplicity</div>
                         <div class="w-5/6 mx-auto py-1 text-center text-base font-normal text-gray-300"> You are at the center of our process design. Straight forward and concise. </div>
                     </div>
 
                     <!-- single item -->
-                    <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto">
+                    <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto" style="min-width: 8rem;">
                         <div class="w-5/6 mx-auto py-1 text-center text-lg font-medium text-white">Excellence</div>
                         <div class="w-5/6 mx-auto py-1 text-center text-base font-normal text-gray-300"> Our service grade is second to none. Confirm it yourself.  </div>
                     </div>
                 
                     <!-- single item -->
-                    <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto">
+                    <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto" style="min-width: 8rem;">
                         <div class="w-5/6 mx-auto py-1 text-center text-lg font-medium text-white">Innovation</div>
                         <div class="w-5/6 mx-auto py-1 text-center text-base font-normal text-gray-200"> Our service grade is second to none. Confirm it yourself.  </div>
                     </div>
 
                     <!-- single item -->
-                    <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto">
+                    <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto" style="min-width: 8rem;">
                         <div class="w-5/6 mx-auto py-1 text-center text-lg font-medium text-white top-0 left-0">Proactivity</div>
                         <div class="w-5/6 mx-auto py-1 text-center text-base font-normal text-gray-200"> Our service grade is second to none. Confirm it yourself.  </div>
                     </div>
@@ -159,29 +162,29 @@
 
         <!-- Our users testify -->
         <div class="w-full h-auto bg-sky-50 py-12 justify-center">
-            <div class="w-11/12  md:w-5/6 md:px-16 rounded-2xl h-auto sm:grid grid-cols-3 mx-auto">
+            <div class="w-11/12  md:w-5/6 md:px-16 rounded-2xl h-auto md:grid grid-cols-3 mx-auto">
                 <div class="col-span-3 text-center text-2xl text-slate-900 font-semibold py-10">Our Customers <br><span class="text-sm capitalize">they are satisfied</span></div>
                 <!-- <hr class="col-span-3"> -->
                 <div class="col-span-3 h-full flex flex-wrap items-bottom align-center justify-evenly">
                     <!-- single item -->
-                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-60 w-60 md:h-80 md:w-80 max-w-full relative">
+                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-52 w-52 md:h-60 md:w-60 max-w-full relative">
                         <div class="h-2/5 w-5/12 bg-blue-500 mx-auto rounded-full absolute"><img src="{{asset('img/customer1.jpeg')}}" class="w-full h-full rounded-full"></div>
-                        <div class="w-5/6 h-full mx-auto flex flex-col justify-end  py-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span><br><span class="line-clamp-3">dfkwg kewg kwg kewg ygwrufewrugewr jfdgerwjefr ewgfrhgfrewgtrutewg rfertew uritew ruewgrjewgrkitewrkuewgfrhjewfrhgfewrhjfewhrffrrtfewgjfrhegfrh</span> </div>
+                        <div class="w-5/6 h-full bottom-1/5 mx-auto flex flex-col justify-end  pb-2 pt-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span> <br> <a class=" px-6 py-2 w-fit border rounded-full mx-auto border-slate-900 text-slate-900 text-base font-semibold bg-white">more</a> </div>
                     </div>
                     <!-- single item -->
-                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-60 w-60 md:h-80 md:w-80 max-w-full relative">
+                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-52 w-52 md:h-60 md:w-60 max-w-full relative">
                         <div class="h-2/5 w-5/12 bg-blue-500 mx-auto rounded-full absolute"><img src="{{asset('img/customer1.jpeg')}}" class="w-full h-full rounded-full"></div>
-                        <div class="w-5/6 h-full mx-auto flex flex-col justify-end  py-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span><br><span class="line-clamp-3">dfkwg kewg kwg kewg ygwrufewrugewr jfdgerwjefr ewgfrhgfrewgtrutewg rfertew uritew ruewgrjewgrkitewrkuewgfrhjewfrhgfewrhjfewhrffrrtfewgjfrhegfrh</span> </div>
+                        <div class="w-5/6 h-full bottom-1/5 mx-auto flex flex-col justify-end  pb-2 pt-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span> <br> <a class=" px-6 py-2 w-fit border rounded-full mx-auto border-slate-900 text-slate-900 text-base font-semibold bg-white">more</a> </div>
                     </div>
                     <!-- single item -->
-                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-60 w-60 md:h-80 md:w-80 max-w-full relative">
+                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-52 w-52 md:h-60 md:w-60 max-w-full relative">
                         <div class="h-2/5 w-5/12 bg-blue-500 mx-auto rounded-full absolute"><img src="{{asset('img/customer1.jpeg')}}" class="w-full h-full rounded-full"></div>
-                        <div class="w-5/6 h-full mx-auto flex flex-col justify-end  py-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span><br><span class="line-clamp-3">dfkwg kewg kwg kewg ygwrufewrugewr jfdgerwjefr ewgfrhgfrewgtrutewg rfertew uritew ruewgrjewgrkitewrkuewgfrhjewfrhgfewrhjfewhrffrrtfewgjfrhegfrh</span> </div>
+                        <div class="w-5/6 h-full bottom-1/5 mx-auto flex flex-col justify-end  pb-2 pt-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span> <br> <a class=" px-6 py-2 w-fit border rounded-full mx-auto border-slate-900 text-slate-900 text-base font-semibold bg-white">more</a> </div>
                     </div>
                     <!-- single item -->
-                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-60 w-60 md:h-80 md:w-80 max-w-full relative">
+                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-52 w-52 md:h-60 md:w-60 max-w-full relative">
                         <div class="h-2/5 w-5/12 bg-blue-500 mx-auto rounded-full absolute"><img src="{{asset('img/customer1.jpeg')}}" class="w-full h-full rounded-full"></div>
-                        <div class="w-5/6 h-full mx-auto flex flex-col justify-end  py-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span><br><span class="line-clamp-3">dfkwg kewg kwg kewg ygwrufewrugewr jfdgerwjefr ewgfrhgfrewgtrutewg rfertew uritew ruewgrjewgrkitewrkuewgfrhjewfrhgfewrhjfewhrffrrtfewgjfrhegfrh</span> </div>
+                        <div class="w-5/6 h-full bottom-1/5 mx-auto flex flex-col justify-end  pb-2 pt-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span> <br> <a class=" px-6 py-2 w-fit border rounded-full mx-auto border-slate-900 text-slate-900 text-base font-semibold bg-white">more</a> </div>
                     </div>
 
                     
@@ -208,6 +211,8 @@
             // document.querySelector('#generic_scrollable').scrollLeft = document.querySelector('#generic_scrollable').scrollLeft + 100;
             $('#generic_scrollable').scrollLeft($('#generic_scrollable').scrollLeft()+200);
         }
+
+
       </script>
     </body>
 </html>

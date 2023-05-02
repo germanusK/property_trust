@@ -4,7 +4,7 @@
         <x-header-alt/>
         <div class="w-full mx-auto">
             <div class="flex justify-center text-center text-base font-semibold my-6">
-                <span><a class="text-blue-900" href="{{url('/')}}">Home</a> : <a class="text-blue-900">Services</a> <span class="text-blue-600">Details</span></span>
+                <span><a class="text-blue-900" href="{{url('/')}}">Home</a> : <a class="text-blue-900" href="{{URL::previous()}}">Services</a> <span class="text-blue-600">Details</span></span>
             </div>
             <x-real-property></x-real-property>
         </div>
