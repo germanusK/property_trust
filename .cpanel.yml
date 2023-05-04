@@ -3,5 +3,6 @@
     tasks:
       - export DEPLOYPATH=/home/propncqq/public_html/
       - cp -r . * $DEPLOYPATH
+      - composer install
       - npm run dev
       - php artisan serve
