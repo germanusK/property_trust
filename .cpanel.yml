@@ -2,8 +2,7 @@
   deployment:
     tasks:
       - export DEPLOYPATH=/home/propncqq/public_html/
-      - cp -r ./public/* $DEPLOYPATH
-      - composer update
+      - cp -r .* $DEPLOYPATH
       - composer install
       # - npm install --only=production
       # - npm run prod
