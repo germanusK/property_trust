@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\dashboard\customers;
-use App\Http\Controllers\dashboard\main;
-use App\Http\Controllers\dashboard\messages;
-use App\Http\Controllers\dashboard\property as DashboardProperty;
-use App\Http\Controllers\dashboard\schedules;
-use App\Http\Controllers\dashboard\siteInfo;
+use App\Http\Controllers\dashboard\Customers;
+use App\Http\Controllers\dashboard\Main;
+use App\Http\Controllers\dashboard\Messages;
+use App\Http\Controllers\dashboard\Property as DashboardProperty;
+use App\Http\Controllers\dashboard\Schedules;
+use App\Http\Controllers\dashboard\SiteInfo;
 use App\Http\Controllers\Market;
 use App\Http\Controllers\MarketDetails;
 use App\Http\Controllers\Messenger;
@@ -45,7 +45,7 @@ Route::post('/subscribe', [Others::class, 'subscribe']);
 
 
 Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
-    Route::get('/', [main::class, 'index'])->name('dashboard');
+    Route::get('/', [Main::class, 'index'])->name('dashboard');
     Route::name('assets.')->prefix('property')->group(function(){
         Route::get('/', [DashboardProperty::class, 'index'])->name('index');
         Route::get('/create', [DashboardProperty::class, 'create'])->name('create');

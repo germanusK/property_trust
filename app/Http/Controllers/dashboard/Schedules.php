@@ -3,10 +3,16 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use App\Models\Schedule;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Validator;
 
-class schedules extends Controller
+class Schedules extends Controller
 {
     //
     public function index()
@@ -60,22 +66,22 @@ class schedules extends Controller
                     # code...
                     if ($due_date->hour <=8 || $due_date->hour >= 17) {
                         # code...
-                        throw new Exception("Time not allowed. Schedules from Monday to Friday are only allowed between 8am and 5pm", 403);
+                        throw new \Exception("Time not allowed. Schedules from Monday to Friday are only allowed between 8am and 5pm", 403);
                     }
                     break;
 
                 case 5:
                     if ($due_date->hour <=8 || $due_date->hour >= 12) {
                         # code...
-                        throw new Exception("Time not allowed. Schedules on Saturday are only allowed between 8am and 12pm", 403);
+                        throw new \Exception("Time not allowed. Schedules on Saturday are only allowed between 8am and 12pm", 403);
                     }
                     break;
                 case 6:
-                    throw new Exception("schedules not allowed on Sundays", 403);
+                    throw new \Exception("schedules not allowed on Sundays", 403);
                     break;
                 default:
                     # code...
-                    throw new Exception("Bad input. Invalid day", 403);
+                    throw new \Exception("Bad input. Invalid day", 403);
                     break;
             }
             // if data is valid, save schedule and notify user by email.
@@ -86,7 +92,7 @@ class schedules extends Controller
 
             // construct and save schedule
             $scheduleData = ['asset_id'=>$request->asset_id, 'customer_id'=>$customerInstance->id, 'due_date'=>$request->due_date];
-            $instance = new ModelsSchedule();
+            $instance = new Schedule();
             $instance->fill($scheduleData);
             $instance->saveOrFail();
 
@@ -166,7 +172,7 @@ class schedules extends Controller
                 break;
         }
         
-        $instance = new ModelsSchedule();
+        $instance = new Schedule();
         $instance->fill($request->all()['update']);
         $instance->id = $request->get('id');
         $instance->save();

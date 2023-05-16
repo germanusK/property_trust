@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
+use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Throwable;
 
-class messages extends Controller
+class Messages extends Controller
 {
     //
     public function index()
@@ -46,7 +51,7 @@ class messages extends Controller
             # code...
             return response($validator->errors(), 400);
         }
-        $message = new MessageModel();
+        $message = new Message();
         $customer = new Customer();
         $cstm = ['name'=>$request->name, 'email'=>$request->email, 'contact'=>($request->get('contact', null))];
         $customer->fill($cstm);

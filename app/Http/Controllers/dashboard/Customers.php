@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
-class customers extends Controller
+class Customers extends Controller
 {
     //
     public function index()
@@ -43,7 +46,7 @@ class customers extends Controller
             # code...
             return $validate->errors();
         }
-        $instance = new ModelsCustomer();
+        $instance = new Customer();
         $instance->fill($request->all());
         if ($instance->save()) {
             # code...
@@ -87,7 +90,7 @@ class customers extends Controller
             return response($validator->errors(), 400);
         }
 
-        $cst = new ModelsCustomer();
+        $cst = new Customer();
         $cst = ['name'=>$request->name, 'email'=>$request->email, 'contact'=>$request->get('contact', null)];
         $cstm = DB::table('customer')->find($id);
         return $cstm->update($cst);
