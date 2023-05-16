@@ -1,9 +1,10 @@
 ---
   deployment:
     tasks:
-      # - export DEPLOYPATH=/home/propncqq/public_html/
-      # - cp -r . * $DEPLOYPATH
+      - export DEPLOYPATH=/home/propncqq/public_html/
+      - cp -r ./public/* $DEPLOYPATH
+      - composer update
       - composer install
-      - npm install --only=production
-      - npm run prod
+      # - npm install --only=production
+      # - npm run prod
       - php artisan serve
