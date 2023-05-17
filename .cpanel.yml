@@ -1,9 +1,24 @@
 ---
   deployment:
     tasks:
-      # - export DEPLOYPATH=/home/propncqq/public_html/
-      # - cp -r .* $DEPLOYPATH
+      # set project public folder or deployment folder
+      - export DEPLOYPATH=/home/propncqq/public_html/
+      - export REPOPATH=/home/propncqq/repositories/
+
+      # copy contents of the public folder alongside composer.json and composer lock into public folder
+      - cp -r ./public/* $DEPLOYPATH
+      - cp /y composer.json $DEPLOYPATH
+      - cp /y composer.lock.json $DEPLOYPATH
+
+      - cp /y ./../data_info/.env ./
+
+      # install composer packages both in project repository and deployment root
+      - composer install
+      - cd $DEPLOYPATH
       - composer install
       # - npm install --only=production
       # - npm run prod
+
+      # optimize and run the app
+      - php artisan optimize:clear
       - php artisan serve
