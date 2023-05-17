@@ -6,13 +6,17 @@
       - export REPOPATH=/home/propncqq/repositories/
 
       # copy contents of the public folder alongside composer.json and composer lock into public folder
-      - cp -r ./public/* $DEPLOYPATH
-      - cp /y composer.json $DEPLOYPATH
-      - cp /y composer.lock.json $DEPLOYPATH
+      - cp -r $REPOPATH/repo/public/* $DEPLOYPATH
+      - xcopy -r $REPOPATH/repo/* $REPOPATH/app /EXCLUDE:$REPOPATH/repo/exclude_list.text
+      - xcopy /Y $REPOPATH/repo/composer.json $DEPLOYPATH
+      - xcopy /Y $REPOPATH/repo/composer.lock $DEPLOYPATH
+      - xcopy /Y $REPOPATH/data_info/.htaccess $DEPLOYPATH
 
-      - cp /y ./../data_info/.env ./
+      - xcopy /Y $REPOPATH/data_info/.env $REPOPATH/app
+      - xcopy /Y $REPOPATH/data_info/index.php $DEPLOYPATH/app
 
       # install composer packages both in project repository and deployment root
+      - cd $REPOPATH
       - composer install
       - cd $DEPLOYPATH
       - composer install
@@ -20,5 +24,7 @@
       # - npm run prod
 
       # optimize and run the app
+
+      - cd $REPOPATH
       - php artisan optimize:clear
       - php artisan serve
