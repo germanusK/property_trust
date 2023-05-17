@@ -7,13 +7,13 @@
 
       # copy contents of the public folder alongside composer.json and composer lock into public folder
       - cp -r $REPOPATH/repo/public/* $DEPLOYPATH
-      - xcopy -r $REPOPATH/repo/* $REPOPATH/app /EXCLUDE:$REPOPATH/repo/exclude_list.text
-      - xcopy /Y $REPOPATH/repo/composer.json $DEPLOYPATH
-      - xcopy /Y $REPOPATH/repo/composer.lock $DEPLOYPATH
-      - xcopy /Y $REPOPATH/data_info/.htaccess $DEPLOYPATH
+      - cp -r $REPOPATH/repo/* $REPOPATH/app /EXCLUDE:$REPOPATH/repo/exclude_list.text
+      - yes | cp $REPOPATH/repo/composer.json $DEPLOYPATH
+      - yes | cp $REPOPATH/repo/composer.lock $DEPLOYPATH
+      - yes | cp $REPOPATH/data_info/.htaccess $DEPLOYPATH
 
-      - xcopy /Y $REPOPATH/data_info/.env $REPOPATH/app
-      - xcopy /Y $REPOPATH/data_info/index.php $DEPLOYPATH/app
+      - yes | cp $REPOPATH/data_info/.env $REPOPATH/app
+      - yes | cp $REPOPATH/data_info/index.php $DEPLOYPATH/app
 
       # install composer packages both in project repository and deployment root
       - cd $REPOPATH
