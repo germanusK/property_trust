@@ -22,6 +22,7 @@
       - composer install
       - cd $DEPLOYPATH
       - composer install
+      - chmod -R 777 $DEPLOYPATH
       # - npm install --only=production
       # - npm run prod
 
