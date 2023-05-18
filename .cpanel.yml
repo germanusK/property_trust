@@ -7,7 +7,8 @@
 
       # copy contents of the public folder alongside composer.json and composer lock into public folder
       - cp -r $REPOPATH/repo/public/* $DEPLOYPATH
-      - cp -r $REPOPATH/repo/* $REPOPATH/app /EXCLUDE:$REPOPATH/repo/exclude_list.text
+      - cp -r $REPOPATH/repo/* $REPOPATH/app
+      - rm -r $REPOPATH/app/public
       - yes | cp $REPOPATH/repo/composer.json $DEPLOYPATH
       - yes | cp $REPOPATH/repo/composer.lock $DEPLOYPATH
       - yes | cp $REPOPATH/data_info/.htaccess $DEPLOYPATH
