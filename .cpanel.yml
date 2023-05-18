@@ -9,12 +9,12 @@
       - cp -r $REPOPATH/repo/public/* $DEPLOYPATH
       - cp -r $REPOPATH/repo/* $REPOPATH/app
       - rm -r $REPOPATH/app/public
-      - yes | cp $REPOPATH/repo/composer.json $DEPLOYPATH
-      - yes | cp $REPOPATH/repo/composer.lock $DEPLOYPATH
-      - yes | cp $REPOPATH/data_info/.htaccess $DEPLOYPATH
+      - cp $REPOPATH/repo/composer.json $DEPLOYPATH
+      - cp $REPOPATH/repo/composer.lock $DEPLOYPATH
+      - cp $REPOPATH/data_info/.htaccess $DEPLOYPATH
 
-      - yes | cp $REPOPATH/data_info/.env $REPOPATH/app
-      - yes | cp $REPOPATH/data_info/index.php $DEPLOYPATH/app
+      - cp $REPOPATH/data_info/.env $REPOPATH/app
+      - cp $REPOPATH/data_info/index.php $DEPLOYPATH/app
 
       # install composer packages both in project repository and deployment root
       - cd $REPOPATH
