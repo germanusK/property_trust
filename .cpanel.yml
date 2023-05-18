@@ -16,18 +16,18 @@
       - yes | cp $REPOPATH/data_info/.htaccess $DEPLOYPATH
 
       - yes | cp $REPOPATH/data_info/.env $REPOPATH/app
+      - chmod -R 777 $DEPLOYPATH
 
       # install composer packages both in project repository and deployment root
       - cd $REPOPATH
       - composer install
-      - cd $DEPLOYPATH
-      - composer install
-      - chmod -R 777 $DEPLOYPATH
+      - php artisan optimize:clear
+      # - cd $DEPLOYPATH
+      # - composer install
       # - npm install --only=production
       # - npm run prod
 
       # optimize and run the app
 
-      - cd $REPOPATH
-      - php artisan optimize:clear
-      - php artisan serve
+      # - cd $REPOPATH
+      # - php artisan serve
