@@ -14,7 +14,8 @@
       # - yes | cp $REPOPATH/repo/composer.json $DEPLOYPATH
       # - yes | cp $REPOPATH/repo/composer.lock $DEPLOYPATH
       - yes | cp $REPOPATH/data_info/.env $DEPLOYPATH
-      - yes | cp $REPOPATH/data_info/.index_htaccess $DEPLOYPATH/.htaccess
+      - yes | cp $REPOPATH/data_info/.index_htaccess $DEPLOYPATH/
+      - yes | mv $$DEPLOYPATH/.index_htaccess .htaccess
       - yes | cp $REPOPATH/data_info/.htaccess $DEPLOYPATH/public
 
       # - yes | cp $REPOPATH/data_info/.env $REPOPATH/app

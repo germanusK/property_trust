@@ -26,6 +26,7 @@
     RewriteRule ^config/* index.php [L,NC]
     RewriteRule ^database/* index.php [L,NC]
     RewriteRule ^node_modules/* index.php [L,NC]
+    
     # RewriteRule ^public/* index.php [L,NC]
     RewriteRule ^routes/* index.php [L,NC]
     RewriteRule ^storage/* index.php [L,NC]
