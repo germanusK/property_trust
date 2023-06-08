@@ -7,7 +7,7 @@
 
       # copy contents of the public folder alongside composer.json and composer lock into public folder
       - cp -r $REPOPATH/repo/* $DEPLOYPATH
-      # - cp -r $REPOPATH/repo/* $REPOPATH/app
+      - cp -r $REPOPATH/repo/.* $DEPLOYPATH
       # - rm -r $REPOPATH/app/public
       # - rm $DEPLOYPATH/index.pphp
       # - yes | cp $REPOPATH/data_info/index.php $DEPLOYPATH
