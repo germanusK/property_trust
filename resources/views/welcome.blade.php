@@ -202,7 +202,7 @@
         <!-- Our core values and interests -->
         <div class="w-full h-auto bg-neutral-200 py-6 shadow-inner justify-center">
             <div class="w-full rounded-2xl h-auto">
-                <video class=" object-contain object-center w-5/6 mx-auto h-full" src="https://www.youtube.com/watch?v=ExDI7NyT6LY&pp=ygULcmVhbCBlc3RhdGU%3D" controls></video>
+                <video class=" object-contain object-center w-5/6 mx-auto h-full" src="https://www.youtube.com/watch?v=ExDI7NyT6LY" controls></video>
             </div>
         </div>
         
