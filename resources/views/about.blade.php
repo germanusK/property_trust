@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-slate-900 mt-6">
+            <!-- <div class="bg-slate-900 mt-6">
                 <div class="w-11/12 md:w-5/6 mx-auto h-auto py-12 mb-4 flex items-center align-middle justify-center">
                     <div class="w-4/5 md:w-2/3">
                         <div class="w-full flex flex-wrap justify-evenly py-8">
@@ -94,7 +94,7 @@
                     <div class="w-12 h-12 text-blue-800 mx-auto"><span class="fa fa-envelope text-4xl"></span></div>
                     <div class="text-center text-slate-700 text-sm italic font-medium">customer@bproperty_trust.com</div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="bg-blue-900 ">

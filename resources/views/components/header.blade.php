@@ -19,33 +19,34 @@
     
 </div>
 
-<div class="w-full min-h-screen relative ">
-    <div class="w-1/2 h-1/2  align-bottom items-end justify-end flex absolute bottom-0 left-0 px-2 py-2 bg-slate-900">
-        <div class="w-fit mx-auto">
-            <div class="text-center py-4">
-                <div class="py-2 text-white text-3xl md:text-4xl font-semibold italic text-ellipsis flex-wrap">Welcome To <span class="text-pink-700">Property Trust</span></div>
-                <div class="text-2xl text-slate-200 italic text-center flex-wrap">Where real property comes home</div>
-            </div>
-            <div class="w-full flex items-center justify-center py-4">
-                <div class=" text-xl font-semibold">
-                    <a href="{{ url('/property') }}" class=" inline-flex flex-auto sm:inline-block px-5 py-2 rounded text-center text-ellipsis w-auto bg-white text-blue-800 ">View Property</a>
+<div class="w-full  min-h-screen md:min-h-fit md:h-fit relative bg-white">
+    <div class="w-11/12 h-3/5 md:h-96 right-auto rounded-br-3xl z-10 bg-white pr-2">
+        <div class="w-full h-full rounded-br-3xl border-b-8 border-r-8 border-slate-900 items-center align-middle justify-center flex relative"
+            style="background-image: url(``);">
+            <img src="{{ asset('img/home.jpg') }}" class="w-full h-full overflow-hidden object-cover rounded-br-2xl">
+            <div class="w-full h-full  align-middle items-center justify-center flex absolute bottom-0 left-0 px-2 py-2 bg-slate-900 bg-opacity-60">
+                <div class="w-fit mx-auto">
+                    <div class="text-center py-4">
+                        <div class="py-2 text-white text-3xl md:text-4xl font-semibold italic text-ellipsis flex-wrap">Welcome To <span class="text-pink-700">Property Trust</span></div>
+                        <div class="text-2xl text-slate-200 italic text-center flex-wrap">Where real property comes home</div>
+                    </div>
+                    <div class="w-full flex items-center justify-center py-4">
+                        <div class=" text-xl font-semibold">
+                            <a href="{{ url('/property') }}" class=" inline-flex flex-auto sm:inline-block px-5 py-2 rounded text-center text-ellipsis w-auto bg-white text-blue-800 ">View Property</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="w-1/2 h-full right-0 bottom-0 left-auto absolute align-bottom bg-white items-end justify-end flex py-2">
-        <div class="w-4/5 mx-auto h-1/2 flex align-middle items-center justify-center text-center text-ellipsis line-clamp-3 text-4xl font-semibold">
-            Don't wait to buy real estate, Buy real estate and wait
-        </div>
-    </div>
-    <div class="w-11/12 h-2/3 md:h-96 absolute top-0 left-0 right-auto rounded-br-3xl z-10 bg-white pr-2">
-        <div class="w-full h-full rounded-br-3xl border-b-8 border-r-8 border-blue-900 items-center align-middle justify-center flex">
-            <img src="{{ asset('img/home.jpg') }}" class="w-full h-full overflow-hidden object-cover rounded-br-2xl">
-        </div>
-    </div>
     <div class="w-2/5 absolute flex top-0 right-0 border-b-8 border-l-8 rounded-bl-full border-white z-20 bg-slate-900 justify-center items-center align-middle flex-wrap pl-4 py-4">
-        <a href="{{ url('') }}" class="mx-4"><span class="text-4xl font-semibold text-slate-200 fas fa-home"></span></a>
+        <a href="{{ url('/') }}" class="mx-4"><span class="text-4xl font-semibold text-slate-200 fas fa-home"></span></a>
         <a href="{{ url('/login') }}" class="mx-4"><span class="text-4xl font-sans mx-5 text-blue-900 fas fa-sign-in-alt"></span></a>
+    </div>
+    <div class="w-full h-2/5 md:h-24 mt-12 align-middle text-slate-900 bg-white items-center justify-center flex py-2">
+        <div id="peti-design" class="w-4/5 px-6 rounded-xl mx-auto h-full flex align-middle items-center justify-center text-center text-ellipsis line-clamp-3 text-4xl font-semibold">
+            <marquee>Don't wait to buy real estate, Buy real estate and wait</marquee> 
+        </div>
     </div>
 </div>
 
@@ -73,4 +74,9 @@ function toggle_nav() {
 
     }
 }
+
+setInterval(()=>{
+    $('#peti-design').toggleClass('border-double border-y-slate-700 border-y-4')
+    // $('#peti-design').toggleClass('border-solid border-x-cyan-700 border-x-4')
+}, 200);
 </script>

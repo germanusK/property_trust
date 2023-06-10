@@ -8,17 +8,17 @@
         </div>
         <div class="w-full pt-12">
             
-            <div class=" shadow-inner bg-slate-50 py-12">
+            <div class=" shadow-inner bg-neutral-400 py-12">
                 <div class="w-full h-auto mb-4 flex flex-wrap items-center align-middle justify-around">
                     <div class="w-full md:w-3/4 lg:w-3/4">
-                        <div class="w-full max-w-xl mx-auto">
+                        <div class="w-full max-w-lg px-4 py-6 rounded-md shadow bg-neutral-700 mx-auto">
                             <form method="post" action="" id="contact_form">
-                                <input type="text" class="text-lg text-slate-500 placeholder-slate-300 h-12 w-full border border-slate-300 rounded px-3 my-3" name="name" placeholder="enter your name here" required>
-                                <input type="email" class="text-lg text-slate-500 placeholder-slate-300 h-12 w-full border border-slate-300 rounded px-3 my-3" name="email" placeholder="enter your email here; optional">
-                                <input type="tel" class="text-lg text-slate-500 placeholder-slate-300 h-12 w-full border border-slate-300 rounded px-3 my-3" name="tel" placeholder="enter your phone number here; optional if email provided">
-                                <textarea class="text-lg text-slate-500 placeholder-slate-300 h-28 w-full border border-slate-300 rounded px-3 my-3" name="message" placeholder="enter message here" required></textarea>
+                                <input type="text" class="text-lg text-slate-900 placeholder-slate-700 h-12 w-full border border-slate-900 bg-neutral-200 rounded px-3 my-3" name="name" placeholder="enter your name here" required>
+                                <input type="email" class="text-lg text-slate-900 placeholder-slate-700 h-12 w-full border border-slate-900 bg-neutral-200 rounded px-3 my-3" name="email" placeholder="enter your email here; optional">
+                                <input type="tel" class="text-lg text-slate-900 placeholder-slate-700 h-12 w-full border border-slate-900 bg-neutral-200 rounded px-3 my-3" name="tel" placeholder="enter your phone number here; optional if email provided">
+                                <textarea class="text-lg text-slate-900 placeholder-slate-700 h-28 w-full border border-slate-900 bg-neutral-200 rounded px-3 my-3" name="message" placeholder="enter message here" required></textarea>
                                 <div class="flex justify-end my-3">
-                                    <input type="submit" class="h-12 px-8 rounded border border-slate-300 hover:bg-slate-200 text-slate-500" value="send" onclick="event.preventDefault(); confirm('You are about to send messgae') ? $('#contact_form').submit()">
+                                    <input type="submit" class="h-12 px-8 rounded border border-slate-900 hover:bg-slate-200 font-semibold text-base text-slate-100" value="send" onclick="event.preventDefault(); confirm('You are about to send messgae') ? $('#contact_form').submit()">
                                 </div>
                             </form>
                         </div>

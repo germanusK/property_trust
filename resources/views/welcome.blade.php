@@ -206,38 +206,39 @@
             </div>
         </div>
         
-        <div class="w-11/12 col-span-2 md:px-8 rounded-2xl h-auto sm:grid grid-cols-3 mx-auto py-12">
+        <div class="w-full col-span-2 md:px-8 h-auto sm:grid grid-cols-3 mx-auto py-12">
             <div class="col-span-3 text-center text-2xl font-semibold pb-10">Core Values <br> <span class="text-sm capitalize">our standards at the core</span></div>
             <!-- <hr class="col-span-3"> -->
             <div class="col-span-3 h-full flex flex-wrap items-bottom align-center justify-evenly">
+                
                 <!-- single item -->
-                <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto" style="min-width: 8rem;">
-                    <div class="w-5/6 mx-auto py-1 text-center text-lg font-medium text-white">Commitment</div>
-                    <div class="w-5/6 mx-auto py-1 text-center text-base font-normal text-gray-300">You are our pillars, we ensure the security of your request. </div>
+                <div class=" w-56 my-6 mx-2 bg-neutral-100 rounded px-1 py-4 h-auto shadow border border-slate-900" style="min-width: 8rem; border-style:groove;">
+                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white border py-1 text-center text-lg font-medium text-black">Commitment</div>
+                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">You are our pillars, we ensure the security of your request. </div>
                 </div>
-
+                
                 <!-- single item -->
-                <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto" style="min-width: 8rem;">
-                    <div class="w-5/6 mx-auto py-1 text-center text-lg font-medium text-white">Simplicity</div>
-                    <div class="w-5/6 mx-auto py-1 text-center text-base font-normal text-gray-300"> You are at the center of our process design. Straight forward and concise. </div>
+                <div class=" w-56 my-6 mx-2 bg-neutral-100 rounded px-1 py-4 h-auto shadow border border-slate-900" style="min-width: 8rem; border-style:groove;">
+                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white border py-1 text-center text-lg font-medium text-black">Simplicity</div>
+                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">You are at the center of our process design. Straight forward and concise. </div>
                 </div>
-
+                
                 <!-- single item -->
-                <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto" style="min-width: 8rem;">
-                    <div class="w-5/6 mx-auto py-1 text-center text-lg font-medium text-white">Excellence</div>
-                    <div class="w-5/6 mx-auto py-1 text-center text-base font-normal text-gray-300"> Our service grade is second to none. Confirm it yourself.  </div>
+                <div class=" w-56 my-6 mx-2 bg-neutral-100 rounded px-1 py-4 h-auto shadow border border-slate-900" style="min-width: 8rem; border-style:groove;">
+                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white border py-1 text-center text-lg font-medium text-black">Excellence</div>
+                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">Our service grade is second to none. Confirm it yourself. </div>
                 </div>
-            
+                
                 <!-- single item -->
-                <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto" style="min-width: 8rem;">
-                    <div class="w-5/6 mx-auto py-1 text-center text-lg font-medium text-white">Innovation</div>
-                    <div class="w-5/6 mx-auto py-1 text-center text-base font-normal text-gray-200"> Our service grade is second to none. Confirm it yourself.  </div>
+                <div class=" w-56 my-6 mx-2 bg-neutral-100 rounded px-1 py-4 h-auto shadow border border-slate-900" style="min-width: 8rem; border-style:groove;">
+                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white border py-1 text-center text-lg font-medium text-black">Innovation</div>
+                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">Our service grade is second to none. Confirm it yourself.</div>
                 </div>
-
+                
                 <!-- single item -->
-                <div class="flex-1 my-3 mx-2 bg-black border-l-2 border-l-white rounded-r-lg px-3 py-4 h-auto" style="min-width: 8rem;">
-                    <div class="w-5/6 mx-auto py-1 text-center text-lg font-medium text-white top-0 left-0">Proactivity</div>
-                    <div class="w-5/6 mx-auto py-1 text-center text-base font-normal text-gray-200"> Our service grade is second to none. Confirm it yourself.  </div>
+                <div class=" w-56 my-6 mx-2 bg-neutral-100 rounded px-1 py-4 h-auto shadow border border-slate-900" style="min-width: 8rem; border-style:groove;">
+                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white border py-1 text-center text-lg font-medium text-black">Proactivity</div>
+                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">Our service grade is second to none. Confirm it yourself.</div>
                 </div>
             </div>
         </div>
@@ -250,20 +251,59 @@
                 <!-- <hr class="col-span-3"> -->
                 <div class="col-span-3 h-full flex flex-wrap items-bottom align-center justify-evenly">
                     <!-- single item -->
-                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-52 w-52 md:h-60 md:w-60 max-w-full relative">
-                        <div class="h-2/5 w-5/12 bg-blue-500 mx-auto rounded-full absolute"><img src="{{asset('img/customer1.jpeg')}}" class="w-full h-full rounded-full"></div>
-                        <div class="w-5/6 h-full bottom-1/5 mx-auto flex flex-col justify-end  pb-2 pt-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span> <br> <a class=" px-6 py-2 w-fit border rounded-full mx-auto border-slate-900 text-slate-900 text-base font-semibold bg-white">more</a> </div>
+                    <div class=" my-3 mx-2 bg-slate-900 border px-3 pb-4 h-auto w-72 max-w-full relative">
+                        <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                            <a href="#!">
+                                <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
+                            </a>
+                            <div class="p-6 bg-slate-900 bg-opacity-25">
+                                <h5 class="mb-2 text-xl text-center font-semibold font-medium leading-tight text-neutral-800 dark:text-neutral-50"> Mdm Vandella Juallu </h5>
+                                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                                Tel: +237672908239, vandejual@mail.com
+                                </p>
+                                <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                Button
+                                </button>
+                            </div>
+                        </div>
                     </div>
+                    
                     <!-- single item -->
-                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-52 w-52 md:h-60 md:w-60 max-w-full relative">
-                        <div class="h-2/5 w-5/12 bg-blue-500 mx-auto rounded-full absolute"><img src="{{asset('img/customer1.jpeg')}}" class="w-full h-full rounded-full"></div>
-                        <div class="w-5/6 h-full bottom-1/5 mx-auto flex flex-col justify-end  pb-2 pt-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span> <br> <a class=" px-6 py-2 w-fit border rounded-full mx-auto border-slate-900 text-slate-900 text-base font-semibold bg-white">more</a> </div>
+                    <div class=" my-3 mx-2 bg-slate-900 border px-3 pb-4 h-auto w-72 max-w-full relative">
+                        <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                            <a href="#!">
+                                <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
+                            </a>
+                            <div class="p-6 bg-slate-900 bg-opacity-25">
+                                <h5 class="mb-2 text-xl text-center font-semibold font-medium leading-tight text-neutral-800 dark:text-neutral-50"> Mdm Vandella Juallu </h5>
+                                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                                Tel: +237672908239, vandejual@mail.com
+                                </p>
+                                <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                Button
+                                </button>
+                            </div>
+                        </div>
                     </div>
+                    
                     <!-- single item -->
-                    <div class=" my-3 mx-2 bg-slate-900 border border-l-4 border-blue-500 rounded-full px-3 pb-4 h-52 w-52 md:h-60 md:w-60 max-w-full relative">
-                        <div class="h-2/5 w-5/12 bg-blue-500 mx-auto rounded-full absolute"><img src="{{asset('img/customer1.jpeg')}}" class="w-full h-full rounded-full"></div>
-                        <div class="w-5/6 h-full bottom-1/5 mx-auto flex flex-col justify-end  pb-2 pt-8 text-center text-sm font-light italic text-gray-300"><span class="font-bold ">Mdm Vandella Juallu</span><span class="text-xs">Tel: +237672908239, vandejual@mail.com</span> <br> <a class=" px-6 py-2 w-fit border rounded-full mx-auto border-slate-900 text-slate-900 text-base font-semibold bg-white">more</a> </div>
+                    <div class=" my-3 mx-2 bg-slate-900 border px-3 pb-4 h-auto w-72 max-w-full relative">
+                        <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                            <a href="#!">
+                                <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
+                            </a>
+                            <div class="p-6 bg-slate-900 bg-opacity-25">
+                                <h5 class="mb-2 text-xl text-center font-semibold font-medium leading-tight text-neutral-800 dark:text-neutral-50"> Mdm Vandella Juallu </h5>
+                                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                                Tel: +237672908239, vandejual@mail.com
+                                </p>
+                                <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                Button
+                                </button>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

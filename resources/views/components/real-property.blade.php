@@ -1,6 +1,6 @@
 
 <div class="w-full min-h-screen flex flex-wrap py-16 mt-32 justify-evenly">
-    <div class=" min-h-screen z-20 bg-black bg-opacity-10">
+    <div class=" min-h-screen z-20 bg-slate-900">
         <!-- <div class="w-3/4 py-6 rounded-xl align-middle ml-14 -mt-12 property-bg">
             <div class="w-full h-full -mt-16 min-w-fit pb-4 mb-4 rounded-xl ml-8 sm:ml-14 md:ml-20 lg:ml-28 top-16 border bg-slate-900" >
                 <div class="w-fit max-w-full inline-block mx-auto h-fit justify-between items-center align-middle">

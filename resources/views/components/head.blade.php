@@ -11,16 +11,13 @@
         <link rel="stylesheet" href="{{ asset('fontawesome-free-5.3.1/css/all.min.css') }}">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
         <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-        <link
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
-        rel="stylesheet" />
-        <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
         <script src="https://cdn.tailwindcss.com/3.3.0"></script>
         <script>
         tailwind.config = {
