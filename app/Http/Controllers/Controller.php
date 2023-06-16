@@ -7,6 +7,7 @@ use App\Models\AssetCategory;
 use App\Models\AssetGrade;
 use App\Models\Category;
 use App\Models\Grade;
+use App\Models\MailingList;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -176,5 +177,20 @@ class Controller extends BaseController
                     ->get(['assets.*', 'categories.name as category', 'grades.name as grade']);
         
         return response()->json(['data'=>$records]);
+    }
+
+    public function subscribe(Request $request)
+    {
+        $validity = Validator::make($request->all(), ['email'=>'required|email']);
+        if($validity->fails()){
+            return back()->with('error', $validity->errors()->first());
+        }
+        if(MailingList::where('email', $request->email)->count() > 0){
+            return back()->with('error', "Email ".$request->email." aready exists in our mailing list");
+        }else{
+            $instance = new MailingList(['email'=>$request->email]);
+            $instance->save();
+            return back()->with('success', 'Done');
+        }
     }
 }

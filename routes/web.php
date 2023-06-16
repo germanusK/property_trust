@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [Controller::class, '_index']);
+Route::post('/update/subscribe', [Controller::class, 'subscribe'])->name('updates.subscribe');
 Route::get('/search', [Controller::class, '_search'])->name('search');
 Route::get('/property', [Property::class, 'index']);
 Route::get('/services', [Property::class, 'services_index'])->name('public.services');
