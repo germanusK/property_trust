@@ -61,9 +61,9 @@ class Property extends Controller
                     # code...
                     $ext = $file->getClientOriginalExtension();
                     $name = '_' . time() . '_' . rand(100000, 999999) . '.' . $ext;
-                    $path = '/storage/asset_images';
+                    $path = asset('uploads/asset_images');
                     $pathname = $path.'/'.$name;
-                    $file->move(storage_path('app/public/asset_images'), $name);
+                    $file->storeAs('asset_images', $name, ['disk'=>'public_uploads']);
                     AssetImage::create(['asset_id' => $asset_id, 'url' => $pathname]);
                 }
             }
@@ -108,8 +108,8 @@ class Property extends Controller
                 'price'=>'required',
                 'grade'=>'required|in:1,2,3,4',
             ]);
-            if (!$valid->fails()) {
-                # code...
+            if ($valid->fails()) {
+                return back()->with('error', $valid->errors()->first());
             }
             # redirect back on response
         } catch (\Throwable $th) {
@@ -170,7 +170,6 @@ class Property extends Controller
         # code...
         $validity = Validator::make($request->all(), [
             'name'=>'required',
-            'email'=>'required|email',
             'service_icon'=>'required|file',
             'description'=>'required|string'
         ]);
@@ -178,10 +177,20 @@ class Property extends Controller
             return back()->with('error', $validity->errors()->first());
         }
 
+        $file = $request->file('service_icon');
+        $ext = $file->getClientOriginalExtension();
+        $path = asset('uploads/service_icons');
+        $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
+        $file->storeAs('service_icons', $filename, ['disk'=>'public_uploads']);
+        $icon_path = $path.'/'.$filename;
+
+
         // create service
         $service = new Service();
         $service->fill($request->all());
+        $service->icon_path = $icon_path;
         $service->save();
+        
         return back()->with('success', 'Done');
     }
     

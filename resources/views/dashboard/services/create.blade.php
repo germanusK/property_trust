@@ -24,7 +24,7 @@
 
                         <div class="col-span-1 px-4 py-2">
                             <div class="w-full sm:w-2/3 mx-auto my-2">
-                                <img src="" width="120" height="130" class="rounded-md border border-slate-400" />
+                                <img src="" width="120" height="130" class="rounded-md border border-slate-400" id="icon_preview"/>
                             </div>
                             <div class="w-full my-2">
                                 <label for="name" class="text-white text-opacity-50 text-base capitalize text-left">name:</label><br>
@@ -44,10 +44,10 @@
                             </div>
                             <div class="w-full my-2">
                                 <label for="service_con" class="text-white text-opacity-50 text-base capitalize text-left">icon:</label><br>
-                                <input type="file" required name="service_icon" multiple accept="mimes:png,jpg,jpeg,gif,tif" id="" placeholder="icon_here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11 py-2">
+                                <input type="file" required name="service_icon" multiple accept="image/*" oninput="preview(event)" placeholder="icon_here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11 py-2">
                             </div>
                                 <label for="description" class="text-white text-opacity-50 text-base capitalize text-left">description:</label><br>
-                                <textarea rows="4" name="description" id="" placeholder="item description here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70"></textarea>
+                                <textarea rows="4" name="description" id="" required placeholder="item description here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70"></textarea>
                             </div>
                             <div class="w-full py-2 justify-end flex">
                                 <button id="creationBtn" type="submit" name="submit" class="px-3 py-2 border-b border-white text-white rounded font-semibold">create</button>
@@ -58,4 +58,14 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        preview = function(event){
+            file = event.target.files[0];
+            url = URL.createObjectURL(file);
+            console.log(url);
+            document.getElementById('icon_preview').src = url;
+        }
+    </script>
 @endsection

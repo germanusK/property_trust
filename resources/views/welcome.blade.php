@@ -256,60 +256,25 @@
                 <div class="col-span-3 text-center text-2xl text-slate-900 font-semibold py-10">Our Customers <br><span class="text-sm capitalize">they are satisfied</span></div>
                 <!-- <hr class="col-span-3"> -->
                 <div class="col-span-3 h-full flex flex-wrap items-bottom align-center justify-evenly">
-                    <!-- single item -->
-                    <div class=" my-3 mx-2 bg-slate-900 border px-3 pb-4 h-auto w-72 max-w-full relative">
-                        <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                            <a href="#!">
-                                <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
-                            </a>
-                            <div class="p-6 bg-slate-900 bg-opacity-25">
-                                <h5 class="mb-2 text-xl text-center font-semibold font-medium leading-tight text-neutral-800 dark:text-neutral-50"> Mdm Vandella Juallu </h5>
-                                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                Tel: +237672908239, vandejual@mail.com
-                                </p>
-                                <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                Button
-                                </button>
+                    @foreach (\App\Models\Customer::orderBy('id', 'DESC')->take(3)->get()->shuffle() as $customer)
+                        <!-- single item -->
+                        <div class=" my-3 mx-2 bg-slate-900 border px-3 pb-4 h-auto w-72 max-w-full relative">
+                            <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                                <a href="#!">
+                                    <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
+                                </a>
+                                <div class="p-6 bg-slate-900 bg-opacity-25">
+                                    <h5 class="mb-2 text-xl text-center font-semibold leading-tight text-neutral-800 dark:text-neutral-50"> {{ $customer->name }} </h5>
+                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                                    Tel: {{ $customer->contact }}, {{ $customer->email }}
+                                    </p>
+                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                    Button
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- single item -->
-                    <div class=" my-3 mx-2 bg-slate-900 border px-3 pb-4 h-auto w-72 max-w-full relative">
-                        <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                            <a href="#!">
-                                <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
-                            </a>
-                            <div class="p-6 bg-slate-900 bg-opacity-25">
-                                <h5 class="mb-2 text-xl text-center font-semibold font-medium leading-tight text-neutral-800 dark:text-neutral-50"> Mdm Vandella Juallu </h5>
-                                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                Tel: +237672908239, vandejual@mail.com
-                                </p>
-                                <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                Button
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- single item -->
-                    <div class=" my-3 mx-2 bg-slate-900 border px-3 pb-4 h-auto w-72 max-w-full relative">
-                        <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                            <a href="#!">
-                                <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
-                            </a>
-                            <div class="p-6 bg-slate-900 bg-opacity-25">
-                                <h5 class="mb-2 text-xl text-center font-semibold font-medium leading-tight text-neutral-800 dark:text-neutral-50"> Mdm Vandella Juallu </h5>
-                                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                Tel: +237672908239, vandejual@mail.com
-                                </p>
-                                <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                Button
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    @endforeach
                 </div>
             </div>
         </div>
