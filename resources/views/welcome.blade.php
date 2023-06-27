@@ -25,8 +25,8 @@
                       </svg>
                     </span>
                   </div>
-                  <h5 class="mb-6 font-bold text-primary">150+</h5>
-                  <h6 class="mb-0 font-normal dark:text-neutral-50">Rooms/studios/appartments</h6>
+                  <h5 class="mb-6 font-bold text-primary">{{ \App\Models\Asset::count() }}</h5>
+                  <h6 class="mb-0 font-normal dark:text-neutral-50">Property</h6>
                   <div
                     class="absolute right-0 top-0 hidden h-full min-h-[1em] w-px self-stretch border-t-0 bg-gradient-to-tr from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100 lg:block"></div>
                 </div>
@@ -47,28 +47,8 @@
                       </svg>
                     </span>
                   </div>
-                  <h5 class="mb-6 font-bold text-primary">40+</h5>
-                  <h6 class="mb-0 font-normal dark:text-neutral-50">Contruction Projects</h6>
-                  <div
-                    class="absolute right-0 top-0 hidden h-full min-h-[1em] w-px self-stretch border-t-0 bg-gradient-to-tr from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100 lg:block"></div>
-                </div>
-                <div class="relative mb-12 px-3 lg:mb-0">
-                  <div class="mb-2 flex justify-center">
-                    <span class="text-primary">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="h-14 w-14">
-                        <path
-                          fill-rule="evenodd"
-                          d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </span>
-                  </div>
-                  <h5 class="mb-6 font-bold text-primary">30+</h5>
-                  <h6 class="mb-0 font-normal dark:text-neutral-50">Pieces of Land</h6>
+                  <h5 class="mb-6 font-bold text-primary">{{ \App\Models\Project::count() }}</h5>
+                  <h6 class="mb-0 font-normal dark:text-neutral-50">Projects</h6>
                   <div
                     class="absolute right-0 top-0 hidden h-full min-h-[1em] w-px self-stretch border-t-0 bg-gradient-to-tr from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100 lg:block"></div>
                 </div>
@@ -87,30 +67,56 @@
                       </svg>
                     </span>
                   </div>
-                  <h5 class="mb-6 font-bold text-primary">28</h5>
-                  <h6 class="mb-0 font-normal dark:text-neutral-50">Stores</h6>
+                  <h5 class="mb-6 font-bold text-primary">{{ \App\Models\Service::count() }}</h5>
+                  <h6 class="mb-0 font-normal dark:text-neutral-50">Services</h6>
+                  <div
+                    class="absolute right-0 top-0 hidden h-full min-h-[1em] w-px self-stretch border-t-0 bg-gradient-to-tr from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100 lg:block"></div>
+                </div>
+                <div class="relative mb-12 px-3 lg:mb-0">
+                  <div class="mb-2 flex justify-center">
+                    <span class="text-primary">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="h-14 w-14">
+                        <path
+                          fill-rule="evenodd"
+                          d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                  </div>
+                  <h5 class="mb-6 font-bold text-primary">{{ \App\Models\Customer::count() }}</h5>
+                  <h6 class="mb-0 font-normal dark:text-neutral-50">Customers</h6>
                 </div>
               </div>
               <!-- /STATISTICS -->
 
               <!-- SERVICES -->
             <div class="w-full flex flex-wrap items-baseline align-middle justify-center py-8 px-4 bg-white">
-                <div class="xs:w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-fit py-3 px-2">
-                    <div class="rounded shadow-lg h-auto py-5 px-2 w-full border border-slate-50 hover:border-slate-900 text-center">
-                        <div class="rounded-full w-24 h-28 mt-3 mx-auto">
-                            <span class=" text-6xl text-blue-700 fas fa-cocktail"></span>
-                        </div>
-                        <div class="h-3/5 w-full pb-5">
-                            <div class="font-semibold py-4 text-xl text-blue-800 text-center text-ellipsis">
-                                Real Estate
+                @foreach (\App\Models\Service::take(4)->get() as $service)
+                    <div class="xs:w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-fit py-3 px-2">
+                        <div class="rounded shadow-lg h-auto py-5 px-2 w-full border border-slate-50 hover:border-slate-900 text-center">
+                            <div class="rounded-full w-24 h-28 mt-3 mx-auto">
+                            @if ($service->icon_path != null)
+                                <img class="h-16 w-12 rounded" src="{{ $service->icon_path }}">
+                            @else
+                                <span class=" text-6xl text-blue-700 fas fa-cocktail"></span>
+                            @endif
                             </div>
-                            <div class="text-lg text-slate-600 text-center line-clamp-3 mb-7">Simplifying your home finding hassles with hundreds of luxurious properties</div>
-                            <a class="px-8 py-3 rounded-full bg-blue-900 text-white">more</a>
+                            <div class="h-3/5 w-full pb-5">
+                                <div class="font-semibold py-4 text-xl text-blue-800 text-center text-ellipsis line-clamp-2">
+                                    {{ $service->name }}
+                                </div>
+                                <div class="text-lg text-slate-600 text-center line-clamp-3 mb-7">{{ $service->description }}</div>
+                                <a class="px-8 py-3 rounded-full bg-blue-900 text-white" href="{{ route('public.services.details', [$service->id]) }}">more info</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="xs:w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-fit py-3 px-2">
+                {{-- <div class="xs:w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-fit py-3 px-2">
                     <div class="rounded shadow-lg h-auto py-5 px-2 w-full border border-slate-50 hover:border-slate-900 text-center">
                         <div class="rounded-full w-24 h-28 mt-3 mx-auto">
                             <span class="text-6xl text-blue-700 fab fa-cloudscale"></span>
@@ -153,7 +159,7 @@
                             <a class="px-8 py-3 rounded-full bg-blue-900 text-white">more</a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <!-- END OF SERVICES -->

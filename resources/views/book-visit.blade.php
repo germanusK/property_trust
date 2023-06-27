@@ -9,7 +9,9 @@
                     <div class="rounded shadow-inner bg-stone-200 relative h-full">
                         <div class="absolute w-full h-full bg-slate-900 bg-opacity-70 flex flex-col justify-center text-gray-100">
                             <div class="text-center text-lg font-semibold text-color-1">{{$data->name}}</div>
-                            <div class="text-center font-bold text-color-2">{{$data->categories->first()->name}} : {{$data->grades->first()->name}}</div>
+                            @if(($data->categories->count() > 0) and ($data->grades->count() > 0))
+                                <div class="text-center font-bold text-color-2">{{$data->categories->first()->name ?? null}} >> {{$data->grades->first()->name ?? null}}</div>
+                            @endif
                             <div class="text-center text-md text-color-default">{{$data->description}}</div>
                         </div>
                         <img src="{{ asset($data->images->first()->url ?? '') }}" alt="" class=" w-full h-full rounded-left">

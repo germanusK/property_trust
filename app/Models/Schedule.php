@@ -21,10 +21,10 @@ class Schedule extends Model
     protected $table = 'schedules';
 
     function property(){
-        return $this->belongsTo('App\Models\Property', 'asset_id');
+        return $this->belongsTo(Asset::class, 'asset_id');
     }
     function customer(){
-        return $this->belongsTo('App\Models\Customer', 'customer_id');
+        return $this->belongsTo(Customer::class, 'customer_id');
     }
     
 }

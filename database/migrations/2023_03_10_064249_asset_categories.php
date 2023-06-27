@@ -20,8 +20,7 @@ class AssetCategories extends Migration
             $table->id();
             $table->unsignedBigInteger("asset_id");
             $table->unsignedBigInteger("category_id");
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamps();
         });
     }
 

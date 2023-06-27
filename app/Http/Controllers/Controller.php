@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asset;
-use App\Models\AssetCategory;
-use App\Models\AssetGrade;
 use App\Models\Category;
 use App\Models\Grade;
 use App\Models\MailingList;
@@ -13,9 +11,10 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Routing\Router;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 
 class Controller extends BaseController
 {
@@ -27,12 +26,12 @@ class Controller extends BaseController
     }
 
     function _index(){
-        // get latest/trending items 
-        $assets = Asset::where('quantity', '>', 0)->orderBy('created_at', 'DESC')->get();
-    
-        $data = ['assets'=>collect($assets)->take(12)];
-        return view('welcome', $data);
         // return '---------------------------';
+        // get latest/trending items 
+        $assets = Asset::where('quantity', '>', 0)->orderBy('created_at', 'DESC')->take(12)->get();
+    
+        $data = ['assets'=>collect($assets)];
+        return view('welcome', $data);
     }
 
     function setSenderEmailAddress(Request $request){
@@ -192,5 +191,25 @@ class Controller extends BaseController
             $instance->save();
             return back()->with('success', 'Done');
         }
+    }
+
+    public function send_email(string $email_address, string $subject, $text_content)
+    {
+        # code...
+        $data = ['email_address'=>$email_address, 'subject'=>$subject, 'text_content'=>$text_content];
+        Mail::send('mails.notification', $data, function($message)use($email_address, $subject){
+            $message->to($email_address, "PROPERTY TRUST GROUP CUSTOMER");
+            $message->subject($subject);
+        });
+    }
+
+    public function send_confirmation_email(string $email_address, string $subject, string $text_content, $confirmation_url )
+    {
+        # code...
+        $data = ['email_address'=>$email_address, 'subject'=>$subject, 'text_content'=>$text_content, 'confirmation_url'=>$confirmation_url];
+        Mail::send(['text'=>'mails.confirmation'], $data, function($message)use($email_address, $subject){
+            $message->to($email_address, "PROPERTY TRUST GROUP CUSTOMER");
+            $message->subject($subject);
+        });
     }
 }

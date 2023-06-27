@@ -28,8 +28,8 @@ class AssetImages extends Migration
             $table->unsignedBigInteger("asset_id");
             $table->string("url");
             $table->text("description")->nullable();
-            $table->timestamp("created_at")->useCurrent();
-            $table->timestamp("updated_at")->useCurrent();
+            $table->enum('type', ['property', 'project', 'service'])->default('property');
+            $table->timestamps();
         });
     }
 

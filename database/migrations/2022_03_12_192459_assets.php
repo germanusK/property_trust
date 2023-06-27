@@ -30,8 +30,7 @@ class Assets extends Migration
             $table->string("price");//price per item.
             $table->string("address")->nullable();//price per item.
             $table->string("description")->nullable(); //concise description of the item e.g house properties and facilities.
-            $table->timestamp("created_at")->useCurrent();//time stamp on which the asset was uplaoded
-            $table->timestamp("updated_at")->useCurrent();
+            $table->timestamps();
         });
     }
 

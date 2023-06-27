@@ -19,8 +19,7 @@ class Grades extends Migration
             $table->id();
             $table->string("name");
             $table->tinyInteger("rank")->nullable();
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamps();
         });
     }
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\dashboard\Messages;
 use App\Http\Controllers\dashboard\Property as DashboardProperty;
 use App\Http\Controllers\dashboard\Schedules;
 use App\Http\Controllers\dashboard\SiteInfo;
+use App\Http\Controllers\dashboard\StatisticsController;
 use App\Http\Controllers\Market;
 use App\Http\Controllers\MarketDetails;
 use App\Http\Controllers\Messenger;
@@ -35,8 +36,9 @@ Route::get('/services', [Property::class, 'services_index'])->name('public.servi
 Route::get('/services/{id}/details', [Property::class, 'service_details'])->name('public.services.details');
 Route::get('/propertyDetails/{id}', [PropertyDetails::class, 'index'])->name('assets.show');
 Route::get('/marketDetails/{id}', [MarketDetails::class, 'index']);
-Route::get('/bookVisit/{id}', [VisitBooker::class, 'index']);
+Route::get('/bookVisit/{id}', [VisitBooker::class, 'index'])->name('schedule.book');
 Route::post('/bookVisit/{id}', [VisitBooker::class, 'submit']);
+Route::post('/bookVisit/confirm/{id}', [VisitBooker::class, 'submit'])->name('schedule.confirm');
 Route::get('/about', [Others::class, 'about']);
 Route::get('/contact', [Others::class, 'contact'])->name('public.contacts');
 
@@ -61,6 +63,7 @@ Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
         Route::get('/preview/{id}', [schedules::class, 'preview'])->name('show');
         Route::get('/edit/{id}', [schedules::class, 'edit'])->name('edit');
         Route::post('/edit/{id}', [schedules::class, 'update']);
+        Route::get('/filter/{type}', [Schedules::class, 'filter'])->name('filter');//types: pending, achieved, expired
         Route::post('/delete/{id}', [schedules::class, 'delete'])->name('delete');
     });
     Route::name('customers.')->prefix('customers')->group(function(){
@@ -69,13 +72,13 @@ Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
         Route::get('/edit/{id}', [customers::class, 'edit'])->name('edit');
         Route::post('/edit/{id}', [customers::class, 'update']);
         Route::post('/delete/{id}', [customers::class, 'delete'])->name('delete');
+        Route::get('/filter/{type}', [customers::class, 'edit'])->name('filter');
     });
     Route::name('info.')->prefix('info')->group(function(){
         Route::get('/', [siteInfo::class, 'index'])->name('index');
         Route::get('/preview/{id}', [siteInfo::class, 'preview'])->name('show');
         Route::get('/edit/{id}', [siteInfo::class, 'edit'])->name('edit');
         Route::post('/edit/{id}', [siteInfo::class, 'update']);
-        Route::post('/delete/{id}', [siteInfo::class, 'delete'])->name('delete');
     });
     Route::name('messages.')->prefix('messages')->group(function(){
         Route::get('/', [messages::class, 'index'])->name('index');
@@ -101,6 +104,31 @@ Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
         Route::get('/edit/{id}', [Controller::class, 'grade_edit'])->name('edit');
         Route::post('/edit/{id}', [Controller::class, 'grade_edit']);
         Route::post('/delete/{id}', [Controller::class, 'grade_delete'])->name('delete');
+    });
+    Route::name('projects.')->prefix('projects')->group(function(){
+        Route::get('/', [DashboardProperty::class, 'projects'])->name('index');
+        Route::get('/show/{id}', [DashboardProperty::class, 'show_project'])->name('show');
+        Route::get('/create', [DashboardProperty::class, 'create_project'])->name('create');
+        Route::post('/create', [DashboardProperty::class, 'store_project']);
+        Route::get('/edit/{id}', [DashboardProperty::class, 'edit_project'])->name('edit');
+        Route::post('/edit/{id}', [DashboardProperty::class, 'update_project']);
+        Route::post('/delete/{id}', [DashboardProperty::class, 'delete_project'])->name('delete');
+    });
+    Route::name('services.')->prefix('services')->group(function(){
+        Route::get('/', [DashboardProperty::class, 'services'])->name('index');
+        Route::get('/show/{id}', [DashboardProperty::class, 'show_service'])->name('show');
+        Route::get('/create', [DashboardProperty::class, 'create_service'])->name('create');
+        Route::post('/create', [DashboardProperty::class, 'store_service']);
+        Route::get('/edit/{id}', [DashboardProperty::class, 'edit_service'])->name('edit');
+        Route::post('/edit/{id}', [DashboardProperty::class, 'update_service']);
+        Route::post('/delete/{id}', [DashboardProperty::class, 'delete_service'])->name('delete');
+    });
+    Route::name('statistics.')->prefix('statistics')->group(function(){
+        Route::get('/', [StatisticsController::class, 'index'])->name('index');
+        Route::get('/assets', [StatisticsController::class, 'asset_statistics'])->name('assets');
+        Route::post('/projects', [StatisticsController::class, 'project_statistics'])->name('projects');
+        Route::get('/services', [StatisticsController::class, 'service_statistics'])->name('services');
+        Route::post('/customers', [StatisticsController::class, 'customer_statistics'])->name('customers');
     });
 });
 

@@ -20,8 +20,7 @@ class Customer extends Migration
             $table->string("name");
             $table->string("email");
             $table->string("contact")->nullable();
-            $table->timestamp("created_on")->useCurrent();
-            $table->timestamp("last_updated_time")->useCurrent();
+            $table->timestamps();
         });
     }
 

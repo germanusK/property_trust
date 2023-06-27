@@ -33,6 +33,7 @@ class VisitBooker extends Controller
             # code...
             return back()->with('error', $validator->errors()->first())->withInput();
         }
+        // return $request->all();
 
         // Validate request due_date
         $working_hours = collect([
@@ -45,14 +46,15 @@ class VisitBooker extends Controller
             ['day'=>7, 'name'=>'Saturday', 'open'=>'12:00', 'close'=>'17:00'],
         ]);
         $date = Carbon::createFromTimeString($request->due_date);
-        $day  = $date->dayName;
-        $time = $date->format('H:i');
-        // return $time;
+        // $day  = $date->dayName;
+        // $time = $date->format('H:i');
+        // return $day;
         $valid_time = $working_hours->filter(function($row)use($date){
-            return $date->dayName == $row['name'] && $date->between(Carbon::createFromTimeString($row['open']), Carbon::createFromTimeString($row['close']));
+            return ($date->dayName == $row['name']) and ($date->between(Carbon::createFromTimeString($row['open']), Carbon::createFromTimeString($row['close'])));
         });
-        if($valid_time->count() == 0){
-            return back()->with('error', "Unsupported time. ".$working_hours->__toString())->withInput();
+        // return $valid_time;
+        if(count($valid_time) == 0){
+            return back()->with('error', "Unsupported time. ".$request->due_date);
         }
 
         // return $valid_time;
@@ -62,7 +64,11 @@ class VisitBooker extends Controller
         // post schedule
         $instance = new Schedule(['asset_id'=>$request->asset_id, 'customer_id'=>$customer_id, 'due_date'=>$request->due_date]);
         $instance->save();
-        return back()->with('success', 'Done');
+
+        $this->send_confirmation_email($instance->customer->email, 'Schedule Updated', "Your schedule for ".$instance->property->name." was updated to ".$instance->due_date. " (status: ".$instance->status.")", route('schedule.confirm', $instance->id));
+
+
+        return back()->with('success', "confirm email was sent to ".$instance->customer->email);
         
     }
 }
