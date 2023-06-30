@@ -3,7 +3,7 @@
 <div class=" h-screen flex flex-col justify-center bg-slate-950 bg-opacity-90" style="background-image: url('{{asset('img/bg1.jpg')}}'); background-size:cover; background-repeat:no-repeat; background-position:center; background-blend-mode: multiply;">
 
     
-    <div class=" sm:w-3/5 md:w-1/3 lg:w-1/3 mt-8 mb-4 border-y-4 border-slate-950 bg-slate-900 bg-opacity-80 shadow-2xl py-6 px-3 rounded mx-auto">
+    <div class=" sm:w-3/5 md:w-1/3 lg:w-1/3 mt-8 mb-4 border-y-4 border-slate-950 bg-slate-900 bg-opacity-95 shadow-2xl py-12 px-6 rounded mx-auto">
     
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />

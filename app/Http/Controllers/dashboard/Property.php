@@ -205,17 +205,28 @@ class Property extends Controller
     public function update_service(Request $request, $id)
     {
         # code...
-        $validity = Validator::make($request->all(), []);
+        $validity = Validator::make($request->all(), [
+            'name'=>'required', 'description'=>'required'
+        ]);
         if($validity->fails()){
             return back()->with('error', $validity->errors()->first());
         }
-
         // update service
         $service = Service::find($id);
         if($service == null){
             $service = new Service();
         }
+
         $service->fill($request->all());
+        if($request->has('service_icon')){
+            $file = $request->file('service_icon');
+            $ext = $file->getClientOriginalExtension();
+            $path = asset('uploads/service_icons');
+            $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
+            $file->storeAs('service_icons', $filename, ['disk'=>'public_uploads']);
+            $icon_path = $path.'/'.$filename;
+            $service->icon_path = $icon_path;
+        }
         $service->save();
         return back()->with('success', 'Done');
     }
@@ -260,7 +271,7 @@ class Property extends Controller
     public function store_project(Request $request)
     {
         # code...
-        $validity = Validator::make($request->all(), []);
+        $validity = Validator::make($request->all(), ['name'=>'required', 'address'=>'required', 'description'=>'required', 'images'=>'required']);
         if($validity->fails()){
             return back()->with('error', $validity->errors()->first());
         }
@@ -269,6 +280,20 @@ class Property extends Controller
         $project = new Project();
         $project->fill($request->all());
         $project->save();
+
+        // store images
+        $files = $request->file('images');
+        foreach ($files as $key => $file) {
+            # code...
+            $ext = $file->getClientOriginalExtension();
+            $path = asset('uploads/project_images');
+            $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
+            $file->storeAs('project_images', $filename, ['disk'=>'public_uploads']);
+            $icon_path = $path.'/'.$filename;
+            $image = new AssetImage(['asset_id'=>$project->id, 'url'=>$icon_path, 'description'=>'__project_image', 'type'=>'project']);
+            $image->save();
+        }
+
         return back()->with('success', 'Done');
     }
     
@@ -283,7 +308,7 @@ class Property extends Controller
     public function update_project(Request $request, $id)
     {
         # code...
-        $validity = Validator::make($request->all(), []);
+        $validity = Validator::make($request->all(), ['name'=>'required', 'address'=>'required', 'description'=>'required']);
         if($validity->fails()){
             return back()->with('error', $validity->errors()->first());
         }
@@ -296,6 +321,53 @@ class Property extends Controller
         $project->fill($request->all());
         $project->save();
         return back()->with('success', 'Done');
+    }
+
+    // show/edit project images
+    public function project_images(Request $request, $project_id)
+    {
+        # code...
+        $project = Project::find($project_id);
+        if($project != null){
+            $data['title'] = "Project Images For ".$project->name;
+            $data['images'] = AssetImage::where('asset_id', $project_id)->where('type', 'project')->get();
+            return view('dashboard.projects.images', $data);
+        }
+        return back()->with('error', "Service not found.");
+    }
+
+    // update service images
+    public function update_project_images(Request $request, $project_id)
+    {
+        $validity = Validator::make($request->all(), ['urls'=>'array|required']);//optional field: images
+
+        if($validity->fails()){
+            return back()->with('error', $validity->errors()->first());
+        }
+
+        $urls = $request->urls;
+        $old_urls = AssetImage::where('asset_id', $project_id)->where('type', 'project')->get(['id', 'url']);
+
+        // drop unchecked photos
+        if(count($urls) != count($old_urls)){
+            $deleted = collect($old_urls)->whereNotIn('url', $urls)->each(function($img){$img->delete();});
+        }
+
+        // add any additional images
+        if($request->has('images') and $request->images != null){
+            $files = $request->file('images');
+            foreach ($files as $key => $file) {
+                # code...
+                $ext = $file->getClientOriginalExtension();
+                $path = asset('uploads/project_images');
+                $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
+                $file->storeAs('project_images', $filename, ['disk'=>'public_uploads']);
+                $icon_path = $path.'/'.$filename;
+                $image = new AssetImage(['asset_id'=>$project_id, 'url'=>$icon_path, 'description'=>'__project_image', 'type'=>'project']);
+                $image->save();
+            }
+        }
+
     }
 
     public function delete_project(Request $request, $id)

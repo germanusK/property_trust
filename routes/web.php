@@ -112,6 +112,8 @@ Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
         Route::post('/create', [DashboardProperty::class, 'store_project']);
         Route::get('/edit/{id}', [DashboardProperty::class, 'edit_project'])->name('edit');
         Route::post('/edit/{id}', [DashboardProperty::class, 'update_project']);
+        Route::get('/images/{id}', [DashboardProperty::class, 'project_images'])->name('images');
+        Route::post('/images/{id}', [DashboardProperty::class, 'update_project_images']);
         Route::post('/delete/{id}', [DashboardProperty::class, 'delete_project'])->name('delete');
     });
     Route::name('services.')->prefix('services')->group(function(){

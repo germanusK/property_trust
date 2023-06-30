@@ -44,14 +44,14 @@
                             </div>
                             <div class="w-full my-2">
                                 <label for="address" class="text-white text-opacity-50 text-base capitalize text-left">address:</label><br>
-                                <input type="text" name="address" id="" placeholder=" address here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
+                                <input type="text" required name="address" id="" placeholder=" address here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
                             </div>
                             <div class="w-full my-2">
                                 <label for="images" class="text-white text-opacity-50 text-base capitalize text-left">images:</label><br>
                                 <input type="file" required name="images" multiple accept="mimes:png,jpg,jpeg,gif,tif" id="" placeholder="image" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11 py-2">
                             </div>
                                 <label for="description" class="text-white text-opacity-50 text-base capitalize text-left">description:</label><br>
-                                <textarea rows="4" name="description" id="" placeholder="item description here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70"></textarea>
+                                <textarea rows="4" required name="description" id="" placeholder="item description here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70"></textarea>
                             </div>
                             <div class="w-full py-2 justify-end flex">
                                 <button id="creationBtn" type="submit" name="submit" class="px-3 py-2 border-b border-white text-white rounded font-semibold">create</button>
