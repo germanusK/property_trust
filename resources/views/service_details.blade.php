@@ -35,7 +35,16 @@
                     </div>
                 </div>
             </div>
-            <div class="my-4"></div>
+            <div class="my-4">
+                <div class="py-4 sm:grid md:grid lg:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full border-b border-slate-200 border-opacity-20">
+                    @foreach ($service->images as $image)
+                        <div class="w-76 h-76 relative m-1">
+                            {{-- <input type="checkbox" value="{{ $image->url }}" name="urls[]" class="h-9 w-9 border absolute bottom-0 bg-white rounded m-4 text-slate-900"> --}}
+                            <img class="w-full h-full object-cover object-center ring ring-white ring-opacity-30" src="{{ $image->url }}">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
         <div class="w-full h-auto bg-blue-900">
             <x-footer></x-footer>

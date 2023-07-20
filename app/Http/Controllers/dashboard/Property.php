@@ -242,6 +242,54 @@ class Property extends Controller
         return back()->with('error', 'Service not found.');
     }
 
+    public function service_images(Request $request, $service_id)
+    {
+        # code...
+        $service = Service::find($service_id);
+        $data['title'] = $service->name.' Service Images';
+        $data['images'] = $service->images;
+        // dd($data);
+        return view('dashboard.services.images', $data);
+    }
+    
+    public function add_service_images(Request $request, $service_id)
+    {
+        # code...
+        $validity = Validator::make($request->all(), ['files'=>'required']);
+        if($validity->fails()){
+            return back()->with('error', $validity->errors()->first());
+        }
+        // dd( $request->file('files'));
+
+        $files = $request->file('files');
+        if(is_array($files)){
+            $paths = [];
+            foreach ($files as $file) {
+                # code...
+                $ext = $file->getClientOriginalExtension();
+                $path = asset('uploads/service_images');
+                $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
+                $file->storeAs('service_images', $filename, ['disk'=>'public_uploads']);
+                $icon_path = $path.'/'.$filename;
+                array_push($paths, $icon_path);
+            }
+            $records = array_map(function($p)use($service_id){
+                return ['asset_id'=>$service_id, 'url'=>$p, 'type'=>'service'];
+            }, $paths);
+            AssetImage::insert($records);
+        }else{
+            $ext = $files->getClientOriginalExtension();
+            $path = asset('uploads/service_images');
+            $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
+            $files->storeAs('service_images', $filename, ['disk'=>'public_uploads']);
+            $icon_path = $path.'/'.$filename;
+            AssetImage::insert(['asset_id'=>$service_id, 'url'=>$icon_path, 'type'=>'service']);
+        }
+        return back()->with('success', "Done");
+    }
+
+
+
     // END SERVICE MANAGEMENT
 
 

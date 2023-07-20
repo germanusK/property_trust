@@ -7,8 +7,9 @@
         }
     ?>
     <div class="w-full">
-        <div class="w-full flex flex-wrap py-6 gap-4">
+        <div class="w-full flex justify-between flex-wrap py-6 gap-4">
             <a type="button" href="{{route('rest.services.index')}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold"><span class="text-lg fas fa-arrow-left"></span></a>
+            <a type="button" href="{{route('rest.services.images', $service->id)}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold lowercase italic"><span class="text-lg fas fa-plus">images</span></a>
         </div>
         <div class="w-full">
             <div id="imageBar" class="w-full items-center justify-center flex whitespace-nowrap overflow-x-scroll no-scrollbar my-2">

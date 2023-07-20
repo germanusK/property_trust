@@ -123,6 +123,8 @@ Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
         Route::post('/create', [DashboardProperty::class, 'store_service']);
         Route::get('/edit/{id}', [DashboardProperty::class, 'edit_service'])->name('edit');
         Route::post('/edit/{id}', [DashboardProperty::class, 'update_service']);
+        Route::get('images/{service_id}', [DashboardProperty::class, 'service_images'])->name('images');
+        Route::post('images/{service_id}', [DashboardProperty::class, 'add_service_images']);
         Route::post('/delete/{id}', [DashboardProperty::class, 'delete_service'])->name('delete');
     });
     Route::name('statistics.')->prefix('statistics')->group(function(){
