@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Confirmation;
 use App\Models\Asset;
 use App\Models\Category;
 use App\Models\Grade;
@@ -15,6 +16,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
+use Khill\Lavacharts\Laravel\LavachartsFacade as Lava;
 
 class Controller extends BaseController
 {
@@ -203,13 +205,10 @@ class Controller extends BaseController
         });
     }
 
-    public function send_confirmation_email(string $email_address, string $subject, string $text_content, $confirmation_url )
+    public function send_confirmation_email(string $email_address, string $subject, string $text_content, string $confirmation_url )
     {
         # code...
         $data = ['email_address'=>$email_address, 'subject'=>$subject, 'text_content'=>$text_content, 'confirmation_url'=>$confirmation_url];
-        Mail::send(['text'=>'mails.confirmation'], $data, function($message)use($email_address, $subject){
-            $message->to($email_address, "PROPERTY TRUST GROUP CUSTOMER");
-            $message->subject($subject);
-        });
+        Mail::send((new Confirmation($data)));
     }
 }

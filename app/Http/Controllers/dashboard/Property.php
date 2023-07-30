@@ -294,11 +294,14 @@ class Property extends Controller
 
 
     // PROJECT MANAGEMENT
-    public function projects(Request $request)
+    public function projects(Request $request, $service_id = null)
     {
         # code...
         $data['title'] = "Projects";
         $data['data'] = Project::all();
+        if($service_id != null){
+            $data['data'] = $data['data']->where('service_id', $service_id);
+        }
         return view('dashboard.projects.index', $data);
     }
     
@@ -309,14 +312,14 @@ class Property extends Controller
         return view('dashboard.projects.show', $data);
     }
 
-    public function create_project(Request $request)
+    public function create_project(Request $request, $service_id)
     {
         # code...
         $data['title'] = "Create New Project";
         return view('dashboard.projects.create', $data);
     }
 
-    public function store_project(Request $request)
+    public function store_project(Request $request, $service_id)
     {
         # code...
         $validity = Validator::make($request->all(), ['name'=>'required', 'address'=>'required', 'description'=>'required', 'images'=>'required']);
@@ -326,22 +329,37 @@ class Property extends Controller
 
         // create project
         $project = new Project();
-        $project->fill($request->all());
+        $data = $request->all();
+        $data['service_id'] = $service_id;
+        $project->fill($data);
         $project->save();
 
         // store images
         $files = $request->file('images');
-        foreach ($files as $key => $file) {
-            # code...
-            $ext = $file->getClientOriginalExtension();
+        if(is_array($files)){
+            $paths = [];
+            foreach ($files as $file) {
+                # code...
+                $ext = $file->getClientOriginalExtension();
+                $path = asset('uploads/project_images');
+                $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
+                $file->storeAs('project_images', $filename, ['disk'=>'public_uploads']);
+                $icon_path = $path.'/'.$filename;
+                array_push($paths, $icon_path);
+            }
+            $records = array_map(function($p)use($project){
+                return ['asset_id'=>$project->id, 'url'=>$p, 'type'=>'project'];
+            }, $paths);
+            AssetImage::insert($records);
+        }else{
+            $ext = $files->getClientOriginalExtension();
             $path = asset('uploads/project_images');
             $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
-            $file->storeAs('project_images', $filename, ['disk'=>'public_uploads']);
+            $files->storeAs('project_images', $filename, ['disk'=>'public_uploads']);
             $icon_path = $path.'/'.$filename;
-            $image = new AssetImage(['asset_id'=>$project->id, 'url'=>$icon_path, 'description'=>'__project_image', 'type'=>'project']);
-            $image->save();
+            AssetImage::insert(['asset_id'=>$project->id, 'url'=>$icon_path, 'type'=>'project']);
         }
-
+        
         return back()->with('success', 'Done');
     }
     

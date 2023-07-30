@@ -106,10 +106,10 @@ Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
         Route::post('/delete/{id}', [Controller::class, 'grade_delete'])->name('delete');
     });
     Route::name('projects.')->prefix('projects')->group(function(){
-        Route::get('/', [DashboardProperty::class, 'projects'])->name('index');
+        Route::get('/{service_id?}', [DashboardProperty::class, 'projects'])->name('index');
         Route::get('/show/{id}', [DashboardProperty::class, 'show_project'])->name('show');
-        Route::get('/create', [DashboardProperty::class, 'create_project'])->name('create');
-        Route::post('/create', [DashboardProperty::class, 'store_project']);
+        Route::get('/create/{service_id?}', [DashboardProperty::class, 'create_project'])->name('create');
+        Route::post('/create/{service_id?}', [DashboardProperty::class, 'store_project']);
         Route::get('/edit/{id}', [DashboardProperty::class, 'edit_project'])->name('edit');
         Route::post('/edit/{id}', [DashboardProperty::class, 'update_project']);
         Route::get('/images/{id}', [DashboardProperty::class, 'project_images'])->name('images');

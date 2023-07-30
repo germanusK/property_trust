@@ -161,9 +161,9 @@
         </div>
 
         <!-- Our core values and interests -->
-        <div class="w-full h-auto bg-neutral-200 py-6 shadow-inner justify-center">
-            <div class="w-full rounded-2xl h-auto">
-                <video class=" object-contain object-center w-5/6 mx-auto h-full" src="https://youtu.be/ExDI7NyT6LY" controls></video>
+        <div class="w-full bg-neutral-900 py-6 shadow-inner justify-center">
+            <div class="w-full rounded-2xl max-h-screen">
+                <video class="object-contain h-full w-56 md:w-64 lg:w-64 mx-auto rounded-md my-3" src="{{ asset('videos/vid1.mp4') }}" controls></video>
             </div>
         </div>
         

@@ -19,7 +19,7 @@
                 </thead>
                 <tbody class="w-full">
                     @php($k = 1)
-                    @forelse(\App\Models\Project::all() as $value)
+                    @forelse($data as $value)
                     <tr class="py-2 border-y mb-1 max-w-full bg-slate-700 bg-opacity-20 border-cyan-700 text-slate-200 divide-x divide-slate-600">
                         <td class="text-base px-2 capitalize">{{$k++}}</td>
                         <td class="text-base px-2">{{$value->name}}</td>

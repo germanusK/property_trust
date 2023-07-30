@@ -8,8 +8,10 @@
     ?>
     <div class="w-full">
         <div class="w-full flex justify-between flex-wrap py-6 gap-4">
-            <a type="button" href="{{route('rest.services.index')}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold"><span class="text-lg fas fa-arrow-left"></span></a>
-            <a type="button" href="{{route('rest.services.images', $service->id)}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold lowercase italic"><span class="text-lg fas fa-plus">images</span></a>
+            <a type="button" href="{{route('rest.services.index')}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold"><span class="text-sm fas fa-arrow-left"></span></a>
+            <a href="{{route('rest.projects.create', $service->id)}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold lowercase"><span class="text-base" style="font-family:sans !important; ">new project</span></a>
+            <a href="{{route('rest.projects.index', $service->id)}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold lowercase"><span class="text-base" style="font-family:sans !important; ">projects</span></a>
+            <a href="{{route('rest.services.images', $service->id)}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold lowercase"><span class="text-base" style="font-family:sans !important; ">images</span></a>
         </div>
         <div class="w-full">
             <div id="imageBar" class="w-full items-center justify-center flex whitespace-nowrap overflow-x-scroll no-scrollbar my-2">
@@ -34,12 +36,12 @@
                                 <label for="contact" class="text-white text-opacity-50 text-base capitalize text-left">{{$service->contact}}</label>
                             </div>
                             <div class="w-full my-2">
-                                <label for="email" class="text-white text-opacity-50 text-base capitalize text-left">{{$service->email}}</label>
+                                <label for="email" class="text-white text-opacity-50 text-base text-left">{{$service->email}}</label>
                             </div>
                             <div class="w-full my-2">
-                                <label for="address" class="whitespace-pre-wrap text-white text-opacity-50 text-base capitalize text-left">{{$service->address}}</label>
+                                <label for="address" class="whitespace-pre-wrap text-white text-opacity-50 text-base text-left">{{$service->address}}</label>
                             </div class="w-full my-2">
-                                <label for="description" class="w-full whitespace-pre-wrap text-white text-opacity-50 text-base capitalize text-left">{{$service->description}}</label>
+                                <label for="description" class="w-full whitespace-pre-wrap text-white text-opacity-50 text-base text-left">{{$service->description}}</label>
                             </div>
                         </div>
                     </div>

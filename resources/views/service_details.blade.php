@@ -37,10 +37,15 @@
             </div>
             <div class="my-4">
                 <div class="py-4 sm:grid md:grid lg:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full border-b border-slate-200 border-opacity-20">
-                    @foreach ($service->images as $image)
-                        <div class="w-76 h-76 relative m-1">
-                            {{-- <input type="checkbox" value="{{ $image->url }}" name="urls[]" class="h-9 w-9 border absolute bottom-0 bg-white rounded m-4 text-slate-900"> --}}
-                            <img class="w-full h-full object-cover object-center ring ring-white ring-opacity-30" src="{{ $image->url }}">
+                    @foreach ($service->projects as $project)
+                        {{-- @php(dd($project->images)) --}}
+                        <div class="w-76 h-76 relative m-1 d-flex flex-column justify-end align-bottom">
+                            <div class="w-full h-full absolute object-bottom bg-gradient-to-b from-transparent via-slate-700 to-slate-950 opacity-80 flex flex-col justify-end">
+                                <div class="font-semibold py-2 object-bottom text-center uppercase w-full text-white">{{ $project->name }}</div>
+                                <div class="font-semibold py-2 object-bottom text-center italic w-full text-slate-200">{{ $project->address }}</div>
+                                <div class="font-semibold py-2 object-bottom text-center w-full text-gray-200">{{ $project->description}}</div>
+                            </div>
+                            <img class="w-full h-full object-cover object-center ring ring-white ring-opacity-30" src="{{ $project->images()->first()->url ?? null }}">
                         </div>
                     @endforeach
                 </div>

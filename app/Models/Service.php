@@ -18,4 +18,10 @@ class Service extends Model
         # code...
         return $this->hasMany(AssetImage::class, 'asset_id')->where('type', 'service');
     }
+
+    public function projects()
+    {
+        # code...
+        return $this->hasMany(Project::class, 'service_id');
+    }
 }

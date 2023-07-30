@@ -1,5 +1,5 @@
 <div class="w-3/4 mx-auto bg-white pt-8">
-    <input type="search" name="search_field" id="search_field" placeholder="search by name, category or grade" oninput="perform_search(event)" class="border border-stone-600 rounded-full my-2 w-full px-8">
+    <input type="search" name="search_field" id="search_field" placeholder="search by name, category or grade" oninput="perform_search(event)" class="border border-stone-600 rounded-full my-2 w-full px-8 h-10">
     <div class="py-3" id="search-display"></div>
 </div>
 <script>

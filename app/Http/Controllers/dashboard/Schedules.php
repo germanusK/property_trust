@@ -64,13 +64,12 @@ class Schedules extends Controller
 
          // Validate request due_date
          $working_hours = collect([
-            ['day'=>1, 'name'=>'Sunday', 'open'=>'12:00', 'close'=>'17:00'],
             ['day'=>2, 'name'=>'Monday', 'open'=>'8:00', 'close'=>'17:00'],
             ['day'=>3, 'name'=>'Tuesday', 'open'=>'8:00', 'close'=>'17:00'],
             ['day'=>4, 'name'=>'Wednesday', 'open'=>'8:00', 'close'=>'17:00'],
             ['day'=>5, 'name'=>'Thursday', 'open'=>'8:00', 'close'=>'17:00'],
             ['day'=>6, 'name'=>'Friday', 'open'=>'8:00', 'close'=>'17:00'],
-            ['day'=>7, 'name'=>'Saturday', 'open'=>'12:00', 'close'=>'17:00'],
+            ['day'=>7, 'name'=>'Saturday', 'open'=>'8:00', 'close'=>'17:00'],
         ]);
         $date = Carbon::parse($request->due_date);
         $time = Carbon::parse($request->due_date)->format('H:i');
