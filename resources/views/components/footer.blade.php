@@ -1,10 +1,10 @@
 <!-- FOOTER GALLERY -->
 <div class="bg-black text-center text-white dark:bg-neutral-600 dark:text-neutral-200">
-  <div class="container p-6">
-    <div class="md:flex flex-wrap gap-1 justify-stretch">
+  <div class="w-full whitespace-nowrap md:whitespace-normal overflow-x-scroll no-scrollbar">
+    <div class="flex w-fit md:w-full md:flex-wrap items-baseline align-middle justify-center">
       @foreach (\App\Models\AssetImage::inRandomOrder()->take(48)->get() as $img)
-        <div class="mb-2 h-48 lg:mb-0">
-          <img src="{{ $img->url }}" class="mx-auto object-cover h-full rounded-sm shadow-lg" />
+        <div class="m-1 w-56 h-72">
+          <img src="{{ $img->url }}" class="object-cover object-center w-full h-full hover:border-x-4 rounded" />
         </div>
       @endforeach
     </div>

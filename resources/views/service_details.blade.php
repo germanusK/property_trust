@@ -40,10 +40,10 @@
                     @foreach ($service->projects as $project)
                         {{-- @php(dd($project->images)) --}}
                         <div class="w-76 h-76 relative m-1 d-flex flex-column justify-end align-bottom">
-                            <div class="w-full h-full absolute object-bottom bg-gradient-to-b from-transparent via-slate-700 to-slate-950 opacity-80 flex flex-col justify-end">
-                                <div class="font-semibold py-2 object-bottom text-center uppercase w-full text-white">{{ $project->name }}</div>
-                                <div class="font-semibold py-2 object-bottom text-center italic w-full text-slate-200">{{ $project->address }}</div>
-                                <div class="font-semibold py-2 object-bottom text-center w-full text-gray-200">{{ $project->description}}</div>
+                            <div class="w-full h-full absolute object-bottom bg-slate-950 bg-opacity-0 opacity-0 hover:opacity-100 hover:bg-opacity-75 flex flex-col justify-center leading-tight">
+                                <div class="font-semibold pt-2 object-bottom text-center uppercase w-full text-white">{{ $project->name }}</div>
+                                <div class="font-semibold pb-1 object-bottom text-center italic w-full text-slate-200">{{ $project->address }}</div>
+                                <div class="font-semibold py-1 object-bottom text-center w-full text-gray-200">{{ $project->description}}</div>
                             </div>
                             <img class="w-full h-full object-cover object-center ring ring-white ring-opacity-30" src="{{ $project->images()->first()->url ?? null }}">
                         </div>

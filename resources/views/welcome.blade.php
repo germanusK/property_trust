@@ -11,7 +11,7 @@
         <!-- STATISTICS -->
         <div class="w-11/12 md:w-5/6 h-auto my-16 rounded-xl mx-auto">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 py-3 text-center border rounded-xl bg-neutral-200">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 py-3 text-center border rounded-xl bg-light">
                 <div class="relative mb-12 px-3 lg:mb-0">
                   <div class="mb-2 flex justify-center">
                     <span class="text-primary">
@@ -90,31 +90,34 @@
                   <h5 class="mb-6 font-bold text-primary">{{ \App\Models\Customer::count() }}</h5>
                   <h6 class="mb-0 font-normal dark:text-neutral-50">Customers</h6>
                 </div>
-              </div>
-              <!-- /STATISTICS -->
+            </div>
+            <!-- /STATISTICS -->
 
-              <!-- SERVICES -->
-            <div class="w-full flex flex-wrap items-baseline align-middle justify-center py-8 px-4 bg-white">
-                @foreach (\App\Models\Service::take(4)->get() as $service)
-                    <div class="xs:w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-fit py-3 px-2">
-                        <div class="rounded shadow-lg h-auto py-5 px-2 w-full border border-slate-50 hover:border-slate-900 text-center">
-                            <div class="rounded-full w-24 h-28 mt-3 mx-auto">
-                            @if ($service->icon_path != null)
-                                <img class="h-full w-full object-cover object-center rounded" src="{{ $service->icon_path }}">
-                            @else
-                                <span class=" text-6xl text-blue-700 fas fa-cocktail"></span>
-                            @endif
-                            </div>
-                            <div class="h-3/5 w-full pb-5">
-                                <div class="font-semibold py-4 text-xl text-blue-800 text-center text-ellipsis line-clamp-2">
-                                    {{ $service->name }}
+            <!-- SERVICES -->
+            <div class="text-center text-2xl md:text-3xl text-slate-700 capitalize mt-12 ">our services <br> <hr class="w-1/6 md:w-1/12 border border-slate-300 border-dashed mx-auto"></div>
+            <div class="w-full bg-light flex md:flex-wrap overflow-x-scroll no-scrollbar whitespace-nowrap md:whitespace-normal">
+                <div class="w-fit flex md:flex-wrap items-baseline align-middle justify-center pb-8 pt-5 px-4">
+                    @foreach (\App\Models\Service::all() as $service)
+                        <div class="w-72 md:w-1/2 lg:w-1/3 xl:w-1/4 h-fit py-3 px-2 whitespace-normal">
+                            <div class="rounded shadow-lg h-auto py-5 px-2 w-full border border-slate-50 hover:border-slate-900 text-center">
+                                <div class="rounded-full flex flex-col text-center justify-center w-24 h-28 mt-3 mx-auto shadow-inner bg-slate-100 overflow-hidden">
+                                    @if ($service->icon_path != null)
+                                        <img class="h-28 w-24 object-cover object-center rounded" src="{{ $service->icon_path }}">
+                                    @else
+                                        <span class=" text-6xl text-blue-700 fas fa-cocktail"></span>
+                                    @endif
                                 </div>
-                                <div class="text-lg text-slate-600 text-center line-clamp-3 mb-7">{{ $service->description }}</div>
-                                <a class="px-8 py-3 rounded-full bg-blue-900 text-white" href="{{ route('public.services.details', [$service->id]) }}">more info</a>
+                                <div class="h-3/5 w-full pb-5">
+                                    <div class="font-semibold py-4 text-xl text-blue-800 text-center text-ellipsis line-clamp-2">
+                                        {{ $service->name }}
+                                    </div>
+                                    <div class="text-lg text-slate-600 text-center line-clamp-3 mb-7">{{ $service->description }}</div>
+                                    <a class="px-8 py-3 rounded-full bg-blue-900 text-white" href="{{ route('public.services.details', [$service->id]) }}">more info</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
         <!-- END OF SERVICES -->
@@ -152,16 +155,20 @@
         </div>
 
         <!-- Others -->
-        <div class="w-11/12 md:w-5/6 h-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto mt-4 py-12 items-stretch" >
-            @if(count($assets)>0)
-                @foreach($assets as $value)
-                <x-generic-item2 :data="$value"/>
-                @endforeach
-            @endif
+        <div class="w-full whitespace-nowrap md:whitespace-normal overflow-x-scroll no-scrollbar">
+            <div class="w-fit md:w-full h-auto flex md:flex-wrap items-baseline align-middle justify-center" >
+                @if(count($assets)>0)
+                    @foreach($assets as $value)
+                    <div class="w-72 whitespace-normal">
+                        <x-generic-item2 :data="$value"/>
+                    </div>
+                    @endforeach
+                @endif
+            </div>
         </div>
 
         <!-- Our core values and interests -->
-        <div class="w-full bg-neutral-900 py-6 shadow-inner justify-center">
+        <div class="w-full bg-slate-950 py-6 shadow-inner justify-center">
             <div class="w-full rounded-2xl max-h-screen">
                 <video class="object-contain h-full w-56 md:w-64 lg:w-64 mx-auto rounded-md my-3" src="{{ asset('videos/vid1.mp4') }}" controls></video>
             </div>
@@ -173,63 +180,65 @@
             <div class="col-span-3 h-full flex flex-wrap items-bottom align-center justify-evenly">
                 
                 <!-- single item -->
-                <div class=" w-56 my-6 mx-2 bg-neutral-100 rounded px-1 py-4 h-auto shadow border border-slate-900" style="min-width: 8rem; border-style:groove;">
-                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white border py-1 text-center text-lg font-medium text-black">Commitment</div>
+                <div class=" w-56 my-6 mx-2 bg-light rounded px-1 py-4 h-auto shadow-md shadow-blue-950" style="min-width: 8rem; border-style:groove;">
+                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white shadow shadow-blue-600 py-1 text-center text-lg font-medium text-blue-950">Commitment</div>
                     <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">You are our pillars, we ensure the security of your request. </div>
                 </div>
                 
                 <!-- single item -->
-                <div class=" w-56 my-6 mx-2 bg-neutral-100 rounded px-1 py-4 h-auto shadow border border-slate-900" style="min-width: 8rem; border-style:groove;">
-                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white border py-1 text-center text-lg font-medium text-black">Simplicity</div>
+                <div class=" w-56 my-6 mx-2 bg-light rounded px-1 py-4 h-auto shadow-md shadow-blue-950" style="min-width: 8rem; border-style:groove;">
+                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white shadow shadow-blue-600 py-1 text-center text-lg font-medium text-blue-950">Simplicity</div>
                     <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">You are at the center of our process design. Straight forward and concise. </div>
                 </div>
                 
                 <!-- single item -->
-                <div class=" w-56 my-6 mx-2 bg-neutral-100 rounded px-1 py-4 h-auto shadow border border-slate-900" style="min-width: 8rem; border-style:groove;">
-                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white border py-1 text-center text-lg font-medium text-black">Excellence</div>
+                <div class=" w-56 my-6 mx-2 bg-light rounded px-1 py-4 h-auto shadow-md shadow-blue-950" style="min-width: 8rem; border-style:groove;">
+                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white shadow shadow-blue-600 py-1 text-center text-lg font-medium text-blue-950">Excellence</div>
                     <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">Our service grade is second to none. Confirm it yourself. </div>
                 </div>
                 
                 <!-- single item -->
-                <div class=" w-56 my-6 mx-2 bg-neutral-100 rounded px-1 py-4 h-auto shadow border border-slate-900" style="min-width: 8rem; border-style:groove;">
-                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white border py-1 text-center text-lg font-medium text-black">Innovation</div>
-                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">Our service grade is second to none. Confirm it yourself.</div>
+                <div class=" w-56 my-6 mx-2 bg-light rounded px-1 py-4 h-auto shadow-md shadow-blue-950" style="min-width: 8rem; border-style:groove;">
+                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white shadow shadow-blue-600 py-1 text-center text-lg font-medium text-blue-950">Innovation</div>
+                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">With our diversified collection of services, you can always get a better fit.</div>
                 </div>
                 
                 <!-- single item -->
-                <div class=" w-56 my-6 mx-2 bg-neutral-100 rounded px-1 py-4 h-auto shadow border border-slate-900" style="min-width: 8rem; border-style:groove;">
-                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white border py-1 text-center text-lg font-medium text-black">Proactivity</div>
-                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">Our service grade is second to none. Confirm it yourself.</div>
+                <div class=" w-56 my-6 mx-2 bg-light rounded px-1 py-4 h-auto shadow-md shadow-blue-950" style="min-width: 8rem; border-style:groove;">
+                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white shadow shadow-blue-600 py-1 text-center text-lg font-medium text-blue-950">Proactivity</div>
+                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">All you need to get your deals done is set. Hassle free deals for you.</div>
                 </div>
             </div>
         </div>
 
 
         <!-- Our users testify -->
-        <div class="w-full h-auto bg-sky-50 py-12 justify-center">
-            <div class="w-11/12  md:w-5/6 md:px-16 rounded-2xl h-auto md:grid grid-cols-3 mx-auto">
-                <div class="col-span-3 text-center text-2xl text-slate-900 font-semibold py-10">Our Customers <br><span class="text-sm capitalize">they are satisfied</span></div>
+        <div class="w-full h-auto bg-light py-12 justify-center">
+            <div class="w-11/12  md:w-5/6 mx-auto md:px-16 rounded-2xl h-auto">
+                <div class="w-full text-center text-2xl text-slate-900 font-semibold py-10">Our Customers <br><span class="text-sm capitalize">they are satisfied</span></div>
                 <!-- <hr class="col-span-3"> -->
-                <div class="col-span-3 h-full flex flex-wrap items-bottom align-center justify-evenly">
-                    @foreach (\App\Models\Customer::orderBy('id', 'DESC')->take(3)->get()->shuffle() as $customer)
-                        <!-- single item -->
-                        <div class=" my-3 mx-2 bg-slate-900 border px-3 pb-4 h-auto w-72 max-w-full relative">
-                            <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <a href="#!">
-                                    <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
-                                </a>
-                                <div class="p-6 bg-slate-900 bg-opacity-25">
-                                    <h5 class="mb-2 text-xl text-center font-semibold leading-tight text-neutral-800 dark:text-neutral-50"> {{ $customer->name }} </h5>
-                                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                    Tel: {{ $customer->contact }}, {{ $customer->email }}
-                                    </p>
-                                    <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                    Button
-                                    </button>
+                <div class="w-full mx-auto overflow-x-scroll no-scrollbar whitespace-nowrap md:whitespace-normal">
+                    <div class="w-fit md:w-full h-full flex md:flex-wrap items-bottom align-center justify-evenly">
+                        @foreach (\App\Models\Customer::inRandomOrder()->take(3)->get()->shuffle() as $customer)
+                            <!-- single item -->
+                            <div class=" my-3 mx-2 px-3 pb-4 h-auto w-72 max-w-full relative whitespace-normal">
+                                <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                                    <a href="#!">
+                                        <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
+                                    </a>
+                                    <div class="p-6 bg-slate-900 rounded-b-lg bg-opacity-25">
+                                        <h5 class="mb-2 text-xl text-center font-semibold leading-tight text-neutral-800 dark:text-neutral-50"> {{ $customer->name }} </h5>
+                                        <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                                        Tel: {{ $customer->contact }}, {{ $customer->email }}
+                                        </p>
+                                        {{-- <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                        Button
+                                        </button> --}}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
