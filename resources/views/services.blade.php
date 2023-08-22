@@ -9,12 +9,12 @@
                 <span><a class="text-blue-900" href="{{url('/')}}">Home</a> : <span class="text-blue-600">Our Services</span></span>
             </div>
             <!-- SERVICES -->
-            <div class="w-11/12 md:w-5/6 h-auto mb-16 mt-10 rounded-xl mx-auto">
+            <div class="w-11/12 md:w-5/6 overflow-x-scroll whitespace-nowrap md:whitespace-normal no-scrollbar h-fit my-8 mx-auto">
 
-                <div class="w-full flex flex-wrap items-baseline align-middle justify-center py-8 px-4 bg-white">
+                <div class="flex md:flex-wrap py-8 px-4 bg-white">
                     @foreach (\App\Models\Service::all() as $service)
-                    <div class="xs:w-full sm:w-1/2 md:w-1/3 lg:w-1/4 h-fit py-7 px-2">
-                        <div class="rounded shadow-lg h-auto pb-5 w-full border border-slate-50 hover:border-slate-900 text-center">
+                    <div class="w-screen md:w-80 py-2 px-2 my-3 mx-2 min-h-min whitespace-normal rounded shadow-lg">
+                        <div class=" h-full pb-5 w-full border border-slate-50 hover:border-slate-900 text-center">
                             <div class="rounded-full w-full h-40 mx-auto">
                                 <img class="h-full w-full rounded-t mx-auto" src="{{ $service->icon_path }}">
                             </div>

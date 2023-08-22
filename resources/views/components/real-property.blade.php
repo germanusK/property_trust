@@ -17,13 +17,14 @@
         </div>
     </div>
 </div>
-<div class="w-full sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-h-screen overflow-y-scroll no-scrollbar my-10">
-    <div class=" col-span-full flex justify-end mb-6">
-        <span class=" border rounded"></span>
+<div class="flex w-full overflow-x-scroll whitespace-nowrap md:whitespace-normal no-scrollbar">
+    <div class="flex w-fit md:flex-wrap h-fit my-10">
+        @if(count($property)>0)
+            @foreach($property as $value)
+                <div class=" w-60 h-80 mx-2 my-2 whitespace-normal">
+                    <x-generic-item2 :data="$value" />
+                </div>
+            @endforeach
+        @endif
     </div>
-    @if(count($property)>0)
-        @foreach($property as $value)
-            <x-generic-item2 :data="$value" />
-        @endforeach
-    @endif
 </div>

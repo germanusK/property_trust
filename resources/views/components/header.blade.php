@@ -1,17 +1,19 @@
 <div class="w-full h-auto bg-slate-900 text-slate-200 relative">
-    <div class="h-full w-11/12 flex align-middle items-stretch justify-between mx-auto py-3 relative">
+    <div class="h-full w-11/12 flex align-super items-stretch justify-between mx-auto py-3 relative">
         <div class=" h-auto w-fit px-16 xs:block justify-center text-2xl italic font-semibomd self-start">
             <img src="{{ asset('img/logo1.jpg') }}" alt="LOGO" class="w-12 h-auto rounded-t-full">
         </div> 
-        <div id="nav-box" class="h-fit w-fit hidden md:flex flex-wrap justify-end text-lg  font-normal flex-auto gap-x-2 gap-y-2 divide-blue-600 bg-transparent">
-            <a href="{{ url('/') }}" class="block lg:inline-flex no-underline px-4 py-1 mx-2 h-fit md:bg-transparent">Home</a>
-            <a href="{{ url('/property') }}" class="block md:inline-flex no-underline px-4 py-1 mx-2 h-fit md:bg-transparent">Our Property</a>
-            <a href="{{route('public.services')}}" class="block md:inline-flex no-underline px-4 py-1 mx-2 h-fit md:bg-transparent">Services</a>
-            <a href="{{ url('/about') }}" class="block md:inline-flex no-underline px-4 py-1 mx-2 h-fit md:bg-transparent">About</a>
-            <a href="{{route('public.contacts')}}" class="block md:inline-flex no-underline px-4 py-1 mx-2 h-fit md:bg-transparent">Contact</a>
-            <!-- <a href="{{ url('/login') }}" class="block md:hidden no-underline px-4 py-1 mx-2 h-fit md:bg-transparent"><span class="text-4xl font-sans mx-5 text-blue-100 "> &curlyeqsucc;</span></a> -->
+        <div class="inline-block">
+            <div id="nav-box" class=" h-fit w-fit hidden md:flex flex-wrap justify-end text-lg  font-normal flex-auto gap-x-2 gap-y-2 divide-blue-600 bg-transparent">
+                <a href="{{ url('/') }}" class="block lg:inline-flex no-underline px-4 py-1 mx-2 h-fit md:bg-transparent">Home</a>
+                <a href="{{ url('/property') }}" class="block md:inline-flex no-underline px-4 py-1 mx-2 h-fit md:bg-transparent">Our Property</a>
+                <a href="{{route('public.services')}}" class="block md:inline-flex no-underline px-4 py-1 mx-2 h-fit md:bg-transparent">Services</a>
+                <a href="{{ url('/about') }}" class="block md:inline-flex no-underline px-4 py-1 mx-2 h-fit md:bg-transparent">About</a>
+                <a href="{{route('public.contacts')}}" class="block md:inline-flex no-underline px-4 py-1 mx-2 h-fit md:bg-transparent">Contact</a>
+                <!-- <a href="{{ url('/login') }}" class="block md:hidden no-underline px-4 py-1 mx-2 h-fit md:bg-transparent"><span class="text-4xl font-sans mx-5 text-blue-100 "> &curlyeqsucc;</span></a> -->
+            </div>
         </div>
-        <button class="self-end md:hidden" id="nav-toggler" onclick="toggle_nav()"><span class="fas fa-bars text-slate-200 text-2xl font-semibold"></span></button>
+        <button class="self-end md:hidden active:border-0" id="nav-toggler" onclick="toggle_nav()"><span class="fas fa-bars text-slate-200 text-2xl font-semibold"></span></button>
         <button onclick="toggle_search()" class=" self-end px-2 mx-2 my-2 rounded-3xl border-2 border-blue-300 h-fit md:bg-transparent">search</button>
         <a href="{{ url('/login') }}" class="self-end md:hidden"><span class="text-slate-200 text-2xl font-semibold">&curlyeqsucc;</span></a>
     </div>
