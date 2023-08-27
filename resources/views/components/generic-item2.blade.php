@@ -1,4 +1,4 @@
-<div class="sm:max-w-xs md:max-w-sm h-auto px-3 py-6" style="min-width: 14rem;">
+<div class="sm:max-w-xs md:max-w-sm h-auto px-3 py-6" style="min-width: 18.5rem;">
     <div class="prop w-full h-auto bg-stone-900 rounded-lg border-4 border-stone-300 hover:border-gray-600 border-double relative">
         <div class="w-full h-96 p-2 rounded-lg items-center align-middle justify-center flex relative">
             <div class="w-1/2 h-auto py-1 absolute z-10 top-0 mx-auto rounded-b-xl text-center bg-stone-900 bg-opacity-60 text-slate-200"> {{ $data['price']}} </div>

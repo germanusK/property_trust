@@ -13,7 +13,7 @@
 
                 <div class="flex md:flex-wrap py-8 px-4 bg-white">
                     @foreach (\App\Models\Service::all() as $service)
-                    <div class="w-screen md:w-80 py-2 px-2 my-3 mx-2 min-h-min whitespace-normal rounded shadow-lg">
+                    <div class="w-screen md:w-80 py-2 px-2 my-3 mx-2 min-h-min whitespace-normal rounded shadow-lg" style="min-width: 18rem;">
                         <div class=" h-full pb-5 w-full border border-slate-50 hover:border-slate-900 text-center">
                             <div class="rounded-full w-full h-40 mx-auto">
                                 <img class="h-full w-full rounded-t mx-auto" src="{{ $service->icon_path }}">

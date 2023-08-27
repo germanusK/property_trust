@@ -98,7 +98,7 @@
             <div class="w-full bg-light flex md:flex-wrap overflow-x-scroll no-scrollbar whitespace-nowrap md:whitespace-normal">
                 <div class="w-fit flex md:flex-wrap items-baseline align-middle justify-center pb-8 pt-5 px-4">
                     @foreach (\App\Models\Service::all() as $service)
-                        <div class="w-72 md:w-1/2 lg:w-1/3 xl:w-1/4 h-fit py-3 px-2 whitespace-normal">
+                        <div class="w-72 md:w-1/2 lg:w-1/3 xl:w-1/4 h-fit py-3 px-2 whitespace-normal" style="min-width: 18rem;">
                             <div class="rounded shadow-lg h-auto py-5 px-2 w-full border border-slate-50 hover:border-slate-900 text-center">
                                 <div class="rounded-full flex flex-col text-center justify-center w-24 h-28 mt-3 mx-auto shadow-inner bg-slate-100 overflow-hidden">
                                     @if ($service->icon_path != null)

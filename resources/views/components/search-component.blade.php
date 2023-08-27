@@ -1,11 +1,12 @@
-<div class="w-3/4 mx-auto bg-white pt-8">
-    <input type="search" name="search_field" id="search_field" placeholder="search by name, category or grade" oninput="perform_search(event)" class="border border-stone-600 rounded-full my-2 w-full px-8 h-10">
-    <div class="py-3" id="search-display"></div>
+<div class="w-full bg-slate-950 py-1">
+    <input type="search" name="search_field" id="search_field" placeholder="search by name, category or grade" oninput="perform_search(event)" class="border bg-slate-800 text-slate-200 border-stone-600 rounded-full my-2 px-8 h-10 block w-3/4 mx-auto">
+    <div class="py-3 bg-white hidden" id="search-display"></div>
 </div>
 <script>
     function perform_search(event){
         value = event.target.value;
         url = "{{route('search')}}";
+        $('#search-display').removeClass('hidden');
         $.ajax({
             method: 'get',
             url: url,

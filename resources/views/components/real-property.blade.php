@@ -1,5 +1,5 @@
 
-<div class="w-full min-h-screen flex flex-wrap py-16 mt-32 justify-evenly">
+<div class="w-full min-h-screen flex flex-wrap py-10 md:py-16 md:mt-12 justify-evenly">
     <div class="w-full z-20 bg-slate-900 py-0">
         <div class="w-full pt-8">
             <div class="text-center w-full py-1 text-white text-2xl font-semibold">Trending/latest property</div>
@@ -18,10 +18,10 @@
     </div>
 </div>
 <div class="flex w-full overflow-x-scroll whitespace-nowrap md:whitespace-normal no-scrollbar">
-    <div class="flex w-fit md:flex-wrap h-fit my-10">
+    <div class="flex w-fit md:flex-wrap my-6 md:my-10">
         @if(count($property)>0)
             @foreach($property as $value)
-                <div class=" w-60 h-80 mx-2 my-2 whitespace-normal">
+                <div class=" w-60 h-fit mx-2 my-2 whitespace-normal">
                     <x-generic-item2 :data="$value" />
                 </div>
             @endforeach
