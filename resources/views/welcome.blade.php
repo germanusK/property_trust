@@ -16,7 +16,7 @@
                   <div class="mb-2 flex justify-center">
                     <span class="text-primary">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns="https://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                         class="h-14 w-14">
@@ -34,7 +34,7 @@
                   <div class="mb-2 flex justify-center">
                     <span class="text-primary">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns="https://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                         class="h-14 w-14">
@@ -56,7 +56,7 @@
                   <div class="mb-2 flex justify-center">
                     <span class="text-primary">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns="https://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                         class="h-14 w-14">
@@ -76,7 +76,7 @@
                   <div class="mb-2 flex justify-center">
                     <span class="text-primary">
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns="https://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                         class="h-14 w-14">

@@ -55,7 +55,7 @@
       {{-- facebook --}}
       <a href="https://www.facebook.com/bpropertytrust?mibextid=2JQ9oc" class="mr-6 text-neutral-300 dark:text-neutral-200">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.w3.org/2000/svg"
           class="h-4 w-4"
           fill="currentColor"
           viewBox="0 0 24 24">
@@ -66,7 +66,7 @@
       {{-- twitter --}}
       <a href="https://twitter.com/ptrustgroup/status/1683360424031297537?s=46&t=2ItHQJHSl4cknkDUHt1jRg" class="mr-6 text-neutral-300 dark:text-neutral-200">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.w3.org/2000/svg"
           class="h-4 w-4"
           fill="currentColor"
           viewBox="0 0 24 24">
@@ -77,7 +77,7 @@
       {{-- instagram --}}
       <a href="https://instagram.com/propertytrustgroup?igshid=OGQ5ZDc2ODk2ZA==" class="mr-6 text-neutral-300 dark:text-neutral-200">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.w3.org/2000/svg"
           class="h-4 w-4"
           fill="currentColor"
           viewBox="0 0 24 24">
@@ -88,7 +88,7 @@
       {{-- linkedin --}}
       {{-- <a href="#!" class="mr-6 text-neutral-300 dark:text-neutral-200">
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          xmlns="https://www.w3.org/2000/svg"
           class="h-4 w-4"
           fill="currentColor"
           viewBox="0 0 24 24">
@@ -115,7 +115,7 @@
         <h6
           class="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
             class="mr-3 h-4 w-4">
@@ -189,7 +189,7 @@
           Contact
         </h6>
         <p class="mb-4 flex items-center justify-center md:justify-start">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mr-3 h-12 w-12">
+          <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mr-3 h-12 w-12">
             <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
             <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
           </svg>
@@ -199,7 +199,7 @@
           Limbe:  Opposite Castillina, Behind GHS Limbe, Mile 2
         </p>
         <a href="mailto:bpropertytrust@gmail.com" class="mb-4 flex items-center justify-center md:justify-start">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mr-3 h-5 w-5">
+          <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mr-3 h-5 w-5">
             <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
             <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
           </svg>
@@ -207,7 +207,7 @@
         </a>
         <a href="tel:237-652-078-411" class="mb-4 flex items-center justify-center md:justify-start">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
             class="mr-3 h-5 w-5">
@@ -229,7 +229,7 @@
   <!--Copyright section-->
   <div class="bg-gray-300 p-6 text-center text-stone-700 ">
     <span>© 2023 Copyright:</span>
-    <a class="font-semibold text-neutral-900" href="http://propertytrust.group/">Property Trust Group</a>
+    <a class="font-semibold text-neutral-900" href="https://propertytrust.group/">Property Trust Group</a>
   </div>
 
   <!-- display alerts -->
