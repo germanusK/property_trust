@@ -242,6 +242,27 @@
       if ( "{{ session()->has('success') != null }}" ) {
         alert("{{session('success')}}")
       }
-    })
+    });
+    
+
+
+    // multiple thresholds
+    var grid_observer = new IntersectionObserver((entries) => {
+      entries.forEach(element => {
+        anime({
+          targets: element['target'],
+          scale: [
+            {value: .1, easing: 'easeOutSine', duration: 500},
+            {value: 1, easing: 'easeInOutQuad', duration: 1200}
+          ],
+          delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
+        });
+      });
+    });
+
+    grid_observer.observe(document.querySelector([".hero-text"]));
+    grid_observer.observe(document.querySelector(['.service-cards']));
+
+
   </script>
 </footer>

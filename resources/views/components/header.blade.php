@@ -23,12 +23,12 @@
     
 </div>
 
-<div class="w-full min-h-max md:min-h-fit md:h-fit relative bg-white">
+<div class="w-full min-h-max md:min-h-fit md:h-fit relative bg-white header-section2">
     <div class="w-11/12 h-3/5 md:h-96 min-h-fit right-auto rounded-br-3xl z-10 bg-white pr-2">
         <div class="w-full h-full rounded-br-3xl border-b-8 border-r-8 border-slate-900 items-center align-middle justify-center flex relative" style="background-image: url(``);">
             <img src="{{ asset('img/hero.jpeg') }}" class="w-full h-full overflow-hidden object-cover rounded-br-2xl">
             <div class="w-full h-full  align-middle items-center justify-center flex absolute bottom-0 left-0 px-2 py-2 bg-slate-900 bg-opacity-60">
-                <div class="w-fit mx-auto">
+                <div class="w-fit mx-auto hero-text">
                     <div class="text-center py-4">
                         <div class="py-2 text-white text-2xl sm:text-3xl md:text-4xl font-semibold italic text-ellipsis flex-wrap">Welcome To <span class="text-pink-700">Property Trust Group</span></div>
                         <div class="text-2xl text-slate-200 italic text-center hidden md:block flex-wrap">Where real property comes home</div>

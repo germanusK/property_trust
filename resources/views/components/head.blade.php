@@ -18,6 +18,7 @@
         <script src="https://cdn.tailwindcss.com/3.3.0"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/animejs/anime.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
         <script>
             tailwind.config = {

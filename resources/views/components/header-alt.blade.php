@@ -23,7 +23,7 @@
     
 </div>
 
-<div class="w-full h-40 md:h-96 relative bg-transparent">
+<div class="w-full h-40 md:h-96 relative bg-transparent header-section2">
     <div class="w-11/12 h-full absolute top-0 left-0 right-auto rounded-br-3xl z-10 bg-transparent pb-2 pr-2">
         <div class="w-full h-full rounded-br-3xl border-b-8 border-r-8 border-slate-900 items-center align-middle justify-center flex">
             <img src="{{ asset('img/hero.jpeg') }}" class="w-full h-full overflow-hidden object-cover rounded-br-2xl">
