@@ -23,21 +23,21 @@
                     <div class="col-span-1 px-4 py-2">
                         <div class="w-full my-2">
                             <label for="name" class="text-white text-opacity-50 text-base capitalize text-left">name:</label><br>
-                            <input type="text" name="name" required id="" placeholder="item name here" value="{{$data->name}}" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
+                            <input type="text" name="name" required id="" placeholder="item name here" value="{{$data->name}}" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-slate-950 text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
                         </div>
                         <div class="w-full my-2">
                             <label for="price" class="text-white text-opacity-50 text-base capitalize text-left">price (CFA):</label><br>
-                            <input type="number" required name="price" id="" placeholder="w-full item price here" value="{{$data->price}}" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
+                            <input type="number" required name="price" id="" placeholder="w-full item price here" value="{{$data->price}}" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-slate-950 text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
                         </div>
                         <div class="w-full my-2">
                             <label for="description" class="text-white text-opacity-50 text-base capitalize text-left">description:</label><br>
-                            <textarea rows="4" name="description" id="" placeholder="item description here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70">{{$data->description}}</textarea>
+                            <textarea rows="4" name="description" id="" placeholder="item description here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-slate-950 text-opacity-60 placeholder-white placeholder-opacity-70">{{$data->description}}</textarea>
                         </div>
                     </div>
                     <div class="col-span-1 px-4 py-2">
                         <div class="w-full my-2">
                             <label for="images" class="text-white text-opacity-50 text-base capitalize">categories:</label><br>
-                            <div class="flex flex-wrap justify-between bg-white px-3 bg-opacity-10 text-white text-opacity-60 rounded p-2 shadow-lg">
+                            <div class="flex flex-wrap justify-between bg-white px-3 bg-opacity-10 text-slate-950 text-opacity-60 rounded p-2 shadow-lg">
                                 @foreach (\App\Models\Category::all() as $cat)
                                     <span class="px-1 mx-1 flex" style="font-size: 0.8rem;">
                                         <input type="checkbox" {{$data->categories->where('id', $cat->id)->count() > 0 ? 'checked' : ''}} value="{{$cat->id}}" name="categories[]" class="mr-1">
@@ -48,7 +48,7 @@
                         </div>
                         <div class="w-full my-2">
                             <label for="images" class="text-white text-opacity-50 text-base capitalize">grades:</label><br>
-                            <div class="flex flex-wrap justify-between bg-white px-3 bg-opacity-10 text-white text-opacity-60 rounded p-2 shadow-lg">
+                            <div class="flex flex-wrap justify-between bg-white px-3 bg-opacity-10 text-slate-950 text-opacity-60 rounded p-2 shadow-lg">
                                 @foreach (\App\Models\Grade::all() as $grd)
                                     <span class="px-1 mx-1 flex" style="font-size: 0.8rem;">
                                         <input type="checkbox" {{$data->grades->where('id', $grd->id)->count() > 0 ? 'checked' : ''}} value="{{$grd->id}}" name="grades[]" class="mr-1">

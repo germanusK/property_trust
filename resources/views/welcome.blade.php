@@ -95,11 +95,11 @@
 
             <!-- SERVICES -->
             <div class="text-center text-2xl md:text-3xl text-slate-700 capitalize mt-12 ">our services <br> <hr class="w-1/6 md:w-1/12 border border-slate-300 border-dashed mx-auto"></div>
-            <div class="w-full bg-light flex md:flex-wrap overflow-x-scroll no-scrollbar whitespace-nowrap md:whitespace-normal service-cards">
+            <div class="w-full bg-light flex md:flex-wrap overflow-x-scroll no-scrollbar whitespace-nowrap md:whitespace-normal">
                 <div class="w-fit flex md:flex-wrap items-baseline align-middle justify-center pb-8 pt-5">
                     @foreach (\App\Models\Service::all() as $service)
                         <div class="w-72 md:w-1/3 lg:w-1/4 xl:w-1/4 h-fit py-3 px-2 whitespace-normal" style="min-width: 16rem;">
-                            <div class="rounded shadow-lg h-auto py-5 px-2 w-full border border-slate-50 hover:border-slate-900 text-center">
+                            <div class="rounded shadow-lg h-auto py-5 px-2 w-full border border-slate-50 hover:border-slate-900 text-center service-cards">
                                 <div class="rounded-full flex flex-col text-center justify-center w-24 h-28 mt-3 mx-auto shadow-inner bg-slate-100 overflow-hidden">
                                     @if ($service->icon_path != null)
                                         <img class="h-28 w-24 object-cover object-center rounded" src="{{ $service->icon_path }}">
@@ -159,7 +159,7 @@
             <div class="w-fit md:w-full h-auto flex md:flex-wrap items-baseline align-middle justify-center" >
                 @if(count($assets)>0)
                     @foreach($assets as $value)
-                    <div class="w-72 whitespace-normal">
+                    <div class="w-72 whitespace-normal service-cards">
                         <x-generic-item2 :data="$value"/>
                     </div>
                     @endforeach
@@ -221,7 +221,7 @@
                     <div class="w-fit md:w-full h-full flex md:flex-wrap items-bottom align-center justify-evenly">
                         @foreach (\App\Models\Customer::inRandomOrder()->take(3)->get()->shuffle() as $customer)
                             <!-- single item -->
-                            <div class=" my-3 mx-2 px-3 pb-4 h-auto w-72 max-w-full relative whitespace-normal">
+                            <div class=" my-3 mx-2 px-3 pb-4 h-auto w-72 max-w-full relative whitespace-normal service-cards">
                                 <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                                     <a href="#!">
                                         <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
@@ -245,7 +245,7 @@
 
         <!-- Contact -->
         <div class="w-full h-auto border-y-2">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.3234487756235!2d9.284495013744113!3d4.156663596977882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x106131fb28383773%3A0xe0908049832295fd!2sPROPERTY%20TRUST!5e0!3m2!1sen!2scm!4v1679866113967!5m2!1sen!2scm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mx-auto"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.3234487756235!2d9.284495013744113!3d4.156663596977882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x106131fb28383773%3A0xe0908049832295fd!2sPROPERTY%20TRUST!5e0!3m2!1sen!2scm!4v1679866113967!5m2!1sen!2scm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mx-auto"></iframe>
         </div>
 
         <!-- Subscription and footer-->

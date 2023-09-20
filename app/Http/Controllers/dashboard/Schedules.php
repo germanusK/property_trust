@@ -29,7 +29,7 @@ class Schedules extends Controller
         # code...
         $sch = Schedule::find($id);
         $data['schedule'] = $sch;
-        $data['title'] = "Edit Schedule (".$sch->customer->name.' | '.$sch->property->name.' | '.$sch->due_date.")";
+        $data['title'] = "Edit Schedule (".($sch->customer->name??'').' | '.($sch->property->name??'').' | '.($sch->due_date??'').")";
         return view('dashboard.schedules.edit', $data);
     }
 
@@ -62,6 +62,7 @@ class Schedules extends Controller
             return back()->with('error', $validity->errors()->first());
         }
 
+        // return $request->all();
          // Validate request due_date
          $working_hours = collect([
             ['day'=>2, 'name'=>'Monday', 'open'=>'8:00', 'close'=>'17:00'],
@@ -82,14 +83,24 @@ class Schedules extends Controller
         }
 
         // update schedule proper
-        $schedule = Schedule::find($id);
-        if($schedule != null){
-            $schedule->due_date = $request->due_date;
-            $schedule->status = $request->status;
-            $schedule->save();
+        try {
+            //code...
+            DB::beginTransaction();
+            $schedule = Schedule::find($id);
+            if($schedule != null){
+                $schedule->due_date = $request->due_date;
+                $schedule->status = $request->status;
+                $schedule->save();
+                DB::commit();
 
-            $this->send_email($schedule->customer->email, 'Schedule Updated', "Your schedule for ".$schedule->property->name." was updated to ".$schedule->due_date. " (status: ".$schedule->status.")");
-            return back()->with('success', "Done");
+                $this->send_email($schedule->customer->email, 'Schedule Updated', "Your schedule for ".($schedule->property->name??'PROPERTY TRUST GROUP')." was updated to ".$schedule->due_date. " (status: ".$schedule->status.")");
+                return back()->with('success', "Done");
+            }
+
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return back()->with('error', $th->getMessage()."(L{$th->getLine()})");
+            //throw $th;
         }
     }
 

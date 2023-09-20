@@ -74,13 +74,13 @@
                 <div class="md:grid grid-cols-2">
 
                     <!-- property distribution -->
-                    <div class="mx-auto my-2 md:grid grid-cols-2 border-x px-1">
-                        <div id="chart-main" class="mx-4 sm:mx-1 md:col-span-2  border border-slate-400 bg-stone-900 bg-opacity-30 my-2"></div>
-                        <div id="customer-stats" class="mx-4 sm:mx-1 md:col-span-2  border border-slate-400 bg-stone-900 bg-opacity-30 my-2"></div>
+                    <div class="mx-auto my-2 md:grid grid-cols-2 px-1">
+                        <div id="chart-main" class="mx-4 sm:mx-1 col-span-1 md:col-span-2 my-2"></div>
+                        <div id="customer-stats" class="mx-4 sm:mx-1 col-span-1 md:col-span-2 my-2"></div>
                     </div>
-                    <div class="mx-auto my-2 md:grid grid-cols-2 border-x px-1">
-                        <div id="asset-stats" class="mx-4 sm:mx-1 md:col-span-2  border border-slate-400 bg-stone-900 bg-opacity-30 my-2"></div>
-                        <div id="schedule-stats" class="mx-4 sm:mx-1 md:col-span-2  border border-slate-400 bg-stone-900 bg-opacity-30 my-2"></div>
+                    <div class="mx-auto my-2 md:grid grid-cols-2 px-1">
+                        <div id="schedule-stats" class="mx-4 sm:mx-1 col-span-1 md:col-span-2 my-2 min-h-max"></div>
+                        <div id="asset-stats" class="mx-4 sm:mx-1 col-span-1 md:col-span-2 my-2"></div>
                     </div>
                 </div>
             </div>
@@ -88,13 +88,13 @@
             <!--  -->
 
             <div class="col-span-1 py-4 px-3 md:h-full">
-                <div class="rounded-lg bg-white bg-opacity-50 my-4 mx-3 py-3 px-3 h-full">
-                    @for($i = 1; $i < 10; $i++)
-                        <a href="#" class="block rounded w-full py-2 px-1 my-1 border-y border-blue-100 list-none capitalize">
-                            <span class="inline-block w-6 h-6 rounded-full bg-slate-50 text-center" aria-hidden="true"> &ddotseq;</span>
-                            <span class="mr-2 inline-block w-6 h-6 rounded-full bg-slate-50 text-red-400 text-center" aria-hidden="true"> 49</span>construction projects
-                        </a>
-                    @endfor
+                <div class=" bg-slate-800 bg-opacity-50 my-4 mx-3 py-3 px-3 h-full text-start">
+                    @foreach(\App\Models\Service::all() as $service)
+                        <div href="#" class="block w-full py-2 px-1 my-1 border-y border-slate-200 border-opacity-10 bg-slate-950 bg-opacity-20 list-none capitalize font-bold">
+                            <span class="inline-block w-6 h-6 rounded-full bg-stone-950 text-blue-100 text-center mx-2" aria-hidden="true"> &andand;</span>
+                            <span class="mr-2 inline-block w-6 h-6 rounded-full bg-slate-50 text-center uppercase" aria-hidden="true"> {{ $service->projects()->count() }}</span> <span class="text-blue-100">{{ $service->name }} projects </span>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

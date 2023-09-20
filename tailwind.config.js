@@ -6,17 +6,26 @@ module.exports = {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
+        './resources/views/**/**/*.blade.php',
         './resources/views/**/*.blade.php',
         './resources/views/*.blade.php',
+        './node_modules/tw-elements/dist/css/*.css',
+        "./node_modules/tw-elements/dist/js/*.js",
+        "./node_modules/tw-elements/dist/**/*.js",
+        "./node_modules/tw-elements/dist/**/*.css",
     ],
-
+    darkMode: "class",
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ["Roboto", "sans-serif", 'Nunito', ...defaultTheme.fontFamily.sans],
+                body: ["Roboto", "sans-serif"],
+                mono: ["ui-monospace", "monospace"],
             },
         },
     },
-
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp')],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/line-clamp'), require('tw-elements/dist/plugin.cjs')],
+    corePlugins: {
+        preflight: false,
+    },
 };

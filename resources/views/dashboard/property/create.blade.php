@@ -17,31 +17,31 @@
         <div id="imageBar" class="w-full items-center justify-center flex whitespace-nowrap overflow-x-scroll no-scrollbar my-2">
         </div>
         <div class="w-full items-center justify-center py-6">
-            <form id="creationForm" enctype="multipart/form-data" method="post" class="rounded-md bg-slate-950 shadow-md py-10 px-6 w-4/5 sm:3/5 mx-auto border-x border-black border-opacity-30">
+            <form id="creationForm" enctype="multipart/form-data" method="post" class="rounded-md bg-slate-950 shadow-md py-10 px-2 md:px-6 w-4/5 sm:3/5 mx-auto border-x border-black border-opacity-30">
                 @csrf
                 <div class="w-full md:grid grid-cols-2 divide-x divide-slate-600">
-                    <div class="col-span-1 px-4 py-2">
-                        <div class="w-full my-2">
+                    <div class="col-span-1 px-1 py-2">
+                        <div class="w-full my-2 min-w-fit">
                             <label for="name" class="text-white text-opacity-50 text-base capitalize text-left">name:</label><br>
-                            <input type="text" name="name" required id="" placeholder="item name here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
+                            <input type="text" name="name" required id="" placeholder="item name here" class="w-full max-w-full sm:w-2/3 flex-auto bg-opacity-10 rounded text-blue-950 text-opacity-80 placeholder-blue-800 placeholder-opacity-70 h-11">
                         </div>
-                        <div class="w-full my-2">
+                        <div class="w-full my-2 min-w-fit">
                             <label for="price" class="text-white text-opacity-50 text-base capitalize text-left">price:</label><br>
-                            <input type="number" required name="price" id="" placeholder="w-full item price here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
+                            <input type="number" required name="price" id="" placeholder="item price here" class="w-full max-w-full sm:w-2/3 flex-auto bg-opacity-10 rounded text-blue-950 text-opacity-80 placeholder-blue-800 placeholder-opacity-70 h-11">
                         </div>
-                        <div class="w-full my-2">
+                        <div class="w-full my-2 min-w-fit">
                             <label for="description" class="text-white text-opacity-50 text-base capitalize text-left">description:</label><br>
-                            <textarea rows="4" name="description" id="" placeholder="item description here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70"></textarea>
+                            <textarea rows="4" name="description" id="" placeholder="item description here" class="w-full max-w-full sm:w-2/3 flex-auto bg-opacity-10 rounded text-blue-950 text-opacity-80 placeholder-blue-800 placeholder-opacity-70"></textarea>
                         </div>
-                        <div class="w-full my-2">
+                        <div class="w-full my-2 min-w-fit">
                             <label for="images" class="text-white text-opacity-50 text-base capitalize text-left">images:</label><br>
-                            <input type="file" required multiple name="images[]" id="" placeholder="images here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11 py-2">
+                            <input type="file" required multiple name="images[]" id="" placeholder="images here" class="w-full max-w-full sm:w-2/3 flex-auto bg-opacity-10 rounded text-blue-950 text-opacity-80 placeholder-blue-800 placeholder-opacity-70 h-11 py-2">
                         </div>
                     </div>
-                    <div class="col-span-1 px-4 py-2">
+                    <div class="col-span-1 px-1 py-2">
                         <div class="w-full my-2">
                             <label for="images" class="text-white text-opacity-50 text-base capitalize">categories:</label><br>
-                            <div class="flex flex-wrap justify-between bg-white px-3 bg-opacity-10 text-white text-opacity-60 rounded p-2 shadow-lg">
+                            <div class="flex flex-wrap justify-between bg-white px-3 bg-opacity-10 text-blue-950 text-opacity-60 rounded p-2 shadow-lg">
                                 @foreach (\App\Models\Category::all() as $cat)
                                     <span class="px-1 mx-1 flex" style="font-size: 0.8rem;">
                                         <input type="checkbox" value="{{$cat->id}}" name="categories[]" class="mr-1">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="w-full my-2">
                             <label for="images" class="text-white text-opacity-50 text-base capitalize">grades:</label><br>
-                            <div class="flex flex-wrap justify-between bg-white px-3 bg-opacity-10 text-white text-opacity-60 rounded p-2 shadow-lg">
+                            <div class="flex flex-wrap justify-between bg-white px-3 bg-opacity-10 text-blue-950 text-opacity-60 rounded p-2 shadow-lg">
                                 @foreach (\App\Models\Grade::all() as $grd)
                                     <span class="px-1 mx-1 flex" style="font-size: 0.8rem;">
                                         <input type="checkbox" value="{{$grd->id}}" name="grades[]" class="mr-1">

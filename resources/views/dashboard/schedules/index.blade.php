@@ -27,10 +27,10 @@
                         <td class="text-base px-2 bg-white bg-opacity-20 p-2">
                             <img class="h-12 w-12 rounded-sm border border-blue-100" src="">
                         </td>
-                        <td class="text-base px-2">{{$value->property->name}}</td>
-                        <td class="text-base px-2">{{$value->customer->name}}</td>
-                        <td class="text-base px-2 text-orange-400">{{$value->due_date}} </td>
-                        <td class="text-base px-2 text-red-400">{{$value->status}} </td>
+                        <td class="text-base px-2">{{$value->property->name??null}}</td>
+                        <td class="text-base px-2">{{$value->customer->name??null}}</td>
+                        <td class="text-base px-2 text-orange-400">{{$value->due_date??''}} </td>
+                        <td class="text-base px-2 text-red-400">{{$value->status??''}} </td>
                         <td class="text-base px-2 whitespace-nowrap ">
                             <a href=" {{ route('rest.schedules.show', $value['id']) }} "><span title="preview" class="text-base text-slate-100 mx-2 fas fa-eye"></span></a>
                             <a href=" {{ route('rest.schedules.edit', $value['id'])}} "><span title="edit" class="text-base text-sky-300 mx-2 fas fa-edit"></span></a>

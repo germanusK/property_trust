@@ -9,7 +9,7 @@
             <!-- property item -->
             <table class="w-full">
                 <thead class="bg-white bg-opacity-10 py-3 shadow-inner">
-                    <tr class="py-1 border-y divide-x text-white divide-slate-700">
+                    <tr class="py-2 border-y divide-x text-blue-950 divide-slate-700">
                         <th class="font-bold capitalize">s/n</th>
                         <th class="font-bold capitalize">Name</th>
                         <th class="font-bold capitalize text-orange-400">Contact</th>

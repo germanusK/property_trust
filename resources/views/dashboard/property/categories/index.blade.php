@@ -10,7 +10,7 @@
     <div class="w-full flex flex-wrap py-6 gap-4">
         <a type="button" href="{{url('/rest/property')}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold"><span class="text-lg fas fa-arrow-left"></span></a>
     </div>
-    <div class="flex align-middle items-center py-1 bg-white bg-opacity-20 rounded">
+    <div class="flex align-middle items-center py-1 bg-slate-950 bg-opacity-20 rounded">
         <h3 class=" mx-auto text-xl font-semibold text-slate-200 px-4">Categories</h3>
     </div>
     <div class="w-full">
@@ -20,7 +20,7 @@
             <!-- property item -->
             <table class="w-full">
                 <thead class="bg-white bg-opacity-10 py-3 shadow-inner">
-                    <tr class="py-1 border-y divide-x text-white divide-slate-700">
+                    <tr class="py-1 border-y divide-x text-blue-950 divide-slate-700">
                         <th class="font-bold capitalize">s/n</th>
                         <th class="font-bold capitalize">Name</th>
                         <th class="font-bold capitalize">Description</th>
