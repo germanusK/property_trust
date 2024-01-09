@@ -1,23 +1,56 @@
 @extends('dashboard.main')
-@section('content')
-    <form method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="py-4 sm:grid md:grid lg:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full border-b border-slate-200 border-opacity-20">
-            @foreach ($images as $image)
-                <div class="w-76 h-76 relative m-1">
-                    <input type="checkbox" value="{{ $image->url }}" name="urls[]" class="h-9 w-9 border absolute bottom-0 bg-white rounded m-4 text-slate-900">
-                    <img class="w-full h-full object-cover object-center ring ring-white ring-opacity-30" src="{{ $image->url }}">
+@section('section')
+     <div class="card">
+        <div class="card-body pt-5">
+            <!-- Horizontal Form -->
+            <h4 class="fw-semibold">{{ $service->name??'' }}</h4>
+            <hr>
+            <form method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Images</label>
+                    <div class="col-sm-10">
+                        <div class="form-control input-images"></div>
+                    </div>
                 </div>
-            @endforeach
-        </div>
-        <div class="my-2 py-3">
-            <div class="w-3/5 mx-auto">
-                <div class="text-center py-1 text-slate-300 font-semibold text-lg">Add More Images</div>
-                <input class="mx-3 my-2 px-2 border rounded h-9 w-full" type="file" accept="image/*" multiple="multiple" name="files[]">
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Gallery</label>
+                    <div class="col-sm-10">
+                        <div class="form-control d-flex flex-wrap">
+                            @foreach ($service->images as $image)
+                                <div class="m-1 position-relative">
+                                    <div class="text-center py-2 position-absolute w-100"><input type="checkbox" checked name="old_images[]" value="{{ $image->id }}"></div>
+                                    <img class="img img-thumbnail" style="height: 7rem; width: auto;" src="{{ $image->img_path }}">
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary px-3">Submit</button>
+                    <button type="reset" class="btn btn-secondary px-3">Reset</button>
+                </div>
+            </form><!-- End Horizontal Form -->
+
+            <div class="py-4 row">
+                <div class="col-md-4 col-xl-3">@if($service->img_path != null)
+                    <img style="width: 6rem; height: 6rem; border-radius: 0.2rem;" class="img img-rounded img-responsive" src="{{ $service->img_path }}">
+                @endif</div>
+                <div class="col-md-12 col-xl-9">
+                @if($service->images()->count() > 0)
+                    <div class="d-flex flex-wrap">
+                        @foreach ($service->images as $image)
+                            <img class="img img-responsive img-rounded" style="width:7rem; height: 7rem; border-radius: 0.2rem;" src="{{ $image->image }}">
+                        @endforeach
+                    </div>
+                @endif
+                </div>
             </div>
-            <div class="w-3/5 mx-auto flex px-3 justify-end">
-                <button class=" rounded-sm ring ring-teal-100 ring-opacity-30 bg-white bg-opacity-80 text-white text-opacity-20" type="submit">update</button>
-            </div>
         </div>
-    </form>
+    </div>
+@endsection
+@section('script')
+    <script>
+        $('.input-images').imageUploader();
+    </script>
 @endsection

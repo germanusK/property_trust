@@ -8,55 +8,61 @@ use App\Models\AssetCategory;
 use App\Models\AssetGrade;
 use App\Models\AssetImage;
 use App\Models\Project;
+use App\Models\ProjectImage;
 use App\Models\Service;
+use App\Models\ServiceImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use phpDocumentor\Reflection\Types\Object_;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Throwable;
 
 class Property extends Controller
 {
-
 
     // ASSET MANAGEMENT
     public function index()
     {
         # code...
-        return view('dashboard.property.index');
+        $data['title'] = "All Property";
+        return view('dashboard.property.index', $data);
     }
 
     public function create()
     {
         # code...
-        return view('dashboard.property.create');
+        $data['title'] = "Add New Property";
+        return view('dashboard.property.create', $data);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $service_id)
     {
         # code...
-        // return $request->all();
-        $valid = Validator::make($request->all(), [
-            'name'=>'required',
-            'categories'=>'required|array',
-            'price'=>'required',
-            'grades'=>'required|array',
-            'images'=>'required',
-            'images[*]'=>'mimes:jpg,png,jpeg,gif'
-        ]);
+        $valid = Validator::make($request->all(), ['name'=>'required', 'price'=>'required', 'description'=>'required',
+        'address'=>'required', 'images'=>'required']);
        
-        if (!$valid->fails()) {
-
+        if ($valid->fails()) {
+            // alert for validation errors
+            session()->flash('error', $valid->errors()->first());
+            return back()->withInput();
+        }
+        
+        try{
             // save asset
-            $asset = new Asset(['name' => $request->name, 'quantity'=>$request->quantity??1, 'price' => $request->price, 'description' => $request->description ?? '']);
+            DB::beginTransaction();
+            $asset = new Asset(['name' => $request->name, 'service_id'=>$service_id, 'address'=>$request->address, 'price' => $request->price, 'description' => $request->description ?? '']);
+            // dd($asset);
             $asset->save();
             $asset_id = $asset->id;
-
+    
             // upload and save images
             $files = $request->images;
             // dd($files);
-            if (count($files) > 0) {
+            if (($files = $request->file('images')) != null) {
                 # code...
+                $images = [];
                 foreach ($files as $key => $file) {
                     # code...
                     $ext = $file->getClientOriginalExtension();
@@ -64,35 +70,27 @@ class Property extends Controller
                     $path = asset('uploads/asset_images');
                     $pathname = $path.'/'.$name;
                     $file->storeAs('asset_images', $name, ['disk'=>'public_uploads']);
-                    AssetImage::create(['asset_id' => $asset_id, 'url' => $pathname]);
+                    $images[] = ['asset_id' => $asset_id, 'img_path' => $pathname];
                 }
+                AssetImage::insert($images);
             }
-
-            // save categories
-            foreach ($request->categories as $key => $cat) {
-                # code...
-                AssetCategory::create(['asset_id' => $asset_id, 'category_id' => $cat]);
-            }
-            // save grades
-            foreach ($request->grades as $key => $grd) {
-                # code...
-                AssetGrade::create(['asset_id'=>$asset_id, 'grade_id'=>$grd]);
-            }
-
+            DB::commit();
+    
             return back()->with('success', 'Done');
         }
-        else{
-            // alert for validation errors
-            return back()->with('error', $valid->errors()->first());
+        catch(Throwable $th){
+            DB::rollBack();
+            session()->flash('error', $th->getMessage());
+            return back()->withInput();
         }
-        
+
     }
 
     public function edit($id)
     {
         # code...
+        $data['title'] = "Update Property";
         $data['data'] = Asset::find($id);
-        
         return view('dashboard.property.edit', $data);
     }
 
@@ -122,9 +120,54 @@ class Property extends Controller
     {
         # code...
         // fetch item data
-        $data['data'] = Asset::find($id);
+        $data['item'] = Asset::find($id);
         return view('dashboard.property.preview', $data);
     }
+
+    public function images($id)
+    {
+        # code...
+        // fetch item data
+        $data['item'] = Asset::find($id);
+        return view('dashboard.property.images', $data);
+    }
+
+
+    public function update_images(Request $request, $id)
+    {
+        # code...
+        $validity = Validator::make($request->all(), ['images'=>'array', 'old_images'=>'array']);
+        if($validity->fails()){
+            session()->flash('error', $validity->errors()->first());
+            return back()->withInput();
+        }
+        
+        // update old_images
+        if(($old_images = $request->old_images) != null){
+            AssetImage::whereNotIn('id', $request->old_images)->each(function($record){
+                if(file_exists($record->img_path))
+                    unlink($record->img_path);
+                $record->delete();
+            });
+        }
+
+        // save additional images
+        if(($files = $request->file('images')) != null){
+            $images = [];
+            foreach ($files as $key => $file) {
+                # code...
+                $path = asset('uploads/asset_images');
+                $fname = 'prop_'.time().'_'.random_int(1000000, 9999999).'.'.$file->getClientOriginalExtension();
+                $file->move(public_path('uploads/asset_images'), $fname);
+                $images[] = ['img_path'=>$path.'/'.$fname, 'asset_id'=>$id];
+            }
+            AssetImage::insert($images);
+        }
+
+        return redirect()->route('rest.assets.show', $id)->with('success', "Operation complete");
+    }
+
+
 
     public function delete($id)
     {
@@ -168,28 +211,31 @@ class Property extends Controller
     public function store_service(Request $request)
     {
         # code...
-        $validity = Validator::make($request->all(), [
-            'name'=>'required',
-            'service_icon'=>'required|file',
-            'description'=>'required|string'
-        ]);
-        if($validity->fails()){
-            return back()->with('error', $validity->errors()->first());
+        $request->validate(['name'=>'required', 'caption'=>'required', 'category_id'=>'required',
+            'image'=>'required|file', 'price'=>'numeric', 'description'=>'required']);
+
+        
+        $data = ['name'=>$request->name??'', 'caption'=>$request->caption??'', 'category_id'=>$request->category_id??'', 
+            'price'=>$request->price??'', 'description'=>$request->description??''];
+        
+        if(Service::whereName($request->name)->count() > 0){
+            session()->flash('error', 'Servce already exists with same name');
+            return back()->withInput();
         }
 
-        $file = $request->file('service_icon');
-        $ext = $file->getClientOriginalExtension();
-        $path = asset('uploads/service_icons');
-        $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
-        $file->storeAs('service_icons', $filename, ['disk'=>'public_uploads']);
-        $icon_path = $path.'/'.$filename;
-
-
         // create service
-        $service = new Service();
-        $service->fill($request->all());
-        $service->icon_path = $icon_path;
+        $service = new Service($data);
         $service->save();
+
+        if(($file = $request->file('image')) != null){
+            $ext = $file->getClientOriginalExtension();
+            $path = asset('uploads/service_icons/');
+            $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
+            $file->storeAs('service_icons', $filename, ['disk'=>'public_uploads']);
+            $service->update(['img_path'=>$path.$filename]);
+        }
+
+
         
         return back()->with('success', 'Done');
     }
@@ -205,29 +251,34 @@ class Property extends Controller
     public function update_service(Request $request, $id)
     {
         # code...
-        $validity = Validator::make($request->all(), [
-            'name'=>'required', 'description'=>'required'
-        ]);
-        if($validity->fails()){
-            return back()->with('error', $validity->errors()->first());
-        }
-        // update service
-        $service = Service::find($id);
-        if($service == null){
-            $service = new Service();
-        }
+        $request->validate(['name'=>'required', 'caption'=>'required', 'category_id'=>'required',
+            'image'=>'required|file', 'price'=>'numeric', 'description'=>'required']);
 
-        $service->fill($request->all());
-        if($request->has('service_icon')){
-            $file = $request->file('service_icon');
+        
+        $data = ['name'=>$request->name??'', 'caption'=>$request->caption??'', 'category_id'=>$request->category_id??'', 
+            'price'=>$request->price??'', 'description'=>$request->description??''];
+        
+        if(Service::whereName($request->name)->where('id', $id)->count() > 0){
+            session()->flash('error', 'Servce already exists with same name');
+            return back()->withInput();
+        }
+        $service = Service::find($id);
+
+        if(($file = $request->file('image')) != null){
             $ext = $file->getClientOriginalExtension();
             $path = asset('uploads/service_icons');
             $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
             $file->storeAs('service_icons', $filename, ['disk'=>'public_uploads']);
-            $icon_path = $path.'/'.$filename;
-            $service->icon_path = $icon_path;
+            $data['img_path'] = $path.'/'.$filename;
+            $service->img_path != null ? unlink($service->img_path) : null;
         }
+        // dd($data);
+
+
+        // create service
+        $service->update($data);
         $service->save();
+        
         return back()->with('success', 'Done');
     }
 
@@ -245,9 +296,9 @@ class Property extends Controller
     public function service_images(Request $request, $service_id)
     {
         # code...
-        $service = Service::find($service_id);
-        $data['title'] = $service->name.' Service Images';
-        $data['images'] = $service->images;
+        $data['service'] = Service::find($service_id);
+        $data['title'] = "Service Images";
+        // $data['images'] = $service->images;
         // dd($data);
         return view('dashboard.services.images', $data);
     }
@@ -255,37 +306,34 @@ class Property extends Controller
     public function add_service_images(Request $request, $service_id)
     {
         # code...
-        $validity = Validator::make($request->all(), ['files'=>'required']);
+        $validity = Validator::make($request->all(), ['images'=>'array', 'old_images'=>'array']);
         if($validity->fails()){
-            return back()->with('error', $validity->errors()->first());
+            session()->flash('error', $validity->errors()->first());
+            return back()->withInput();
         }
-        // dd( $request->file('files'));
+        
+        // update old_images
+        if(($old_images = $request->old_images) != null){
+            ServiceImage::whereNotIn('id', $request->old_images)->each(function($record){
+                if(file_exists($record->img_path))
+                    unlink($record->img_path);
+                $record->delete();
+            });
+        }
 
-        $files = $request->file('files');
-        if(is_array($files)){
-            $paths = [];
-            foreach ($files as $file) {
+        // save additional images
+        if(($files = $request->file('images')) != null){
+            $images = [];
+            foreach ($files as $key => $file) {
                 # code...
-                $ext = $file->getClientOriginalExtension();
-                $path = asset('uploads/service_images');
-                $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
-                $file->storeAs('service_images', $filename, ['disk'=>'public_uploads']);
-                $icon_path = $path.'/'.$filename;
-                array_push($paths, $icon_path);
+                $path = asset('uploads/asset_images');
+                $fname = 'prop_'.time().'_'.random_int(1000000, 9999999).'.'.$file->getClientOriginalExtension();
+                $file->move(public_path('uploads/asset_images'), $fname);
+                $images[] = ['img_path'=>$path.'/'.$fname, 'service_id'=>$service_id];
             }
-            $records = array_map(function($p)use($service_id){
-                return ['asset_id'=>$service_id, 'url'=>$p, 'type'=>'service'];
-            }, $paths);
-            AssetImage::insert($records);
-        }else{
-            $ext = $files->getClientOriginalExtension();
-            $path = asset('uploads/service_images');
-            $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
-            $files->storeAs('service_images', $filename, ['disk'=>'public_uploads']);
-            $icon_path = $path.'/'.$filename;
-            AssetImage::insert(['asset_id'=>$service_id, 'url'=>$icon_path, 'type'=>'service']);
+            ServiceImage::insert($images);
         }
-        return back()->with('success', "Done");
+        return redirect()->route('rest.services.show', $service_id)->with('success', "Done");
     }
 
 
@@ -302,12 +350,14 @@ class Property extends Controller
         if($service_id != null){
             $data['data'] = $data['data']->where('service_id', $service_id);
         }
+        // dd($data);
         return view('dashboard.projects.index', $data);
     }
     
     public function show_project(Request $request, $id)
     {
         # code...
+        $data['title'] = "Product Details";
         $data['project'] = Project::find($id);
         return view('dashboard.projects.show', $data);
     }
@@ -322,42 +372,32 @@ class Property extends Controller
     public function store_project(Request $request, $service_id)
     {
         # code...
-        $validity = Validator::make($request->all(), ['name'=>'required', 'address'=>'required', 'description'=>'required', 'images'=>'required']);
-        if($validity->fails()){
-            return back()->with('error', $validity->errors()->first());
-        }
+        $request->validate(['name'=>'required', 'address'=>'required', 'description'=>'required', 'images'=>'required']);
 
         // create project
         $project = new Project();
-        $data = $request->all();
+        $data = ['name'=>$request->name??'', 'address'=>$request->address??'', 'description'=>$request->description, 'service_id'=>$service_id];
         $data['service_id'] = $service_id;
         $project->fill($data);
         $project->save();
 
         // store images
         $files = $request->file('images');
-        if(is_array($files)){
+        if($files != null){
             $paths = [];
             foreach ($files as $file) {
                 # code...
                 $ext = $file->getClientOriginalExtension();
                 $path = asset('uploads/project_images');
-                $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
+                $filename = 'project__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
                 $file->storeAs('project_images', $filename, ['disk'=>'public_uploads']);
                 $icon_path = $path.'/'.$filename;
                 array_push($paths, $icon_path);
             }
             $records = array_map(function($p)use($project){
-                return ['asset_id'=>$project->id, 'url'=>$p, 'type'=>'project'];
+                return ['project_id'=>$project->id, 'img_path'=>$p];
             }, $paths);
-            AssetImage::insert($records);
-        }else{
-            $ext = $files->getClientOriginalExtension();
-            $path = asset('uploads/project_images');
-            $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
-            $files->storeAs('project_images', $filename, ['disk'=>'public_uploads']);
-            $icon_path = $path.'/'.$filename;
-            AssetImage::insert(['asset_id'=>$project->id, 'url'=>$icon_path, 'type'=>'project']);
+            ProjectImage::insert($records);
         }
         
         return back()->with('success', 'Done');
@@ -374,18 +414,22 @@ class Property extends Controller
     public function update_project(Request $request, $id)
     {
         # code...
-        $validity = Validator::make($request->all(), ['name'=>'required', 'address'=>'required', 'description'=>'required']);
-        if($validity->fails()){
-            return back()->with('error', $validity->errors()->first());
-        }
+        $validity = Validator::make($request->all(), ['name'=>'required', 'address'=>'required', 'description'=>'required', 'images'=>'required', 'service_id'=>'required']);
 
-        // update project
-        $project = Project::find($id);
-        if($project == null){
-            $project = new Project();
+        if($validity->fails()){
+            session('error', $validity->errors()->first());
+            return back()->withInput();
         }
-        $project->fill($request->all());
-        $project->save();
+        // create project
+        $project = Project::find($id);
+        
+        // update project
+        $data = ['name'=>$request->name??'', 'address'=>$request->address??'', 'description'=>$request->description, 'service_id'=>$request->service_id];
+        if(Project::where(['name'=>$request->name])->where('id', '!=', $id)->count() > 0){
+            session()->flash('error', "Another project with the same name already exist");
+            return back()->withInput();
+        }
+        Project::updateOrInsert(['id'=>$id], $data);
         return back()->with('success', 'Done');
     }
 
@@ -396,7 +440,7 @@ class Property extends Controller
         $project = Project::find($project_id);
         if($project != null){
             $data['title'] = "Project Images For ".$project->name;
-            $data['images'] = AssetImage::where('asset_id', $project_id)->where('type', 'project')->get();
+            $data['project'] = $project;
             return view('dashboard.projects.images', $data);
         }
         return back()->with('error', "Service not found.");
@@ -405,34 +449,32 @@ class Property extends Controller
     // update service images
     public function update_project_images(Request $request, $project_id)
     {
-        $validity = Validator::make($request->all(), ['urls'=>'array|required']);//optional field: images
+        $request->validate(['old_images'=>'array', 'images'=>'array']);//optional field: images
 
-        if($validity->fails()){
-            return back()->with('error', $validity->errors()->first());
+        
+        if(($old_images = $request->old_images) != null){
+            // delete unchecked images
+            ProjectImage::where('project_id', $project_id)->whereNotIn('id', $old_images)->each(function($rec){
+                $rec->delete();
+            });
         }
 
-        $urls = $request->urls;
-        $old_urls = AssetImage::where('asset_id', $project_id)->where('type', 'project')->get(['id', 'url']);
-
-        // drop unchecked photos
-        if(count($urls) != count($old_urls)){
-            $deleted = collect($old_urls)->whereNotIn('url', $urls)->each(function($img){$img->delete();});
-        }
 
         // add any additional images
-        if($request->has('images') and $request->images != null){
-            $files = $request->file('images');
+        if(($files = $request->file('images')) != null){
+            $project_images = [];
             foreach ($files as $key => $file) {
                 # code...
                 $ext = $file->getClientOriginalExtension();
                 $path = asset('uploads/project_images');
-                $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
+                $filename = 'project__'.random_int(1000000000, 9999999999).'__'.time().'.'.$ext;
                 $file->storeAs('project_images', $filename, ['disk'=>'public_uploads']);
                 $icon_path = $path.'/'.$filename;
-                $image = new AssetImage(['asset_id'=>$project_id, 'url'=>$icon_path, 'description'=>'__project_image', 'type'=>'project']);
-                $image->save();
+                $project_images[] = ['project_id'=>$project_id, 'img_path'=>$icon_path];
             }
+            ProjectImage::insert($project_images);
         }
+        return redirect()->route('rest.projects.show', $project_id);
 
     }
 

@@ -1,52 +1,112 @@
 @extends('dashboard.main')
-@section('content')
-    <?php 
-        if (isset($_POST['submit'])) {
-            # code...
-            print_r($_POST);
-        }
-    ?>
-    <div class="w-full">
-        <div class="w-full flex justify-between flex-wrap py-6 gap-4">
-            <a type="button" href="{{route('rest.services.index')}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold"><span class="text-sm fas fa-arrow-left"></span></a>
-            <a href="{{route('rest.projects.create', $service->id)}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold lowercase"><span class="text-base" style="font-family:sans !important; ">new project</span></a>
-            <a href="{{route('rest.projects.index', $service->id)}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold lowercase"><span class="text-base" style="font-family:sans !important; ">projects</span></a>
-            <a href="{{route('rest.services.images', $service->id)}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold lowercase"><span class="text-base" style="font-family:sans !important; ">images</span></a>
-        </div>
-        <div class="w-full">
-            <div id="imageBar" class="w-full items-center justify-center flex whitespace-nowrap overflow-x-scroll no-scrollbar my-2">
-            </div>
-            <div class="w-full items-center justify-center py-6">
-                <div id="creationForm" class="rounded-md bg-slate-950 shadow-md py-10 px-6 w-4/5 sm:3/5 mx-auto border-x border-black border-opacity-30">
-                    <div class="w-full md:grid grid-cols-2 divide-x divide-slate-600">
+@section('section')
+    <section class="section profile">
+        <div class="row">
+            <div class="col-xl-4">
 
-
-                        <div class="col-span-1 px-4 py-2 text-white text-opacity-60">
-                            <div class="w-full mx-auto my-2">
-                                <img src="{{$service->icon_path}}" width="120" height="130" class="rounded-md border border-slate-400 mx-auto" />
-                            </div>
-                            <div class="w-full my-2">
-                                <label for="name" class="text-white text-opacity-50 font-bold text-base capitalize text-left">{{$service->name}}</label>
-                            </div>
-                        </div>
-
-
-                        <div class="col-span-1 px-4 py-2 text-white text-opacity-60 gap-y-8">
-                            <div class="w-full my-2">
-                                <label for="contact" class="text-white text-opacity-50 text-base capitalize text-left">{{$service->contact}}</label>
-                            </div>
-                            <div class="w-full my-2">
-                                <label for="email" class="text-white text-opacity-50 text-base text-left">{{$service->email}}</label>
-                            </div>
-                            <div class="w-full my-2">
-                                <label for="address" class="whitespace-pre-wrap text-white text-opacity-50 text-base text-left">{{$service->address}}</label>
-                            </div class="w-full my-2">
-                                <label for="description" class="w-full whitespace-pre-wrap text-white text-opacity-50 text-base text-left">{{$service->description}}</label>
-                            </div>
+                <div class="card">
+                    <div class="card-body profile-card py-5 d-flex flex-column align-items-center">
+                        <img src="{{ $service->img_path == null ? asset('img/logo1.jpg') : $service->img_path }}" alt="Profile" class="img img-rounded">
+                        <h2 class="text-center">{{ $service->name??'' }}</h2>
+                        <h6 class="text-center">{{ $service->caption??'null caption' }}</h6>
+                        <div class="social-links mt-2">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
+
+            </div>
+
+            <div class="col-xl-8">
+
+                <div class="card">
+                    <div class="card-body pt-3">
+                        <!-- Bordered Tabs -->
+                        <ul class="nav nav-tabs nav-tabs-bordered">
+
+                            <li class="nav-item">
+                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Details</button>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('rest.projects.index', $service->id) }}">Projects <small class="text-danger">({{ $service->projects->count() }})</small></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('rest.assets.index', $service->id) }}">Property <small class="text-danger">({{ $service->property->count() }})</small></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('rest.services.bookings', $service->id) }}">Bookings</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('rest.services.images', $service->id) }}">Gallery</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content pt-2">
+
+                            <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                                <p class="small fst-italic">{!! $service->description??'' !!}</p>
+
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label ">Name</div>
+                                    <div class="col-lg-9 col-md-8">{{ $service->name??'' }}</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Caption</div>
+                                    <div class="col-lg-9 col-md-8">{{ $service->caption??'' }}</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Category</div>
+                                    <div class="col-lg-9 col-md-8">{{ $service->category->name??'' }}</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Price</div>
+                                    <div class="col-lg-9 col-md-8">XAF {{ $service->price??'---' }}</div>
+                                </div>
+
+                                <hr>
+
+                                <div class="form-control d-flex flex-wrap">
+                                    @foreach ($service->images as $image)
+                                        <div class="m-1 position-relative">
+                                            <img class="img img-thumbnail" style="height: 7rem; width: auto;" src="{{ $image->img_path }}">
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                            </div>
+
+
+
+                        </div><!-- End Bordered Tabs -->
+                        <hr>
+                        <div class="navbar navbar-inverse">
+                            <ul class="nav nav-tabs">
+
+                                <li class="pull-right">
+                                    <a class=" btn mx-1 btn-xs btn-outline-primary" href="{{ route('rest.projects.create', $service->id) }}">new project</a>
+                                </li>
+
+                                <li class="pull-right">
+                                    <a class=" btn mx-1 btn-xs btn-outline-primary" href="{{ route('rest.assets.create', $service->id) }}">new property</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 @endsection

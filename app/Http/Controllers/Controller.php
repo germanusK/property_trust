@@ -50,58 +50,37 @@ class Controller extends BaseController
     function search(){}
 
 
-    // Grade management
-    function grade_store(Request $request){
-        $validator = Validator::make($request->all(), [
-            'name'=>'required'
-        ]);
-        if ($validator->fails()) {
-            # code...
-            return back()->with('error', $validator->errors()->first());
-        }
-        $grade = new Grade($request->all());
-        $grade->save();
-        return back()->with('success', 'Done');
-    }
-    
-
-    function grade_update(Request $request, $id){
-        $valid = Validator::make($request->all(), [
-            'name'=>'required'
-        ]);
-        if ($valid->fails()) {
-            # code...
-            return back()->with('error', $valid->errors()->first());
-        }
-        $grade = Grade::find($id);
-        $grade->fill($request->all());
-        $grade->save();
-        return back()->with('success', 'Done');
-    }
-
-
-    function grade_delete($id){
-        DB::table('grades')->delete($id);
-        return back()->with('success', 'Done');
-    }
-
     public function category_index()
     {
         # code...
-        return view('dashboard.property.categories.index');
+        $data['title'] = "Categories";
+        return view('dashboard.categories.index', $data);
     }
+    
+
+    public function category_show(Request $request, $id)
+    {
+        # code...
+        $cat = Category::find($id);
+        $data['category'] = $cat;
+        $data['title'] = "Categories Details";
+        return view('dashboard.categories.show', $data);
+    }
+
 
     public function category_create()
     {
         # code...
-        return view('dashboard.property.categories.create');
+        $data['title'] = "Create New Category";
+        return view('dashboard.categories.create', $data);
     }
 
     public function category_edit($id)
     {
         # code...
         $data['category'] = Category::find($id);
-        return view('dashboard.property.categories.edit', $data);
+        $data['title'] = "Edit Category / ".$data['category']->name??'';
+        return view('dashboard.categories.edit', $data);
     }
     public function category_delete($id)
     {
@@ -118,12 +97,25 @@ class Controller extends BaseController
     public function category_store(Request $request)
     {
         # code...
-        $valid = Validator::make($request->all(), ['name'=>'required']);
+        $valid = Validator::make($request->all(), ['name'=>'required', 'description'=>'required', 'image'=>'required|file']);
         if ($valid->fails()) {
             # code...
-            return back()->with('error', $valid->errors()->first());
+            session()->flash('error', $valid->errors()->first());
+            return back()->withInput();
         }
-        $category = new Category($request->all());
+        if(Category::where(['name'=>$request->name])->count() > 0){
+            session()->flash('error', "Category already exists with the same name.");
+            return back()->withInput();
+        }
+        
+        $data = ['name'=>$request->name, 'description'=>$request->description];
+        if(($icon_file = $request->file('image')) != null){
+            $path = public_path('uploads/category_images');
+            $fname = 'category_'.random_int(1000000, 9999999).'_'.time().'.'.$icon_file->getClientOriginalExtension();
+            $icon_file->move($path, $fname);
+            $data['image'] = $fname;
+        }
+        $category = new Category($data);
         $category->save();
         return back()->with('success', 'Done');
     }
@@ -131,34 +123,26 @@ class Controller extends BaseController
     public function category_update(Request $request, $id)
     {
         # code...
-        $valid = Validator::make($request->all(), ['name'=>'required']);
+        $valid = Validator::make($request->all(), ['name'=>'required', 'description'=>'required']);
         if ($valid->fails()) {
             # code...
-            return back()->with('error', $valid->errors()->first());
+            session()->flash('error', $valid->errors()->first());
+            return back()->withInput();
+        }
+        if(Category::where('id', '!=', $id)->where(['name'=>$request->name])->count() > 0){
+            session()->flash('error', "A category with the same name already exist");
+            return back()->withInput();
         }
         $category = Category::find($id);
-        $category->fill($request->all());
-        $category->save();
+        $data = ['name'=>$request->name, 'description'=>$request->description];
+        if(($icon_file = $request->file('image')) != null){
+            $path = public_path('uploads/category_images');
+            $fname = 'category_'.random_int(1000000, 9999999).'_'.time().'.'.$icon_file->getClientOriginalExtension();
+            $icon_file->move($path, $fname);
+            $data['image'] = $fname;
+        }
+        $category->update($data);
         return back()->with('success', 'Done');
-    }
-
-    public function grade_create()
-    {
-        # code...
-        return view('dashboard.property.grades.create');
-    }
-
-    public function grade_edit(Request $request, $id)
-    {
-        # code...
-        $data['grade'] = Grade::find($id);
-        return view('dashboard.property.grades.edit', $data);
-    }
-
-    public function grade_index()
-    {
-        # code...
-        return view('dashboard.property.grades.index');
     }
 
     public function _search(Request $request)

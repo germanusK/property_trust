@@ -1,61 +1,68 @@
 @extends('dashboard.main')
-@section('content')
-    <?php 
-        if (isset($_POST['submit'])) {
-            # code...
-            print_r($_POST);
-        }
-    ?>
-    <div class="w-full">
-        <div class="w-full flex flex-wrap py-6 gap-4">
-            <a type="button" href="{{route('rest.services.index')}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold"><span class="text-lg fas fa-arrow-left"></span></a>
-        </div>
-        <div class="flex align-middle items-center py-1 bg-slate-950 rounded">
-            <h3 class=" mx-auto text-xl font-semibold text-white px-4">Edit Service ({{$service->name}})</h3>
-        </div>
-        <div class="w-full">
-            <div id="imageBar" class="w-full items-center justify-center flex whitespace-nowrap overflow-x-scroll no-scrollbar my-2">
-            </div>
-            <div class="w-full items-center justify-center py-6">
-                <form id="creationForm" enctype="multipart/form-data" method="post" class="rounded-md bg-slate-950 shadow-md py-10 px-6 w-4/5 sm:3/5 mx-auto border-x border-black border-opacity-30">
-                    @csrf
-                    <div class="w-full md:grid grid-cols-2 divide-x divide-slate-600">
-
-
-                        <div class="col-span-1 px-4 py-2">
-                            <div class="w-full sm:w-2/3 mx-auto my-2">
-                                <img src="" width="120" height="130" class="rounded-md border border-slate-400" />
-                            </div>
-                            <div class="w-full my-2">
-                                <label for="name" class="text-white text-opacity-50 text-base capitalize text-left">name:</label><br>
-                                <input type="text" name="name" value="{{$service->name}}" required id="" placeholder="item name here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
-                            </div>
-                            <div class="w-full my-2">
-                                <label for="contact" class="text-white text-opacity-50 text-base capitalize text-left">contact:</label><br>
-                                <input type="tel" name="contact" value="{{$service->contact}}" id="" placeholder=" contact here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
-                            </div>
-                        </div>
-
-
-                        <div class="col-span-1 px-4 py-2">
-                            <div class="w-full my-2">
-                                <label for="email" class="text-white text-opacity-50 text-base capitalize text-left">email:</label><br>
-                                <input type="email" name="email" value="{{$service->email}}" id="" placeholder=" email here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">
-                            </div>
-                            <div class="w-full my-2">
-                                <label for="images" class="text-white text-opacity-50 text-base capitalize text-left">images:</label><br>
-                                <input type="file" required name="images" multiple accept="mimes:png,jpg,jpeg,gif,tif" id="" placeholder="image" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11 py-2">
-                            </div>
-                                <label for="description" class="text-white text-opacity-50 text-base capitalize text-left">description:</label><br>
-                                <textarea rows="4" name="description" id="" placeholder="item description here" class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70">{{$service->description}}</textarea>
-                            </div>
-                            <div class="w-full py-2 justify-end flex">
-                                <button id="creationBtn" type="submit" name="submit" class="px-3 py-2 border-b border-white text-white rounded font-semibold">update</button>
-                            </div>
-                        </div>
+@section('section')
+     <div class="card">
+        <div class="card-body pt-5">
+            <!-- Horizontal Form -->
+            <form method="POST">
+                @csrf
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="name" value="{{ old('old', $service->name) }}">
                     </div>
-                </form>
-            </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Caption</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" name="caption" value="{{ old('caption', $service->caption??'') }}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">category</label>
+                    <div class="col-sm-10">
+                    <select class="form-control" name="category_id">
+                        @foreach (\App\Models\Category::orderBy('name')->get() as $cat)
+                            <option value="{{ $cat->id }}" {{ old('category_id', $service->category_id) == $cate->id ? 'selected' : '' }}>{{ $cat->name??'' }}</option>
+                        @endforeach
+                    </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Description</label>
+                    <div class="col-sm-10">
+                        <!-- TinyMCE Editor -->
+                        <textarea class="tinymce-editor form-control" name="description" placeholder="Enter property specifications">{!! old('description', $service->description) !!}
+                        </textarea>
+                        <!-- End TinyMCE Editor -->
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Price</label>
+                    <div class="col-sm-10">
+                    <input type="number" class="form-control" name="price" value="{{ old('price', $service->price??'') }}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Image</label>
+                    <div class="col-sm-10">
+                    <input type="file" class="form-control" name="image">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary px-3">Submit</button>
+                    <button type="reset" class="btn btn-secondary px-3">Reset</button>
+                </div>
+            </form><!-- End Horizontal Form -->
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        preview = function(event){
+            file = event.target.files[0];
+            url = URL.createObjectURL(file);
+            console.log(url);
+            document.getElementById('icon_preview').src = url;
+        }
+    </script>
 @endsection

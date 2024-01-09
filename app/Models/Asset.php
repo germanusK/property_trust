@@ -9,7 +9,7 @@ class Asset extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'quantity', 'price', 'address', 'description'];
+    protected $fillable = ['name', 'quantity', 'price', 'address', 'description', 'service_id'];
 
     protected $table = "assets";
 

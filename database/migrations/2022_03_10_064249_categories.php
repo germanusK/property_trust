@@ -19,6 +19,7 @@ class Categories extends Migration
             $table->engine='InnoDB';
             $table->id();
             $table->string("name");
+            $table->string("image")->nullable();
             $table->text("description")->nullable();
             $table->timestamps();
         });

@@ -1,4 +1,9 @@
 <div class="w-full h-auto bg-slate-900 text-slate-200 relative">
+    <div class="w-full align-middle bg-slate-900 text-white items-center justify-center flex py-2">
+        <div id="peti-design" class="w-11/12 rounded-md mx-auto h-full flex align-middle items-center justify-center text-center text-ellipsis line-clamp-3 text-xl font-semibold border-y-2">
+            <marquee>Don't wait to buy real estate, Buy real estate and wait</marquee> 
+        </div>
+    </div>
     <div id="seach-box" class="h-full w-full">
         <x-search-component/>
     </div>
@@ -45,11 +50,6 @@
     <div class="w-1/5 hidden absolute md:flex top-0 right-0 border-b-8 border-l-8 rounded-bl-full border-white z-20 bg-slate-900 justify-center items-center align-middle flex-wrap pl-4 py-4">
         <a href="{{ url('/') }}" class="mx-4"><span class="text-4xl font-semibold text-slate-200 fas fa-home"></span></a>
         {{-- <a href="{{ url('/login') }}" class="mx-4"><span class="text-4xl font-sans mx-5 text-blue-100 "> &curlyeqsucc;</span></a> --}}
-    </div>
-    <div class="w-full h-2/5 md:h-24 mt-12 align-middle text-slate-900 bg-white items-center justify-center flex py-2">
-        <div id="peti-design" class="w-4/5 px-6 rounded-xl mx-auto h-full flex align-middle items-center justify-center text-center text-ellipsis line-clamp-3 text-4xl font-semibold border-y-4">
-            <marquee>Don't wait to buy real estate, Buy real estate and wait</marquee> 
-        </div>
     </div>
 </div>
 

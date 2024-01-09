@@ -24,4 +24,11 @@ class Property extends Controller
         $data['service'] = Service::find($service_id);
         return view('service_details', $data);
     }
+
+    public function services_booking(Request $request)
+    {
+        # code...
+        
+        $request->dd();
+    }
 }

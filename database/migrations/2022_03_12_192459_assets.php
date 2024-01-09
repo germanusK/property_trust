@@ -29,6 +29,7 @@ class Assets extends Migration
             $table->integer("quantity");
             $table->string("price");//price per item.
             $table->string("address")->nullable();//price per item.
+            $table->unsignedBigInteger("service_id");//price per item.
             $table->string("description")->nullable(); //concise description of the item e.g house properties and facilities.
             $table->timestamps();
         });

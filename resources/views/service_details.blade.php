@@ -6,16 +6,17 @@
             <div class="flex justify-center text-center text-base font-semibold my-6">
                 <span><a class="text-blue-900" href="{{url('/')}}">Home</a> :: <a class="text-blue-900" href="{{URL::previous()}}">Services</a> :: <span class="text-blue-600">Details</span></span>
             </div>
-            <div class="py-4 my-14  md:grid lg:grid grid-cols-3 bg-slate-100 shadow-2xl shadow-slate-900">
-                <div class="col-span-2 px-6 flex flex-col justify-center">
+            <div class="py-4 my-14  md:grid lg:grid grid-cols-5 bg-slate-100 shadow-2xl shadow-slate-900">
+                <div class="col-span-3 px-6 flex flex-col justify-center">
                     <img class="w-full h-auto" src="{{ $service->icon_path ?? asset('asset_images/_1676749992_484911.jpg') }}">
                 </div>
-                <div class="col-span-1 px-7 bg-slate-950 border border-gray-400 border-opacity-40 py-14">
+                <div class="col-span-2 px-7 bg-slate-950 border border-gray-400 border-opacity-40 py-14">
                     <span class="font-semibold text-2xl capitalize block w-full text-center text-white text-opacity-80 py-2">{{ $service->name }}</span>
                     <span class="text-blue-300 text-opacity-50 block text-center">{{ $service->contact }} ::: {{ $service->email }}</span>
                     <span class="text-lg text-white text-opacity-70 py-4 block text-justify">{{ $service->description }}</span>
-                    <div class="py-8 px-6 my-4 block bg-white bg-opacity-10 rounded">
-                        <form method="POST">
+                    <div class="py-8 px-6 my-4 -mb-14 block bg-white bg-opacity-10 rounded">
+                        <form method="POST" action="{{ route('public.services.book', $service->id) }}">
+                            @csrf
                             <div class="my-2">
                                 <label class="text-blue-200 text-opacity-70 block">Name</label>
                                 <input type="text" name="name" class="w-full h-9 rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white" required>
@@ -27,6 +28,10 @@
                             <div class="my-2">
                                 <label class="text-blue-200 text-opacity-70">Contact (optional)</label>
                                 <input type="tel" name="contact" class="w-full h-9 rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white">
+                            </div>
+                            <div class="my-2">
+                                <label class="text-blue-200 text-opacity-70">Contact (optional)</label>
+                                <textarea name="message" required rowspan="3" class="w-full rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white"></textarea>
                             </div>
                             <div class="my-6">
                                 <button type="submit" class="w-3/5 block mx-auto h-9 rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-40 text-white text-opacity-70">Book Service</button>

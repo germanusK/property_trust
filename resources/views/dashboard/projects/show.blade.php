@@ -1,55 +1,83 @@
 @extends('dashboard.main')
-@section('content')
-    <?php 
-        if (isset($_POST['submit'])) {
-            # code...
-            print_r($_POST);
-        }
-    ?>
-    <div class="w-full">
-        <div class="w-full flex flex-wrap py-6 gap-4">
-            <a type="button" href="{{route('rest.projects.index')}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold"><span class="text-lg fas fa-arrow-left"></span></a>
-        </div>
-        <div class="w-full">
-            <div id="imageBar" class="w-full items-center justify-center flex whitespace-nowrap overflow-x-scroll no-scrollbar my-2">
-            </div>
-            <div class="w-full items-center justify-center py-6">
-                <div id="creationForm" class="rounded-md bg-slate-950 shadow-md py-10 px-6 w-4/5 sm:3/5 mx-auto border-x border-black border-opacity-30">
-                    @csrf
-                    <div class="w-full md:grid grid-cols-2 divide-x divide-slate-600">
+@section('section')
+    <section class="section profile">
+        <div class="row">
+            <div class="col-xl-4">
 
-
-                        <div class="col-span-1 px-4 py-2 divide-y divide-slate-500">
-                            <div class="w-full sm:w-2/3 mx-auto my-2">
-                                <img src="" width="120" height="130" class="rounded-md border border-slate-400" />
-                            </div>
-                            <div class="w-full my-2">
-                                <label for="name" class="text-white text-opacity-50 text-base capitalize text-left">name:</label><br>
-                                <div class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">{{$project->name}}</div>
-                            </div>
-                            <div class="w-full my-2">
-                                <label for="contact" class="text-white text-opacity-50 text-base capitalize text-left">contact:</label><br>
-                                <div class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">{{$project->contact}}</div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-span-1 px-4 py-2 divide-y divide-slate-500">
-                            <div class="w-full my-2">
-                                <label for="email" class="text-white text-opacity-50 text-base capitalize text-left">email:</label><br>
-                                <div class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">{{$project->email}}</div>
-                            </div>
-                            <div class="w-full my-2">
-                                <label for="address" class="text-white text-opacity-50 text-base capitalize text-left">address:</label><br>
-                                <div class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70 h-11">{{$project->address}}</div>
-                            </div>
-                                <label for="description" class="text-white text-opacity-50 text-base capitalize text-left">description:</label><br>
-                                <div class="sm:w-2/3 flex-auto bg-white px-3 bg-opacity-10 rounded text-white text-opacity-60 placeholder-white placeholder-opacity-70">{{$project->description}}</div>
-                            </div>
+                <div class="card">
+                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                        <img src="{{ $project->images()->first()->img_path??'' }}" alt="Profile" class="rounded-circle">
+                        <h2>{{ $project->name??'' }}</h2>
+                        <h6>{{ $project->address??'' }}</h6>
+                        <div class="social-links mt-2">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
+
+            </div>
+
+            <div class="col-xl-8">
+
+                <div class="card">
+                    <div class="card-body pt-3">
+                        <!-- Bordered Tabs -->
+                        <ul class="nav nav-tabs nav-tabs-bordered">
+
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Details</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ route('rest.projects.edit', $project->id) }}" class="nav-link">Edit Project</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ route('rest.projects.images', $project->id) }}" class="nav-link">Images</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a href="{{ route('rest.projects.delete', $project->id) }}" class="nav-link">Delete</a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content pt-2">
+
+                            <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                                <p class="small fst-italic">{!! $project->description??'' !!}</p>
+
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                                    <div class="col-lg-9 col-md-8">Kevin Anderson</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Company</div>
+                                    <div class="col-lg-9 col-md-8">Lueilwitz, Wisoky and Leuschke</div>
+                                </div>
+
+                                <hr>
+
+                                <div class="form-control d-flex flex-wrap">
+                                    @foreach ($project->images as $image)
+                                        <div class="m-1 position-relative">
+                                            <img class="img img-thumbnail" style="height: 7rem; width: auto;" src="{{ $image->img_path }}">
+                                        </div>
+                                    @endforeach
+                                </div>
+
+                            </div>
+
+                        </div><!-- End Bordered Tabs -->
+
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 @endsection

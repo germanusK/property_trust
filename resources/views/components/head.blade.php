@@ -4,16 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Property Trust</title>
+
+        <link href="{{ asset('img/logo1.jpg') }}" rel="icon">
+        <link href="{{ asset('img/logo1.jpg') }}" rel="apple-touch-icon">
         
         <link href=" {{ asset('css/app.css') }}" rel="stylesheet">
-        {{-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">  --}}
         <link rel="stylesheet" href="{{ asset('tailwindcss/tailwind-all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('fontawesome-free-6.0.0-beta1-web/css/all.min.css') }}">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+        {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" /> --}}
 
-        {{-- <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://cdn.tailwindcss.com/3.3.0"></script> --}}
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/animejs/anime.min.js') }}"></script>

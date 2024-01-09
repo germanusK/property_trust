@@ -18,9 +18,8 @@ class MailBase extends Mailable
      */
     private $data;
 
-    public function __construct($data)
+    public function __construct($data = ['title'=>'', 'address'=>'', 'name'=>'', 'url'=>'url', 'due_date'=>'timestamp', 'mail_type'=>'int'])// data must be associative array as : ['title'=>'', 'address'=>'', 'name'=>'', 'url'=>'url', 'due_date'=>'timestamp', 'mail_type'=>'int']
     {
-        //data must be associative array as : ['title'=>'', 'address'=>'', 'name'=>'', 'url'=>'url', 'due_date'=>'timestamp', 'mail_type'=>'int']
         $this->data = $data;
     }
 
@@ -35,7 +34,7 @@ class MailBase extends Mailable
             case 1:
                 XX:
                 # code...
-                return $this->view('view.name', ['data'=>$this->data]);
+                return $this->view('mail.base', ['data'=>$this->data]);
 
             default:
                 # code...

@@ -11,17 +11,27 @@ class Service extends Model
 
     protected $table = 'services';
 
-    protected $fillable = ['name', 'contact', 'email', 'description', 'icon_path'];
-
+    protected $fillable = ['name', 'caption', 'category_id', 'price', 'description', 'icon_path'];
+ 
     public function images()
     {
         # code...
-        return $this->hasMany(AssetImage::class, 'asset_id')->where('type', 'service');
+        return $this->hasMany(ServiceImage::class, 'service_id');
     }
 
     public function projects()
     {
         # code...
         return $this->hasMany(Project::class, 'service_id');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function property()
+    {
+        return $this->hasMany(Asset::class, 'service_id');
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Asset;
+use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AssetFactory extends Factory
@@ -21,7 +22,8 @@ class AssetFactory extends Factory
             'quantity'=>random_int(10, 150),
             'price'=>$this->faker->numberBetween(5000, 50000),
             'address'=>$this->faker->address(),
-            'description'=>$this->faker->text()
+            'description'=>$this->faker->text(),
+            'service_id'=>random_int(1, Service::count())
         ];
     }
 }

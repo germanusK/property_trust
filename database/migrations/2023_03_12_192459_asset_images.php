@@ -26,9 +26,8 @@ class AssetImages extends Migration
             $table->engine = "InnoDB";
             $table->id();
             $table->unsignedBigInteger("asset_id");
-            $table->string("url");
+            $table->string("img_path");
             $table->text("description")->nullable();
-            $table->enum('type', ['property', 'project', 'service'])->default('property');
             $table->timestamps();
         });
     }

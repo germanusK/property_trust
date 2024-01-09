@@ -19,6 +19,8 @@ class CreateProjectsTable extends Migration
             $table->string('contact')->nullable();
             $table->string('email')->nullable();
             $table->text('description');
+            $table->text('address');
+            $table->unsignedBigInteger('service_id');
             $table->timestamps();
         });
     }

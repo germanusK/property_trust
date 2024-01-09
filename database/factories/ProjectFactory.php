@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Project;
+use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProjectFactory extends Factory
@@ -20,7 +21,8 @@ class ProjectFactory extends Factory
             'name'=>$this->faker->buildingNumber(),
             'contact'=>$this->faker->phoneNumber(),
             'email'=>$this->faker->email(),
-            'description'=>$this->faker->text()
+            'description'=>$this->faker->text(),
+            'service_id'=>random_int(1, Service::count()),
         ];
     }
 }

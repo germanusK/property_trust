@@ -17,9 +17,12 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->nullable();
-            $table->string('contact');
-            $table->text('description')->nullable();
-            $table->string('icon_path')->nullable();
+            $table->string('contact')->nullable();
+            $table->string('caption')->nullable();
+            $table->integer('price')->nullable();
+            $table->text('description');
+            $table->unsignedBigInteger('category_id');
+            $table->string('img_path')->nullable();
             $table->timestamps();
         });
     }

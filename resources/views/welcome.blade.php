@@ -8,10 +8,10 @@
         <!-- END OF PAGE HEADER -->
         
 
-        <!-- STATISTICS -->
-        <div class="w-11/12 md:w-5/6 h-auto my-16 rounded-xl mx-auto">
+        <div class="w-11/12 md:w-5/6 h-auto mt-16 mb-8 rounded-xl mx-auto">
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 py-3 text-center border rounded-xl bg-light">
+            <!-- STATISTICS -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 py-3 text-center bg-light">
                 <div class="relative mb-12 px-3 lg:mb-0">
                   <div class="mb-2 flex justify-center">
                     <span class="text-primary">
@@ -19,7 +19,7 @@
                         xmlns="https://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="h-14 w-14">
+                        class="h-11 w-11">
                         <path
                           d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
                       </svg>
@@ -37,7 +37,7 @@
                         xmlns="https://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="h-14 w-14">
+                        class="h-11 w-11">
                         <path
                           d="M11.644 1.59a.75.75 0 01.712 0l9.75 5.25a.75.75 0 010 1.32l-9.75 5.25a.75.75 0 01-.712 0l-9.75-5.25a.75.75 0 010-1.32l9.75-5.25z" />
                         <path
@@ -59,7 +59,7 @@
                         xmlns="https://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="h-14 w-14">
+                        class="h-11 w-11">
                         <path
                           fill-rule="evenodd"
                           d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 00-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 00-2.282.819l-.922 1.597a1.875 1.875 0 00.432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 000 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 00-.432 2.385l.922 1.597a1.875 1.875 0 002.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 002.28-.819l.923-1.597a1.875 1.875 0 00-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 000-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 00-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 00-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 00-1.85-1.567h-1.843zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z"
@@ -79,7 +79,7 @@
                         xmlns="https://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"
-                        class="h-14 w-14">
+                        class="h-11 w-11">
                         <path
                           fill-rule="evenodd"
                           d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
@@ -92,7 +92,19 @@
                 </div>
             </div>
             <!-- /STATISTICS -->
+        </div>
 
+        <!-- BANNER -->
+        <div class="w-full h-auto mt-4 bg-black">
+            <div class="w-11/12 md:w-5/6  mx-auto text-center bg-light">
+                <div class="">
+                    <img class="object-fill object-center w-full h-auto" src="{{ asset('img/banners/horizontal1.gif') }}">
+                </div>
+            </div>
+        </div>
+        <!-- /BANNER -->
+
+        <div class="w-11/12 md:w-5/6 h-auto my-8 rounded-xl mx-auto">
             <!-- SERVICES -->
             <div class="text-center text-2xl md:text-3xl text-slate-700 capitalize mt-12 ">our services <br> <hr class="w-1/6 md:w-1/12 border border-slate-300 border-dashed mx-auto"></div>
             <div class="w-full bg-light flex md:flex-wrap overflow-x-scroll no-scrollbar whitespace-nowrap md:whitespace-normal">
@@ -119,134 +131,213 @@
                     @endforeach
                 </div>
             </div>
+            <!-- END OF SERVICES -->
         </div>
-        <!-- END OF SERVICES -->
 
 
 
         <!-- Our works or products -->
         <!-- Latest -->
-        <div class="w-full h-auto md:h-screen bg-slate-900 py-12">
-            
-            <div class="w-11/12 md:w-5/6 mx-auto text-2xl text-slate-100 text-center font-semibold py-2">Latest Deals</div>
-            <div class="w-11/12 md:w-5/6 mx-auto text-slate-500 text-center mb-4">Don't think about it's current value. <br>Think about it's future value</div>
-            <!-- Horizontal scrolling container -->
-            <div class="w-well h-96 md:h-3/4 mx-auto my-4  relative">
-                
-                <div class="bg-transparent absolute z-20 h-full w-full flex justify-center items-center align-middle">
-                    <div class="w-full h-fit flex py-4 justify-between">
-                        <li class="w-12 hidden md:flex flex-col justify-center align-middle" onclick="_scrollLeft()">
-                            <a class="font-black py-1 rounded-full text-sky-900 text-6xl font-sans drop-shadow-2xl">&Lang;</a>
-                        </li>
-                        <li class="w-12 hidden md:flex flex-col justify-center align-middle" onclick="_scrollRight()">
-                            <span class="font-black py-1 rounded-full text-sky-900 text-6xl font-sans drop-shadow-2xl">&Rang;</span>
-                        </li>
+        <div class="lg:grid grid-cols-4 w-full">
+            <div class="lg:col-span-1 flex items-center justify-center">
+                <img class="object-cover object-center w-full h-full" src="{{ asset('img/hero.jpeg') }}">
+            </div>
+            <div class=" lg:col-span-3 ">
+                <div class="w-full h-auto md:h-screen bg-black py-12">
+                    
+                    <div class="lg:w-11/12 mx-auto text-2xl text-slate-100 text-center font-semibold py-2">Latest Deals</div>
+                    <div class="lg:w-11/12 mx-auto text-slate-500 text-center mb-4">Don't think about it's current value. <br>Think about it's future value</div>
+                    <!-- Horizontal scrolling container -->
+                    <div class="w-well h-96 md:h-3/4 mx-auto my-4  relative">
+                        
+                        <div class="bg-transparent absolute z-20 h-full w-full flex justify-center items-center align-middle">
+                            <div class="w-full h-fit flex py-4 justify-between">
+                                <li class="w-12 hidden md:flex flex-col justify-center align-middle" onclick="_scrollLeft()">
+                                    <a class="font-black py-1 rounded-full text-sky-900 text-6xl font-sans drop-shadow-2xl">&Lang;</a>
+                                </li>
+                                <li class="w-12 hidden md:flex flex-col justify-center align-middle" onclick="_scrollRight()">
+                                    <span class="font-black py-1 rounded-full text-sky-900 text-6xl font-sans drop-shadow-2xl">&Rang;</span>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="w-full mx-auto h-full flex whitespace-nowrap overflow-x-scroll no-scrollbar scroll-smooth" id="generic_scrollable">
+                            @if(count($assets)>0)
+                                @foreach($assets->shuffle() as $value)
+                                <!-- Horizontal scroll item -->
+                                <x-generic-item :data="$value" class="mx-2"/>
+                                @endforeach
+                            @endif
+                        </div>
                     </div>
                 </div>
-                <div class="w-full mx-auto h-full flex whitespace-nowrap overflow-x-scroll no-scrollbar scroll-smooth" id="generic_scrollable">
-                    @if(count($assets)>0)
-                        @foreach($assets->shuffle() as $value)
-                        <!-- Horizontal scroll item -->
-                        <x-generic-item :data="$value" class="mx-2"/>
-                        @endforeach
-                    @endif
+                <!-- Others -->
+                <div class="w-full whitespace-nowrap md:whitespace-normal overflow-x-scroll no-scrollbar">
+                    <div class="w-fit md:w-full h-auto flex md:flex-wrap items-baseline align-middle justify-center" >
+                        @if(count($assets)>0)
+                            @foreach($assets as $value)
+                            <div class="w-72 whitespace-normal service-cards">
+                                <x-generic-item2 :data="$value"/>
+                            </div>
+                            @endforeach
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Others -->
-        <div class="w-full whitespace-nowrap md:whitespace-normal overflow-x-scroll no-scrollbar">
-            <div class="w-fit md:w-full h-auto flex md:flex-wrap items-baseline align-middle justify-center" >
-                @if(count($assets)>0)
-                    @foreach($assets as $value)
-                    <div class="w-72 whitespace-normal service-cards">
-                        <x-generic-item2 :data="$value"/>
-                    </div>
-                    @endforeach
-                @endif
-            </div>
-        </div>
 
         <!-- Our core values and interests -->
-        <div class="w-full bg-slate-950 py-6 shadow-inner justify-center">
+        <div class="w-full bg-slate-50 py-6 shadow-inner justify-center">
             <div class="w-full rounded-2xl max-h-screen">
                 <video class="object-contain h-full w-56 md:w-64 lg:w-64 mx-auto rounded-md my-3" src="{{ asset('videos/vid1.mp4') }}" controls></video>
             </div>
         </div>
+
         
-        <div class="w-full col-span-2 md:px-8 h-auto sm:grid grid-cols-3 mx-auto py-12">
-            <div class="col-span-3 text-center text-2xl font-semibold pb-10">Core Values <br> <span class="text-sm capitalize">our standards at the core</span></div>
-            <!-- <hr class="col-span-3"> -->
-            <div class="col-span-3 h-full flex flex-wrap items-bottom align-center justify-evenly">
-                
-                <!-- single item -->
-                <div class=" w-56 my-6 mx-2 bg-light rounded px-1 py-4 h-auto shadow-md shadow-blue-950" style="min-width: 8rem; border-style:groove;">
-                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white shadow shadow-blue-600 py-1 text-center text-lg font-medium text-blue-950">Commitment</div>
-                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">You are our pillars, we ensure the security of your request. </div>
-                </div>
-                
-                <!-- single item -->
-                <div class=" w-56 my-6 mx-2 bg-light rounded px-1 py-4 h-auto shadow-md shadow-blue-950" style="min-width: 8rem; border-style:groove;">
-                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white shadow shadow-blue-600 py-1 text-center text-lg font-medium text-blue-950">Simplicity</div>
-                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">You are at the center of our process design. Straight forward and concise. </div>
-                </div>
-                
-                <!-- single item -->
-                <div class=" w-56 my-6 mx-2 bg-light rounded px-1 py-4 h-auto shadow-md shadow-blue-950" style="min-width: 8rem; border-style:groove;">
-                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white shadow shadow-blue-600 py-1 text-center text-lg font-medium text-blue-950">Excellence</div>
-                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">Our service grade is second to none. Confirm it yourself. </div>
-                </div>
-                
-                <!-- single item -->
-                <div class=" w-56 my-6 mx-2 bg-light rounded px-1 py-4 h-auto shadow-md shadow-blue-950" style="min-width: 8rem; border-style:groove;">
-                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white shadow shadow-blue-600 py-1 text-center text-lg font-medium text-blue-950">Innovation</div>
-                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">With our diversified collection of services, you can always get a better fit.</div>
-                </div>
-                
-                <!-- single item -->
-                <div class=" w-56 my-6 mx-2 bg-light rounded px-1 py-4 h-auto shadow-md shadow-blue-950" style="min-width: 8rem; border-style:groove;">
-                    <div class="w-2/3 mx-auto -mt-9 rounded-full bg-white shadow shadow-blue-600 py-1 text-center text-lg font-medium text-blue-950">Proactivity</div>
-                    <div class="w-full px-2 h-full flex items-center justify-center align-middle py-1 text-center text-base font-normal text-gray-700">All you need to get your deals done is set. Hassle free deals for you.</div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Our users testify -->
-        <div class="w-full h-auto bg-light py-12 justify-center">
-            <div class="w-11/12  md:w-5/6 mx-auto md:px-16 rounded-2xl h-auto">
-                <div class="w-full text-center text-2xl text-slate-900 font-semibold py-10">Our Customers <br><span class="text-sm capitalize">they are satisfied</span></div>
-                <!-- <hr class="col-span-3"> -->
-                <div class="w-full mx-auto overflow-x-scroll no-scrollbar whitespace-nowrap md:whitespace-normal">
-                    <div class="w-fit md:w-full h-full flex md:flex-wrap items-bottom align-center justify-evenly">
-                        @foreach (\App\Models\Customer::inRandomOrder()->take(3)->get()->shuffle() as $customer)
-                            <!-- single item -->
-                            <div class=" my-3 mx-2 px-3 pb-4 h-auto w-72 max-w-full relative whitespace-normal service-cards">
-                                <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                    <a href="#!">
-                                        <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
-                                    </a>
-                                    <div class="p-6 bg-slate-900 rounded-b-lg bg-opacity-25">
-                                        <h5 class="mb-2 text-xl text-center font-semibold leading-tight text-neutral-800 dark:text-neutral-50"> {{ $customer->name }} </h5>
-                                        <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                                        Tel: {{ $customer->contact }}, {{ $customer->email }}
-                                        </p>
-                                        {{-- <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
-                                        Button
-                                        </button> --}}
-                                    </div>
+        <!-- BG-VIDEO -->
+        <div class="w-full h-fit mt-4 bg-black">
+            <div class="relative min-h-full">
+                <video autoplay loop muted class="absolute w-auto h-full -z-10 object-cover object-center">
+                    <source src="{{ asset('videos/advert1.mp4') }}" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div class="w-full h-full min-h-fit flex flex-col justify-center text-center z-20 bg-slate-950 bg-opacity-80">
+                    <div class=" py-6 px-3 md:w-5/6 mx-auto text-center">
+                        <h2 class="font-semibold text-capitalize my-8 text-3xl text-slate-300">We cover all you need</h2>
+                        <div class="sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 space-x-4">
+                            <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-black rounded-lg shadow-lg my-4 border">
+                                <div class="flex-1 flex flex-col justify-center text-center py-3">
+                                    <span class="text-2xl text-slate-300 font-semibold">Commercial Real Estate</span>
+                                </div>
+                                <div class="flex-1 flex flex-col justify-center text-center">
+                                    <span class="text-lg text-slate-400 font-semibold capitalize">retail spaces, hospitals, offices, nursing homes, and storage facilities</span>
                                 </div>
                             </div>
-                        @endforeach
+                            <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-black rounded-lg shadow-lg my-4 border">
+                                <div class="flex-1 flex flex-col justify-center text-center py-3">
+                                    <span class="text-2xl text-slate-300 font-semibold">Residential Real Estate</span>
+                                </div>
+                                <div class="flex-1 flex flex-col justify-center text-center">
+                                    <span class="text-lg text-slate-400 font-semibold capitalize">Duplexes, apartment buildings, multifamily housing, condos, tiny home investing, and student housing</span>
+                                </div>
+                            </div>
+                            <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-black rounded-lg shadow-lg my-4 border">
+                                <div class="flex-1 flex flex-col justify-center text-center py-3">
+                                    <span class="text-2xl text-slate-300 font-semibold">Land Ownership Real Estate</span>
+                                </div>
+                                <div class="flex-1 flex flex-col justify-center text-center">
+                                    <span class="text-lg text-slate-400 font-semibold capitalize">land that’s purchased, sold, and rented out</span>
+                                </div>
+                            </div>
+                            <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-black rounded-lg shadow-lg my-4 border">
+                                <div class="flex-1 flex flex-col justify-center text-center py-3">
+                                    <span class="text-2xl text-slate-300 font-semibold">Construction</span>
+                                </div>
+                                <div class="flex-1 flex flex-col justify-center text-center">
+                                    <span class="text-lg text-slate-400 font-semibold capitalize">architectural design, project execution, etc</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- /BG-VIDEO -->
 
-        <!-- Contact -->
-        <div class="w-full h-auto border-y-2">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.3234487756235!2d9.284495013744113!3d4.156663596977882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x106131fb28383773%3A0xe0908049832295fd!2sPROPERTY%20TRUST!5e0!3m2!1sen!2scm!4v1679866113967!5m2!1sen!2scm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mx-auto"></iframe>
+        
+        <div class="w-full md:px-8 h-auto lg:grid grid-cols-4 mx-auto py-12">
+            <div class="col-span-3">
+
+                <div class="w-full col-span-2 md:px-8 h-auto sm:grid grid-cols-3 mx-auto py-12">
+                    <div class="col-span-3 text-center text-2xl font-semibold pb-10">Core Values <br> <span class="text-sm capitalize">our standards at the core</span></div>
+                    <!-- <hr class="col-span-3"> -->
+                    <div class="col-span-3 h-full">
+                        <div class="sm:grid grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 space-x-4">
+                            <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-white rounded-lg shadow-lg my-4 border">
+                                <div class="flex-1 flex flex-col justify-center text-center py-3">
+                                    <span class="text-2xl text-slate-600 font-semibold">Commitment</span>
+                                </div>
+                                <div class="flex-1 flex flex-col justify-center text-center">
+                                    <span class="text-lg text-slate-500 font-semibold capitalize">You are our pillars, we ensure the security of your request.</span>
+                                </div>
+                            </div>
+                            <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-white rounded-lg shadow-lg my-4 border">
+                                <div class="flex-1 flex flex-col justify-center text-center py-3">
+                                    <span class="text-2xl text-slate-600 font-semibold">Simplicity</span>
+                                </div>
+                                <div class="flex-1 flex flex-col justify-center text-center">
+                                    <span class="text-lg text-slate-500 font-semibold capitalize">You are at the center of our process design. Straight forward and concise.</span>
+                                </div>
+                            </div>
+                            <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-white rounded-lg shadow-lg my-4 border">
+                                <div class="flex-1 flex flex-col justify-center text-center py-3">
+                                    <span class="text-2xl text-slate-600 font-semibold">Excellence</span>
+                                </div>
+                                <div class="flex-1 flex flex-col justify-center text-center">
+                                    <span class="text-lg text-slate-500 font-semibold capitalize">Our service grade is second to none. Confirm it yourself.</span>
+                                </div>
+                            </div>
+                            <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-white rounded-lg shadow-lg my-4 border">
+                                <div class="flex-1 flex flex-col justify-center text-center py-3">
+                                    <span class="text-2xl text-slate-600 font-semibold">Innovation</span>
+                                </div>
+                                <div class="flex-1 flex flex-col justify-center text-center">
+                                    <span class="text-lg text-slate-500 font-semibold capitalize">With our diversified collection of services, you can always get a better fit</span>
+                                </div>
+                            </div>
+                            <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-white rounded-lg shadow-lg my-4 border">
+                                <div class="flex-1 flex flex-col justify-center text-center py-3">
+                                    <span class="text-2xl text-slate-600 font-semibold">Proactivity</span>
+                                </div>
+                                <div class="flex-1 flex flex-col justify-center text-center">
+                                    <span class="text-lg text-slate-500 font-semibold capitalize">All you need to get your deals done is set. Hassle free deals for you</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Our users testify -->
+                <div class="w-full h-auto bg-light py-12 justify-center">
+                    <div class="w-11/12  md:w-5/6 mx-auto md:px-16 rounded-2xl h-auto">
+                        <div class="w-full text-center text-2xl text-slate-900 font-semibold py-10">Our Customers <br><span class="text-sm capitalize">they are satisfied</span></div>
+                        <!-- <hr class="col-span-3"> -->
+                        <div class="w-full mx-auto overflow-x-scroll no-scrollbar whitespace-nowrap md:whitespace-normal">
+                            <div class="w-fit md:w-full h-full flex md:flex-wrap items-bottom align-center justify-evenly">
+                                @foreach (\App\Models\Customer::inRandomOrder()->take(3)->get()->shuffle() as $customer)
+                                    <!-- single item -->
+                                    <div class=" my-3 mx-2 px-3 pb-4 h-auto w-72 max-w-full relative whitespace-normal service-cards">
+                                        <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                                            <a href="#!">
+                                                <img class="rounded-t-lg" src="{{asset('img/customer1.jpeg')}}" alt="" />
+                                            </a>
+                                            <div class="p-6 bg-slate-900 rounded-b-lg bg-opacity-25">
+                                                <h5 class="mb-2 text-xl text-center font-semibold leading-tight text-neutral-800 dark:text-neutral-50"> {{ $customer->name }} </h5>
+                                                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                                                Tel: {{ $customer->contact }}, {{ $customer->email }}
+                                                </p>
+                                                {{-- <button type="button" class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]" data-te-ripple-init data-te-ripple-color="light">
+                                                Button
+                                                </button> --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="w-full h-auto border-y-2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.3234487756235!2d9.284495013744113!3d4.156663596977882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x106131fb28383773%3A0xe0908049832295fd!2sPROPERTY%20TRUST!5e0!3m2!1sen!2scm!4v1679866113967!5m2!1sen!2scm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mx-auto"></iframe>
+                </div>
+            </div>
+            <div class="">
+                <img class="object-center object-fill w-full h-auto" src="{{ asset('img/banners/vertical1.gif') }}">
+            </div>
         </div>
+
 
         <!-- Subscription and footer-->
         <div class="w-full h-auto bg-blue-900">

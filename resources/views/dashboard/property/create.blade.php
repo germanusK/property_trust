@@ -1,74 +1,51 @@
 @extends('dashboard.main')
-@section('content')
-<?php 
-    if (isset($_POST['submit'])) {
-        # code...
-        print_r($_POST);
-    }
- ?>
+@section('section')
 <div class="w-full">
-    <div class="w-full flex flex-wrap py-6 gap-4">
-        <a type="button" href="{{url('/rest/property')}}" class="px-3 py-2 border-b border-white text-white rounded font-semibold"><span class="text-lg fas fa-arrow-left"></span></a>
-    </div>
-    <div class="flex align-middle items-center py-1 bg-slate-950 rounded">
-        <h3 class=" mx-auto text-xl font-semibold text-white px-4">Create Property</h3>
-    </div>
-    <div class="w-full">
-        <div id="imageBar" class="w-full items-center justify-center flex whitespace-nowrap overflow-x-scroll no-scrollbar my-2">
-        </div>
-        <div class="w-full items-center justify-center py-6">
-            <form id="creationForm" enctype="multipart/form-data" method="post" class="rounded-md bg-slate-950 shadow-md py-10 px-2 md:px-6 w-4/5 sm:3/5 mx-auto border-x border-black border-opacity-30">
+    
+    <!-- Top Selling -->
+    <div class="card py-4">
+        <div class="card-body">
+            <!-- Vertical Form -->
+            <form class="row g-3" method="post" enctype="multipart/form-data">
                 @csrf
-                <div class="w-full md:grid grid-cols-2 divide-x divide-slate-600">
-                    <div class="col-span-1 px-1 py-2">
-                        <div class="w-full my-2 min-w-fit">
-                            <label for="name" class="text-white text-opacity-50 text-base capitalize text-left">name:</label><br>
-                            <input type="text" name="name" required id="" placeholder="item name here" class="w-full max-w-full sm:w-2/3 flex-auto bg-opacity-10 rounded text-blue-950 text-opacity-80 placeholder-blue-800 placeholder-opacity-70 h-11">
-                        </div>
-                        <div class="w-full my-2 min-w-fit">
-                            <label for="price" class="text-white text-opacity-50 text-base capitalize text-left">price:</label><br>
-                            <input type="number" required name="price" id="" placeholder="item price here" class="w-full max-w-full sm:w-2/3 flex-auto bg-opacity-10 rounded text-blue-950 text-opacity-80 placeholder-blue-800 placeholder-opacity-70 h-11">
-                        </div>
-                        <div class="w-full my-2 min-w-fit">
-                            <label for="description" class="text-white text-opacity-50 text-base capitalize text-left">description:</label><br>
-                            <textarea rows="4" name="description" id="" placeholder="item description here" class="w-full max-w-full sm:w-2/3 flex-auto bg-opacity-10 rounded text-blue-950 text-opacity-80 placeholder-blue-800 placeholder-opacity-70"></textarea>
-                        </div>
-                        <div class="w-full my-2 min-w-fit">
-                            <label for="images" class="text-white text-opacity-50 text-base capitalize text-left">images:</label><br>
-                            <input type="file" required multiple name="images[]" id="" placeholder="images here" class="w-full max-w-full sm:w-2/3 flex-auto bg-opacity-10 rounded text-blue-950 text-opacity-80 placeholder-blue-800 placeholder-opacity-70 h-11 py-2">
-                        </div>
-                    </div>
-                    <div class="col-span-1 px-1 py-2">
-                        <div class="w-full my-2">
-                            <label for="images" class="text-white text-opacity-50 text-base capitalize">categories:</label><br>
-                            <div class="flex flex-wrap justify-between bg-white px-3 bg-opacity-10 text-blue-950 text-opacity-60 rounded p-2 shadow-lg">
-                                @foreach (\App\Models\Category::all() as $cat)
-                                    <span class="px-1 mx-1 flex" style="font-size: 0.8rem;">
-                                        <input type="checkbox" value="{{$cat->id}}" name="categories[]" class="mr-1">
-                                        <span class="lowercase">{{$cat->name}}</span>
-                                    </span>
-                                @endforeach
-                            </div>
-                        </div>
-                        <div class="w-full my-2">
-                            <label for="images" class="text-white text-opacity-50 text-base capitalize">grades:</label><br>
-                            <div class="flex flex-wrap justify-between bg-white px-3 bg-opacity-10 text-blue-950 text-opacity-60 rounded p-2 shadow-lg">
-                                @foreach (\App\Models\Grade::all() as $grd)
-                                    <span class="px-1 mx-1 flex" style="font-size: 0.8rem;">
-                                        <input type="checkbox" value="{{$grd->id}}" name="grades[]" class="mr-1">
-                                        <span class="lowercase">{{$grd->name}}</span>
-                                    </span>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                    
+                <div class="col-12">
+                    <label for="inputNanme4" class="form-label">Property Name</label>
+                    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                 </div>
-                <div class="w-full items-end justify-end flex px-6">
-                    <button id="creationBtn" type="submit" name="submit" class="px-3 py-2 border-b border-white text-white rounded font-semibold">create</button>
+                <div class="col-12">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" name="address" value="{{ old('address') }}" placeholder="Enter property location">
                 </div>
-            </form>
+                <div class="col-12">
+                    <label for="inputPassword4" class="form-label">Unit price</label>
+                    <input type="number" class="form-control" name="price" placeholder="enter unit price" value="{{ old('price') }}"> 
+                </div>
+                <div class="col-12">
+                    <label for="inputEmail4" class="form-label">Specifications</label>
+                    <!-- TinyMCE Editor -->
+                    <textarea class="tinymce-editor form-control" name="description" placeholder="Enter property specifications" style="height: 6rem !important;">{!! old('description') !!}
+                    </textarea>
+                    <!-- End TinyMCE Editor -->
+                </div>
+                <div class="col-12">
+                    <label for="inputEmail4" class="form-label">Images</label>
+                    <!-- TinyMCE Editor -->
+                    <div class="form-control input-images">
+                    </div>
+                    <!-- End TinyMCE Editor -->
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary px-5">Save</button>
+                    <button type="reset" class="btn btn-secondary px-5">Reset</button>
+                </div>
+            </form><!-- Vertical Form -->
         </div>
     </div>
+    <!-- End Top Selling -->
 </div>
+@endsection
+@section('script')
+    <script>
+        $('.input-images').imageUploader({label:"Uplaod Images"});
+    </script>
 @endsection

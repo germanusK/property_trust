@@ -1,3 +1,3 @@
 @extends('dashboard.main')
-@section('content')
+@section('section')
 @endsection

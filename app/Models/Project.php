@@ -16,7 +16,7 @@ class Project extends Model
     public function images()
     {
         # code...
-        return $this->hasMany(AssetImage::class, 'asset_id')->where('type', 'project');
+        return $this->hasMany(ProjectImage::class, 'project_id');
     }
 
     public function service()

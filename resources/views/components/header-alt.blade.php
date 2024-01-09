@@ -1,4 +1,9 @@
 <div class="w-full h-auto bg-slate-900 text-slate-200 relative">
+    <div class="w-full align-middle bg-slate-900 text-white items-center justify-center flex py-2">
+        <div id="peti-design" class="w-11/12 rounded-md mx-auto h-full flex align-middle items-center justify-center text-center text-ellipsis line-clamp-3 text-xl font-semibold border-y-2">
+            <marquee>Don't wait to buy real estate, Buy real estate and wait</marquee> 
+        </div>
+    </div>
     <div id="seach-box" class="h-full w-full">
         <x-search-component/>
     </div>
