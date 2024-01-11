@@ -1,5 +1,5 @@
 <!-- FOOTER GALLERY -->
-<div class="bg-black text-center text-white dark:bg-neutral-600 dark:text-neutral-200">
+<div class="bg-black text-center text-white dark:bg-neutral-600 dark:text-neutral-200 py-3">
   <div class="w-full whitespace-nowrap md:whitespace-normal overflow-x-scroll no-scrollbar">
     <div class="flex w-fit md:w-full md:flex-wrap items-baseline align-middle justify-center">
       @foreach (\App\Models\AssetImage::inRandomOrder()->take(48)->get() as $img)
@@ -14,7 +14,7 @@
 
 
 <!-- SUBSCRIPTION FORM -->
-<div class=" bg-gray-300 text-center">
+<div class=" bg-stone-950 border-t text-center">
   <!--Sign-up form section-->
   <div class="px-6 pt-6">
     <form method="post" action="{{ route('updates.subscribe') }}">
@@ -22,13 +22,13 @@
       <div
         class="gird-cols-1 grid items-center justify-center gap-4 md:grid-cols-3">
         <div class="md:mb-6 md:ml-auto">
-          <p class="text-secondary-800 dark:text-secondary-200">
+          <p class="text-secondary-600 dark:text-secondary-200">
             <strong>Sign up for our newsletter</strong>
           </p>
         </div>
 
         <div class="relative md:mb-6" data-te-input-wrapper-init>
-          <input type="email" name="email" class="peer block min-h-[auto] w-full rounded border bg-neutral-200 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-secondary-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0" id="exampleFormControlInput1" placeholder="Email address" required />
+          <input type="email" name="email" class="peer block min-h-[auto] w-full rounded border text-slate-200 bg-neutral-800 px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:placeholder:text-secondary-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0" id="exampleFormControlInput1" placeholder="Email address" required />
           <label for="exampleFormControlInput1" class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-secondary-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-secondary-200 dark:peer-focus:text-secondary-200">Email address</label>
         </div>
 
@@ -227,9 +227,9 @@
   </div>
 
   <!--Copyright section-->
-  <div class="bg-gray-300 p-6 text-center text-stone-700 ">
+  <div class="bg-neutral-950 p-6 text-center text-stone-300 ">
     <span>© 2023 Copyright:</span>
-    <a class="font-semibold text-neutral-900" href="https://propertytrust.group/">Property Trust Group</a>
+    <a class="font-semibold text-neutral-100" href="https://propertytrust.group/">Property Trust Group</a>
   </div>
 
   <!-- display alerts -->

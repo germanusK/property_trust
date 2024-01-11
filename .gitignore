@@ -8,6 +8,7 @@
 /public/assets/images/header.jpg
 /assets/images/header.jpg
 /assets/images/letter-head.jpeg
+/resources/views/NiceAdmin
 .env
 .env.backup
 .phpunit.result.cache

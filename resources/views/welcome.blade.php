@@ -139,9 +139,6 @@
         <!-- Our works or products -->
         <!-- Latest -->
         <div class="lg:grid grid-cols-4 w-full">
-            <div class="lg:col-span-1 flex items-center justify-center">
-                <img class="object-cover object-center w-full h-full" src="{{ asset('img/hero.jpeg') }}">
-            </div>
             <div class=" lg:col-span-3 ">
                 <div class="w-full h-auto md:h-screen bg-black py-12">
                     
@@ -183,24 +180,40 @@
                     </div>
                 </div>
             </div>
+            <div class="lg:col-span-1 flex items-center justify-center">
+                <img class="object-cover object-center w-full h-full" src="{{ asset('img/hero.jpeg') }}">
+            </div>
         </div>
 
-
+{{-- 
         <!-- Our core values and interests -->
         <div class="w-full bg-slate-50 py-6 shadow-inner justify-center">
             <div class="w-full rounded-2xl max-h-screen">
                 <video class="object-contain h-full w-56 md:w-64 lg:w-64 mx-auto rounded-md my-3" src="{{ asset('videos/vid1.mp4') }}" controls></video>
             </div>
-        </div>
+        </div> --}}
 
         
         <!-- BG-VIDEO -->
-        <div class="w-full h-fit mt-4 bg-black">
-            <div class="relative min-h-full">
-                <video autoplay loop muted class="absolute w-auto h-full -z-10 object-cover object-center">
+        <div class="w-full h-fit bg-black">
+            <div class="relative h-96 w-full">
+                <div class="w-full h-full min-h-fit flex flex-col items-center align-middle justify-center absolute text-center z-20 bg-slate-950 bg-opacity-80">
+                    {{-- <span class="block text-center text-4xl font-semibold text-slate-200 my-4">All</span> <br> --}}
+                    <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="w-24 hover:w-32 h-24 hover:h-32 flex items-center align-middle justify-center bg-red-700 text-white hover:bg-red-500 rounded-full hover:border border-white">
+                        <span class="fa-brands fa-youtube fa-4x shadow-2xl shadow-white outline-1"></span>
+                    </a>
+                </div>
+                <video autoplay loop muted class="absolute w-full h-full object-cover object-center">
                     <source src="{{ asset('videos/advert1.mp4') }}" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
+            </div>
+        </div>
+        <!-- /BG-VIDEO -->
+        
+        <!-- BG-VIDEO -->
+        <div class="w-full h-fit bg-black">
+            <div class="relative min-h-full">
                 <div class="w-full h-full min-h-fit flex flex-col justify-center text-center z-20 bg-slate-950 bg-opacity-80">
                     <div class=" py-6 px-3 md:w-5/6 mx-auto text-center">
                         <h2 class="font-semibold text-capitalize my-8 text-3xl text-slate-300">We cover all you need</h2>
@@ -245,7 +258,7 @@
         <!-- /BG-VIDEO -->
 
         
-        <div class="w-full md:px-8 h-auto lg:grid grid-cols-4 mx-auto py-12">
+        <div class="w-full xxl:px-8 h-auto lg:grid grid-cols-4 mx-auto">
             <div class="col-span-3">
 
                 <div class="w-full col-span-2 md:px-8 h-auto sm:grid grid-cols-3 mx-auto py-12">

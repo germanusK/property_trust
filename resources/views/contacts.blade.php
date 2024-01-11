@@ -8,22 +8,9 @@
         </div>
         <div class="w-full pt-12">
             
-            <div class=" shadow-inner bg-neutral-400">
-                <div class="w-full h-auto mb-4 md:grid grid-cols-3">
+            <div class=" shadow-inner bg-neutral-900">
+                <div class="w-full h-auto md:grid grid-cols-3">
                     <div class="w-full md:col-span-2 py-12">
-                        <div class="w-full max-w-lg px-4 py-6 rounded-md shadow bg-neutral-700 mx-auto">
-                            <form method="post" action="" id="contact_form">
-                                <input type="text" class="text-lg text-slate-900 placeholder-slate-700 h-12 w-full border border-slate-900 bg-neutral-200 rounded px-3 my-3" name="name" placeholder="enter your name here" required>
-                                <input type="email" class="text-lg text-slate-900 placeholder-slate-700 h-12 w-full border border-slate-900 bg-neutral-200 rounded px-3 my-3" name="email" placeholder="enter your email here; optional">
-                                <input type="tel" class="text-lg text-slate-900 placeholder-slate-700 h-12 w-full border border-slate-900 bg-neutral-200 rounded px-3 my-3" name="tel" placeholder="enter your phone number here; optional if email provided">
-                                <textarea class="text-lg text-slate-900 placeholder-slate-700 h-28 w-full border border-slate-900 bg-neutral-200 rounded px-3 my-3" name="message" placeholder="enter message here" required></textarea>
-                                <div class="flex justify-end my-3">
-                                    <input type="submit" class="h-12 px-8 rounded border border-slate-900 hover:bg-slate-200 font-semibold text-base text-slate-100" value="send" onclick="event.preventDefault(); confirm('You are about to send messgae') ? $('#contact_form').submit()">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="w-full md:col-span-1 shadow-md md:h-full py-12 bg-slate-950">
                         <div class="w-full flex flex-wrap justify-evenly py-8">
                             <div class="m-4">
                                 <a href="https://twitter.com/ptrustgroup/status/1683360424031297537?s=46&t=2ItHQJHSl4cknkDUHt1jRg" class=" flex w-12 h-12 sm:w-16 sm:h-16 items-center justify-center align-middle text-center rounded-full border bg-slate-300"><span class="fab fa-twitter inline text-4xl text-blue-800"></span></a>
@@ -41,31 +28,54 @@
                                 <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class=" flex w-12 h-12 sm:w-16 sm:h-16 items-center justify-center align-middle text-center rounded-full border bg-slate-300"><span class="fa-brands fa-youtube inline text-4xl text-blue-800"></span></a>
                             </div>
                         </div>
+                        <div class="w-full md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-12">
+                            <div class="justify-center items-center p-3 md:h-full col-span-2">
+                                <div class="rounded-lg border py-4 px-2 h-full bg-slate-950 bg-opacity-20">
+                                    <div class="w-16 h-16 bg-black my-8 text-blue-100 mx-auto rounded-full border flex items-center align-middle justify-center"><span class="fa fa-location text-4xl"></span></div>
+                                    <div class="text-center text-slate-300 text-base font-bold font-sans">
+                                    HQ:  Buea:  Opposite Sumerset/Heartland supermarket and opposite Orange Molyko <br>
+                                    Douala: 2eme Avenue Logpom <br>
+                                    Yaoundé:  Bonne Diz, Odja <br>
+                                    Limbe:  Opposite Castillina, Behind GHS Limbe, Mile 2</div>
+                                </div>
+                            </div>
+                            <div class="justify-center items-center p-3 md:h-full">
+                                <div class="rounded-lg border py-4 px-2 h-full bg-slate-950 bg-opacity-20">
+                                    <div class="w-16 h-16 bg-black my-8 text-blue-100 mx-auto rounded-full border flex items-center align-middle justify-center"><span class="fa fa-envelope text-4xl"></span></div>
+                                    <div class="text-center text-slate-300 text-base font-bold font-sans">bpropertytrust@gmail.com</div>
+                                </div>
+                            </div>
+                            <div class="justify-center items-center p-3 md:h-full">
+                                <div class="rounded-lg border py-4 px-2 h-full bg-slate-950 bg-opacity-20">
+                                    <div class="w-16 h-16 bg-black my-8 text-blue-100 mx-auto rounded-full border flex items-center align-middle justify-center"><span class="fa fa-phone text-4xl"></span></div>
+                                    <div class="text-center text-slate-300 text-base font-bold font-sans">+237 652078411</div>
+                                </div>
+                            </div>
+                            <div class="justify-center items-center p-3 md:h-full">
+                                <div class="rounded-lg border py-4 px-2 h-full bg-slate-950 bg-opacity-20">
+                                    <div class="w-16 h-16 bg-black my-8 text-blue-100 mx-auto rounded-full border flex items-center align-middle justify-center"><span class="fab fa-whatsapp text-4xl"></span></div>
+                                    <div class="text-center text-slate-300 text-base font-bold font-sans">+237 652078411</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:col-span-1 shadow-md md:h-full bg-slate-950">
+                        <div class="w-full h-full max-w-lg px-12 py-16 flex flex-col justify-center items-center rounded-md shadow mx-auto">
+                            <span class="text-center text-xl font-semibold capitalize text-neutral-200">Leave a Message</span><hr class="border-t my-4 w-full">
+                            <form method="post" action="" id="contact_form">
+                                <input type="text" class="text-lg text-slate-200 placeholder-slate-400 h-12 w-full border border-slate-600 bg-neutral-900 rounded px-3 my-3" name="name" placeholder="enter your name here" required>
+                                <input type="email" class="text-lg text-slate-200 placeholder-slate-400 h-12 w-full border border-slate-600 bg-neutral-900 rounded px-3 my-3" name="email" placeholder="enter your email here; optional">
+                                <input type="tel" class="text-lg text-slate-200 placeholder-slate-400 h-12 w-full border border-slate-600 bg-neutral-900 rounded px-3 my-3" name="tel" placeholder="enter your phone number here; optional if email provided">
+                                <textarea class="text-lg text-slate-200 placeholder-slate-400 h-28 w-full border border-slate-600 bg-neutral-900 rounded px-3 my-3" name="message" placeholder="enter message here" required></textarea>
+                                <div class="flex justify-end my-3">
+                                    <input type="submit" class="h-12 px-8 rounded border border-slate-600 bg-neutral-900 font-semibold text-base text-slate-100" value="send" onclick="event.preventDefault(); confirm('You are about to send messgae') ? $('#contact_form').submit()">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="w-full sm:w-5/6 md:grid grid-cols-4 mx-auto flex flex-wrap justify-evenly py-12">
-                <div class="justify-center items-center">
-                    <div class="w-12 h-12 text-blue-800 mx-auto"><span class="fa fa-envelope text-4xl"></span></div>
-                    <div class="text-center text-slate-700 text-base font-bold font-sans">bpropertytrust@gmail.com</div>
-                </div>
-                <div class="justify-center items-center">
-                    <div class="w-12 h-12 text-blue-800 mx-auto"><span class="fa fa-phone text-4xl"></span></div>
-                    <div class="text-center text-slate-700 text-base font-bold font-sans">+237 652078411</div>
-                </div>
-                <div class="justify-center items-center">
-                    <div class="w-12 h-12 text-blue-800 mx-auto"><span class="fa fa-globe text-4xl"></span></div>
-                    <div class="text-center text-slate-700 text-base font-bold font-sans">
-                    HQ:  Buea:  Opposite Sumerset/Heartland supermarket and opposite Orange Molyko <br>
-                    Douala: 2eme Avenue Logpom <br>
-                    Yaoundé:  Bonne Diz, Odja <br>
-                    Limbe:  Opposite Castillina, Behind GHS Limbe, Mile 2</div>
-                </div>
-                <div class="justify-center items-center">
-                    <div class="w-12 h-12 text-blue-800 mx-auto"><span class="fab fa-whatsapp text-4xl"></span></div>
-                    <div class="text-center text-slate-700 text-base font-bold font-sans">+237 652078411</div>
-                </div>
-            </div>
+            
 
             <div class="w-full h-auto flex flex-wrap items-center align-middle justify-around">
                 <div class="w-full h-auto border-y-2">
