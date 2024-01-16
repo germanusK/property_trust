@@ -123,7 +123,7 @@
                                     <div class="font-semibold py-4 text-xl text-blue-800 text-center text-ellipsis line-clamp-2">
                                         {{ $service->name }}
                                     </div>
-                                    <div class="text-lg text-slate-600 text-center line-clamp-3 mb-7">{{ $service->description }}</div>
+                                    <div class="text-lg text-slate-600 text-center line-clamp-3 mb-7">{!! $service->description !!}</div>
                                     <a class="px-8 py-3 rounded-full bg-blue-900 text-white" href="{{ route('public.services.details', [$service->id]) }}">more info</a>
                                 </div>
                             </div>
@@ -181,11 +181,11 @@
                 </div>
             </div>
             <div class="lg:col-span-1 flex items-center justify-center">
-                <img class="object-cover object-center w-full h-full" src="{{ asset('img/hero.jpeg') }}">
+                <img class="object-cover object-center w-full h-full border-x-4" src="{{ asset('img/hero.jpeg') }}">
             </div>
         </div>
 
-{{-- 
+        {{-- 
         <!-- Our core values and interests -->
         <div class="w-full bg-slate-50 py-6 shadow-inner justify-center">
             <div class="w-full rounded-2xl max-h-screen">

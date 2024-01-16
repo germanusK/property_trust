@@ -6,35 +6,53 @@
             <div class="flex justify-center text-center text-base font-semibold my-6">
                 <span><a class="text-blue-900" href="{{url('/')}}">Home</a> :: <a class="text-blue-900" href="{{URL::previous()}}">Services</a> :: <span class="text-blue-600">Details</span></span>
             </div>
-            <div class="py-4 my-14  md:grid lg:grid grid-cols-5 bg-slate-100 shadow-2xl shadow-slate-900">
-                <div class="col-span-3 px-6 flex flex-col justify-center">
-                    <img class="w-full h-auto" src="{{ $service->icon_path ?? asset('asset_images/_1676749992_484911.jpg') }}">
+            <div class="my-14  md:grid lg:grid grid-cols-6 bg-white shadow-2xl shadow-slate-900">
+                <div class="col-span-2 px-6 flex flex-col justify-center bg-stone">
+                    <img class="w-full h-auto" id="photo_element" src="{{ $service->icon_path ?? asset('asset_images/_1676749992_484911.jpg') }}">
+                    <div class="flex space-x-2">
+                        @foreach ($service->images as $img)
+                            <img src="{{ $img->img_path }}" class="object-center h-16 w-16 rounded" onclick="showPhoto(this)">
+                        @endforeach
+                    </div>
+                </div>
+                <div class="col-span-2 px-6 flex flex-col justify-center shadow-xl">
+                    <div class="py-3">
+                        <div class="text-sm text-neutral-600 capitalize">Name:</div>
+                        <div class="text-neutral-900">{{ $service->name }}</div>
+                    </div>
+                    <div class="py-3">
+                        <div class="text-sm text-neutral-600 capitalize">category:</div>
+                        <div class=" text-neutral-900">{{ $service->category->name??'' }}</div>
+                    </div>
+                    <div class="py-3">
+                        <div class="text-sm text-neutral-600 capitalize">details:</div>
+                        <div class="text-neutral-900">{!! $service->description??'' !!}</div>
+                    </div>
                 </div>
                 <div class="col-span-2 px-7 bg-slate-950 border border-gray-400 border-opacity-40 py-14">
-                    <span class="font-semibold text-2xl capitalize block w-full text-center text-white text-opacity-80 py-2">{{ $service->name }}</span>
-                    <span class="text-blue-300 text-opacity-50 block text-center">{{ $service->contact }} ::: {{ $service->email }}</span>
-                    <span class="text-lg text-white text-opacity-70 py-4 block text-justify">{{ $service->description }}</span>
-                    <div class="py-8 px-6 my-4 -mb-14 block bg-white bg-opacity-10 rounded">
+                    <div class="py-12 my-6 block rounded">
+                        <div class="text-center text-3xl font-semibold text-neutral-300 my-4">Book For Service</div>
+                        <hr class="w-1/5 mx-auto opacity-40 border-4">
                         <form method="POST" action="{{ route('public.services.book', $service->id) }}">
                             @csrf
                             <div class="my-2">
                                 <label class="text-blue-200 text-opacity-70 block">Name</label>
-                                <input type="text" name="name" class="w-full h-9 rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white" required>
+                                <input type="text" name="name" value="{{ old('name') }}" class="w-full h-9 rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white" required>
                             </div>
                             <div class="my-2">
                                 <label class="text-blue-200 text-opacity-70">Email</label>
-                                <input type="email" name="email" class="w-full h-9 rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white" required>
+                                <input type="email" name="email" value="{{ old('email') }}" class="w-full h-9 rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white" required>
                             </div>
                             <div class="my-2">
                                 <label class="text-blue-200 text-opacity-70">Contact (optional)</label>
-                                <input type="tel" name="contact" class="w-full h-9 rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white">
+                                <input type="tel" name="contact" value="{{ old('contact') }}" class="w-full h-9 rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white">
                             </div>
                             <div class="my-2">
-                                <label class="text-blue-200 text-opacity-70">Contact (optional)</label>
-                                <textarea name="message" required rowspan="3" class="w-full rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white"></textarea>
+                                <label class="text-blue-200 text-opacity-70">Message</label>
+                                <textarea name="message" required rows="5" class="w-full rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white p-2">{{ old('message', "I came accross this service on propertytrust.group and would love to know more about it.") }}</textarea>
                             </div>
                             <div class="my-6">
-                                <button type="submit" class="w-3/5 block mx-auto h-9 rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-40 text-white text-opacity-70">Book Service</button>
+                                <button type="submit" class="px-8 block ml-auto mr-0 h-9 rounded border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-40 text-white text-opacity-70">Book Service</button>
                             </div>
                         </form>
                     </div>
@@ -60,5 +78,10 @@
             <x-footer></x-footer>
         </div>
     </div>
+    <script>
+        let showPhoto = function(element){
+            $('#photo_element').prop('src', $(element).prop('src'));
+        }
+    </script>
 </body>
 </html>

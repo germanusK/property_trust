@@ -30,7 +30,7 @@ class Controller extends BaseController
     function _index(){
         // return '---------------------------';
         // get latest/trending items 
-        $assets = Asset::where('quantity', '>', 0)->orderBy('created_at', 'DESC')->take(12)->get();
+        $assets = Asset::orderBy('id', 'DESC')->take(12)->get();
     
         $data = ['assets'=>collect($assets)];
         return view('welcome', $data);

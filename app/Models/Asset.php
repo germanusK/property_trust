@@ -13,11 +13,7 @@ class Asset extends Model
 
     protected $table = "assets";
 
-    function categories()
-    {
-        # code...
-        return $this->belongsToMany(Category::class, AssetCategory::class);
-    }
+
 
     public function grades()
     {

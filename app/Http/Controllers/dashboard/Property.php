@@ -4,8 +4,6 @@ namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Asset;
-use App\Models\AssetCategory;
-use App\Models\AssetGrade;
 use App\Models\AssetImage;
 use App\Models\Project;
 use App\Models\ProjectImage;
@@ -13,20 +11,24 @@ use App\Models\Service;
 use App\Models\ServiceImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
-use phpDocumentor\Reflection\Types\Object_;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Throwable;
 
 class Property extends Controller
 {
 
     // ASSET MANAGEMENT
-    public function index()
+    public function index(Request $request, $service_id = null)
     {
         # code...
         $data['title'] = "All Property";
+        $data['data'] = Asset::all();
+        if($service_id != null){
+            $data['data'] = Service::find($service_id)->property;
+        }
+        if($request->has('catex1')){
+            $data['data'] = \App\Models\Category::find($request->catex1)->assets;
+        }
         return view('dashboard.property.index', $data);
     }
 
@@ -132,7 +134,6 @@ class Property extends Controller
         return view('dashboard.property.images', $data);
     }
 
-
     public function update_images(Request $request, $id)
     {
         # code...
@@ -166,8 +167,6 @@ class Property extends Controller
 
         return redirect()->route('rest.assets.show', $id)->with('success', "Operation complete");
     }
-
-
 
     public function delete($id)
     {
@@ -349,6 +348,9 @@ class Property extends Controller
         $data['data'] = Project::all();
         if($service_id != null){
             $data['data'] = $data['data']->where('service_id', $service_id);
+        }
+        if($request->has('catex1')){
+            $data['data'] = \App\Models\Category::find($request->catex1)->projects;
         }
         // dd($data);
         return view('dashboard.projects.index', $data);

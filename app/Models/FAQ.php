@@ -5,11 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AssetGrade extends Model
+class FAQ extends Model
 {
     use HasFactory;
+    protected $table = "faqs";
 
-    protected $fillable = ['asset_id', 'grade_id'];
-
-    protected $table = "asset_grades";
+    protected $fillable = ['title', 'content'];
 }

@@ -135,6 +135,7 @@ Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
     Route::post('/profile', [Main::class, 'update_user_profile']);
     Route::get('/faqs/{id?}', [Main::class, 'faqs'])->name('faqs');
     Route::post('/faqs/{id?}', [Main::class, 'update_faqs']);
+    Route::post('/faqs/delete/{id}', [Main::class, 'delete_faqs'])->name('faqs.delete');
 });
 
 
