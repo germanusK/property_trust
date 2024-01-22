@@ -29,6 +29,10 @@ class Main extends Controller
         $assets = Asset::whereYear('created_at', now()->format('Y'))->count();
         $services = Service::whereYear('created_at', now()->format('Y'))->count();
         $projects = Project::whereYear('created_at', now()->format('Y'))->count();
+        $data['assets'] = Asset::count();
+        $data['services'] = Service::count();
+        $data['projects'] = Project::count();
+        $data['customers'] = Customer::count();
 
         $base = $asset_base + $service_base + $project_base;
         $change = $assets + $services + $projects;
