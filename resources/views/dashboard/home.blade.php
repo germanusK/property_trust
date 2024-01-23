@@ -7,7 +7,7 @@
           <div class="row">
 
             <!-- Property Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xl-4 col-sm-6">
               <div class="card info-card sales-card">
 
                 {{-- <div class="filter">
@@ -42,7 +42,7 @@
             </div><!-- End Property Card -->
 
             <!-- Services Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xl-4 col-sm-6">
               <div class="card info-card revenue-card">
 
                 {{-- <div class="filter">
@@ -77,7 +77,7 @@
             </div><!-- End Services Card -->
 
             <!-- Projects Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xl-4 col-sm-6">
 
               <div class="card info-card customers-card">
 
@@ -114,7 +114,7 @@
             </div><!-- End Projects Card -->
 
             <!-- Schedules Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xl-4 col-sm-6">
 
               <div class="card info-card customers-card">
 

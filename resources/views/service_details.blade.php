@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-span-2 px-7 bg-slate-950 border border-gray-400 border-opacity-40 py-14">
                     <div class="py-12 my-6 block rounded">
-                        <div class="text-center text-3xl font-semibold text-neutral-300 my-4">Book For Service</div>
+                        <div class="text-center text-3xl font-semibold text-neutral-300 my-4">Make Service Enquiry</div>
                         <hr class="w-1/5 mx-auto opacity-40 border-4">
                         <form method="POST" action="{{ route('public.services.book', $service->id) }}">
                             @csrf
@@ -51,8 +51,9 @@
                                 <label class="text-blue-200 text-opacity-70">Message</label>
                                 <textarea name="message" required rows="5" class="w-full rounded-sm border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-70 text-white p-2">{{ old('message', "I came accross this service on propertytrust.group and would love to know more about it.") }}</textarea>
                             </div>
-                            <div class="my-6">
-                                <button type="submit" class="px-8 block ml-auto mr-0 h-9 rounded border border-opacity-30 border-slate-100 bg-slate-950 bg-opacity-40 text-white text-opacity-70">Book Service</button>
+                            <div class="my-6 font-semibold">
+                                <button type="submit" class="px-8 block mx-auto h-9 rounded border border-opacity-30 border-slate-100 bg-slate-700 bg-opacity-40 text-white text-opacity-70"> <span class="fa fa-clock"></span> Make Enquiry</button>
+                                <button onclick="window.location=`https://wa.me/237652078411?text='I came accross {{ $service->name }} on propertytrust.group'`" class="px-8 block mx-auto text-center h-9 rounded border border-opacity-30 border-slate-100 bg-green-700 bg-opacity-40 text-white text-opacity-70 my-3"> <span class="fab fa-whatsapp"></span> Chat on Whatsapp</button>
                             </div>
                         </form>
                     </div>

@@ -72,6 +72,7 @@ class Controller extends BaseController
     {
         # code...
         $data['title'] = "Create New Category";
+        $data['categories'] = Category::whereNull('category_id')->get();
         return view('dashboard.categories.create', $data);
     }
 
@@ -79,6 +80,7 @@ class Controller extends BaseController
     {
         # code...
         $data['category'] = Category::find($id);
+        $data['categories'] = Category::whereNull('category_id')->get();
         $data['title'] = "Edit Category / ".$data['category']->name??'';
         return view('dashboard.categories.edit', $data);
     }
@@ -108,7 +110,7 @@ class Controller extends BaseController
             return back()->withInput();
         }
         
-        $data = ['name'=>$request->name, 'description'=>$request->description];
+        $data = ['name'=>$request->name, 'description'=>$request->description, 'parent_id'=>$request->parent_id??null];
         if(($icon_file = $request->file('image')) != null){
             $path = public_path('uploads/category_images');
             $fname = 'category_'.random_int(1000000, 9999999).'_'.time().'.'.$icon_file->getClientOriginalExtension();
@@ -134,7 +136,7 @@ class Controller extends BaseController
             return back()->withInput();
         }
         $category = Category::find($id);
-        $data = ['name'=>$request->name, 'description'=>$request->description];
+        $data = ['name'=>$request->name, 'description'=>$request->description, 'parent_id'=>$request->parent_id];
         if(($icon_file = $request->file('image')) != null){
             $path = public_path('uploads/category_images');
             $fname = 'category_'.random_int(1000000, 9999999).'_'.time().'.'.$icon_file->getClientOriginalExtension();

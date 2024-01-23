@@ -22,7 +22,7 @@
                     <div class="col-sm-10">
                     <select class="form-control" name="category_id">
                         @foreach (\App\Models\Category::orderBy('name')->get() as $cat)
-                            <option value="{{ $cat->id }}" {{ old('category_id', $service->category_id) == $cate->id ? 'selected' : '' }}>{{ $cat->name??'' }}</option>
+                            <option value="{{ $cat->id }}" {{ old('category_id', $service->category_id) == $cat->id ? 'selected' : '' }}>{{ $cat->name??'' }}</option>
                         @endforeach
                     </select>
                     </div>

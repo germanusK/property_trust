@@ -11,7 +11,7 @@
         <div class="w-11/12 md:w-5/6 h-auto mt-16 mb-8 rounded-xl mx-auto">
 
             <!-- STATISTICS -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 py-3 text-center bg-light">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 px-4 py-3 my-4 text-center bg-light">
                 <div class="relative mb-12 px-3 lg:mb-0">
                   <div class="mb-2 flex justify-center">
                     <span class="text-primary">
@@ -92,10 +92,26 @@
                 </div>
             </div>
             <!-- /STATISTICS -->
+
         </div>
 
+        {{-- SERVICE CATEGORIES --}}
+        <div class="py-6 border-t">
+            <div class="w-11/12 md:w-5/6 h-auto mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+                    @for($i = 0; $i < 12; $i++)
+                        <div class="rounded border border-gray-100 m-1 hover:shadow hover:bg-neutral-100">
+                            <a class="flex flex-col w-full h-full text-center justify-center capitalize py-5" href="">category item</a>
+                        </div>
+                    @endfor
+                </div>
+            </div>
+        </div>
+        {{-- END OF SERVICE CATEGORIES --}}
+
+
         <!-- BANNER -->
-        <div class="w-full h-auto mt-4 bg-black">
+        <div class="w-full h-auto bg-black">
             <div class="w-11/12 md:w-5/6  mx-auto text-center bg-light">
                 <div class="">
                     <img class="object-fill object-center w-full h-auto" src="{{ asset('img/banners/horizontal1.gif') }}">
@@ -217,7 +233,7 @@
                 <div class="w-full h-full min-h-fit flex flex-col justify-center text-center z-20 bg-slate-950 bg-opacity-80">
                     <div class=" py-6 px-3 md:w-5/6 mx-auto text-center">
                         <h2 class="font-semibold text-capitalize my-8 text-3xl text-slate-300">We cover all you need</h2>
-                        <div class="sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 space-x-4">
+                        <div class="sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                             <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-black rounded-lg shadow-lg my-4 border">
                                 <div class="flex-1 flex flex-col justify-center text-center py-3">
                                     <span class="text-2xl text-slate-300 font-semibold">Commercial Real Estate</span>
@@ -265,7 +281,7 @@
                     <div class="col-span-3 text-center text-2xl font-semibold pb-10">Core Values <br> <span class="text-sm capitalize">our standards at the core</span></div>
                     <!-- <hr class="col-span-3"> -->
                     <div class="col-span-3 h-full">
-                        <div class="sm:grid grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 space-x-4">
+                        <div class="sm:grid grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4">
                             <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-white rounded-lg shadow-lg my-4 border">
                                 <div class="flex-1 flex flex-col justify-center text-center py-3">
                                     <span class="text-2xl text-slate-600 font-semibold">Commitment</span>

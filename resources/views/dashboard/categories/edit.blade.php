@@ -10,6 +10,17 @@
                 @csrf
                 <div class="col-xl-6">
                     <div class="form-floating">
+                    <select class="form-control" name="parent_id" value="{{ old('parent_id')}}" required id="floatingName">
+                        <option></option>
+                        @foreach($categories as $key => $cat)
+                            <option value="{{ $cat->id }}" {{ old('parent_id', $category->parent_id) == $cat->id ? 'selected' : '' }}>{{ $cat->name }}</option>
+                        @endforeach
+                    </select>
+                    <label for="floatingName">Parent</label>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="form-floating">
                     <input type="text" class="form-control" name="name" value="{{ old('name', $category->name??'')}}" required id="floatingName" placeholder="Name">
                     <label for="floatingName">Name</label>
                     </div>
