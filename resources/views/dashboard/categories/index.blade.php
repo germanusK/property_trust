@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (\App\Models\category::all() as $cat)
+                    @foreach (\App\Models\Category::all() as $cat)
                         <tr>
                             <th scope="row"><a href="#"><img src="{{ asset('uploads/category_images/'.$cat->image??'') }}" alt=""></a></th>
                             <td class="fw-semibold">{{ $cat->name??'' }}</td>
