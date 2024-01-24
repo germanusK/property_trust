@@ -72,7 +72,7 @@ class Controller extends BaseController
     {
         # code...
         $data['title'] = "Create New Category";
-        $data['categories'] = Category::whereNull('category_id')->get();
+        $data['categories'] = Category::whereNull('parent_id')->get();
         return view('dashboard.categories.create', $data);
     }
 
