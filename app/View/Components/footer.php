@@ -26,6 +26,6 @@ class footer extends Component
      */
     public function render()
     {
-        return view('components.footer', ['services'=>$this->services]);
+        return view('components.footer')->with(['services'=>$this->services]);
     }
 }

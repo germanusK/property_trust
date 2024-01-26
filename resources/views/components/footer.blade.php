@@ -136,38 +136,25 @@
         </h6>
         @foreach($services as $key => $service)
           <p class="mb-4">
-            <a href="{{ route('public.services.details', $service->id) }}" class="text-neutral-300 dark:text-neutral-200"
-              >{{ $service->name }}</a
-            >
+            <a href="{{ route('public.services.details', $service->id) }}" class="text-neutral-300 dark:text-neutral-200">{{ $service->name }}</a>
           </p>
         @endforeach
         
       </div>
       <!-- Useful links section -->
       <div class="">
-        <h6
-          class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-          Useful links
-        </h6>
+        <h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start">Useful links</h6>
         <p class="mb-4">
-          <a href="#!" class="text-neutral-300 dark:text-neutral-200"
-            >Our Products</a
-          >
+          <a href="#!" class="text-neutral-300 dark:text-neutral-200">Our Products</a>
         </p>
         <p class="mb-4">
-          <a href="#!" class="text-neutral-300 dark:text-neutral-200"
-            >Our Services</a
-          >
+          <a href="#!" class="text-neutral-300 dark:text-neutral-200">Our Services</a>
         </p>
         <p class="mb-4">
-          <a href="#!" class="text-neutral-300 dark:text-neutral-200"
-            >About Us</a
-          >
+          <a href="#!" class="text-neutral-300 dark:text-neutral-200">About Us</a>
         </p>
         <p>
-          <a href="#!" class="text-neutral-300 dark:text-neutral-200"
-            >Contact</a
-          >
+          <a href="#!" class="text-neutral-300 dark:text-neutral-200">Contact</a>
         </p>
       </div>
       <!-- Contact section -->

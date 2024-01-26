@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\HttpService\HttpServiceProvider;
+use App\Models\Service;
 use App\Services\MailService;
 use Facade\FlareClient\Http\Client;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -34,5 +36,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        View::share('services', Service::orderBy('name')->get());
     }
 }
