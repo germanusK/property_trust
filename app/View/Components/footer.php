@@ -2,10 +2,12 @@
 
 namespace App\View\Components;
 
+use App\Models\Service;
 use Illuminate\View\Component;
 
 class footer extends Component
 {
+    protected $services;
     /**
      * Create a new component instance.
      *
@@ -14,6 +16,7 @@ class footer extends Component
     public function __construct()
     {
         //
+        $this->services = Service::orderBy('name')->get();
     }
 
     /**
@@ -23,6 +26,6 @@ class footer extends Component
      */
     public function render()
     {
-        return view('components.footer');
+        return view('components.footer', ['services'=>$this->services]);
     }
 }

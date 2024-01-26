@@ -132,28 +132,17 @@
       <div class="">
         <h6
           class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-          Products & Services
+          Services
         </h6>
+        @foreach($services as $key => $service)
+          
+        @endforeach
         <p class="mb-4">
-          <a href="#!" class="text-neutral-300 dark:text-neutral-200"
-            >Housing Reservations</a
+          <a href="{{ route('public.services.details', $service->id) }}" class="text-neutral-300 dark:text-neutral-200"
+            >{{ $service->name }}</a
           >
         </p>
-        <p class="mb-4">
-          <a href="#!" class="text-neutral-300 dark:text-neutral-200"
-            >Construction</a
-          >
-        </p>
-        <p class="mb-4">
-          <a href="#!" class="text-neutral-300 dark:text-neutral-200"
-            >Architectural Design</a
-          >
-        </p>
-        <p>
-          <a href="#!" class="text-neutral-300 dark:text-neutral-200"
-            > Buy/Sell real estate</a
-          >
-        </p>
+        
       </div>
       <!-- Useful links section -->
       <div class="">
