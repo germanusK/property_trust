@@ -30,14 +30,7 @@ class RealPropertyDetails extends Component
     {
 
         $data = Asset::find($this->id);
-        $related = Asset::join('asset_categories', ['asset_categories.asset_id'=>'assets.id'])
-                    ->join('asset_grades', ['asset_grades.asset_id'=>'assets.id'])
-                    ->whereIn('asset_categories.id', $data->categories()->pluck('categories.id')->toArray())
-                    ->whereIn('asset_grades.id', $data->grades()->pluck('grades.id')->toArray())
-                    ->where('assets.id', '!=', $this->id)
-                    ->distinct()
-                    ->orderBy('asset_grades.id')
-                    ->orderBy('asset_categories.id')
+        $related = Asset::where('service_id', $data->service_id)->where('id', '!=', $this->id)                    
                     ->select(['assets.*'])->paginate(24);
         return view('components.real-property-details', ['data'=>$data, 'related'=>$related]);
     }

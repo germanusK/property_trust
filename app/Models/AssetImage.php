@@ -9,7 +9,7 @@ class AssetImage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['asset_id', 'url', 'description', 'type'];
+    protected $fillable = ['asset_id', 'img_path', 'description', 'type'];
 
     protected $table = "asset_images";
 

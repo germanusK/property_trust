@@ -129,8 +129,8 @@
                         <div class="w-72 md:w-1/3 lg:w-1/4 xl:w-1/4 h-fit py-3 px-2 whitespace-normal" style="min-width: 16rem;">
                             <div class="rounded shadow-lg h-auto py-5 px-2 w-full border border-slate-50 hover:border-slate-900 text-center service-cards">
                                 <div class="rounded-full flex flex-col text-center justify-center w-24 h-28 mt-3 mx-auto shadow-inner bg-slate-100 overflow-hidden">
-                                    @if ($service->icon_path != null)
-                                        <img class="h-28 w-24 object-cover object-center rounded" src="{{ $service->icon_path }}">
+                                    @if ($service->img_path != null)
+                                        <img class="h-28 w-24 object-cover object-center rounded" src="{{ $service->img_path }}">
                                     @else
                                         <span class=" text-6xl text-blue-700 fas fa-cocktail"></span>
                                     @endif

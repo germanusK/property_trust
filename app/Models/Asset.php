@@ -15,15 +15,21 @@ class Asset extends Model
 
 
 
-    public function grades()
-    {
-        # code...
-        return $this->belongsToMany(Grade::class, AssetGrade::class);
-    }
-
     public function images()
     {
         # code...
         return $this->hasMany(AssetImage::class, 'asset_id');
+    }
+
+    public function service()
+    {
+        # code...
+        return $this->belongsTo(Service::class, 'service_id');
+    }
+
+    public function categories()
+    {
+        # code...
+        return $this->belongsToMany(Category::class, 'asset_categories');
     }
 }

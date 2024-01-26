@@ -80,7 +80,7 @@ class Controller extends BaseController
     {
         # code...
         $data['category'] = Category::find($id);
-        $data['categories'] = Category::whereNull('category_id')->get();
+        $data['categories'] = Category::whereNull('parent_id')->get();
         $data['title'] = "Edit Category / ".$data['category']->name??'';
         return view('dashboard.categories.edit', $data);
     }

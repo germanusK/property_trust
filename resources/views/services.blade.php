@@ -16,7 +16,7 @@
                     <div class="w-80 max-w-full py-2 px-2 my-3 mx-2 min-h-min whitespace-normal rounded shadow-lg" style="min-width: 18rem;">
                         <div class=" h-full pb-5 w-full border border-slate-50 hover:border-slate-900 text-center">
                             <div class="rounded-full w-full h-40 mx-auto">
-                                <img class="h-full w-full rounded-t mx-auto" src="{{ $service->icon_path }}">
+                                <img class="h-full w-full rounded-t mx-auto" src="{{ $service->img_path }}">
                             </div>
                             <div class="h-3/5 w-full pb-5 px-3">
                                 <div class="font-semibold py-4 text-xl text-blue-800 text-center text-ellipsis line-clamp-2">

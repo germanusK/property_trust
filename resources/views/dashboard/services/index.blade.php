@@ -14,9 +14,9 @@
                         <th scope="col">Action</th>
                     </thead>
                     <tbody>
-                        @foreach (\App\Models\Service::orderBy('id', 'DESC')->orderBy('name', 'DESC')->get() as $prop)
+                        @foreach (\App\Models\Service::orderBy('name', 'DESC')->get() as $prop)
                             <tr>
-                                <th scope="row"><a href="#"><img src="{{ $prop->img_path }}" alt=""></a></th>
+                                <th scope="row"><a href="{{ route('rest.services.show', $prop->id) }}"><img src="{{ $prop->img_path }}" alt="" style="height: 4rem; width: 4rem; border-radius: 0.3rem;"></a></th>
                                 <td class="fw-semibold">{{ $prop->name??'' }}</td>
                                 <td>{!! $prop->description??'' !!}</td>
                                 <td class="fw-bold">

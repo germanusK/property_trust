@@ -3,7 +3,7 @@
      <div class="card">
         <div class="card-body pt-5">
             <!-- Horizontal Form -->
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>

@@ -19,7 +19,7 @@
                 <tbody>
                     @foreach ($data as $proj)
                         <tr>
-                            <th scope="row"><a href="#"><img src="{{ $proj->images->first()->img_path }}" alt="" style="width: 3rem; height: 3rem; border-radius: 0.2rem"></a></th>
+                            <th scope="row"><a href="#"><img src="{{ $proj->images->count() > 0 ? $proj->images->first()->img_path : asset('img/logo1.jpg') }}" alt="" style="width: 3rem; height: 3rem; border-radius: 0.2rem"></a></th>
                             <td class="fw-semibold">{!! $proj->name??'' !!}</td>
                             <td class="fw-semibold">{!! $proj->address??'' !!}</td>
                             <td class="fw-bold">

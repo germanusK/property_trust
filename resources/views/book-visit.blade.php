@@ -9,12 +9,13 @@
                     <div class="rounded shadow-inner bg-stone-200 relative h-full">
                         <div class="absolute w-full h-full bg-slate-900 bg-opacity-70 flex flex-col justify-center text-gray-100">
                             <div class="text-center text-lg font-semibold text-color-1">{{$data->name}}</div>
-                            @if(($data->categories->count() > 0) and ($data->grades->count() > 0))
-                                <div class="text-center font-bold text-color-2">{{$data->categories->first()->name ?? null}} >> {{$data->grades->first()->name ?? null}}</div>
+                                <div class="text-center font-semibold text-color-2">{{$data->service->category->name ?? null}}</div>
+                            @if(($data->categories()->count() > 0))
+                                <div class="text-center font text-color-2 text-sm">{{$data->categories->first()->name ?? null}}</div>
                             @endif
-                            <div class="text-center text-md text-color-default">{{$data->description}}</div>
+                            <div class="text-center text-md text-color-default px-6">{!! $data->description !!}</div>
                         </div>
-                        <img src="{{ asset($data->images->first()->url ?? '') }}" alt="" class=" w-full h-full rounded-left">
+                        <img src="{{ asset($data->images->first()->img_path ?? '') }}" alt="" class=" w-full h-full rounded-left">
                     </div>
                 </div>
                 <div class="w-5/6 sm:w-2/3 mx-auto px-3 bg-white">
@@ -24,19 +25,19 @@
                             Book a visit
                         </div>
                         <div class="w-full md:w-4/5 mx-auto px-2">
-                            <div class="py-1 my-1 px-3 border-b">
+                            <div class="py-1 my-1 px-3">
                                 <label for="name" class="text-blue-900 font-extralight italic capitalize">name:</label><br>
                                 <input type="text" required class="w-11/12 py-1 text-base text-slate-600 rounded-sm" name="name" placeholder="your name here">
                             </div>
-                            <div class="py-1 my-1 px-3 border-b">
+                            <div class="py-1 my-1 px-3">
                                 <label for="email" class="text-blue-900 font-extralight italic capitalize">email:</label><br>
                                 <input type="email" required class="w-11/12 py-1 text-base text-slate-600 rounded-sm" name="email" placeholder="your email here">
                             </div>
-                            <div class="py-1 my-1 px-3 border-b">
+                            <div class="py-1 my-1 px-3">
                                 <label for="contact" class="text-blue-900 font-extralight italic capitalize">contact:</label><br>
                                 <input type="tel" class="w-11/12 py-1 text-base text-slate-600 rounded-sm" name="contact" placeholder="your contact here">
                             </div>
-                            <div class="py-1 my-1 px-3 border-b">
+                            <div class="py-1 my-1 px-3">
                                 <label for="due_time" class="text-blue-900 font-extralight italic capitalize">Due time:</label><br>
                                 <input type="datetime-local" required class="w-11/12 py-1 text-base text-slate-800 rounded-sm" name="due_date" placeholder="choose date">
                             </div>

@@ -14,7 +14,7 @@
                         <th scope="col">Action</th>
                     </thead>
                     <tbody>
-                        @foreach (\App\Models\Asset::orderBy('id', 'DESC')->orderBy('name', 'DESC')->get() as $prop)
+                        @foreach (\App\Models\Asset::orderBy('id', 'DESC')->get() as $prop)
                             <tr>
                                 <th scope="row"><a href="#"><img src="{{ $prop->images == null ? asset('admin_assets/img/product-1.jpg') : asset($prop->images->first()->img_path) }}" alt=""></a></th>
                                 <td class="fw-semibold"><a href="{{ route('rest.assets.show', $prop->id) }}"> {{ $prop->name??'' }} </a></td>

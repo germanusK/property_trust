@@ -11,6 +11,7 @@ use App\Models\Service;
 use App\Models\ServiceImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Throwable;
 
@@ -210,8 +211,8 @@ class Property extends Controller
     public function store_service(Request $request)
     {
         # code...
-        $request->validate(['name'=>'required', 'caption'=>'required', 'category_id'=>'required',
-            'image'=>'required|file', 'price'=>'numeric', 'description'=>'required']);
+        $request->validate(['name'=>'required', 'caption'=>'nullable', 'category_id'=>'required',
+            'image'=>'required|file', 'price'=>'numeric|nullable', 'description'=>'required']);
 
         
         $data = ['name'=>$request->name??'', 'caption'=>$request->caption??'', 'category_id'=>$request->category_id??'', 
@@ -223,19 +224,19 @@ class Property extends Controller
         }
 
         // create service
+        
+
+        if(($file = $request->file('image')) != null){
+            $path = asset('uploads/service_icons/');
+            $filename = 'icon__'.random_int(1000000001, 9999999999).'__'.time().'.'.$file->getClientOriginalExtension();
+            $file->move(public_path('uploads/service_icons'), $filename);
+            $data['img_path'] = $path.'/'.$filename;
+        }
+
+        // dd($data);
         $service = new Service($data);
         $service->save();
 
-        if(($file = $request->file('image')) != null){
-            $ext = $file->getClientOriginalExtension();
-            $path = asset('uploads/service_icons/');
-            $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
-            $file->storeAs('service_icons', $filename, ['disk'=>'public_uploads']);
-            $service->update(['img_path'=>$path.$filename]);
-        }
-
-
-        
         return back()->with('success', 'Done');
     }
     
@@ -250,34 +251,40 @@ class Property extends Controller
     public function update_service(Request $request, $id)
     {
         # code...
-        $request->validate(['name'=>'required', 'caption'=>'required', 'category_id'=>'required',
-            'image'=>'required|file', 'price'=>'numeric', 'description'=>'required']);
-
-        
+        $validity = Validator::make($request->all(), ['name'=>'required', 'caption'=>'nullable', 'category_id'=>'required',
+            'price'=>'numeric|nullable', 'description'=>'required']);
+        if($validity->fails()){
+            session()->flash('error', $validity->errors()->first());
+            return back()->withInput();
+        }
         $data = ['name'=>$request->name??'', 'caption'=>$request->caption??'', 'category_id'=>$request->category_id??'', 
             'price'=>$request->price??'', 'description'=>$request->description??''];
         
-        if(Service::whereName($request->name)->where('id', $id)->count() > 0){
+        if(Service::whereName($request->name)->where('id', '!=', $id)->count() > 0){
             session()->flash('error', 'Servce already exists with same name');
             return back()->withInput();
         }
         $service = Service::find($id);
 
         if(($file = $request->file('image')) != null){
-            $ext = $file->getClientOriginalExtension();
-            $path = asset('uploads/service_icons');
-            $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$ext;
-            $file->storeAs('service_icons', $filename, ['disk'=>'public_uploads']);
+            // delete former image
+            /*
+            $oldImage = $service->img_path;
+            $filePathTokens = explode('/', $oldImage);
+            if(is_array($filePathTokens)){
+                $fname = $filePathTokens[count($filePathTokens)-1];
+                unlink(asset('uploads/service_icons/'.$fname));
+            }
+            */
+            
+            // upload new image
+            $path = asset('uploads/service_icons/');
+            $filename = '__'.random_int(1000000001, 9999999999).'__'.time().'.'.$file->getClientOriginalExtension();
+            $file->move(public_path('uploads/service_icons'), $filename);
             $data['img_path'] = $path.'/'.$filename;
-            $service->img_path != null ? unlink($service->img_path) : null;
         }
         // dd($data);
-
-
-        // create service
         $service->update($data);
-        $service->save();
-        
         return back()->with('success', 'Done');
     }
 
@@ -374,7 +381,7 @@ class Property extends Controller
     public function store_project(Request $request, $service_id)
     {
         # code...
-        $request->validate(['name'=>'required', 'address'=>'required', 'description'=>'required', 'images'=>'required']);
+        $request->validate(['name'=>'required', 'address'=>'required', 'description'=>'required']);
 
         // create project
         $project = new Project();
