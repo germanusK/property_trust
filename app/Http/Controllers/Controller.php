@@ -33,6 +33,7 @@ class Controller extends BaseController
         $assets = Asset::orderBy('id', 'DESC')->take(12)->get();
     
         $data = ['assets'=>collect($assets)];
+        $data['categories'] = Category::whereNotNull('parent_id')->orderBy('parent_id')->get();
         return view('welcome', $data);
     }
 

@@ -95,19 +95,21 @@
 
         </div>
 
-        {{-- SERVICE CATEGORIES --}}
-        <div class="py-6 border-t">
-            <div class="w-11/12 md:w-5/6 h-auto mx-auto">
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
-                    @for($i = 0; $i < 12; $i++)
-                        <div class="rounded border border-gray-100 m-1 hover:shadow hover:bg-neutral-100">
-                            <a class="flex flex-col w-full h-full text-center justify-center capitalize py-5" href="">category item</a>
-                        </div>
-                    @endfor
+        @if(count($categories) > 0)
+            {{-- SERVICE CATEGORIES --}}
+            <div class="py-6 border-t">
+                <div class="w-11/12 md:w-5/6 h-auto mx-auto">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+                        @foreach($categories as $category)
+                            <div class="rounded border border-gray-100 m-1 hover:shadow hover:bg-neutral-100">
+                                <a class="flex flex-col w-full h-full text-center justify-center capitalize py-5" href="#">{{ $category->name }}</a>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
-        </div>
-        {{-- END OF SERVICE CATEGORIES --}}
+            {{-- END OF SERVICE CATEGORIES --}}
+        @endif
 
 
         <!-- BANNER -->
