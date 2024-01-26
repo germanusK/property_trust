@@ -2,7 +2,7 @@
 <div class="bg-black text-center text-white dark:bg-neutral-600 dark:text-neutral-200 py-3">
   <div class="w-full whitespace-nowrap md:whitespace-normal overflow-x-scroll no-scrollbar">
     <div class="flex w-fit md:w-full md:flex-wrap items-baseline align-middle justify-center">
-      @foreach (\App\Models\AssetImage::inRandomOrder()->take(40)->get() as $img)
+      @foreach (\App\Models\ServiceImage::inRandomOrder()->take(40)->get() as $img)
         <div class="m-1 w-56 h-72">
           <img src="{{ $img->img_path }}" class="object-cover object-center w-full h-full hover:border-x-4 rounded" />
         </div>
@@ -135,13 +135,12 @@
           Services
         </h6>
         @foreach($services as $key => $service)
-          
+          <p class="mb-4">
+            <a href="{{ route('public.services.details', $service->id) }}" class="text-neutral-300 dark:text-neutral-200"
+              >{{ $service->name }}</a
+            >
+          </p>
         @endforeach
-        <p class="mb-4">
-          <a href="{{ route('public.services.details', $service->id) }}" class="text-neutral-300 dark:text-neutral-200"
-            >{{ $service->name }}</a
-          >
-        </p>
         
       </div>
       <!-- Useful links section -->
