@@ -22,7 +22,7 @@
                                 <div class="font-semibold py-4 text-xl text-blue-800 text-center text-ellipsis line-clamp-2">
                                     {{ $service->name }}
                                 </div>
-                                <div class="text-lg text-slate-600 text-center line-clamp-3 mb-7">{{ $service->description }}</div>
+                                <div class="text-lg text-slate-600 text-center line-clamp-3 mb-7">{!! $service->description !!}</div>
                                 <a class="px-8 py-3 rounded-full bg-blue-900 text-white uppercase" href="{{ route('public.services.details', [$service->id]) }}">details</a>
                             </div>
                         </div>
