@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
             return new HttpServiceProvider();
         });
         $this->app->bindIf(MailService::class, function($app){
-            return new MailService(env('BREVO_API_KEY'));
+            return new MailService(config('services.brevo.key'));
         });
     }
 
