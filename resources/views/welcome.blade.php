@@ -237,14 +237,15 @@
             <div class="relative min-h-full">
                 <div class="w-full h-full min-h-fit flex flex-col justify-center text-center z-20 bg-slate-950 bg-opacity-80">
                     <div class=" py-6 px-3 md:w-5/6 mx-auto text-center">
-                        <h2 class="font-semibold text-capitalize my-8 text-3xl text-slate-300">We cover all you need</h2>
-                        <div class="sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        {{-- <h2 class="font-semibold text-capitalize my-8 text-3xl text-slate-300">We cover all you need</h2> --}}
+                        <h5 class="text-center text-neutral-300 text-5xl my-6 font-bold">Unlock your dream property with our trusted real estate services. Expertise, reliability, and satisfaction guaranteed. Your journey starts here<h5>
+                        <div class="sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 border-spacing-x-3">
                             <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-black rounded-lg shadow-lg my-4 border">
                                 <div class="flex-1 flex flex-col justify-center text-center py-3">
                                     <span class="text-2xl text-slate-300 font-semibold">Commercial Real Estate</span>
                                 </div>
                                 <div class="flex-1 flex flex-col justify-center text-center">
-                                    <span class="text-lg text-slate-400 font-semibold capitalize">retail spaces, hospitals, offices, nursing homes, and storage facilities</span>
+                                    <span class="text-lg text-slate-400 font-semibold  line-clamp-6 text-ellipsis">Retail spaces, hospitals, offices, nursing homes, and storage facilities. Maximize your business potential with prime commercial real estate solutions. Unlock growth opportunities with our strategic expertise</span>
                                 </div>
                             </div>
                             <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-black rounded-lg shadow-lg my-4 border">
@@ -252,7 +253,7 @@
                                     <span class="text-2xl text-slate-300 font-semibold">Residential Real Estate</span>
                                 </div>
                                 <div class="flex-1 flex flex-col justify-center text-center">
-                                    <span class="text-lg text-slate-400 font-semibold capitalize">Duplexes, apartment buildings, multifamily housing, condos, tiny home investing, and student housing</span>
+                                    <span class="text-lg text-slate-400 font-semibold line-clamp-6 text-ellipsis"> Discover your ideal home in Cameroon with our trusted residential real estate services. Expert guidance and personalized solutions for your dream. Duplexes, apartment buildings, multifamily housing, condos, tiny home investing, and student housing</span>
                                 </div>
                             </div>
                             <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-black rounded-lg shadow-lg my-4 border">
@@ -260,7 +261,7 @@
                                     <span class="text-2xl text-slate-300 font-semibold">Land Ownership Real Estate</span>
                                 </div>
                                 <div class="flex-1 flex flex-col justify-center text-center">
-                                    <span class="text-lg text-slate-400 font-semibold capitalize">land that’s purchased, sold, and rented out</span>
+                                    <span class="text-lg text-slate-400 font-semibold line-clamp-6 text-ellipsis">Secure your future with strategic land ownership solutions tailored to your real estate goals. Explore opportunities with our expert guidance. Land purchase, sales, and rentals</span>
                                 </div>
                             </div>
                             <div class="w-4/5 sm:w-auto mx-auto col-span-1 py-4 px-2 bg-black rounded-lg shadow-lg my-4 border">
@@ -268,7 +269,7 @@
                                     <span class="text-2xl text-slate-300 font-semibold">Construction</span>
                                 </div>
                                 <div class="flex-1 flex flex-col justify-center text-center">
-                                    <span class="text-lg text-slate-400 font-semibold capitalize">architectural design, project execution, etc</span>
+                                    <span class="text-lg text-slate-400 font-semibold line-clamp-6 text-ellipsis">Architectural design, project execution, etc. Elevate your project with premium construction services. Quality craftsmanship, timely delivery, and client satisfaction guaranteed. Experience excellence in every detai</span>
                                 </div>
                             </div>
                         </div>

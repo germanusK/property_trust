@@ -2977,6 +2977,7 @@ input[type="range"]:active::-webkit-slider-thumb{background:#285192}
 .basis-0{flex-basis:0px}
 .basis-auto{flex-basis:auto}
 .border-collapse{border-collapse:collapse}
+.border-spacing-x-3{--tw-border-spacing-x:0.75rem;border-spacing:var(--tw-border-spacing-x) var(--tw-border-spacing-y)}
 .origin-\[0_0\]{transform-origin:0 0}
 .origin-\[center_bottom_0\]{transform-origin:center bottom 0}
 .origin-bottom{transform-origin:bottom}
