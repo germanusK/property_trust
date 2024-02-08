@@ -36,7 +36,7 @@
                 <div class="w-fit mx-auto hero-text">
                     <div class="text-center py-4">
                         <div class="py-2 text-white text-2xl sm:text-3xl md:text-4xl font-semibold italic text-ellipsis flex-wrap">Welcome To <span class="text-pink-700">Property Trust Group</span></div>
-                        <div class="text-2xl text-slate-200 italic text-center hidden md:block flex-wrap">Where real property comes home</div>
+                        <div class="text-2xl text-slate-200 italic text-center hidden md:block flex-wrap">Your Trusted Partner for Real Estate Solutions and Services.</div>
                     </div>
                     <div class="w-full flex items-center justify-center py-4">
                         <div class=" text-xl font-semibold">

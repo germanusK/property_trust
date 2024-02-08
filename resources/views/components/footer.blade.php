@@ -124,8 +124,8 @@
           </svg>
           Property Trust Group
         </h6>
-        <p>
-          A team of well established professionals in real estate providing solutions to any issues related to housing (sales and rentals), aquisition and sales of land, construction and general commerce
+        <p class="line-clamp-6 text-ellipsis">
+          <b>Building Dreams, Connecting Spaces, Delivering Solutions.</b> Your one-stop destination for <b class="text-white">real estate, construction, logistics business and janitorial </b> services. From finding your ideal property to constructing your dream space, managing logistics, and optimizing business operations, we're here to streamline every step of your journey. Experience excellence in service, efficiency in execution, and reliability in partnerships. Let us transform your vision into reality, providing innovative solutions tailored to your needs. With a commitment to quality, integrity, and customer satisfaction, trust us to handle every aspect of your project with professionalism and expertise. Elevate your experience with us today and unlock the potential of your ventures.
         </p>
       </div>
       <!-- Products section -->

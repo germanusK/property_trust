@@ -44,15 +44,13 @@
                     </div>
                 </div>
                 <div class="col-span-3 text-center py-16 px-12">
-                    <div class="text-center text-slate-300 text-3xl font-bold mb-6">B-Property Trust <br> <span class="text-sm text-neutral-200">Where real property comes home</span></div>
+                    <div class="text-center text-slate-300 text-3xl font-bold mb-6">B-Property Trust <br> <span class="text-sm text-neutral-200">Your Trusted Partner for Real Estate Solutions and Services.</span></div>
                     <div class=" text-justify text-neutral-400 text-xl font-medium my-1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic sed, incidunt quaerat nam eveniet quod vel inventore beatae exercitationem dolorem, in delectus, quae atque sit maxime asperiores voluptatibus minima. Blanditiis.
-                        Amet sunt minima debitis vel obcaecati animi quis perferendis quo quam omnis nulla, facere voluptas iste quidem minus voluptatem quae quos voluptatum commodi architecto rerum! Amet sequi vitae iusto quo!
+                        <b>Building Dreams, Connecting Spaces, Delivering Solutions.</b> Your one-stop destination for <b class="text-white">real estate, construction, logistics business and janitorial </b> services. From finding your ideal property to constructing your dream space, managing logistics, and optimizing business operations, we're here to streamline every step of your journey. Experience excellence in service, efficiency in execution, and reliability in partnerships. Let us transform your vision into reality, providing innovative solutions tailored to your needs. With a commitment to quality, integrity, and customer satisfaction, trust us to handle every aspect of your project with professionalism and expertise. Elevate your experience with us today and unlock the potential of your ventures.
                     </div>
-                    <div class="text-center text-slate-300 text-2xl font-bold mb-6 mt-10">History</div>
+                    <div class="text-center text-slate-300 text-2xl font-bold mb-6 mt-10">Trusted by clients for seamless solutions</div>
                     <div class=" text-justify text-neutral-400 text-xl font-medium my-1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic sed, incidunt quaerat nam eveniet quod vel inventore beatae exercitationem dolorem, in delectus, quae atque sit maxime asperiores voluptatibus minima. Blanditiis.
-                        Amet sunt minima debitis vel obcaecati animi quis perferendis quo quam omnis nulla, facere voluptas iste quidem minus voluptatem quae quos voluptatum commodi architecto rerum! Amet sequi vitae iusto quo!
+                        With a rich history spanning over a decade, we've excelled in providing comprehensive solutions in real estate, construction, logistics, and business services. Our track record speaks volumes, earning trust through seamless transactions and tailored services. Join countless satisfied clients who've benefited from our expertise and dedication to excellence.
                     </div>
                     <div class="text-center text-slate-300 text-2xl font-bold mb-6 mt-10">Branches</div>
                     <div class="w-full md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-6">

@@ -124,7 +124,10 @@
 
         <div class="w-11/12 md:w-5/6 h-auto my-8 rounded-xl mx-auto">
             <!-- SERVICES -->
-            <div class="text-center text-2xl md:text-3xl text-slate-700 capitalize mt-12 ">our services <br> <hr class="w-1/6 md:w-1/12 border border-slate-300 border-dashed mx-auto"></div>
+            <div class="text-center text-2xl md:text-3xl text-slate-700 capitalize mt-12 ">our services <br> 
+                <hr class="w-1/6 md:w-1/12 border border-slate-300 border-dashed mx-auto">
+                <h6 class="italic text-neutral-600 text-center text-sm">Leading the way in real estate, construction, logistics, and business services in Cameroon</h6>
+            </div>
             <div class="w-full bg-light flex md:flex-wrap overflow-x-scroll no-scrollbar whitespace-nowrap md:whitespace-normal">
                 <div class="w-fit flex md:flex-wrap items-baseline align-middle justify-center pb-8 pt-5">
                     @foreach (\App\Models\Service::all() as $service)
