@@ -32,9 +32,10 @@ class Controller extends BaseController
         // get latest/trending items 
         $assets = Asset::orderBy('id', 'DESC')->take(12)->get();
     
-        $data = ['assets'=>collect($assets)];
-        $data['categories'] = Category::whereNotNull('parent_id')->orderBy('parent_id')->get();
-        return view('welcome', $data);
+        $data['assets'] = $assets;
+        $data['projects'] = \App\Models\Project::inRandomOrder()->take(6)->get();
+        $data['categories'] = Category::take(20)->get();
+        return view('showcase.index', $data);
     }
 
     function setSenderEmailAddress(Request $request){
@@ -197,5 +198,13 @@ class Controller extends BaseController
         # code...
         $data = ['email_address'=>$email_address, 'subject'=>$subject, 'text_content'=>$text_content, 'confirmation_url'=>$confirmation_url];
         Mail::send((new Confirmation($data)));
+    }
+
+    public function random_project()
+    {
+        # code...
+        $data = \App\Models\Project::inRandomOrder()->first();
+        $data->_images = $data->images;
+        return $data;
     }
 }

@@ -59,9 +59,9 @@
                     </div>
                 </div>
             </div>
-            <div class="my-4 px-6">
+            <div class="px-6 py-6">
                 @if(count($service->projects) > 0)
-                    <div class="text-xl font-semibold mt-12 mb-1 py-1 capitalize text-center">Property</div>
+                    <div class="text-xl font-semibold mt-12 mb-1 py-1 capitalize text-center">{{ $service->name??'' }} / Projects</div>
                     <div class="py-4 sm:grid md:grid lg:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full border-b border-slate-200 border-opacity-20">
                         @foreach ($service->projects()->orderBy('id', 'DESC')->get() as $project)
                             {{-- @php(dd($project->images)) --}}
@@ -79,8 +79,10 @@
                         @endforeach
                     </div>
                 @endif
+            </div>
+            <div class="px-6 bg-neutral-400 py-6">
                 @if(count($service->property) > 0)
-                    <div class="text-xl font-semibold mt-12 mb-1 py-1 capitalize text-center">Property</div>
+                    <div class="text-xl font-semibold mt-12 mb-1 py-1 capitalize text-center">{{ $service->name??'' }} / Property</div>
                     <div class="py-4 sm:grid md:grid lg:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full border-b border-slate-200 border-opacity-20">
                         @foreach ($service->property()->orderBy('id', 'DESC')->get() as $property)
                             {{-- @php(dd($project->images)) --}}

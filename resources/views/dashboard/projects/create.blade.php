@@ -9,7 +9,7 @@
             <form class="row g-3" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col-12">
-                    <label for="inputNanme4" class="form-label">Property Name</label>
+                    <label for="inputNanme4" class="form-label">Project Name</label>
                     <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                 </div>
                 <div class="col-12">

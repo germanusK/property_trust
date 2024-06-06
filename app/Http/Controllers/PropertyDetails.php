@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\HttpService\HttpServiceProvider;
+use App\Models\Asset;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\Router;
@@ -17,9 +18,9 @@ class PropertyDetails extends Controller
     //     $this->router = $router;
     // }
 
-    function index(Request $request){
+    function index(Request $request, $id){
         
-        
-        return view('property-details', ['id'=>$request->id]);
+        $data['property'] = Asset::find($id);
+        return view('showcase.property-details', $data);
     }
 }

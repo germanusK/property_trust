@@ -42,6 +42,6 @@ class Others extends Controller
     public function contact()
     {
         # code...
-        return view('contacts');
+        return view('showcase.contact');
     }
 }

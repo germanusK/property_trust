@@ -10,20 +10,20 @@
                 @csrf
                 <div class="col-12">
                     <label for="inputNanme4" class="form-label">Property Name</label>
-                    <input type="text" class="form-control" name="name" value="{{ old('name', $service->name??'') }}">
+                    <input type="text" class="form-control" name="name" value="{{ old('name', $data->name??'') }}">
                 </div>
                 <div class="col-12">
                     <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" name="address" value="{{ old('address', $service->address??'') }}" placeholder="Enter property location">
+                    <input type="text" class="form-control" name="address" value="{{ old('address', $data->address??'') }}" placeholder="Enter property location">
                 </div>
                 <div class="col-12">
                     <label for="inputPassword4" class="form-label">Unit price</label>
-                    <input type="number" class="form-control" name="price" value="{{ old('price', $service->price??'') }}" placeholder="enter unit price"> 
+                    <input type="number" class="form-control" name="price" value="{{ old('price', $data->price??'') }}" placeholder="enter unit price"> 
                 </div>
                 <div class="col-12">
                     <label for="inputEmail4" class="form-label">Specifications</label>
                     <!-- TinyMCE Editor -->
-                    <textarea class="tinymce-editor form-control" name="description" placeholder="Enter property specifications" style="height: 6rem !important;">{!! old('description', $service->description) !!}
+                    <textarea class="tinymce-editor form-control" name="description" placeholder="Enter property specifications" style="height: 6rem !important;">{!! old('description', $data->description??'') !!}
                     </textarea>
                     <!-- End TinyMCE Editor -->
                 </div>

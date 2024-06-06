@@ -28,13 +28,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Controller::class, '_index']);
+Route::get('/', [Controller::class, '_index'])->name('public.home');
 Route::post('/update/subscribe', [Controller::class, 'subscribe'])->name('updates.subscribe');
 Route::get('/search', [Controller::class, '_search'])->name('search');
-Route::get('/property', [Property::class, 'index']);
+Route::get('/property', [Property::class, 'index'])->name('public.property');
+Route::get('/projects', [Property::class, 'projects'])->name('public.projects');
+Route::get('/projects/{id}', [Property::class, 'project_details'])->name('public.project.details');
 Route::get('/services', [Property::class, 'services_index'])->name('public.services');
 Route::post('/services/book/{id}', [Property::class, 'services_booking'])->name('public.services.book');
 Route::get('/services/{id}/details', [Property::class, 'service_details'])->name('public.services.details');
+Route::get('/service/{id}/enquiry', [Property::class, 'service_enquiry'])->name('public.service.enquiry');
 Route::get('/propertyDetails/{id}', [PropertyDetails::class, 'index'])->name('assets.show');
 Route::get('/marketDetails/{id}', [MarketDetails::class, 'index']);
 Route::get('/bookVisit/{id}', [VisitBooker::class, 'index'])->name('schedule.book');
@@ -42,6 +45,7 @@ Route::post('/bookVisit/{id}', [VisitBooker::class, 'submit']);
 Route::post('/bookVisit/confirm/{id}', [VisitBooker::class, 'submit'])->name('schedule.confirm');
 Route::get('/about', [Others::class, 'about']);
 Route::get('/contact', [Others::class, 'contact'])->name('public.contacts');
+Route::get('/random_project', [Controller::class, 'random_project'])->name('public.random.project');
 
 Route::post('/submitSchedule', [VisitBooker::class, 'submit']);
 Route::post('/submitMessage', [Messenger::class, 'submit']);//handle submision of orders, problem reports and messages

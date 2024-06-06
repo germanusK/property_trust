@@ -111,7 +111,6 @@
             {{-- END OF SERVICE CATEGORIES --}}
         @endif
 
-
         <!-- BANNER -->
         <div class="w-full h-auto bg-black">
             <div class="w-11/12 md:w-5/6  mx-auto text-center bg-light">
@@ -154,8 +153,6 @@
             </div>
             <!-- END OF SERVICES -->
         </div>
-
-
 
         <!-- Our works or products -->
         <!-- Latest -->
@@ -220,7 +217,7 @@
             <div class="relative h-96 w-full">
                 <div class="w-full h-full min-h-fit flex flex-col items-center align-middle justify-center absolute text-center z-20 bg-slate-950 bg-opacity-80">
                     {{-- <span class="block text-center text-4xl font-semibold text-slate-200 my-4">All</span> <br> --}}
-                    <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="w-24 hover:w-32 h-24 hover:h-32 flex items-center align-middle justify-center bg-red-700 text-white hover:bg-red-500 rounded-full hover:border border-white">
+                    <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="w-24 hover:w-32 h-24 hover:h-32 flex items-center align-middle justify-center bg-red-700 text-white hover:bg-red-500 rounded-full hover:border border-white" target="new">
                         <span class="fa-brands fa-youtube fa-4x shadow-2xl shadow-white outline-1"></span>
                     </a>
                 </div>
@@ -363,6 +360,34 @@
                     </div>
                 </div>
 
+                <div class="w-full min-h-fit py-6 my-2 bg-slate-950">
+                    <div class="md:w-4/5 mx-auto rounded-md border-4 border-white relative" id="projects_slider">
+                        <div class="absolute w-full h-full flex justify-start items-center align-middle text-capitalize text-8xl font-bold text-white -skew-y-12">Our Projects</div>
+                        <div class="absolute w-full h-full opacity-20 hover:opacity-100">
+                            <div class="h-full w-fit md:w-3/5 mx-auto md:skew-y-12 flex flex-wrap justify-center items-center align-middle border-x-8 border-white shadow-xl bg-neutral-950 bg-opacity-60 font-semibold text-white">
+                                <div class="py-4 px-3 text-center">
+                                    <div class="text-xl" id="project_title">Project Title</div>
+                                    <hr class="my-2 opacity-40">
+                                    <div class="flex flex-wrap -skew-x-6 text-base font-medium"><span class="px-3 py-1 bg-neutral-900 bg-opacity-30 rounded-sm">Address</span>: <span id="project_address"> Behind Omnisport Stadium Check-point, Molyko, Buea </span> </div>
+                                    <hr class="my-2 opacity-40">
+                                    <div class="text-lg font-medium line-clamp-5 text-ellipsis" id="project_description">
+                                        Brethren good day
+                                        This is a new semester
+                                        We are to implement what we discussed in our last meeting.
+                                        At the start of the new semester the children will have this week for prayer as to cross their sptman into the semester.
+                                        Then next week is the introduction.
+                                        Teach what semester is and the graph of the Lord to them because during Christmas and new year they did things that God is not happy with them.
+                                        This is a time for them to ask for forgiveness.
+                                        Then where each class ended should be a continuation and not going back to start. But if you have gone to the end of the syllabus then you can start over.
+                                        As we work in the vineyard of the Lord he will richly bless us and our families.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class=" w-full h-auto object-cover object-center" id="project_image" src="{{ asset('img/home2.jpg') }}">
+                    </div>
+                </div>
+
                 <!-- Contact -->
                 <div class="w-full h-auto border-y-2">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.3234487756235!2d9.284495013744113!3d4.156663596977882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x106131fb28383773%3A0xe0908049832295fd!2sPROPERTY%20TRUST!5e0!3m2!1sen!2scm!4v1679866113967!5m2!1sen!2scm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mx-auto"></iframe>
@@ -390,6 +415,33 @@
         }
 
 
+        $(document).ready(function(){
+            
+            setInterval(()=>{
+                let url = "{{ route('public.random.project') }}";
+                $.ajax({
+                    method: "get", url: url,
+                    success: function(data){
+                        $('#projects_title').text(data.name);
+                        $('#projects_address').text(data.address);
+                        $('#projects_description').html(data.description);
+                        $('#projects_description').attr('src', data.images[0].img_path);
+                    }, 
+                    error: function(error){
+                        $('#projects_title').text("Project Title");
+                        $('#projects_address').text("Behind Omnisport Stadium Check-point, Molyko, Buea");
+                        $('#projects_description').text(`Brethren good day This is a new semester We are to implement what we discussed in our last meeting. At the start of the new semester 
+                            the children will have this week for prayer as to cross their sptman into the semester. Then next week is the introduction. Teach what semester is and the 
+                            graph of the Lord to them because during Christmas and new year they did things that God is not happy with them. This is a time for them to ask for forgiveness.
+                            Then where each class ended should be a continuation and not going back to start. But if you have gone to the end of the syllabus then you can start over.
+                            As we work in the vineyard of the Lord he will richly bless us and our families.`);
+                        $('#projects_description').attr('src', "{{ asset('img/home2.jpg') }}");
+
+                    }
+                });
+            }, 8000);
+        });
+            
       </script>
     </body>
 </html>
