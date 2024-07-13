@@ -163,7 +163,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-youtube"></i></div>
-              <a href="" class="stretched-link" title="youtube"></a>
+              <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="stretched-link" title="youtube"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -171,7 +171,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-whatsapp"></i></div>
-              <a href="" class="stretched-link" title="whatsapp"></a>
+              <a href="https://wa.link/n6lrc2" class="stretched-link" title="whatsapp"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -179,7 +179,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-facebook"></i></div>
-              <a href="" class="stretched-link" title="facebook"></a>
+              <a href="https://www.facebook.com/bpropertytrust?mibextid=2JQ9oc" class="stretched-link" title="facebook"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -187,7 +187,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-instagram"></i></div>
-              <a href="" class="stretched-link" title="instagram"></a>
+              <a href="https://instagram.com/propertytrustgroup?igshid=OGQ5ZDc2ODk2ZA==" class="stretched-link" title="instagram"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -203,7 +203,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-twitter"></i></div>
-              <a href="" class="stretched-link" title="twitter"></a>
+              <a href="https://twitter.com/ptrustgroup/status/1683360424031297537?s=46&t=2ItHQJHSl4cknkDUHt1jRg" class="stretched-link" title="twitter"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -211,7 +211,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-tiktok"></i></div>
-              <a href="" class="stretched-link" title="tiktok"></a>
+              <a href="https://www.tiktok.com/@nkemboris1" class="stretched-link" title="tiktok"></a>
             </div>
           </div>
           <!--End Icon Box -->

@@ -213,14 +213,9 @@
                 <a href="blog-details.html" class="btn-visit">See All Property</a>
               </h2>
             </div><!-- End Portfolio Item -->
-
           </div><!-- End Portfolio Container -->
-
         </div>
-
       </div>
     </section><!-- End Portfolio Section -->
-
-
   </main><!-- End #main -->
 @endsection

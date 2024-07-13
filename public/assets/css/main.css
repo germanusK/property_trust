@@ -19,8 +19,9 @@
 /* Colors */
 :root {
   --color-default: #222222;
-  --color-primary: #008374;
+  --color-primary: #09579b;
   --color-secondary: #f85a40;
+  --color-light: #fff;
 }
 
 /* Smooth scroll behavior */
@@ -64,7 +65,7 @@ section {
 }
 
 .sections-bg {
-  background-color: #f6f6f6;
+  background-color: #d6d6d6;
 }
 
 .section-header {
@@ -294,14 +295,14 @@ section {
 }
 
 .topbar .social-links a:hover {
-  color: #fff;
+  color: var(--color-default);
 }
 
 .header {
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
-  background-color: var(--color-primary);
+  background-color: white;
 }
 
 .header.sticked {
@@ -319,16 +320,24 @@ section {
 }
 
 .header .logo h1 {
+  color: var(--color-default);
+}
+
+.header .logo h1 {
   font-size: 30px;
   margin: 0;
   font-weight: 600;
   letter-spacing: 0.8px;
-  color: #fff;
+  color: var(--color-default);
   font-family: var(--font-primary);
 }
 
 .header .logo h1 span {
   color: #f96f59;
+}
+
+.header .navbar li>a{
+  color: var(--color-default) !important;
 }
 
 .sticked-header-offset {
@@ -1779,7 +1788,7 @@ section {
 
 .contact .info-item {
   width: 100%;
-  background-color: #009282;
+  background-color: #1b3c60;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
@@ -1940,8 +1949,14 @@ section {
 .hero {
   width: 100%;
   position: relative;
-  background: var(--color-primary);
+  background-color: var(--color-default);
+  background-image: url('./../img/hero-crop.jpg');
+  background-blend-mode: multiply;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 60px 0 0 0;
+  box-shadow: 2px 1xp var(--color-default);
 }
 
 @media (min-width: 1365px) {
@@ -1954,11 +1969,11 @@ section {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--color-light);
 }
 
 .hero p {
-  color: rgba(255, 255, 255, 0.6);
+  color: #d2eeeb;
   font-weight: 400;
   margin-bottom: 30px;
 }
@@ -1972,26 +1987,26 @@ section {
   padding: 14px 40px;
   border-radius: 50px;
   transition: 0.3s;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-light);
+  background: var(--color-default);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(125, 125, 125, 0.7);
 }
 
 .hero .btn-get-started:hover {
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(125, 125, 125, 0.9);
 }
 
 .hero .btn-watch-video {
   font-size: 16px;
   transition: 0.5s;
   margin-left: 25px;
-  color: #fff;
+  color: var(--color-light);
   font-weight: 600;
 }
 
 .hero .btn-watch-video i {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-primary);
   font-size: 32px;
   transition: 0.3s;
   line-height: 0;
@@ -1999,7 +2014,7 @@ section {
 }
 
 .hero .btn-watch-video:hover i {
-  color: #fff;
+  color: var(--color-primary);
 }
 
 @media (max-width: 640px) {
@@ -2033,7 +2048,7 @@ section {
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: #008d7d;
+  background: #1b3c60;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -2048,7 +2063,7 @@ section {
   padding: 40px 30px;
   position: relative;
   overflow: hidden;
-  background: #008d7d;
+  background: #8d5500;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -2082,7 +2097,7 @@ section {
 }
 
 .hero .icon-box:hover {
-  background: #009786;
+  background: #45484d;
 }
 
 .hero .icon-box:hover .title a,

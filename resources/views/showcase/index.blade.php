@@ -8,7 +8,7 @@
           <p class="h4">Real Estate, Construction & Business</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started">Get Started</a>
-            <a href="" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            <a href="https://www.youtube.com/shorts/MVhe5yhq_Ak" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
@@ -63,31 +63,142 @@
 
 @section('section')
   <main id="main">
-    
-    <!-- -----------------------
-      --------------------------
-      SECTION 1: CLIENTS
-      --------------------------
-      -------------------------- -->
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container" data-aos="zoom-out">
 
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="{{ asset('assets') }}/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets') }}/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets') }}/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets') }}/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets') }}/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets') }}/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets') }}/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('assets') }}/img/clients/client-8.png" class="img-fluid" alt=""></div>
+
+        <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="fade-up">
+        
+        <div class="slides-2 swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            @forelse ($categories as $event)
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial-item shadow">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="m-1 px-1">
+                          <img class="img-fluid img img-rounded" style="height: 12rem;" src="{{ $event->img ?? asset('assets/img/hero-crop.jpg') }}">
+                          <h3 class="my-3 title">{{ $event->name??'Event name' }}</h3>
+                          <p class="caption">{{ $event->description ?? 'event description' }}</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card">
+                          <div class="card-body h-md-100">
+                            <div class="">
+                              <h2><strong class="py-1 text-center my-2 d-block text-warning"><span class="bi bi-watch mx-3"></span></strong></h2>                              
+                              <p>
+                                <strong class="py-1 my-1 d-block text-danger"><span class="bi bi-stopwatch mx-3"></span>#Days</strong>
+                                <strong class="py-1 my-1 d-block text-warning"><span class="bi bi-stopwatch mx-3"></span>#Hours</strong>
+                                <strong class="py-1 my-1 d-block text-success"><span class="bi bi-stopwatch mx-3"></span>#mins</strong>
+                              </p>                              
+                            </div>
+                            <hr class="border-top border-dark">
+                            <div class="">
+                              <h2><strong class="py-1 text-center my-2 d-block text-warning"><span class="bi bi-geo-fill mx-3"></span></strong></h2>
+                              <p><strong class="py-1 my-1 d-block text-success"><span class="bi bi-geo-alt mx-3"></span>Molyko, Buea, SWR, Cameroon</strong></p>
+                              <p><strong class="py-1 my-1 d-block text-success"><span class="bi bi-geo mx-3"></span>Molyko Omnisport Stadium</strong></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div><!-- End testimonial item -->
+              
+            @empty
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial-item">
+                    <div class="d-flex align-items-center">
+                      <img src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                      <div>
+                        <h3>Category Name</h3>
+                        <div class="stars">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      Category Description/details
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div><!-- End testimonial item -->
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial-item">
+                    <div class="d-flex align-items-center">
+                      <img src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                      <div>
+                        <h3>Category Name</h3>
+                        <div class="stars">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      Category Description/details
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div><!-- End testimonial item -->
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial-item">
+                    <div class="d-flex align-items-center">
+                      <img src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                      <div>
+                        <h3>Category Name</h3>
+                        <div class="stars">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      Category Description/details
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div><!-- End testimonial item -->
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial-item">
+                    <div class="d-flex align-items-center">
+                      <img src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                      <div>
+                        <h3>Category Name</h3>
+                        <div class="stars">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      Category Description/details
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div><!-- End testimonial item -->              
+            @endforelse
+
           </div>
+          <div class="swiper-pagination"></div>
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section><!-- End Testimonials Section -->
 
 
     <!-- -----------------------------
@@ -96,7 +207,7 @@
       --------------------------------
       -------------------------------- -->
     <!-- ======= Our Services Section ======= -->
-    <section id="services" class="services sections-bg">
+    <section id="services" class="services">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
@@ -107,8 +218,9 @@
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
 
           @forelse($services as $key => $service)
+
             <div class="col-lg-4 col-md-6 p-4">
-              <article class="bg-light rounded">
+              <article class="shadow rounded">
 
                 <div class="post-img w-100">
                   <img src="{{ $service->img_path }}" alt="" class="img-fluid img-responsive">
@@ -116,19 +228,20 @@
 
                 <div class="px-3 py-3">
                   <h4 class="title">
-                    <a href="blog-details.html">{!! $service->name !!}</a>
+                    <a href="{{ route('public.services.details', ['id'=>$service->id]) }}">{!! $service->name !!}</a>
                   </h4>
     
                   <p class="py-1">{!! $service->description !!}</p>
-                  <a href="{{ route('public.services.details', ['id'=>$service->id]) }}" class="readmore stretched-link my-2">Read more <i class="bi bi-arrow-right"></i></a>
+                  <a href="{{ route('public.services.details', ['id'=>$service->id]) }}" class="readmore my-2">Read more <i class="bi bi-arrow-right"></i></a>
                 </div>
 
               </article>
-            </div><!-- End Service Item -->            
+            </div><!-- End Service Item -->     
+
           @empty
 
             <div class="col-lg-4 col-md-6 p-4">
-              <article class="bg-light rounded">
+              <article class="shadow rounded">
 
                 <div class="post-img">
                   <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
@@ -140,14 +253,14 @@
                   </h4>
     
                   <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore stretched-link my-2">Read more <i class="bi bi-arrow-right"></i></a>
+                  <a href="#" class="readmore  my-2">Read more <i class="bi bi-arrow-right"></i></a>
                 </div>
 
               </article>
             </div><!-- End Service Item -->
 
             <div class="col-lg-4 col-md-6 p-4">
-              <article class="bg-light rounded">
+              <article class="shadow rounded">
 
                 <div class="post-img">
                   <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
@@ -159,14 +272,14 @@
                   </h4>
     
                   <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore stretched-link my-2">Read more <i class="bi bi-arrow-right"></i></a>
+                  <a href="#" class="readmore  my-2">Read more <i class="bi bi-arrow-right"></i></a>
                 </div>
 
               </article>
             </div><!-- End Service Item -->
 
             <div class="col-lg-4 col-md-6 p-4">
-              <article class="bg-light rounded">
+              <article class="shadow rounded">
 
                 <div class="post-img">
                   <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
@@ -178,14 +291,14 @@
                   </h4>
     
                   <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore stretched-link my-2">Read more <i class="bi bi-arrow-right"></i></a>
+                  <a href="#" class="readmore  my-2">Read more <i class="bi bi-arrow-right"></i></a>
                 </div>
 
               </article>
             </div><!-- End Service Item -->
 
             <div class="col-lg-4 col-md-6 p-4">
-              <article class="bg-light rounded">
+              <article class="shadow rounded">
 
                 <div class="post-img">
                   <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
@@ -197,14 +310,14 @@
                   </h4>
     
                   <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore stretched-link my-2">Read more <i class="bi bi-arrow-right"></i></a>
+                  <a href="#" class="readmore  my-2">Read more <i class="bi bi-arrow-right"></i></a>
                 </div>
 
               </article>
             </div><!-- End Service Item -->
 
             <div class="col-lg-4 col-md-6 p-4">
-              <article class="bg-light rounded">
+              <article class="shadow rounded">
 
                 <div class="post-img">
                   <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
@@ -216,31 +329,12 @@
                   </h4>
     
                   <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore stretched-link my-2">Read more <i class="bi bi-arrow-right"></i></a>
+                  <a href="#" class="readmore  my-2">Read more <i class="bi bi-arrow-right"></i></a>
                 </div>
 
               </article>
             </div><!-- End Service Item -->
 
-            <div class="col-lg-4 col-md-6 p-4">
-              <article class="bg-light rounded">
-
-                <div class="post-img">
-                  <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
-
-                <div class="px-3 py-3">
-                  <h4 class="title">
-                    <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-                  </h4>
-    
-                  <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore stretched-link my-2">Read more <i class="bi bi-arrow-right"></i></a>
-                </div>
-
-              </article>
-            </div><!-- End Service Item -->
-            
           @endforelse
 
         </div>
@@ -260,20 +354,15 @@
             @forelse ($categories as $categ)
               <div class="swiper-slide">
                 <div class="testimonial-wrap">
-                  <div class="testimonial-item">
+                  <div class="testimonial-item bg-light">
                     <div class="d-flex align-items-center">
                       <img src="{{ asset($categ->image == null ? 'img/logo1.jpg': 'uploads/category_images/'.$categ->image) }}" class="testimonial-img flex-shrink-0" alt="">
                       <div>
                         <h3>{{ $categ->name }}</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
                       </div>
                     </div>
                     <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
                       {!! $categ->description??'' !!}
-                      <i class="bi bi-quote quote-icon-right"></i>
                     </p>
                   </div>
                 </div>
@@ -1033,7 +1122,7 @@
             <div class="content ps-0 ps-lg-5">
               <div class="position-relative mt-4">
                 <img src="{{ asset('img/hero.jpeg') }}" class="img-fluid rounded-4" alt="">
-                <a href="" class="glightbox play-btn"></a>
+                <a href="https://www.youtube.com/shorts/MVhe5yhq_Ak" class="glightbox play-btn"></a>
               </div>
             </div>
           </div>
@@ -1140,29 +1229,33 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-4">
-            <div class="content px-xl-5">
+          <div class="col-lg-3">
+            <div class="content px-xl-3">
               <h3><strong>Motto</strong></h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              <p class="fs-5">
+                Building Trust, Creating Homes, Growing Businesses
               </p>
             </div>
           </div>
 
           <div class="col-lg-4">
-            <div class="content px-xl-5">
+            <div class="content px-xl-3">
               <h3><strong>Mission</strong></h3>
               <p class="">
-                Eliminating complexity in property acquisition, Enhancing quality of construction and business processes, creating space for everyone 
+                To be the premier provider of innovative construction solutions, exceptional real estate services, and strategic business partnerships in Buea and beyond
               </p>
             </div>
           </div>
 
-          <div class="col-lg-4">
-            <div class="content px-xl-5">
+          <div class="col-lg-5">
+            <div class="content px-xl-3">
               <h3><strong>Vision</strong></h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                <ul class="list menu" style="list-style-type: disc;">
+                  <li class="list-item">To deliver high-quality construction projects that exceed client expectations</li>
+                  <li class="list-item">To manage and develop properties with integrity, ensuring long-term value and satisfaction</li>
+                  <li class="list-item">To foster lasting business relationships built on trust, reliability, and mutual success</li>
+                </ul>
               </p>
             </div>
           </div>

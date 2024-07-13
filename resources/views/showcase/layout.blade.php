@@ -93,20 +93,21 @@
 
     <div class="container">
       <div class="row gy-4">
+        
         <div class="col-lg-5 col-md-12 footer-info">
           <a href="{{ route('public.home') }}" class="logo d-flex align-items-center">
             <span>Property Trust Group</span>
           </a>
           <p>Building Dreams, Connecting Spaces, Delivering Solutions. Your one-stop destination for real estate, construction, logistics business and janitorial services. From finding your ideal property to constructing your dream space, managing logistics, and optimizing business operations, we're here to streamline every step of your journey.</p>
           <div class="social-links d-flex mt-4">
-            <a href="#" class="youtube"><i class="bi bi-youtube"></i></a>
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="tiktok"><i class="bi bi-tiktok"></i></a>
-            <a href="#" class="telegram"><i class="bi bi-telegram"></i></a>
-            <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="youtube"><i class="bi bi-youtube"></i></a>
+            <a href="https://twitter.com/ptrustgroup/status/1683360424031297537?s=46&t=2ItHQJHSl4cknkDUHt1jRg" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/bpropertytrust?mibextid=2JQ9oc" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com/propertytrustgroup?igshid=OGQ5ZDc2ODk2ZA==" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/property-trust-group/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.tiktok.com/@nkemboris1" class="tiktok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://t.me/Property_Trust" class="telegram"><i class="bi bi-telegram"></i></a>
+            <a href="https://wa.link/n6lrc2" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
 
@@ -138,11 +139,10 @@
             Douala: <b>2eme Avenue Logpom</b> <br>
             Yaoundé: <b>Bonne Diz, Odja</b> <br>
             Limbe: <b>Opposite Castillina, Behind GHS Limbe, Mile 2</b> <br>
-            <strong>Phone:</strong> +237 652078411<br>
-            <strong>Whatsapp:</strong> +237 652078411<br>
-            <strong>Email:</strong> bpropertytrust@gmail.com<br>
+            <a href="tel:237-652-078-411"><strong>Phone:</strong> +237 652078411</a><br>
+            <a href="https://wa.link/n6lrc2"><strong>Whatsapp:</strong> +237 652078411/653507633</a><br>
+            <a href="mailto:bpropertytrust@gmail.com"><strong>Email:</strong> bpropertytrust@gmail.com</a><br>
           </p>
-
         </div>
 
       </div>
