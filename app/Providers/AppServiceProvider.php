@@ -20,9 +20,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bind(HttpServiceProvider::class, function($app){
-            return new HttpServiceProvider();
-        });
+        // $this->app->bind(HttpServiceProvider::class, function($app){
+        //     return new HttpServiceProvider();
+        // });
         $this->app->bindIf(MailService::class, function($app){
             return new MailService(config('services.brevo.key'));
         });
@@ -36,6 +36,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        View::share('services', Service::orderBy('name')->get());
+        // View::share('services', Service::orderBy('name')->get());
     }
 }
