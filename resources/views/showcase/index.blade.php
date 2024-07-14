@@ -47,8 +47,8 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-folder"></i></div>
-              <h4 class="title"><a href="" class="stretched-link">All</a></h4>
+              <div class="icon"><i class="bi bi-phone"></i></div>
+              <h4 class="title"><a href="{{ route('public.contacts') }}" class="stretched-link">Contact</a></h4>
             </div>
           </div>
           <!--End Icon Box -->
@@ -249,7 +249,7 @@
 
                 <div class="px-3 py-3">
                   <h4 class="title">
-                    <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                    <a href="">Dolorum optio tempore voluptas dignissimos</a>
                   </h4>
     
                   <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
@@ -268,7 +268,7 @@
 
                 <div class="px-3 py-3">
                   <h4 class="title">
-                    <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                    <a href="">Dolorum optio tempore voluptas dignissimos</a>
                   </h4>
     
                   <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
@@ -287,7 +287,7 @@
 
                 <div class="px-3 py-3">
                   <h4 class="title">
-                    <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                    <a href="">Dolorum optio tempore voluptas dignissimos</a>
                   </h4>
     
                   <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
@@ -306,7 +306,7 @@
 
                 <div class="px-3 py-3">
                   <h4 class="title">
-                    <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                    <a href="">Dolorum optio tempore voluptas dignissimos</a>
                   </h4>
     
                   <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
@@ -325,7 +325,7 @@
 
                 <div class="px-3 py-3">
                   <h4 class="title">
-                    <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                    <a href="">Dolorum optio tempore voluptas dignissimos</a>
                   </h4>
     
                   <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
@@ -756,7 +756,7 @@
                 </div>
 
                 <h2 class="title">
-                  <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                  <a href="">Dolorum optio tempore voluptas dignissimos</a>
                 </h2>
 
                 <div class="align-items-center">
@@ -774,7 +774,7 @@
                 </div>
 
                 <h2 class="title">
-                  <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                  <a href="">Dolorum optio tempore voluptas dignissimos</a>
                 </h2>
 
                 <div class="align-items-center">
@@ -792,7 +792,7 @@
                 </div>
 
                 <h2 class="title">
-                  <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                  <a href="">Dolorum optio tempore voluptas dignissimos</a>
                 </h2>
 
                 <div class="align-items-center">
@@ -1122,7 +1122,7 @@
             <div class="content ps-0 ps-lg-5">
               <div class="position-relative mt-4">
                 <img src="{{ asset('img/hero.jpeg') }}" class="img-fluid rounded-4" alt="">
-                <a href="https://www.youtube.com/shorts/MVhe5yhq_Ak" class="glightbox play-btn"></a>
+                <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="glightbox play-btn"></a>
               </div>
             </div>
           </div>
