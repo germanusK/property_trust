@@ -302,7 +302,7 @@ section {
   transition: all 0.5s;
   z-index: 997;
   height: 90px;
-  background-color: white;
+  background-color: rgb(37, 37, 37);
 }
 
 .header.sticked {
@@ -333,11 +333,11 @@ section {
 }
 
 .header .logo h1 span {
-  color: #f96f59;
+  color: var(--color-primary);
 }
 
 .header .navbar li>a{
-  color: var(--color-default) !important;
+  color: var(--color-light) !important;
 }
 
 .sticked-header-offset {

@@ -7,7 +7,7 @@
           <h2><span>PROPERTY TRUST GROUP</span></h2>
           <p class="h4">Real Estate, Construction & Business</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started">Get Started</a>
+            <a href="#about" class="btn-get-started d-none d-md-inline">Get Started</a>
             <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
           </div>
         </div>
@@ -75,7 +75,7 @@
             @foreach ($categories as $event)
               <div class="swiper-slide">
                 <div class="testimonial-wrap">
-                  <div class="testimonial-item shadow">
+                  <div class="testimonial-item shadow p-2">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="m-1 px-1">
@@ -85,20 +85,19 @@
                         </div>
                       </div>
                       <div class="col-md-6">
-                        <div class="card">
-                          <div class="card-body h-md-100">
+                        <div class="card p-1 border-0">
+                          <div class="card-body p-0 h-md-100">
                             <div class="">
-                              <h2><strong class="py-1 text-center my-2 d-block text-warning"><span class="bi bi-watch mx-3"></span></strong></h2>                              
+                              <h1><strong class="py-1 text-center my-1 d-block text-primary"><span class="bi bi-watch mx-3"></span></strong></h1>                              
                               <p>
-                                <strong class="py-1 my-1 d-block text-danger"><span class="bi bi-stopwatch mx-3"></span>#Days</strong>
-                                <strong class="py-1 my-1 d-block text-warning"><span class="bi bi-stopwatch mx-3"></span>#Hours</strong>
-                                <strong class="py-1 my-1 d-block text-success"><span class="bi bi-stopwatch mx-3"></span>#mins</strong>
+                                <strong class="py-1 my-1 d-block text-dark"><span class="bi bi-calendar mx-3"></span>Date</strong>
+                                <strong class="py-1 my-1 d-block text-success"><span class="bi bi-stopwatch mx-3"></span>Time</strong>
                               </p>                              
                             </div>
                             <hr class="border-top border-dark">
                             <div class="">
-                              <h2><strong class="py-1 text-center my-2 d-block text-warning"><span class="bi bi-geo-fill mx-3"></span></strong></h2>
-                              <p><strong class="py-1 my-1 d-block text-success"><span class="bi bi-geo-alt mx-3"></span>Molyko, Buea, SWR, Cameroon</strong></p>
+                              <h1><strong class="py-1 text-center my-1 d-block text-primary"><span class="bi bi-geo-fill mx-3"></span></strong></h1>
+                              <p><strong class="py-1 my-1 d-block text-dark"><span class="bi bi-geo-alt mx-3"></span>Molyko, Buea, SWR, Cameroon</strong></p>
                               <p><strong class="py-1 my-1 d-block text-success"><span class="bi bi-geo mx-3"></span>Molyko Omnisport Stadium</strong></p>
                             </div>
                           </div>
