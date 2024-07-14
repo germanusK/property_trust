@@ -8,7 +8,7 @@
           <p class="h4">Real Estate, Construction & Business</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started">Get Started</a>
-            <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
@@ -1122,7 +1122,7 @@
             <div class="content ps-0 ps-lg-5">
               <div class="position-relative mt-4">
                 <img src="{{ asset('img/hero.jpeg') }}" class="img-fluid rounded-4" alt="">
-                <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="glightbox play-btn"></a>
+                <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="play-btn"></a>
               </div>
             </div>
           </div>
