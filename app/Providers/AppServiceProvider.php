@@ -36,6 +36,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        // View::share('services', Service::orderBy('name')->get());
+        View::share('services', Service::orderBy('name')->get());
     }
 }
