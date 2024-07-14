@@ -72,7 +72,7 @@
         <div class="slides-2 swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
 
-            @forelse ($categories as $event)
+            @foreach ($categories as $event)
               <div class="swiper-slide">
                 <div class="testimonial-wrap">
                   <div class="testimonial-item shadow">
@@ -108,90 +108,8 @@
 
                   </div>
                 </div>
-              </div><!-- End testimonial item -->
-              
-            @empty
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->              
-            @endforelse
+              </div><!-- End testimonial item -->          
+            @endforeach
 
           </div>
           <div class="swiper-pagination"></div>
