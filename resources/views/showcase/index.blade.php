@@ -1169,9 +1169,9 @@
               <h3><strong>Vision</strong></h3>
               <p>
                 <ul class="list menu" style="list-style-type: disc;">
-                  <li class="list-item">To deliver high-quality construction projects that exceed client expectations</li>
-                  <li class="list-item">To manage and develop properties with integrity, ensuring long-term value and satisfaction</li>
-                  <li class="list-item">To foster lasting business relationships built on trust, reliability, and mutual success</li>
+                  <li class="list-item"><p>To deliver high-quality construction projects that exceed client expectations</p></li>
+                  <li class="list-item"><p>To manage and develop properties with integrity, ensuring long-term value and satisfaction</p></li>
+                  <li class="list-item"><p>To foster lasting business relationships built on trust, reliability, and mutual success</p></li>
                 </ul>
               </p>
             </div>
