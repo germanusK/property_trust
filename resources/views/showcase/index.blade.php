@@ -1055,7 +1055,7 @@
         <div class="row gy-4 align-items-center">
 
           <div class="col-lg-6">
-            <img src="{{ asset('img/web-settings.png') }}" alt="" class="img-fluid">
+            <img src="{{ asset('assets/img/stats.jpg') }}" alt="" class="img-fluid">
           </div>
 
           <div class="col-lg-6">
