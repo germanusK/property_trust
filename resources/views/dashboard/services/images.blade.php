@@ -16,7 +16,7 @@
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Gallery</label>
                     <div class="col-sm-10">
-                        <div class="form-control row" data-masonry='{"percentPosition": true }'>
+                        <div class="form-control row g-1" data-masonry='{"percentPosition": true }'>
                             @foreach ($service->images as $image)
                                 <div class="col-md-6 col-lg-4 col-xl-3">
                                     <div class="position-relative ">
