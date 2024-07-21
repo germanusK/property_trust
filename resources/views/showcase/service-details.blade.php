@@ -8,8 +8,8 @@
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <h2>Service Details</h2>
-              <p>Explore the depts of our services for a better knowledge of what you have at your disposal</p>
+              <h2>{{ $service->name }}</h2>
+              <p>{{ $service->caption }}</p>
             </div>
           </div>
         </div>
@@ -18,7 +18,7 @@
         <div class="container">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Service Details</li>
+            <li>{{ $service->name }}</li>
           </ol>
         </div>
       </nav>
@@ -40,7 +40,7 @@
 
                     @forelse ($service->images as $image)
                       <div class="swiper-slide">
-                        <img src="{{ $image->img_path }}" alt="">
+                        <img src="{{ $image->img_path }}" alt="" class="img img-fluid img-responsive">
                       </div>
                     @empty
                       <div class="swiper-slide">
