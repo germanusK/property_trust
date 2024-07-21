@@ -142,8 +142,7 @@
                           <div class="portfolio-wrap">
                             <a href="{{ $image->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $image->img_path }}" class="img-fluid" alt=""></a>
                             <div class="portfolio-info">
-                              <h4><a href="portfolio-details.html" title="More Details">App 1</a></h4>
-                              <p>Lorem ipsum, dolor sit amet consectetur</p>
+                              <h4><a href="portfolio-details.html" title="More Details">{{ $service->name }}</a></h4>
                             </div>
                           </div>
                         </div><!-- End Portfolio Item -->
