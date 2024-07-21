@@ -19,7 +19,7 @@
                         <div class="form-control row" data-masonry='{"percentPosition": true }'>
                             @foreach ($service->images as $image)
                                 <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div class="position-relative m-1">
+                                    <div class="position-relative ">
                                         <div class="text-center py-2 position-absolute w-100"><input type="checkbox" checked name="old_images[]" value="{{ $image->id }}"></div>
                                         <img class="img img-fluid img-responsive" src="{{ $image->img_path }}">
                                     </div>
