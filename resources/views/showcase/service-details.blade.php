@@ -141,9 +141,10 @@
                         <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                           <div class="portfolio-wrap">
                             <a href="{{ $image->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $image->img_path }}" class="img-fluid" alt=""></a>
-                            <div class="portfolio-info">
+                            {{-- <div class="portfolio-info">
                               <h4><a href="portfolio-details.html" title="More Details">{{ $service->name }}</a></h4>
-                            </div>
+                              <p>Lorem ipsum, dolor sit amet consectetur</p>
+                            </div> --}}
                           </div>
                         </div><!-- End Portfolio Item -->
                       @endforeach
