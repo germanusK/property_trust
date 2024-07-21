@@ -332,9 +332,9 @@ class Property extends Controller
             $images = [];
             foreach ($files as $key => $file) {
                 # code...
-                $path = asset('uploads/asset_images');
+                $path = asset('uploads/service_images');
                 $fname = 'prop_'.time().'_'.random_int(1000000, 9999999).'.'.$file->getClientOriginalExtension();
-                $file->move(public_path('uploads/asset_images'), $fname);
+                $file->move(public_path('uploads/service_images'), $fname);
                 $images[] = ['img_path'=>$path.'/'.$fname, 'service_id'=>$service_id];
             }
             ServiceImage::insert($images);
