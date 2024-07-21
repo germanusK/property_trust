@@ -2769,3 +2769,10 @@ section {
 .footer .credits a {
   color: #fff;
 }
+
+.masonry {   
+  display: grid;   
+  gap: 0.4rem;   
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));   
+  grid-template-rows: masonry; 
+}

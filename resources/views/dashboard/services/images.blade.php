@@ -16,7 +16,7 @@
                 <div class="row mb-3">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Gallery</label>
                     <div class="col-sm-10">
-                        <div class="form-control masonry-layout">
+                        <div class="form-control masonry">
                             @foreach ($service->images as $image)
                                 <div class="p-1 position-relative image-item col-md-6 col-lg-4 col-xl-3">
                                     <div class="text-center py-2 position-absolute w-100"><input type="checkbox" checked name="old_images[]" value="{{ $image->id }}"></div>
@@ -52,17 +52,5 @@
 @section('script')
     <script>
         $('.input-images').imageUploader();
-
-
-        window.addEventListener('load', () => {
-            let portfolioIsotope = new Isotope(document.querySelector('.masonry-layout'), {
-                itemSelector: '.image-item',
-                layoutMode: 'masonry',
-                filter: '',
-                sortBy: ''
-            });
-
-        });
-
     </script>
 @endsection
