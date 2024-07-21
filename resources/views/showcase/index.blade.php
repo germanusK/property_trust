@@ -771,7 +771,7 @@
                   <div class="portfolio-wrap">
                     <a href="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" class="img-fluid" alt=""></a>
                     <div class="portfolio-info">
-                      <h4><a href="portfolio-details.html" title="More Details">{{ $serv_image->name }}</a></h4>
+                      <h4><a href="{{ route('public.services.details', $serv_image->service_id) }}" title="More Details">{{ $serv_image->name }}</a></h4>
                       <p>{{ $serv_image->caption }}</p>
                     </div>
                   </div>
