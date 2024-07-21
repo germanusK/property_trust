@@ -402,6 +402,10 @@
   <script src="{{ asset('admin_assets') }}/vendor/tinymce/tinymce.min.js"><script>
   <script src="{{ asset('admin_assets') }}/vendor/php-email-form/validate.js"></script>
 
+  {{-- masonry layout plugin --}}
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+
+
   {{-- image uploader script --}}
   <script src="{{ asset('js/jquery.min.js') }}"></script>
   <script src="{{ asset('image_uploader/image-uploader.min.js') }}"></script>
