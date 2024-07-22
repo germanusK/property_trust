@@ -19,7 +19,7 @@
                 <tbody>
                     @foreach (\App\Models\Category::all() as $cat)
                         <tr>
-                            <th scope="row"><a href="#"><img src="{{ asset('uploads/category_images/'.$cat->image??'') }}" alt=""></a></th>
+                            <th scope="row"><a href="#"><img src="{{ $cat->image??'' }}" alt=""></a></th>
                             <td class="fw-semibold">{{ $cat->name??'' }}</td>
                             <td>{!! $cat->description??'' !!}</td>
                             <td class="fw-bold">

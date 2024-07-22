@@ -175,7 +175,7 @@
                 <div class="testimonial-wrap">
                   <div class="testimonial-item bg-light">
                     <div class="d-flex align-items-center">
-                      <img src="{{ asset($categ->image == null ? 'img/logo1.jpg': 'uploads/category_images/'.$categ->image) }}" class="testimonial-img flex-shrink-0" alt="">
+                      <img src="{{ $categ->image != null ? $categ->image : asset('img/logo1.jpg') }}" class="testimonial-img flex-shrink-0" alt="">
                       <div>
                         <h3>{{ $categ->name }}</h3>
                       </div>
