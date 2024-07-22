@@ -115,7 +115,7 @@ class Controller extends BaseController
         
         $data = ['name'=>$request->name, 'description'=>$request->description, 'parent_id'=>$request->parent_id??null];
         if(($icon_file = $request->file('image')) != null){
-            $path = public_path('uploads/category_images');
+            $path = asset('uploads/category_images');
             if(!file_exists($path)){
                 mkdir($path);
             }
@@ -144,7 +144,7 @@ class Controller extends BaseController
         $category = Category::find($id);
         $data = ['name'=>$request->name, 'description'=>$request->description, 'parent_id'=>$request->parent_id];
         if(($icon_file = $request->file('image')) != null){
-            $path = public_path('uploads/category_images');
+            $path = asset('uploads/category_images');
             if(!file_exists($path)){
                 mkdir($path);
             }

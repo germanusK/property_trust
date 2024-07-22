@@ -6,7 +6,7 @@
 
                 <div class="card">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                        <img src="{{ asset('admin_assets/img/news-1.jpg') }}" alt="Profile" class="rounded-circle">
+                        <img src="{{ $category->image }}" alt="Profile" class="rounded-circle">
                         <h2>{{ $category->name??'???' }}</h2>
                     </div>
                 </div>
