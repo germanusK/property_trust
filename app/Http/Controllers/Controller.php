@@ -117,7 +117,7 @@ class Controller extends BaseController
         if(($icon_file = $request->file('image')) != null){
             $path = asset('uploads/category_images');
             $fname = 'category_'.random_int(1000000, 9999999).'_'.time().'.'.$icon_file->getClientOriginalExtension();
-            $icon_file->move($path, $fname);
+            $icon_file->storeAs('category_images', $fname, ['disk'=>'public_uploads']);
             $data['image'] = $path.'/'.$fname;
         }
         $category = new Category($data);
@@ -143,7 +143,7 @@ class Controller extends BaseController
         if(($icon_file = $request->file('image')) != null){
             $path = asset('uploads/category_images');
             $fname = 'category_'.random_int(1000000, 9999999).'_'.time().'.'.$icon_file->getClientOriginalExtension();
-            $icon_file->move($path, $fname);
+            $icon_file->storeAs('category_images', $fname, ['disk'=>'public_uploads']);
             $data['image'] = $path.'/'.$fname;
         }
         $category->update($data);
