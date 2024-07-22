@@ -134,7 +134,7 @@
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
 
-          @forelse($services as $key => $service)
+          @foreach($services as $key => $service)
 
             <div class="col-lg-4 col-md-6 p-4">
               <article class="shadow rounded">
@@ -148,111 +148,13 @@
                     <a href="{{ route('public.services.details', ['id'=>$service->id]) }}">{!! $service->name !!}</a>
                   </h4>
     
-                  <p class="py-1">{!! $service->description !!}</p>
+                  <p class="py-1">{!! $service->caption !!}</p>
                   <a href="{{ route('public.services.details', ['id'=>$service->id]) }}" class="readmore my-2">Read more <i class="bi bi-arrow-right"></i></a>
                 </div>
 
               </article>
             </div><!-- End Service Item -->     
-
-          @empty
-
-            <div class="col-lg-4 col-md-6 p-4">
-              <article class="shadow rounded">
-
-                <div class="post-img">
-                  <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
-
-                <div class="px-3 py-3">
-                  <h4 class="title">
-                    <a href="">Dolorum optio tempore voluptas dignissimos</a>
-                  </h4>
-    
-                  <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore  my-2">Read more <i class="bi bi-arrow-right"></i></a>
-                </div>
-
-              </article>
-            </div><!-- End Service Item -->
-
-            <div class="col-lg-4 col-md-6 p-4">
-              <article class="shadow rounded">
-
-                <div class="post-img">
-                  <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
-
-                <div class="px-3 py-3">
-                  <h4 class="title">
-                    <a href="">Dolorum optio tempore voluptas dignissimos</a>
-                  </h4>
-    
-                  <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore  my-2">Read more <i class="bi bi-arrow-right"></i></a>
-                </div>
-
-              </article>
-            </div><!-- End Service Item -->
-
-            <div class="col-lg-4 col-md-6 p-4">
-              <article class="shadow rounded">
-
-                <div class="post-img">
-                  <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
-
-                <div class="px-3 py-3">
-                  <h4 class="title">
-                    <a href="">Dolorum optio tempore voluptas dignissimos</a>
-                  </h4>
-    
-                  <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore  my-2">Read more <i class="bi bi-arrow-right"></i></a>
-                </div>
-
-              </article>
-            </div><!-- End Service Item -->
-
-            <div class="col-lg-4 col-md-6 p-4">
-              <article class="shadow rounded">
-
-                <div class="post-img">
-                  <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
-
-                <div class="px-3 py-3">
-                  <h4 class="title">
-                    <a href="">Dolorum optio tempore voluptas dignissimos</a>
-                  </h4>
-    
-                  <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore  my-2">Read more <i class="bi bi-arrow-right"></i></a>
-                </div>
-
-              </article>
-            </div><!-- End Service Item -->
-
-            <div class="col-lg-4 col-md-6 p-4">
-              <article class="shadow rounded">
-
-                <div class="post-img">
-                  <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
-
-                <div class="px-3 py-3">
-                  <h4 class="title">
-                    <a href="">Dolorum optio tempore voluptas dignissimos</a>
-                  </h4>
-    
-                  <p class="py-1">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                  <a href="#" class="readmore  my-2">Read more <i class="bi bi-arrow-right"></i></a>
-                </div>
-
-              </article>
-            </div><!-- End Service Item -->
-
-          @endforelse
+          @endforeach
 
         </div>
 
@@ -636,100 +538,48 @@
       </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= Recent Blog Posts Section ======= -->
-    <section id="recent-posts" class="recent-posts sections-bg">
-      <div class="container" data-aos="fade-up">
+    @if($projects->count() > 0)
+      <!-- ======= Recent Blog Posts Section ======= -->
+      <section id="recent-posts" class="recent-posts sections-bg">
+        <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
-          <h2>Our Projects</h2>
-          <p>Enhanced & Effective Services Ensured Through Our Projects (Ready-made Offers)</p>
+          <div class="section-header">
+            <h2>Our Projects</h2>
+            <p>Enhanced & Effective Services Ensured Through Our Projects (Ready-made Offers)</p>
+          </div>
+
+          <div class="row gy-4">
+            @foreach ($projects as $project)
+              <div class="col-xl-4 col-md-6">
+                <article>
+
+                  <div class="post-img">
+                    <img src="{{ $project->images->first()->img_path??'' }}" alt="" class="img-fluid">
+                  </div>
+
+                  <h2 class="title">
+                    <a href="{{ route('public.project.details', $project->id) }}">{{ $project->name }}</a>
+                  </h2>
+
+                  <div class="align-items-center">
+                    {!! $project->description !!}
+                  </div>
+
+                </article>
+              </div><!-- End post list item -->
+            @endforeach
+
+            <div class="col-12">
+              <h2 class="text-end mt-3">
+                <a href="{{ route('public.projects') }}" class="btn-visit">See All Projects</a>
+              </h2>
+            </div><!-- End post list item -->
+
+          </div><!-- End recent posts list -->
+
         </div>
-
-        <div class="row gy-4">
-          @forelse ($projects as $project)
-            <div class="col-xl-4 col-md-6">
-              <article>
-
-                <div class="post-img">
-                  <img src="{{ $project->images->first()->img_path??'' }}" alt="" class="img-fluid">
-                </div>
-
-                <h2 class="title">
-                  <a href="{{ route('public.project.details', $project->id) }}">{{ $project->name }}</a>
-                </h2>
-
-                <div class="align-items-center">
-                  {!! $project->description !!}
-                </div>
-
-              </article>
-            </div><!-- End post list item -->
-          @empty
-            <div class="col-xl-4 col-md-6">
-              <article>
-
-                <div class="post-img">
-                  <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
-
-                <h2 class="title">
-                  <a href="">Dolorum optio tempore voluptas dignissimos</a>
-                </h2>
-
-                <div class="align-items-center">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-                </div>
-
-              </article>
-            </div><!-- End post list item -->
-
-            <div class="col-xl-4 col-md-6">
-              <article>
-
-                <div class="post-img">
-                  <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
-
-                <h2 class="title">
-                  <a href="">Dolorum optio tempore voluptas dignissimos</a>
-                </h2>
-
-                <div class="align-items-center">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-                </div>
-
-              </article>
-            </div><!-- End post list item -->
-
-            <div class="col-xl-4 col-md-6">
-              <article>
-
-                <div class="post-img">
-                  <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-                </div>
-
-                <h2 class="title">
-                  <a href="">Dolorum optio tempore voluptas dignissimos</a>
-                </h2>
-
-                <div class="align-items-center">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-                </div>
-
-              </article>
-            </div><!-- End post list item -->
-          @endforelse
-
-          <div class="col-12">
-            <h2 class="text-end mt-3">
-              <a href="{{ route('public.projects') }}" class="btn-visit">See All Projects</a>
-            </h2>
-          </div><!-- End post list item -->
-
-        </div><!-- End recent posts list -->
-
-      </div>
-    </section><!-- End Recent Blog Posts Section -->
+      </section><!-- End Recent Blog Posts Section -->      
+    @endif
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio sections-bg">
