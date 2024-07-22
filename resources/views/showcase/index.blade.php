@@ -736,21 +736,11 @@
             <div class="slides-1 portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
   
-                <div class="swiper-slide">
-                  <img src="{{ asset('img/hero.jpeg') }}" alt="">
-                </div>
-  
-                <div class="swiper-slide">
-                  <img src="{{ asset('img/IMG-20230717-WA0009.jpg') }}" alt="">
-                </div>
-  
-                <div class="swiper-slide">
-                  <img src="{{ asset('img/IMG-20230717-WA0017.jpg') }}" alt="">
-                </div>
-  
-                <div class="swiper-slide">
-                  <img src="{{ asset('img/IMG-20230717-WA0015.jpg') }}" alt="">
-                </div>
+                @foreach (\App\Models\ServiceImage::inRandomOrder()->take(50)->get() as $serv_img)
+                  <div class="swiper-slide">
+                    <img src="{{ $serv_img->img_path }}" alt="">
+                  </div>
+                @endforeach
   
               </div>
               <!-- <div class="swiper-pagination"></div> -->
