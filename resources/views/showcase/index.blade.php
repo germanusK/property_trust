@@ -65,57 +65,59 @@
   <main id="main">
 
 
-        <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container" data-aos="fade-up">
-        
-        <div class="slides-2 swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
+    @isset($events)
+      <!-- ======= Testimonials Section ======= -->
+      <section id="testimonials" class="testimonials">
+        <div class="container" data-aos="fade-up">
+          
+          <div class="slides-2 swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
 
-            @foreach ($categories as $event)
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item shadow p-2">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="m-1 px-1">
-                          <img class="img-fluid img img-rounded" style="height: 12rem;" src="{{ $event->img ?? asset('assets/img/hero-crop.jpg') }}">
-                          <h3 class="my-3 title">{{ $event->name??'Event name' }}</h3>
-                          <p class="caption">{{ $event->description ?? 'event description' }}</p>
+              @foreach ($events as $event)
+                <div class="swiper-slide">
+                  <div class="testimonial-wrap">
+                    <div class="testimonial-item shadow p-2">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="m-1 px-1">
+                            <img class="img-fluid img img-rounded" style="height: 12rem;" src="{{ $event->img ?? asset('assets/img/hero-crop.jpg') }}">
+                            <h3 class="my-3 title">{{ $event->name??'Event name' }}</h3>
+                            <p class="caption">{{ $event->description ?? 'event description' }}</p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="card p-1 border-0">
-                          <div class="card-body p-0 h-md-100">
-                            <div class="">
-                              <h1><strong class="py-1 text-center my-1 d-block text-primary"><span class="bi bi-watch mx-3"></span></strong></h1>                              
-                              <p>
-                                <strong class="py-1 my-1 d-block text-dark"><span class="bi bi-calendar mx-3"></span>Date</strong>
-                                <strong class="py-1 my-1 d-block text-success"><span class="bi bi-stopwatch mx-3"></span>Time</strong>
-                              </p>                              
-                            </div>
-                            <hr class="border-top border-dark">
-                            <div class="">
-                              <h1><strong class="py-1 text-center my-1 d-block text-primary"><span class="bi bi-geo-fill mx-3"></span></strong></h1>
-                              <p><strong class="py-1 my-1 d-block text-dark"><span class="bi bi-geo-alt mx-3"></span>Molyko, Buea, SWR, Cameroon</strong></p>
-                              <p><strong class="py-1 my-1 d-block text-success"><span class="bi bi-geo mx-3"></span>Molyko Omnisport Stadium</strong></p>
+                        <div class="col-md-6">
+                          <div class="card p-1 border-0">
+                            <div class="card-body p-0 h-md-100">
+                              <div class="">
+                                <h1><strong class="py-1 text-center my-1 d-block text-primary"><span class="bi bi-watch mx-3"></span></strong></h1>                              
+                                <p>
+                                  <strong class="py-1 my-1 d-block text-dark"><span class="bi bi-calendar mx-3"></span>Date</strong>
+                                  <strong class="py-1 my-1 d-block text-success"><span class="bi bi-stopwatch mx-3"></span>Time</strong>
+                                </p>                              
+                              </div>
+                              <hr class="border-top border-dark">
+                              <div class="">
+                                <h1><strong class="py-1 text-center my-1 d-block text-primary"><span class="bi bi-geo-fill mx-3"></span></strong></h1>
+                                <p><strong class="py-1 my-1 d-block text-dark"><span class="bi bi-geo-alt mx-3"></span>Molyko, Buea, SWR, Cameroon</strong></p>
+                                <p><strong class="py-1 my-1 d-block text-success"><span class="bi bi-geo mx-3"></span>Molyko Omnisport Stadium</strong></p>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
+
                     </div>
-
                   </div>
-                </div>
-              </div><!-- End testimonial item -->          
-            @endforeach
+                </div><!-- End testimonial item -->          
+              @endforeach
 
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
 
-      </div>
-    </section><!-- End Testimonials Section -->
+        </div>
+      </section><!-- End Testimonials Section -->
+    @endisset
 
 
     <!-- -----------------------------
