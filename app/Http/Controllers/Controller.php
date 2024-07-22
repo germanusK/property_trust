@@ -116,7 +116,7 @@ class Controller extends BaseController
         $data = ['name'=>$request->name, 'description'=>$request->description, 'parent_id'=>$request->parent_id??null];
         if(($icon_file = $request->file('image')) != null){
             $path = asset('uploads/category_images');
-            if(!file_exists(mkdir(public_path('uploads/category_images'));)){
+            if(!file_exists(public_path('uploads/category_images'))){
                 mkdir(public_path('uploads/category_images'));
             }
             $fname = 'category_'.random_int(1000000, 9999999).'_'.time().'.'.$icon_file->getClientOriginalExtension();
@@ -145,7 +145,7 @@ class Controller extends BaseController
         $data = ['name'=>$request->name, 'description'=>$request->description, 'parent_id'=>$request->parent_id];
         if(($icon_file = $request->file('image')) != null){
             $path = asset('uploads/category_images');
-            if(!file_exists(mkdir(public_path('uploads/category_images'));)){
+            if(!file_exists(public_path('uploads/category_images'))){
                 mkdir(public_path('uploads/category_images'));
             }
             $fname = 'category_'.random_int(1000000, 9999999).'_'.time().'.'.$icon_file->getClientOriginalExtension();
