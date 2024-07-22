@@ -6,7 +6,7 @@
         <div class="card-body pt-4">
 
             <!-- Floating Labels Form -->
-            <form class="row g-3" method="POST">
+            <form class="row g-3" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col-xl-6">
                     <div class="form-floating">
