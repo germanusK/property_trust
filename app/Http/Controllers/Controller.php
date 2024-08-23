@@ -6,7 +6,7 @@ use App\Mail\Confirmation;
 use App\Models\Asset;
 use App\Models\Category;
 use App\Models\Grade;
-use App\Models\MailingList;
+use App\Models\Mailing List;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
