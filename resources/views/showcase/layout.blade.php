@@ -36,6 +36,7 @@
   {{-- <link href="{{ asset('assets') }}/vendor/aos/aos.css" rel="stylesheet"> --}}
   <link href="{{ asset('assets') }}/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="{{ asset('assets') }}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  {{-- <link rel="stylesheet" href="{{ asset('assets/search-select/bootstrap-select.min.css') }}"> --}}
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets') }}/css/main.css" rel="stylesheet">
@@ -47,7 +48,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  <script src="{{ asset('js/app.js') }}"></script>
+  {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
   <script src="{{ asset('js/jquery.min.js') }}"></script>
   <script src="{{ asset('js/animejs/anime.min.js') }}"></script>
 
@@ -86,6 +87,42 @@
   <!-- ======= Hero Section ======= -->
   @yield('hero')
   <!-- End Hero Section -->
+
+  <!-- Search bar starts here -->
+  <section class="search-bar" id="search-bar">
+    <div class="container shadow rounded py-3">
+      <form action="{{ route('search') }}">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 col-xl-3 form-floating my-2">
+            <select type="search" name="search_category" id="" class="form-control " placeholder="filter search category">
+              <option value="">select category</option>
+              @foreach ($categories as $category)
+                <option value="{{ $category->id }}" data-tokens="{{ $category->name }}">{{ $category->name }}</option>
+              @endforeach
+            </select>
+            <label for="search_category" class="px-3">category</label>
+          </div>
+          <div class="col-md-6 col-lg-3 col-xl-3 form-floating my-2">
+            <select type="search" name="search_town" id="" class="form-control" placeholder="filter search town">
+              <option value="">select town</option>
+              @foreach ($towns as $town)
+                <option value="{{ $town->id }}"  data-tokens="{{ $town->name }}">{{ $town->name }}</option>
+              @endforeach
+            </select>
+            <label for="search_location" class="px-3">town</label>
+          </div>
+          <div class="col-md-6 col-lg-4 col-xl-3 form-floating my-2">
+            <input type="text" name="search" id="" class="form-control" placeholder="filter search">
+            <label for="search_location" class="px-3">search</label>
+          </div>
+          <div class="col-lg-2 d-flex justify-content-end my-2">
+            <button class="btn px-4 btn-light rounded" type="submit"><i class="bi bi-search mx-2"></i>Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- Search bar ends here -->
 
   @yield('section')
   <!-- ======= Footer ======= -->
@@ -169,6 +206,8 @@
   <script src="{{ asset('assets') }}/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="{{ asset('assets') }}/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   {{-- <script src="{{ asset('assets') }}/vendor/php-email-form/validate.js"></script> --}}
+
+  {{-- <script src="{{ asset('assets/search-select/bootstrap-select.min.js') }}"></script> --}}
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets') }}/js/main.js"></script>

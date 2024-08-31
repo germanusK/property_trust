@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\HttpService\HttpServiceProvider;
+use App\Models\Category;
 use App\Models\Service;
+use App\Models\Town;
 use App\Services\MailService;
 use Facade\FlareClient\Http\Client;
 use Illuminate\Support\Facades\Http;
@@ -37,5 +39,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         View::share('services', Service::orderBy('name')->get());
+        View::share('categories', Category::orderBy('name')->get());
+        View::share('towns', Town::orderBy('name')->get());
     }
 }

@@ -784,6 +784,7 @@ section {
   padding: 10px 0;
 }
 
+
 .clients .swiper-slide img {
   transition: 0.3s;
 }
@@ -2063,7 +2064,7 @@ section {
   padding: 40px 30px;
   position: relative;
   overflow: hidden;
-  background: #8d5500;
+  background: #004b8d;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;

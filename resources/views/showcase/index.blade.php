@@ -736,17 +736,17 @@
             <div class="slides-1 portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
   
-                @foreach (\App\Models\ServiceImage::inRandomOrder()->take(50)->get() as $serv_img)
-                  <div class="swiper-slide">
-                    <img src="{{ $serv_img->img_path }}" alt="">
+                @for ($i = 101; $i <= 133; $i++)
+                  <div class="swiper-slide container-fluid" style="max-height: 80vh !important;">
+                    <img class="img-fluid w-100" src="{{ asset('assets/img/slider_images/slide-'.$i.'.jpg') }}" alt="">
                   </div>
-                @endforeach
+                @endfor
   
               </div>
-              <!-- <div class="swiper-pagination"></div> -->
+              {{-- <div class="swiper-pagination"></div>  --}}
             </div>
-            <!-- <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div> -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
   
           </div>
           

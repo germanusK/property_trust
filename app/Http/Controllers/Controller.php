@@ -7,6 +7,7 @@ use App\Models\Asset;
 use App\Models\Category;
 use App\Models\Grade;
 use App\Models\MailingList;
+use App\Models\Town;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -153,20 +154,21 @@ class Controller extends BaseController
     public function _search(Request $request)
     {
         # code...
-        $value = $request->search_value;
-        $records = Asset::join('asset_categories', ['asset_categories.asset_id'=>'assets.id'])
-                    ->join('categories', ['categories.id'=>'asset_categories.category_id'])
-                    ->join('asset_grades', ['asset_grades.asset_id'=>'assets.id'])
-                    ->join('grades', ['grades.id'=>'asset_grades.grade_id'])
-                    ->where(function($q)use($value){
-                        $q->where('assets.name', 'LIKE', '%'.$value.'%')
-                        ->orWhere('assets.description', 'LIKE', '%'.$value.'%')
-                        ->orWhere('categories.name', 'LIKE', '%'.$value.'%')
-                        ->orWhere('grades.name', 'LIKE', '%'.$value.'%');
-                    })->distinct()->limit(15)
-                    ->get(['assets.*', 'categories.name as category', 'grades.name as grade']);
+        // dd($request->all());
+        $text = $request->search == null ? ' ' : $request->search;
+        $category = $request->search_category == null ? ' ' : Category::find($request->search_category);
+        $town = $request->search_town == null ? ' ' : Town::find($request->search_town);
+        $string = ($text??'')." ".($category->name??'')." ".($category->description??'');
+        $tokens = array_filter(explode(' ', $string), function($el){
+            return strlen($el) > 0;
+        });
+        $builder = Asset::join('services', ['services.id'=>'assets.service_id'])
+            ->where(function($query){
+                $query->join('categories', ['categories.id'=>'services.category_id'])
+                ->orJoin('asset_categories', ['asset_categories.asset_id'=>'assets.id', 'asset_categories.category_id'=>'categories.id']);
+            });
         
-        return response()->json(['data'=>$records]);
+        // return response()->json(['data'=>$records]);
     }
 
     public function subscribe(Request $request)
