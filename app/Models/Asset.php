@@ -9,7 +9,7 @@ class Asset extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'quantity', 'price', 'address', 'description', 'service_id'];
+    protected $fillable = ['name', 'quantity', 'price', 'address', 'description', 'service_id', 'town_id', 'town_id'];
 
     protected $table = "assets";
 
@@ -31,5 +31,11 @@ class Asset extends Model
     {
         # code...
         return $this->belongsToMany(Category::class, 'asset_categories');
+    }
+
+    public function town()
+    {
+        # code...
+        return $this->belongsTo(Town::class, 'town_id');
     }
 }

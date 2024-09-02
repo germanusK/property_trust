@@ -44,7 +44,7 @@ class Property extends Controller
     {
         # code...
         $valid = Validator::make($request->all(), ['name'=>'required', 'price'=>'required', 'description'=>'required',
-        'address'=>'required', 'images'=>'required']);
+        'address'=>'required', 'images'=>'required', 'town_id'=>'required']);
        
         if ($valid->fails()) {
             // alert for validation errors
@@ -55,7 +55,7 @@ class Property extends Controller
         try{
             // save asset
             DB::beginTransaction();
-            $asset = new Asset(['name' => $request->name, 'service_id'=>$service_id, 'address'=>$request->address, 'price' => $request->price, 'description' => $request->description ?? '']);
+            $asset = new Asset(['name' => $request->name, 'town_id'=>$request->town_id, 'service_id'=>$service_id, 'address'=>$request->address, 'price' => $request->price, 'description' => $request->description ?? '']);
             // dd($asset);
             $asset->save();
             $asset_id = $asset->id;
@@ -107,14 +107,25 @@ class Property extends Controller
                 'group'=>'required|in:RE,GC,ARCH,CONS',
                 'category'=>'required',
                 'price'=>'required',
+                'town_id'=>'required',
                 'grade'=>'required|in:1,2,3,4',
             ]);
             if ($valid->fails()) {
-                return back()->with('error', $valid->errors()->first());
+                session()->flash('error', $valid->errors()->first());
+                return back()->withInput();
             }
             # redirect back on response
+            $prop = Asset::find($id);
+            if($prop == null){
+                session()->flash('error', "Asset could not be found");
+                return back()->withInput();
+            }
+            $prop->update(['name' => $request->name, 'town_id'=>$request->town_id, 'address'=>$request->address, 'price' => $request->price, 'description' => $request->description ?? '', 'town_id'=>$request->town_id]);
+            return back()->with('success', "Operation complete");
         } catch (\Throwable $th) {
             //throw $th;
+            session()->flash('error', $th->getMessage());
+            return back()->withInput();
         }
 
     }
@@ -381,11 +392,11 @@ class Property extends Controller
     public function store_project(Request $request, $service_id)
     {
         # code...
-        $request->validate(['name'=>'required', 'address'=>'required', 'description'=>'required']);
+        $request->validate(['name'=>'required', 'address'=>'required', 'description'=>'required', 'town_id'=>'required']);
 
         // create project
         $project = new Project();
-        $data = ['name'=>$request->name??'', 'address'=>$request->address??'', 'description'=>$request->description, 'service_id'=>$service_id];
+        $data = ['name'=>$request->name??'', 'address'=>$request->address??'', 'town_id'=>$request->town_id, 'description'=>$request->description, 'service_id'=>$service_id];
         $data['service_id'] = $service_id;
         $project->fill($data);
         $project->save();
@@ -423,7 +434,7 @@ class Property extends Controller
     public function update_project(Request $request, $id)
     {
         # code...
-        $validity = Validator::make($request->all(), ['name'=>'required', 'address'=>'required', 'description'=>'required', 'images'=>'required', 'service_id'=>'required']);
+        $validity = Validator::make($request->all(), ['name'=>'required', 'address'=>'required', 'description'=>'required', 'images'=>'required', 'service_id'=>'required', 'town_id'=>'required']);
 
         if($validity->fails()){
             session('error', $validity->errors()->first());
@@ -433,7 +444,7 @@ class Property extends Controller
         $project = Project::find($id);
         
         // update project
-        $data = ['name'=>$request->name??'', 'address'=>$request->address??'', 'description'=>$request->description, 'service_id'=>$request->service_id];
+        $data = ['name'=>$request->name??'', 'address'=>$request->address??'', 'description'=>$request->description, 'service_id'=>$request->service_id, 'town_id'=>$request->town_id];
         if(Project::where(['name'=>$request->name])->where('id', '!=', $id)->count() > 0){
             session()->flash('error', "Another project with the same name already exist");
             return back()->withInput();

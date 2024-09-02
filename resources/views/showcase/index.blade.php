@@ -562,7 +562,7 @@
                   <h2 class="title">
                     <a href="{{ route('public.project.details', $project->id) }}">{{ $project->name }}</a>
                   </h2>
-
+                  <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($project->town)->name??null}}</i> | address: <i>{{$project->address??null}}</i></small>
                   <div class="align-items-center">
                     {!! $project->description !!}
                   </div>
@@ -612,6 +612,7 @@
                   <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt=""></a>
                   <div class="portfolio-info">
                     <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
+                    <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>
                     <p>{!! $ass->description !!}</p>
                   </div>
                 </div>

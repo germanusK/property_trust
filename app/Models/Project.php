@@ -11,7 +11,7 @@ class Project extends Model
 
     protected $table = 'projects';
 
-    protected $fillable = ['name', 'contact', 'email', 'address', 'description', 'service_id'];
+    protected $fillable = ['name', 'contact', 'email', 'address', 'description', 'service_id', 'town_id'];
 
     public function images()
     {
@@ -23,5 +23,11 @@ class Project extends Model
     {
         # code...
         return $this->belongsTo(Service::class, 'service_id');
+    }
+
+    public function town()
+    {
+        # code...
+        return $this->belongsTo(Town::class, 'town_id');
     }
 }

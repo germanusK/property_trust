@@ -126,16 +126,17 @@
 
                   <div class="row gy-4 portfolio-container">
 
-                    @forelse ($service->property as $prop)
-                      <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                          <a href="{{ $prop->images == null ? asset('assets/img/testimonials/testimonials-1.jpg') : $prop->images->first()->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $prop->images == null ? asset('assets/img/testimonials/testimonials-1.jpg') : $prop->images->first()->img_path }}" class="img-fluid" alt=""></a>
-                          <div class="portfolio-info">
-                            <h4><a href="portfolio-details.html" title="More Details">{{ $prop->name }}</a></h4>
-                            <p>{!! $prop->description !!}</p>
-                          </div>
+                    @forelse ($service->property as $ass)
+                    <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+                      <div class="portfolio-wrap">
+                        <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt=""></a>
+                        <div class="portfolio-info">
+                          <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
+                          <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>
+                          <p>{!! $ass->description !!}</p>
                         </div>
-                      </div><!-- End Portfolio Item -->  
+                      </div>
+                    </div><!-- End Portfolio Item --> 
                     @empty
                       @foreach ($service->images as $image)
                         <div class="col-xl-4 col-md-6 portfolio-item filter-app">
@@ -190,7 +191,7 @@
                       <img src="{{ $proj->images->first()->img_path }}" alt="" class="img-responsive h-100">
                       <div>
                         <h4><a href="{{ route('public.project.details', $proj->id) }}">{{ $proj->name }}</a></h4>
-                        <time datetime="2020-01-01">{{ $proj->address }}</time>
+                        <span>{{ $proj->address }}</span>
                       </div>
                     </div><!-- End recent post item-->
                     <hr class="border">

@@ -7,6 +7,7 @@ use App\Models\Asset;
 use App\Models\Category;
 use App\Models\Grade;
 use App\Models\MailingList;
+use App\Models\Project;
 use App\Models\Town;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -36,7 +37,6 @@ class Controller extends BaseController
         $data['assets'] = $assets;
         $data['projects'] = \App\Models\Project::inRandomOrder()->take(6)->get();
         $data['service_images'] = \App\Models\Service::join('service_images', ['service_images.service_id'=>'services.id'])->select(['service_images.*', 'services.name', 'services.caption'])->inRandomOrder()->take(24)->get();
-        $data['categories'] = Category::take(20)->get();
         return view('showcase.index', $data);
     }
 
@@ -156,19 +156,66 @@ class Controller extends BaseController
         # code...
         // dd($request->all());
         $text = $request->search == null ? ' ' : $request->search;
-        $category = $request->search_category == null ? ' ' : Category::find($request->search_category);
-        $town = $request->search_town == null ? ' ' : Town::find($request->search_town);
-        $string = ($text??'')." ".($category->name??'')." ".($category->description??'');
-        $tokens = array_filter(explode(' ', $string), function($el){
-            return strlen($el) > 0;
+        $category = $request->search_category == null ? null : Category::find($request->search_category);
+        $town = $request->search_town == null ? null : Town::find($request->search_town);
+        $string = ($text??'');
+        $noisy_words = "a, an, the and, but, or, nor, for, yet, so, although, because, since, unless, while, if, when, whenever, whereas, as, after, before, until, once, though, even though, whether, as long as, as soon as, in order that, provided that, lest, as if, as though, than, both, either, neither, not only, but also, just as, rather than, so that, even if";
+        $noise = explode(', ', $noisy_words);
+        $tokens = array_filter(explode(' ', $string), function($el)use($noise){
+            return strlen($el) > 0 and !in_array($el, $noise);
         });
-        $builder = Asset::join('services', ['services.id'=>'assets.service_id'])
-            ->where(function($query){
-                $query->join('categories', ['categories.id'=>'services.category_id'])
-                ->orJoin('asset_categories', ['asset_categories.asset_id'=>'assets.id', 'asset_categories.category_id'=>'categories.id']);
-            });
+        if(!($category == null and count($tokens) == 0)){
+
+            $assets = Asset::join('asset_categories', ['asset_categories.asset_id'=>'assets.id'])
+                ->where(function($query)use($town){
+                    if($town != null){$query->where('assets.town_id', $town->id);}
+                })
+                ->join('categories', ['categories.id'=>"asset_categories.category_id"])
+                ->where(function($query)use($category){
+                    if($category != null){$query->where('categories.id', $category->id);}
+                })->where(function($query)use($tokens){
+                    if(count($tokens) > 0){
+                        foreach ($tokens as $key => $tok) {
+                            # code...
+                            $query->where('assets.name', 'LIKE', '%'.$tok.'%')
+                                ->where('assets.address', 'LIKE', '%'.$tok.'%')
+                                ->where('assets.description', 'LIKE', '%'.$tok.'%');
+                        }
+                    }
+                })->select(['assets.*', 'categories.id as category_id', 'categories.name as category_name'])->distinct()->get();
+          
+            $projects = Project::where(function($query)use($town){
+                    if($town != null){$query->where('projects.town_id', $town->id);}
+                })
+                ->where(function($query)use($tokens){
+                    if(count($tokens) > 0){
+                        foreach ($tokens as $key => $tok) {
+                            # code...
+                            $query->where('projects.name', 'LIKE', '%'.$tok.'%')
+                                ->where('projects.address', 'LIKE', '%'.$tok.'%')
+                                ->where('projects.description', 'LIKE', '%'.$tok.'%');
+                        }
+                    }
+                })->select(['projects.*'])->distinct()->get();
+    
+            $categories = Category::where(function($query)use($tokens){
+                    if(count($tokens) > 0){
+                        foreach ($tokens as $key => $tok) {
+                            # code...
+                            $query->where('categories.name', 'LIKE', '%'.$tok.'%')
+                                ->where('categories.description', 'LIKE', '%'.$tok.'%');
+                        }
+                    }
+                })->distinct()->get();
+
+        }
+
+        $data['title'] = (strlen(trim($text)) == 0 ? '' : "\"{$text}\";"). "Category: ".($category->name??'').", Town: ".($town->name??'');
+        $data['_assets'] = $assets??collect();
+        $data['_projects'] = $projects??collect();
+        $data['_categories'] = $categories??collect();
         
-        // return response()->json(['data'=>$records]);
+        return view('showcase.search', $data);
     }
 
     public function subscribe(Request $request)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Asset;
 use App\Models\Project;
 use App\Models\Service;
 use App\Services\MailService;
@@ -20,7 +21,9 @@ public function __construct(MailService $mailService)
         $this->mailService = $mailService;
     }
     public function index(Request $request){
-        return view('showcase.property');
+        $data['projects'] = Project::inRandomOrder()->take(3)->get();
+        $data['assets'] = Asset::orderBy('id', 'DESC')->paginate(60);
+        return view('showcase.property', $data);
     }
 
     public function services_index()
@@ -32,7 +35,8 @@ public function __construct(MailService $mailService)
     public function projects()
     {
         # code...
-        return view('showcase.projects');
+        $data['projects'] = Project::orderBy('id', 'DESC')->paginate(24);
+        return view('showcase.projects', $data);
     }
 
     public function project_details($id)

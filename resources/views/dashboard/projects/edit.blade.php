@@ -17,6 +17,15 @@
                     <input type="text" class="form-control" name="address" value="{{ old('address', $project->address??'') }}" placeholder="Enter property location">
                 </div>
                 <div class="col-12">
+                    <label for="address" class="form-label">Town</label>
+                    <select class="form-control" name="town_id">
+                        <option value="">select town</option>
+                        @foreach ($towns as $town)
+                            <option value="{{$town->id}}" {{old('town_id', $project->town_id) == $town->id ? 'selected' : ''}}>{{$town->name??''}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-12">
                     <label for="service" class="form-label">Service</label>
                     <select class="form-control" name="service_id">
                         <option></option>

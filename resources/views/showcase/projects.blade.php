@@ -30,221 +30,25 @@
 
         <div class="row gy-4 posts-list">
 
+          @foreach ($projects->items() as $project)
           <div class="col-xl-4 col-md-6">
             <article>
 
               <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                <img src="{{ optional($project->images->first())->img_path??asset('assets/img/blog/blog-1.jpg') }}" alt="" class="img-fluid">
               </div>
 
               <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                <a href="{{ route('public.project.details', $project->id) }}">{{ $project->name }}</a>
               </h2>
-
+              <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($project->town)->name??null}}</i> | address: <i>{{$project->address??null}}</i></small>
               <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -- 
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
+                {!! $project->description !!}
               </div>
 
             </article>
           </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-xl-4 col-md-6">
-            <article>
-
-              <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="align-items-center">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet est non consequuntur accusamus fuga a rerum, illum dignissimos maxime nam quo labore provident quis sit libero iure ipsam culpa maiores.
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
+          @endforeach
 
         </div><!-- End blog posts list -->
 
