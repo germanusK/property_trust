@@ -187,6 +187,29 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Events</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('rest.info.index') }}">
+              <i class="bi bi-circle"></i><span>Create Event</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('rest.schedules.index') }}">
+              <i class="bi bi-circle"></i><span>Up-coming Events</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('rest.statistics.index') }}">
+              <i class="bi bi-circle"></i><span>Past Events</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Icons Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-gem"></i><span>More</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">

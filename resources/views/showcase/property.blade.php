@@ -28,7 +28,6 @@
     <!-- ======= Recent Blog Posts Section ======= -->
     <section id="recent-posts" class="recent-posts sections-bg">
       <div class="container" data-aos="fade-up">
-
         <div class="section-header">
           <h2>Rocking Projects</h2>
           <p>The reserves of the season</p>
@@ -61,26 +60,19 @@
               <a href="{{route('public.projects')}}" class="btn-visit">See All Projects</a>
             </h2>
           </div><!-- End post list item -->
-
         </div><!-- End recent posts list -->
-
       </div>
     </section><!-- End Recent Blog Posts Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
-
         <div class="section-header">
           <!-- <h2>Property</h2> -->
           <p class="fs-5">Get The Best From Our Vast Property Space</p>
         </div>
-
         <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
-
-
           <div class="row gy-4 portfolio-container">
-
             @foreach ($assets->items() as $ass)
               <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">

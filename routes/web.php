@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\dashboard\Customers;
+use App\Http\Controllers\dashboard\EventController;
 use App\Http\Controllers\dashboard\Main;
 use App\Http\Controllers\dashboard\Messages;
 use App\Http\Controllers\dashboard\Property as DashboardProperty;
 use App\Http\Controllers\dashboard\Schedules;
 use App\Http\Controllers\dashboard\SiteInfo;
 use App\Http\Controllers\dashboard\StatisticsController;
+use App\Http\Controllers\EventController as ControllersEventController;
 use App\Http\Controllers\Market;
 use App\Http\Controllers\MarketDetails;
 use App\Http\Controllers\Messenger;
@@ -134,6 +136,16 @@ Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
         Route::post('/projects', [StatisticsController::class, 'project_statistics'])->name('projects');
         Route::get('/services', [StatisticsController::class, 'service_statistics'])->name('services');
         Route::post('/bookings', [StatisticsController::class, 'booking_statistics'])->name('bookings');
+    });
+    Route::name('events.')->prefix('events')->group(function(){
+        Route::get('upc', [EventController::class, 'index'])->name('index');
+        Route::get('/acheived', [EventController::class, 'acheived'])->name('acheived');
+        Route::get('/show{$id}', [EventController::class, 'show'])->name('show');
+        Route::get('/create', [EventController::class, 'create'])->name('create');
+        Route::post('/create', [EventController::class, 'store']);
+        Route::get('/edit{id}', [EventController::class, 'edit'])->name('edit');
+        Route::post('/edit{id}', [EventController::class, 'update']);
+        Route::get('/del{id}', [EventController::class, 'delete'])->name('delete');
     });
     Route::get('/profile', [Main::class, 'user_profile'])->name('profile');
     Route::post('/profile', [Main::class, 'update_user_profile']);
