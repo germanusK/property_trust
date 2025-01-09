@@ -37,7 +37,7 @@
                 <i class="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h4>Head Quarter: Buea</h4>
-                  <p>Opposite Sumerset / Heartland supermarket</p>
+                  <p>Opposite Heartland Molyko</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -53,7 +53,7 @@
                 <i class="bi bi-phone flex-shrink-0"></i>
                 <div>
                   <h4>Call:</h4>
-                  <p>+237 652078411</p>
+                  <p>(+237) 652 078 411/653 507 633</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -116,7 +116,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bi bi-1-square-fill"></i></div>
                 <h4 class="title"><a href="" class="stretched-link">Buea (Head Quarter)</a></h4>
-                <p>Opposite Sumerset / Heartland supermarket</p>
+                <p>Opposite Heartland Molyko</p>
               </div>
             </div>
             <!--End Icon Box -->
@@ -125,7 +125,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bi bi-2-square-fill"></i></div>
                 <h4 class="title"><a href="" class="stretched-link">Douala</a></h4>
-                <p>2eme Avenue Logpom</p>
+                <p>Logpom Carrefou Andem, Opposite Neptune</p>
               </div>
             </div>
             <!--End Icon Box -->
@@ -134,7 +134,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bi bi-3-square-fill"></i></div>
                 <h4 class="title"><a href="" class="stretched-link">Yaoundé</a></h4>
-                <p>Bonne Diz, Odja</p>
+                <p>Totouli, Odza</p>
               </div>
             </div>
             <!--End Icon Box -->
@@ -143,7 +143,7 @@
               <div class="icon-box">
                 <div class="icon"><i class="bi bi-4-square-fill"></i></div>
                 <h4 class="title"><a href="" class="stretched-link">Limbe</a></h4>
-                <p>Opposite Castillina, Behind GHS Limbe, Mile 2</p>
+                <p>Espoir Junction Mile1</p>
               </div>
             </div>
             <!--End Icon Box -->

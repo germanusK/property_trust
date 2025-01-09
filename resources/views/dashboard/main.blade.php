@@ -191,17 +191,17 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{ route('rest.info.index') }}">
+            <a href="{{ route('rest.events.create') }}">
               <i class="bi bi-circle"></i><span>Create Event</span>
             </a>
           </li>
           <li>
-            <a href="{{ route('rest.schedules.index') }}">
+            <a href="{{ route('rest.events.index') }}">
               <i class="bi bi-circle"></i><span>Up-coming Events</span>
             </a>
           </li>
           <li>
-            <a href="{{ route('rest.statistics.index') }}">
+            <a href="{{ route('rest.events.acheived') }}">
               <i class="bi bi-circle"></i><span>Past Events</span>
             </a>
           </li>

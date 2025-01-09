@@ -154,9 +154,6 @@ Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
     Route::post('/faqs/delete/{id}', [Main::class, 'delete_faqs'])->name('faqs.delete');
 });
 
-
-
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

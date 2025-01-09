@@ -13,24 +13,24 @@ class EventController extends Controller
     public function index() {
         $data['title'] = "Up-coming Events";
         $data['events'] = Event::whereAfter('date', now())->orderBy('date', 'ASC')->get();
-        return view('dashboard.event.index', $data);
+        return view('dashboard.events.index', $data);
     }
 
     public function acheived() {
         $data['title'] = "Acheived Events";
         $data['events'] = Event::whereBefore('date', now())->orderBy('date', 'DESC')->get();
-        return view('dashboard.event.acheived', $data);
+        return view('dashboard.events.acheived', $data);
     }
 
     public function create(){
         $data['title'] = "Create New Event";
-        return view('dashbaord.event.create', $data);
+        return view('dashboard.events.create', $data);
     }
 
     public function show($id){
         $data['event'] = Event::find($id);
         $data['title'] = "Event Details: ".$data['event']->name;
-        return view('dashbaord.event.show', $data);
+        return view('dashboard.events.show', $data);
     }
 
     public function store(Request $request){
@@ -40,7 +40,7 @@ class EventController extends Controller
     public function edit(Request $request, $id){
         $data['event'] = Event::find($id);
         $data['title'] = "Edit Event: ".$data['event']->name;
-        return view('dashboard.event.edit', $data);
+        return view('dashboard.events.edit', $data);
     }
 
     public function update(Request $request, $id){

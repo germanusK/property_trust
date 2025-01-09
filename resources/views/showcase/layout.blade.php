@@ -145,7 +145,7 @@
           <a href="{{ route('public.home') }}" class="logo d-flex align-items-center">
             <span>Property Trust Group</span>
           </a>
-          <p>Building Dreams, Connecting Spaces, Delivering Solutions. Your one-stop destination for real estate, construction, logistics business and janitorial services. From finding your ideal property to constructing your dream space, managing logistics, and optimizing business operations, we're here to streamline every step of your journey.</p>
+          <p>Leading moost decorated real estate company that invests in and manages diverse portfolio of businesses across various 06 subsidiaries. Our portfolio includes a wide range of businesses met across various industries cutting across rel estate, consulting and finance; our portfolio includes land sales/aquisition, investment, construction, rentals, borehole, electricity, transport and logistics, interior decors, staff/pop, business consultation.</p>
           <div class="social-links d-flex mt-4">
             <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="youtube"><i class="bi bi-youtube"></i></a>
             <a href="https://twitter.com/ptrustgroup/status/1683360424031297537?s=46&t=2ItHQJHSl4cknkDUHt1jRg" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -182,12 +182,12 @@
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>
-            HQ: Buea: <b>Opposite Sumerset / Heartland supermarket</b> <br>
-            Douala: <b>2eme Avenue Logpom</b> <br>
-            Yaoundé: <b>Bonne Diz, Odja</b> <br>
-            Limbe: <b>Opposite Castillina, Behind GHS Limbe, Mile 2</b> <br>
-            <a href="tel:237-652-078-411"><strong>Phone:</strong> +237 652078411</a><br>
-            <a href="https://wa.link/n6lrc2"><strong>Whatsapp:</strong> +237 652078411/653507633</a><br>
+            HQ: Buea: <b>Opposite Heartland Molyko</b> <br>
+            Douala: <b>Logpom Carrefou Andem, Opposite Neptune</b> <br>
+            Yaoundé: <b>Totouli, Odza</b> <br>
+            Limbe: <b>Espoir Junction Mile1</b> <br>
+            <a href="tel:237-652-078-411"><strong>Phone:</strong> (+237) 652 078 411/653 507 633</a><br>
+            <a href="https://wa.link/n6lrc2"><strong>Whatsapp:</strong> (+237) 652 078 411/653 507 633</a><br>
             <a href="mailto:bpropertytrust@gmail.com"><strong>Email:</strong> bpropertytrust@gmail.com</a><br>
           </p>
         </div>
