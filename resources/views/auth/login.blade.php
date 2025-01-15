@@ -6,13 +6,13 @@
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
 
-        <div class="row gx-lg-0 gy-4">
+        <div class="col-md-8 col-lg-6 mx-auto row gx-lg-0 gy-4">
 
-          <div class="col-lg-4">
+          <div class="col-lg-5">
 
             <div class="info-container d-flex flex-column align-items-center justify-content-center">
               <div class="info-item d-flex">
-                <i class="bi bi-forward flex-shrink-0"></i>
+                {{-- <i class="bi bi-forward flex-shrink-0"></i> --}}
                 <div>
                   <h2>LOGIN</h2>
                 </div>
@@ -23,7 +23,8 @@
 
           </div>
 
-          <div class="col-lg-8">
+          <div class="col-lg-7">
+            
             <form action="{{ route('login') }}" method="post" role="form" class="php-email-form">
                 @csrf
                 <div class="form-group mt-3">

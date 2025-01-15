@@ -931,10 +931,10 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                    <img src="{{ asset('assets/img/testimonials/bertrand.jpg') }}" class="testimonial-img flex-shrink-0" alt="">
                     <div>
-                      <h3>Saul Goodman</h3>
-                      <h4>Ceo &amp; Founder</h4>
+                      <h3>NK Bertrand</h3>
+                      <h4>First-Time Buyer</h4>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -942,7 +942,7 @@
                   </div>
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                    As a first-time buyer, I was nervous, but PTG made the entire process seamless and stress-free. Their guidance and expertise were invaluable, and I'm now a proud homeowner! Highly recommended!
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                 </div>
@@ -953,10 +953,10 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img src="{{ asset('assets') }}/img/testimonials/testimonials-2.jpg" class="testimonial-img flex-shrink-0" alt="">
+                    <img src="{{ asset('assets/img/testimonials/ayuk-magareth.jpg') }}" class="testimonial-img flex-shrink-0" alt="">
                     <div>
-                      <h3>Sara Wilsson</h3>
-                      <h4>Designer</h4>
+                      <h3>Ayuk Magareth</h3>
+                      <h4>Land Investor</h4>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -964,7 +964,7 @@
                   </div>
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
-                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                    PTG's knowledge of the local market and their ability to identify lucrative land opportunities is unmatched. They are true professionals, and I trust them implicitly with my real estate investments.
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                 </div>
@@ -975,10 +975,10 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img src="{{ asset('assets') }}/img/testimonials/testimonials-3.jpg" class="testimonial-img flex-shrink-0" alt="">
+                    <img src="{{ asset('assets/img/testimonials/Nestor.jpg') }}" class="testimonial-img flex-shrink-0" alt="">
                     <div>
-                      <h3>Jena Karlis</h3>
-                      <h4>Store Owner</h4>
+                      <h3>Mr Boanong Nestor</h3>
+                      <h4>Commercial Property Owner</h4>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -986,7 +986,7 @@
                   </div>
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                    Managing our commercial property was a constant headache until we partnered with PTG. Their property management services are top-notch, and their attention to detail is impressive. Our tenants are happier, and our returns have increased.
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                 </div>
@@ -997,10 +997,10 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img src="{{ asset('assets') }}/img/testimonials/testimonials-4.jpg" class="testimonial-img flex-shrink-0" alt="">
+                    <img src="{{ asset('assets/img/testimonials/atem-family.jpg') }}" class="testimonial-img flex-shrink-0" alt="">
                     <div>
-                      <h3>Matt Brandon</h3>
-                      <h4>Freelancer</h4>
+                      <h3>The ATEM’s Family</h3>
+                      <h4>Family Home Buyer</h4>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -1008,7 +1008,7 @@
                   </div>
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore.
+                    We were looking for the perfect family home for months. PTG listened to our needs, understood our budget, and helped us find our dream home in record time. Thank you for your exceptional service!
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                 </div>
@@ -1019,10 +1019,10 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img src="{{ asset('assets') }}/img/testimonials/testimonials-5.jpg" class="testimonial-img flex-shrink-0" alt="">
+                    <img src="{{ asset('assets/img/testimonials/jenny-b.jpg') }}" class="testimonial-img flex-shrink-0" alt="">
                     <div>
-                      <h3>John Larson</h3>
-                      <h4>Entrepreneur</h4>
+                      <h3>Jenny B</h3>
+                      <h4>Construction Client</h4>
                       <div class="stars">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                       </div>
@@ -1030,7 +1030,73 @@
                   </div>
                   <p>
                     <i class="bi bi-quote quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore.
+                    PTG's construction team is incredible. They delivered our project on time, within budget, and with impeccable quality. Their professionalism and communication were outstanding.
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <div class="d-flex align-items-center">
+                    <img src="{{ asset('assets/img/testimonials/Eseme.jpg') }}" class="testimonial-img flex-shrink-0" alt="">
+                    <div>
+                      <h3>Mr Eseme Matrose</h3>
+                      <h4>Out-of-Town Investor</h4>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    Being based out of town, I needed a trustworthy partner to handle my real estate investments. PTG has gone above and beyond, offering exceptional service and keeping me informed every step of the way. They are a reliable and transparent partner.
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <div class="d-flex align-items-center">
+                    <img src="{{ asset('assets/img/testimonials/Stephanie.jpg') }}" class="testimonial-img flex-shrink-0" alt="">
+                    <div>
+                      <h3>Magha Stephanie</h3>
+                      <h4>Returning Client</h4>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    This is the second time I've worked with PTG, and their service is consistently excellent. They are truly a cut above the rest, and I wouldn't hesitate to recommend them to anyone.
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <div class="d-flex align-items-center">
+                    <img src="{{ asset('assets/img/testimonials/Schneider.jpg') }}" class="testimonial-img flex-shrink-0" alt="">
+                    <div>
+                      <h3>Asong Schneider</h3>
+                      <h4>Property Seller</h4>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    PTG’s expertise in marketing and sales allowed us to sell our property quickly and at a great price. Their guidance and support throughout the process were invaluable. A truly professional team!.
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
                 </div>
@@ -1072,7 +1138,13 @@
                 </h3>
                 <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                    <p><strong>Property Trust Group</strong> is a leading real estate company in Cameroon with over 7 subsidiaries, known for its exceptional services. We offer a comprehensive range of solutions, including:</p>
+                    <ul style="list-style-type: disc">
+                      <li class="list-item">Property rentals and sales</li>
+                      <li class="list-item">Land acquisition and development</li>
+                      <li class="list-item">Construction and project management</li>
+                    </ul>
+                    <p>Our team of experienced professionals is dedicated to providing personalized and tailored solutions for all your real estate needs. Trust Property-Trust Group to find your dream home, invest wisely, or build your next project.</p>
                   </div>
                 </div>
               </div><!-- # Faq item-->
@@ -1081,12 +1153,22 @@
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
                     <span class="num">2.</span>
-                    How do I contact Property Trust Group?
+                    What are some of the subsidiaries of PTG?
                   </button>
                 </h3>
                 <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    <p>Leading most decorated real estate brand that invest in and manages diverse portfolio of businesses across various 07 subsidiaries</p>
+                    <p>With the goal of a long term approach to investing we work closely with our portfolio companies to develop strategic plans for sustainable growth and success</p>
+                    <ul style="list-style-type: disc;">
+                      <li class="list-item">Property Management and Rentals</li>
+                      <li class="list-item">Property Trust Construction</li>
+                      <li class="list-item">Trust Vest & Trust Finance</li>
+                      <li class="list-item">Trust Lands and Properties</li>
+                      <li class="list-item">Trust Interiors</li>
+                      <li class="list-item">Trust Motors/Logistics</li>
+                      <li class="list-item">Trust Business</li>
+                    </ul>
                   </div>
                 </div>
               </div><!-- # Faq item-->
@@ -1095,12 +1177,26 @@
                 <h3 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
                     <span class="num">3.</span>
-                    Which towns are covered for Property Trust Group services?
+                    Where are the offices of PTG located?
                   </button>
                 </h3>
                 <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                    <p>
+                      <h5 class="text-primary">Home: <strong>Cameroon</strong></h5>
+                      HQ: <strong>Buea, Molyko</strong><br>
+                      Yaoundé: <strong>Yde IV Odza, Toutouli</strong><br>
+                      Limbe: <strong>Espoir junction, Mile 1</strong><br>
+                      Douala: <strong>Logpom, Carrefou Andem opp Neptune</strong> <br>
+                      Bamenda: <strong>Developing </strong><br>
+                      Lebialem: <strong>Kongho, Fonjumetaw -Alou</strong><br><br>
+
+                      <h5 class="text-primary"><strong>International offices:</strong></h5>
+                      Nigeria: <strong>25 JD Street, Portharcourt </strong><br>
+                      Dubai, UAE: <strong>Tameen House, Barsha Heights (In partnership with The First Group)</strong><br>
+                      Germany: <strong>Developing</strong><br>
+                      USA: <strong>Developing</strong>
+                    </p>
                   </div>
                 </div>
               </div><!-- # Faq item-->
@@ -1114,7 +1210,7 @@
                 </h3>
                 <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    <p>PTG expects trust, clear communication, and a collaborative approach to achieve your real estate goals.</p>
                   </div>
                 </div>
               </div><!-- # Faq item-->
@@ -1128,35 +1224,109 @@
                 </h3>
                 <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                    <p>Property Trust Group serves a diverse population, including:</p>
+                    <ul style="list-style-type: disc;">
+                      <li class="list-item"><strong>Individuals</strong>: First-time homebuyers, families, and seasoned investors seeking residential properties</li>
+                      <li class="list-item"><strong>Businesses</strong>: Companies looking for commercial, industrial, or retail spaces</li>
+                      <li class="list-item"><strong>Land Investors</strong>: Those interested in land acquisition, development, and investment opportunities</li>
+                      <li class="list-item"><strong>Property Owners</strong>: Individuals and businesses requiring property management and related services</li>
+                      <li class="list-item"><strong>International Investors</strong>: Those seeking to invest in the Cameroonian real estate market</li>
+                    </ul>
+                    <p>Essentially, PTG aims to serve anyone with real estate needs or interests within its operational areas</p>
                   </div>
                 </div>
               </div><!-- # Faq item-->
 
               <div class="accordion-item">
                 <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-6">
                     <span class="num">6.</span>
                     What difference does Property Trust Group make?
                   </button>
                 </h3>
-                <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                <div id="faq-content-6" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                    <p>Property Trust Group differentiates itself by providing:</p>
+                    <ul style="list-style-type: disc;">
+                      <li class="list-item"><strong>Expertise:</strong> Deep market knowledge and experienced professionals</li>
+                      <li class="list-item"><strong>Integrity:</strong> Transparent and ethical business practices</li>
+                      <li class="list-item"><strong>Quality: </strong>Commitment to high-quality properties and services</li>
+                      <li class="list-item"><strong>Solutions:</strong> Tailored real estate solutions to meet individual needs</li>
+                      <li class="list-item"><strong>Partnership:</strong> Collaborative approach and strong client relationships</li>
+                      <li class="list-item"><strong>Innovation:</strong> Embracing new technology and approaches</li>
+                      <li class="list-item"><strong>Sustainability:</strong> Prioritizing environmentally responsible developments</li>
+                    </ul>
+                    <p>Essentially, PTG aims to offer a holistic approach that goes beyond simple transactions</p>
                   </div>
                 </div>
               </div><!-- # Faq item-->
 
               <div class="accordion-item">
                 <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-7">
                     <span class="num">7.</span>
-                    What customers benefit with Property Trust Group?
+                    Why should I choose PTG?
                   </button>
                 </h3>
-                <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                <div id="faq-content-7" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                    <p>You should choose PTG because we offer:</p>
+                    <ul style="list-style-type: disc;">
+                      <li class="list-item"><strong>Proven Expertise:</strong> Deep knowledge of the local real estate market</li>
+                      <li class="list-item"><strong>Commitment to Quality:</strong> High standards in all our projects and services</li>
+                      <li class="list-item"><strong>Client-Focused Approach:</strong> We prioritize your needs and goals</li>
+                      <li class="list-item"><strong>Transparency & Trust:</strong> We operate with integrity and honesty</li>
+                      <li class="list-item"><strong>Comprehensive Solutions:</strong> We offer a wide range of real estate services</li>
+                      <li class="list-item"><strong>Innovation & Technology:</strong> We embrace new technologies for better results</li>
+                      <li class="list-item"><strong>Sustainable Practices:</strong> We are conscious about creating long term value for the community</li>
+                    </ul>
+                    <p>In short, we are your trusted partner for success in real estate</p>
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-8">
+                    <span class="num">8.</span>
+                    How does PTG conducts due diligence to avoid fraud ?
+                  </button>
+                </h3>
+                <div id="faq-content-8" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    <p>PTG conducts thorough due diligence to avoid fraud through a multi-layered approach:</p>
+                    <ul style="list-style-type: disc;">
+                      <li class="list-item"><strong>Title Verification:</strong> Rigorous checks to confirm property ownership and legitimacy</li>
+                      <li class="list-item"><strong>Legal Review:</strong> Engaging legal experts to scrutinize contracts and legal documentation</li>
+                      <li class="list-item"><strong>Financial Audits:</strong> Careful examination of financial transactions and record-keeping</li>
+                      <li class="list-item"><strong>Property Inspections:</strong> Comprehensive physical assessments to ensure accurate property representation</li>
+                      <li class="list-item"><strong>Background Checks:</strong> Vetting involved parties, including clients and partners, when necessary</li>
+                      <li class="list-item"><strong>Reference Checks:</strong> Confirming the reliability of individuals and entities with whom we conduct business</li>
+                      <li class="list-item"><strong>Compliance Monitoring:</strong> Adhering to all applicable laws and regulations to prevent fraudulent practices</li>
+                      <li class="list-item"><strong>Internal Controls:</strong> Implementing robust internal procedures to maintain accountability</li>
+                      <li class="list-item"><strong>Transparency:</strong> Ensuring clear communication and documentation with all stakeholders</li>
+                    </ul>
+                    <p>PTG's commitment to a thorough due diligence process minimizes risk and protects our clients, partners, and the company's reputation</p>
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-9">
+                    <span class="num">9.</span>
+                    Why is PTG considered to soon be the Face of Real Estate in Africa
+                  </button>
+                </h3>
+                <div id="faq-content-9" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    <ul style="list-style-type: disc;">
+                      <li class="list-item">We’re Setting a new standard for excellence in the industry</li>
+                      <li class="list-item">Being a catalyst for positive change in the African real estate sector</li>
+                      <li class="list-item">Demonstrating the potential of African-led real estate development</li>
+                      <li class="list-item">Contributing to the broader economic prosperity of the continent</li>
+                    </ul>
+                    <p>We strive to be a force for good in the African real estate landscape and through our commitment to innovation, integrity, and sustainability, we aim to inspire others and help shape a brighter future for the industry</p>
                   </div>
                 </div>
               </div><!-- # Faq item-->
