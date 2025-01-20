@@ -9,6 +9,7 @@ use App\Http\Controllers\dashboard\Property as DashboardProperty;
 use App\Http\Controllers\dashboard\Schedules;
 use App\Http\Controllers\dashboard\SiteInfo;
 use App\Http\Controllers\dashboard\StatisticsController;
+use App\Http\Controllers\dashboard\TeamController;
 use App\Http\Controllers\EventController as ControllersEventController;
 use App\Http\Controllers\Market;
 use App\Http\Controllers\MarketDetails;
@@ -16,6 +17,7 @@ use App\Http\Controllers\Messenger;
 use App\Http\Controllers\Others;
 use App\Http\Controllers\Property;
 use App\Http\Controllers\PropertyDetails;
+use App\Http\Controllers\team\HomeController;
 use App\Http\Controllers\VisitBooker;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +49,7 @@ Route::post('/bookVisit/{id}', [VisitBooker::class, 'submit']);
 Route::post('/bookVisit/confirm/{id}', [VisitBooker::class, 'submit'])->name('schedule.confirm');
 Route::get('/about', [Others::class, 'about']);
 Route::get('/contact', [Others::class, 'contact'])->name('public.contacts');
+Route::get('/team{id}profile', [Others::class, 'team_profile'])->name('public.team_profile');
 Route::get('/random_project', [Controller::class, 'random_project'])->name('public.random.project');
 
 Route::post('/submitSchedule', [VisitBooker::class, 'submit']);
@@ -152,6 +155,22 @@ Route::name('rest.')->prefix('rest')->middleware('auth')->group(function(){
     Route::get('/faqs/{id?}', [Main::class, 'faqs'])->name('faqs');
     Route::post('/faqs/{id?}', [Main::class, 'update_faqs']);
     Route::post('/faqs/delete/{id}', [Main::class, 'delete_faqs'])->name('faqs.delete');
+
+    Route::prefix('team')->name('team.')->group(function(){
+        Route::get('', [TeamController::class, 'index'])->name('index');
+        Route::get('activate{profile_id}', [TeamController::class, 'activate'])->name('activate');
+        Route::get('deactivate{profile_id}', [TeamController::class, 'deactivate'])->name('deactivate');
+        Route::get('mount{profile_id}', [TeamController::class, 'mount'])->name('mount');
+        Route::get('unmount{profile_id}', [TeamController::class, 'unmount'])->name('unmount');
+    });
+});
+
+Route::name('team.')->prefix('team')->middleware('team')->group(function(){
+    Route::get('', [HomeController::class, 'home'])->name('home');
+    Route::get('edit_profile', [HomeController::class, 'edit_profile'])->name('edit_profile');
+    Route::post('edit_profile', [HomeController::class, 'update_profile']);
+    Route::get('change_password', [HomeController::class, 'change_password'])->name('change_password');
+    Route::post('change_password', [HomeController::class, 'update_password']);
 });
 
 Route::get('/dashboard', function () {

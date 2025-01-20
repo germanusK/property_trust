@@ -39,18 +39,9 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-
-  <style>
-    .line-clamp {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-  </style>
 </head>
 
-<body class="bg-white">
+<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
@@ -89,9 +80,9 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="{{ route('rest.profile') }}">
+              <a class="dropdown-item d-flex align-items-center" href="{{ route('team.edit_profile') }}">
                 <i class="bi bi-person"></i>
-                <span>My Profile</span>
+                <span>Edit Profile</span>
               </a>
             </li>
             <li>
@@ -121,145 +112,20 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="{{ route('rest.dashboard') }}">
+        <a class="nav-link " href="{{ route('team.home') }}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Categories</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ route('rest.categories.index') }}">
-              <i class="bi bi-circle"></i><span>All Categories</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('rest.categories.create') }}">
-              <i class="bi bi-circle"></i><span>Add Category</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Services</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ route('rest.services.create') }}">
-              <i class="bi bi-circle"></i><span>New Service</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('rest.services.index') }}">
-              <i class="bi bi-circle"></i><span>All Services</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Property</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ route('rest.assets.index') }}">
-              <i class="bi bi-circle"></i><span>All Property</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('rest.statistics.assets') }}">
-              <i class="bi bi-circle"></i><span>Property Statistics</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Projects</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ route('rest.projects.index') }}">
-              <i class="bi bi-circle"></i><span>All Projects</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Charts Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Events</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ route('rest.events.create') }}">
-              <i class="bi bi-circle"></i><span>Create Event</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('rest.events.index') }}">
-              <i class="bi bi-circle"></i><span>Up-coming Events</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('rest.events.acheived') }}">
-              <i class="bi bi-circle"></i><span>Past Events</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#more-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>More</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="more-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ route('rest.team.index') }}">
-              <i class="bi bi-circle"></i><span>Our Team</span>
-            </a>
-          </li>
-          {{-- <li>
-            <a href="{{ route('rest.info.index') }}">
-              <i class="bi bi-circle"></i><span>Public Pages</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('rest.schedules.index') }}">
-              <i class="bi bi-circle"></i><span>Schedules</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('rest.statistics.index') }}">
-              <i class="bi bi-circle"></i><span>Statistics</span>
-            </a>
-          </li> --}}
-        </ul>
-      </li><!-- End Icons Nav -->
-
       <hr />
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('rest.profile') }}">
+        <a class="nav-link collapsed" href="{{ route('team.edit_profile') }}">
           <i class="bi bi-person"></i>
-          <span>Profile</span>
+          <span>Edit Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('rest.faqs') }}">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
 
       {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#">

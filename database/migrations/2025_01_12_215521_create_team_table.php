@@ -15,10 +15,15 @@ class CreateTeamTable extends Migration
     {
         Schema::create('team', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('position');
+            $table->string('name')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('position')->nullable();
             $table->string('img_url')->nullable();
             $table->json('media_links')->nullable();
+            $table->string('email');
+            $table->string('password');
+            $table->boolean('status')->default(0);
+            $table->boolean('mount')->default(0);
             $table->timestamps();
         });
     }

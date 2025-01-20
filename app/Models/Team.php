@@ -10,7 +10,7 @@ class Team extends Authenticatable
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'img_url', 'position', 'media_links'];
+    protected $fillable = ['name', 'img_url', 'phone', 'position', 'media_links', 'email', 'password', 'status', 'mount'];
     protected $table = 'team';
     protected $dates = ['created_at', 'updated_at'];
 

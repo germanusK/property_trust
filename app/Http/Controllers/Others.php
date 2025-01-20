@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MailBase;
+use App\Models\Team;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class Others extends Controller
 {
@@ -44,4 +46,11 @@ class Others extends Controller
         # code...
         return view('showcase.contact');
     }
+
+    public function team_profile($id) {
+        $data['profile'] = Team::find($id);
+        $data['qrcode'] = QrCode::size(100, 100)->generate(route('public.team_profile', $id));
+        return view('showcase.team_profile', $data);
+    }
+    
 }

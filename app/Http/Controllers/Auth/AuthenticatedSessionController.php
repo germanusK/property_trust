@@ -32,6 +32,10 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if(auth('team')->user() != null){
+            return redirect()->route('team.home');
+        }
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
@@ -44,6 +48,7 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request)
     {
         Auth::guard('web')->logout();
+        Auth::guard('team')->logout();
         
         $request->session()->invalidate();
         

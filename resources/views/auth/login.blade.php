@@ -38,7 +38,9 @@
                     <div class="error-message"></div>
                     <div class="sent-message">Your message has been sent. Thank you!</div>
                 </div>
-                <div class="text-center"><button type="submit" class="btn-get-started">login</button></div>
+                <div class="text-center"><button type="submit" class="btn btn-primary btn-sm rounded">login</button></div>
+                <hr>
+                <div class="text-center"><a href="{{route('new_profile')}}" class="text-success text-capitalize"><strong>create profile</strong></a></div>
             </form>
           </div><!-- End Contact Form -->
 

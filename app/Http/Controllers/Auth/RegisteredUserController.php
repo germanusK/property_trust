@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -50,5 +51,23 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
+    }
+
+    
+    public function create_team_profile (Request $request) {
+        $data['title'] = "Create New Team Profile";
+        return view('auth.register_profile', $data);
+    }
+
+    public function store_team_profile(Request $request) {
+        $request->validate(['email'=>'required|email', 'password'=>'required|min:6', 'confirm_password'=>'required|same:password']);
+        if(Team::where('email', $request->username)->count() > 0){
+            session()->flash('error', 'Email has already been used. Try something else');
+            return back()->withInput();
+        }
+        $input = ['email'=>$request->email, 'password'=>Hash::make($request->password)];
+        $profile = Team::create($input);
+        auth('team')->login($profile);
+        return redirect()->route('team.home');
     }
 }

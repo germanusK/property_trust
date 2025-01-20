@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Grade;
 use App\Models\MailingList;
 use App\Models\Project;
+use App\Models\Team;
 use App\Models\Town;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -33,7 +34,7 @@ class Controller extends BaseController
         // return '---------------------------';
         // get latest/trending items 
         $assets = Asset::orderBy('id', 'DESC')->take(24)->get();
-    
+        $data['team'] = Team::where('status', 1)->where('mount', 1)->get();
         $data['assets'] = $assets;
         $data['projects'] = \App\Models\Project::inRandomOrder()->take(6)->get();
         $data['service_images'] = \App\Models\Service::join('service_images', ['service_images.service_id'=>'services.id'])->select(['service_images.*', 'services.name', 'services.caption'])->inRandomOrder()->take(24)->get();

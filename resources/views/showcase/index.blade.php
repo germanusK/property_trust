@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
-          <img src="{{ asset('img/hero.jpeg') }}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+          <img src="{{ asset('assets/img/slider_images/slide-103.jpg') }}" class="img-fluid rounded" alt="" data-aos="zoom-out" data-aos-delay="100">
         </div>
       </div>
     </div>
@@ -662,61 +662,84 @@
 
         <div class="row gy-4">
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="{{ asset('assets') }}/img/team/team-1.jpg" class="img-fluid" alt="">
-              <h4>Rt. CPT. Boris Nkemateh</h4>
-              <span>CEO PTG</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
+          @forelse ($team as $profile)
+          
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="member">
+                <img src="{{ $profile->img_url??'' }}" alt="NO PROFILE IMAGE FOUND" class="img-fluid" alt="">
+                <a href="{{route('public.team_profile', $profile->id)}}"><h4>{{$profile->name??''}}</h4></a>
+                <span>{{$profile->position}}</span>
+                <div class="social">
+                  @if($profile->media_links != null)
+                    @foreach (json_decode($profile->media_links) as $key => $link)
+                      @if($link != null and $key != 'whatsapp_phone')
+                        <a href="{{$link}}"><i class="bi bi-{{$key}}"></i></a>
+                      @endif
+                    @endforeach
+                  @endif
+                </div>
               </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <img src="{{ asset('assets') }}/img/team/team-2.jpg" class="img-fluid" alt="">
-              <h4>Rt. Gilbert Mulango</h4>
-              <span>Real Estate manager, Buea</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
+            </div><!-- End Team Member -->
+                    
+          @empty
+  
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="member">
+                <img src="{{ asset('assets') }}/img/team/team-1.jpg" class="img-fluid" alt="">
+                <h4>Rt. CPT. Boris Nkemateh</h4>
+                <span>CEO PTG</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
               </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <img src="{{ asset('assets') }}/img/team/team-3.jpg" class="img-fluid" alt="">
-              <h4>Rt. Jick Etienne Emeka</h4>
-              <span>Real Estate manager, Yaoundé</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
+            </div><!-- End Team Member -->
+  
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+              <div class="member">
+                <img src="{{ asset('assets') }}/img/team/team-2.jpg" class="img-fluid" alt="">
+                <h4>Rt. Gilbert Mulango</h4>
+                <span>Real Estate manager, Buea</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
               </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <img src="{{ asset('assets') }}/img/team/team-4.jpg" class="img-fluid" alt="">
-              <h4>Miss. Taku Bethel</h4>
-              <span>Public Relations Officer, PTG</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
+            </div><!-- End Team Member -->
+  
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+              <div class="member">
+                <img src="{{ asset('assets') }}/img/team/team-3.jpg" class="img-fluid" alt="">
+                <h4>Rt. Jick Etienne Emeka</h4>
+                <span>Real Estate manager, Yaoundé</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
               </div>
-            </div>
-          </div><!-- End Team Member -->
+            </div><!-- End Team Member -->
+  
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+              <div class="member">
+                <img src="{{ asset('assets') }}/img/team/team-4.jpg" class="img-fluid" alt="">
+                <h4>Miss. Taku Bethel</h4>
+                <span>Public Relations Officer, PTG</span>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div><!-- End Team Member -->
+            
+          @endforelse
 
         </div>
 
@@ -738,8 +761,8 @@
               <div class="swiper-wrapper align-items-center">
   
                 @for ($i = 101; $i <= 133; $i++)
-                  <div class="swiper-slide container-fluid" style="max-height: 80vh !important;">
-                    <img class="img-fluid w-100" src="{{ asset('assets/img/slider_images/slide-'.$i.'.jpg') }}" alt="">
+                  <div class="swiper-slide container-fluid d-flex flex-column justify-content-center" style="max-height: 80vh !important; overflow: hidden;">
+                    <img class="img-fluid w-100 rounded" src="{{ asset('assets/img/slider_images/slide-'.$i.'.jpg') }}" alt="">
                   </div>
                 @endfor
   
@@ -794,18 +817,28 @@
           <div class="col-lg-6">
 
             <div class="stats-item d-flex align-items-center">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong> We get rid of the headache</p>
+              <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Branches</strong> nationally and internationally</p>
             </div><!-- End Stats Item -->
 
             <div class="stats-item d-flex align-items-center">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects</strong> Ready-made stuff just for you</p>
+              <span data-purecounter-start="0" data-purecounter-end="8922" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Average Happy Clients</strong> satisfied through our services annually</p>
             </div><!-- End Stats Item -->
 
             <div class="stats-item d-flex align-items-center">
-              <span data-purecounter-start="0" data-purecounter-end="453" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hours Of Support</strong> committed to serve</p>
+              <span data-purecounter-start="0" data-purecounter-end="612" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Projects</strong> completed successfully</p>
+            </div><!-- End Stats Item -->
+
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Subsidiary Companies</strong></p>
+            </div><!-- End Stats Item -->
+
+            <div class="stats-item d-flex align-items-center">
+              <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>First in Real Estate Ranking</strong> in Cameroon</p>
             </div><!-- End Stats Item -->
 
           </div>
@@ -850,7 +883,7 @@
               <ul>
                 <li><i class="bi bi-check"></i> See available properties</li>
                 <li><i class="bi bi-check"></i> Make your choice</li>
-                <li><i class="bi bi-check"></i> Pay commission charge</li>
+                <li><i class="bi bi-check"></i> Schedule for a tour/site inspection</li>
               </ul>
             </div>
           </div><!-- End Pricing Item -->
@@ -862,6 +895,7 @@
               </div>
               <h3>Own A Property</h3>
               <ul>
+                <li><i class="bi bi-check"></i> Conduct due diligence & all legal rights</li>
                 <li><i class="bi bi-check"></i> Pay for asset</li>
                 <li><i class="bi bi-check"></i> Reserve ownership right</li>
               </ul>
@@ -883,7 +917,7 @@
             <div class="content px-xl-3">
               <h3><strong>Motto</strong></h3>
               <p class="fs-5">
-                Building Trust, Creating Homes, Growing Businesses
+                Building Trust, Creating Homes, Growing Businesses. Walk your Real Estate journey with us!
               </p>
             </div>
           </div>
@@ -892,7 +926,7 @@
             <div class="content px-xl-3">
               <h3><strong>Mission</strong></h3>
               <p class="">
-                To be the premier provider of innovative construction solutions, exceptional real estate services, and strategic business partnerships in Buea and beyond
+                To be the Face of Real Estate in Africa, and to be the premier provider of innovative construction solutions, exceptional real estate services, and strategic business partnerships in Cameroon, Africa and beyond
               </p>
             </div>
           </div>

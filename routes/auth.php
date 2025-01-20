@@ -62,3 +62,6 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+
+Route::get('/new_profile', [RegisteredUserController::class, 'create_team_profile'])->middleware('guest')->name('new_profile');
+Route::post('/new_profile', [RegisteredUserController::class, 'store_team_profile'])->middleware('guest')->name('new_profile');
