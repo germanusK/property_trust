@@ -58,7 +58,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="{{route('rest.dashboard')}}" class="logo d-flex align-items-center">
         <img src="{{ asset('img/logo1.jpg') }}" alt="">
-        <span class="d-none d-lg-block">PT-G</span>
+        <span class="d-none d-lg-block">PTG</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -76,7 +76,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="{{ asset('img/real_estate_icon.png') }}" alt="Profile" class="rounded-circle">
+            <img src="{{ asset('img/logo1.jpg') }}" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">Admin</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -303,10 +303,6 @@
       &copy; Copyright <strong><span>Property Trust Group</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
     </div>
   </footer><!-- End Footer -->
 
