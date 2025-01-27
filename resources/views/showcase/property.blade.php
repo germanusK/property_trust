@@ -40,7 +40,7 @@
               <article>
 
                 <div class="post-img">
-                  <img src="{{ optional($project->images->first())->img_path??asset('assets/img/hero-crop.jpg') }}" alt="" class="img-fluid">
+                  <img title="{{$project->name}}" src="{{ optional($project->images->first())->img_path??asset('assets/img/hero-crop.jpg') }}" alt="{{$project->name}}" class="img-fluid">
                 </div>
 
                 <h2 class="title">
@@ -76,7 +76,7 @@
             @foreach ($assets->items() as $ass)
               <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
-                  <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt=""></a>
+                  <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$ass->name}}" src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="{{$ass->name}}"></a>
                   <div class="portfolio-info">
                     <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
                     <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>

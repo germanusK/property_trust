@@ -35,7 +35,7 @@
             <article>
 
               <div class="post-img">
-                <img src="{{ optional($project->images->first())->img_path??asset('assets/img/blog/blog-1.jpg') }}" alt="" class="img-fluid">
+                <img title="{{$project->name}}" src="{{ optional($project->images->first())->img_path??asset('assets/img/blog/blog-1.jpg') }}" alt="{{$project->name}}" class="img-fluid">
               </div>
 
               <h2 class="title">

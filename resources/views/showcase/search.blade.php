@@ -35,7 +35,7 @@
                     <div class="testimonial-wrap">
                       <div class="testimonial-item bg-light">
                         <div class="d-flex align-items-center">
-                          <img src="{{ $categ->image != null ? $categ->image : asset('img/logo1.jpg') }}" class="testimonial-img flex-shrink-0" alt="">
+                          <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $categ->image != null ? $categ->image : asset('img/logo1.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                           <div>
                             <h3>{{ $categ->name }}</h3>
                           </div>
@@ -75,7 +75,7 @@
                   {{-- @dd($ass->images) --}}
                   <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-wrap">
-                      <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt=""></a>
+                      <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
                       <div class="portfolio-info">
                         <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
                         <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>
@@ -116,7 +116,7 @@
                   <article>
 
                     <div class="post-img">
-                      <img src="{{ $project->images->first()->img_path??'' }}" alt="" class="img-fluid">
+                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $project->images->first()->img_path??'' }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img-fluid">
                     </div>
 
                     <h2 class="title">

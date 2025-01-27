@@ -40,19 +40,19 @@
 
                     @forelse ($service->images as $image)
                       <div class="swiper-slide">
-                        <img src="{{ $image->img_path }}" alt="" class="img img-fluid img-responsive">
+                        <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $image->img_path }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img img-fluid img-responsive">
                       </div>
                     @empty
                       <div class="swiper-slide">
-                        <img src="{{ asset('assets') }}/img/portfolio/product-1.jpg" alt="">
+                        <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/product-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       </div>
 
                       <div class="swiper-slide">
-                        <img src="{{ asset('assets') }}/img/portfolio/branding-1.jpg" alt="">
+                        <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/branding-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       </div>
 
                       <div class="swiper-slide">
-                        <img src="{{ asset('assets') }}/img/portfolio/books-1.jpg" alt="">
+                        <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/books-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       </div>
                     @endforelse
                   </div>
@@ -64,7 +64,7 @@
               </div>
 
               <!-- <div class="post-img">
-                <img src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img-fluid">
               </div> -->
 
               <h2 class="title">{{ $service->name }}</h2>
@@ -129,7 +129,7 @@
                     @forelse ($service->property as $ass)
                     <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                       <div class="portfolio-wrap">
-                        <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt=""></a>
+                        <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
                         <div class="portfolio-info">
                           <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
                           <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>
@@ -141,7 +141,7 @@
                       @foreach ($service->images as $image)
                         <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                           <div class="portfolio-wrap">
-                            <a href="{{ $image->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $image->img_path }}" class="img-fluid" alt=""></a>
+                            <a href="{{ $image->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $image->img_path }}" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
                             {{-- <div class="portfolio-info">
                               <h4><a href="portfolio-details.html" title="More Details">{{ $service->name }}</a></h4>
                               <p>Lorem ipsum, dolor sit amet consectetur</p>
@@ -188,7 +188,7 @@
                 <div class="mt-3">
                   @forelse ($service->projects as $proj)
                     <div class="post-item mt-3 shadow py-2 rounded-2" style="overflow: hidden;">
-                      <img src="{{ $proj->images->first()->img_path }}" alt="" class="img-responsive h-100">
+                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $proj->images->first()->img_path }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img-responsive h-100">
                       <div>
                         <h4><a href="{{ route('public.project.details', $proj->id) }}">{{ $proj->name }}</a></h4>
                         <span>{{ $proj->address }}</span>
@@ -197,7 +197,7 @@
                     <hr class="border">
                   @empty
                     <div class="post-item mt-3">
-                      <img src="{{ asset('assets') }}/img/blog/blog-recent-1.jpg" alt="">
+                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-recent-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       <div>
                         <h4><a href="blog-details.html">Nihil blanditiis at in nihil autem</a></h4>
                         <time datetime="2020-01-01">Jan 1, 2020</time>
@@ -205,7 +205,7 @@
                     </div><!-- End recent post item-->
 
                     <div class="post-item">
-                      <img src="{{ asset('assets') }}/img/blog/blog-recent-2.jpg" alt="">
+                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-recent-2.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       <div>
                         <h4><a href="blog-details.html">Quidem autem et impedit</a></h4>
                         <time datetime="2020-01-01">Jan 1, 2020</time>
@@ -213,7 +213,7 @@
                     </div><!-- End recent post item-->
 
                     <div class="post-item">
-                      <img src="{{ asset('assets') }}/img/blog/blog-recent-3.jpg" alt="">
+                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-recent-3.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       <div>
                         <h4><a href="blog-details.html">Id quia et et ut maxime similique occaecati ut</a></h4>
                         <time datetime="2020-01-01">Jan 1, 2020</time>
@@ -221,7 +221,7 @@
                     </div><!-- End recent post item-->
 
                     <div class="post-item">
-                      <img src="{{ asset('assets') }}/img/blog/blog-recent-4.jpg" alt="">
+                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-recent-4.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       <div>
                         <h4><a href="blog-details.html">Laborum corporis quo dara net para</a></h4>
                         <time datetime="2020-01-01">Jan 1, 2020</time>
@@ -229,7 +229,7 @@
                     </div><!-- End recent post item-->
 
                     <div class="post-item">
-                      <img src="{{ asset('assets') }}/img/blog/blog-recent-5.jpg" alt="">
+                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-recent-5.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       <div>
                         <h4><a href="blog-details.html">Et dolores corrupti quae illo quod dolor</a></h4>
                         <time datetime="2020-01-01">Jan 1, 2020</time>

@@ -6,11 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Property Trust Group</title>
 
-  <meta name="description" content="Building Dreams, Connecting Spaces, Delivering Solutions. Your one-stop destination for real estate, construction, logistics, business and janitorial services in Cameroon and in Africa. 
-          From finding your ideal property to constructing your dream space, managing logistics, and optimizing business operations, we're here to streamline every step of your journey. 
-          Experience excellence in service, efficiency in execution, and reliability in partnerships. Let us transform your vision into reality, providing innovative solutions tailored to your needs. 
-          With a commitment to quality, integrity, and customer satisfaction, trust us to handle every aspect of your project with professionalism and expertise. Elevate your experience with us 
-          today and unlock the potential of your ventures.">
+  <meta name="description" content="Leading most decorated real estate Company that invests in and manages diverse portfolio of businesses across various 06 subsidiaries. 
+          Our portfolio includes land sales/acquisition, investment, construction, rentals, borehole, electricity, transport and logistics, interior decors, staff/pop, business consultation.">
 
   <meta name="keywords" content="Property Trust Group Cameroon, Property Trust Buea, Real Estate Company Cameroon, Property Trust Group Douala, Property Trust Yaoundé, South West Property Group, Limbe Real Estate Experts, Property Sales Cameroon,  Douala,
           Property Management Yaoundé, Property Sales Buea, Cameroon Real Estate Company, Property Leasing Douala, Commercial Property Cameroon, Residential Properties Limbe, Property Listings Cameroon, House for Sale Buea, Affordable Real Estate Cameroon, 
@@ -63,6 +60,8 @@
 
   <link href="{{ asset('img/logo1.jpg') }}" rel="icon">
   <link href="{{ asset('img/logo1.jpg') }}" rel="apple-touch-icon">
+
+  <link rel="canonical" href="{{ url()->current() }}">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,7 +100,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="{{ route('public.home') }}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="{{ asset('img/logo1.jpg') }}" alt="">
+        <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('img/logo1.jpg') }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
         <!-- <h1>Property Trust Group<span>.</span></h1> -->
       </a>
       <nav id="navbar" class="navbar">
@@ -174,7 +173,7 @@
           <a href="{{ route('public.home') }}" class="logo d-flex align-items-center">
             <span>Property Trust Group</span>
           </a>
-          <p>Leading moost decorated real estate company that invests in and manages diverse portfolio of businesses across various 06 subsidiaries. Our portfolio includes a wide range of businesses met across various industries cutting across rel estate, consulting and finance; our portfolio includes land sales/aquisition, investment, construction, rentals, borehole, electricity, transport and logistics, interior decors, staff/pop, business consultation.</p>
+          <p>Leading most decorated real estate company that invests in and manages diverse portfolio of businesses across various 06 subsidiaries. Our portfolio includes a wide range of businesses met across various industries cutting across real estate, consulting and finance; our portfolio includes land sales/acquisition, investment, construction, rentals, borehole, electricity, transport and logistics, interior decors, staff/pop, business consultation.</p>
           <div class="social-links d-flex mt-4">
             <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="youtube"><i class="bi bi-youtube"></i></a>
             <a href="https://twitter.com/ptrustgroup/status/1683360424031297537?s=46&t=2ItHQJHSl4cknkDUHt1jRg" class="twitter"><i class="bi bi-twitter"></i></a>

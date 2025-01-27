@@ -34,7 +34,7 @@
 
 
               <div class="post-img">
-                <img src="{{ $project->images->first()->img_path??'' }}" alt="" class="img-fluid">
+                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $project->images->first()->img_path??'' }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img-fluid">
               </div>
 
               <h2 class="title">{{ $project->name }}</h2>
@@ -97,7 +97,7 @@
                     @foreach ($project->images as $img)
                       <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
-                          <a href="{{ $img->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img src="{{ $img->img_path }}" class="img-fluid" alt=""></a>
+                          <a href="{{ $img->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $img->img_path }}" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
                           {{-- <div class="portfolio-info">
                             <h4><a title="More Details"></a></h4>
                           </div> --}}
