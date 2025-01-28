@@ -7,7 +7,7 @@
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <h2>Project Details</h2>
+              <h2>{{$project->name ?? $project->address}}</h2>
               <p>Explore our vast reserve for the best fit.</p>
             </div>
           </div>

@@ -21,6 +21,7 @@ class PropertyDetails extends Controller
     function index(Request $request, $id){
         
         $data['property'] = Asset::find($id);
+        $data['related'] = Asset::find($id);
         return view('showcase.property-details', $data);
     }
 }

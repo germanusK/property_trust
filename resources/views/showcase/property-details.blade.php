@@ -8,7 +8,7 @@
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <h2>Property Details</h2>
+              <h2>{{$property->name}}</h2>
               <!-- <p>.</p> -->
             </div>
           </div>
@@ -33,7 +33,7 @@
             <div class="swiper-wrapper align-items-center">
               @foreach ($property->images as $image)
                 <div class="swiper-slide">
-                  <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $image->img_path }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                  <img title="{{$property->name}}" src="{{ $image->img_path }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                 </div>
               @endforeach
 
