@@ -186,56 +186,16 @@
                 <h3 class="sidebar-title">Latest Projects</h3>
 
                 <div class="mt-3">
-                  @forelse ($service->projects as $proj)
+                  @foreach ($service->projects as $proj)
                     <div class="post-item mt-3 shadow py-2 rounded-2" style="overflow: hidden;">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $proj->images->first()->img_path }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img-responsive h-100">
+                      <img title="{{$proj->name}}" src="{{ $proj->images->first()->img_path }}" alt="{{$proj->name}}" class="img-responsive h-100">
                       <div>
                         <h4><a href="{{ route('public.project.details', $proj->id) }}">{{ $proj->name }}</a></h4>
                         <span>{{ $proj->address }}</span>
                       </div>
                     </div><!-- End recent post item-->
                     <hr class="border">
-                  @empty
-                    <div class="post-item mt-3">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-recent-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h4><a href="blog-details.html">Nihil blanditiis at in nihil autem</a></h4>
-                        <time datetime="2020-01-01">Jan 1, 2020</time>
-                      </div>
-                    </div><!-- End recent post item-->
-
-                    <div class="post-item">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-recent-2.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h4><a href="blog-details.html">Quidem autem et impedit</a></h4>
-                        <time datetime="2020-01-01">Jan 1, 2020</time>
-                      </div>
-                    </div><!-- End recent post item-->
-
-                    <div class="post-item">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-recent-3.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h4><a href="blog-details.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                        <time datetime="2020-01-01">Jan 1, 2020</time>
-                      </div>
-                    </div><!-- End recent post item-->
-
-                    <div class="post-item">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-recent-4.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h4><a href="blog-details.html">Laborum corporis quo dara net para</a></h4>
-                        <time datetime="2020-01-01">Jan 1, 2020</time>
-                      </div>
-                    </div><!-- End recent post item-->
-
-                    <div class="post-item">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-recent-5.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h4><a href="blog-details.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                        <time datetime="2020-01-01">Jan 1, 2020</time>
-                      </div>
-                    </div><!-- End recent post item-->
-                  @endforelse
+                  @endforeach
 
                 </div>
 
