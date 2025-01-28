@@ -53,7 +53,7 @@ Route::get('/team{id}profile', [Others::class, 'team_profile'])->name('public.te
 // Route::get('/random_project', [Controller::class, 'random_project'])->name('public.random.project');
 
 Route::post('/submitSchedule', [VisitBooker::class, 'submit']);
-Route::post('/submitMessage', [Messenger::class, 'submit']);//handle submision of orders, problem reports and messages
+Route::post('/submitMessage', [Messenger::class, 'submit'])->name('post_message');//handle submision of orders, problem reports and messages
 Route::post('/subscribe', [Others::class, 'subscribe']);
 
 

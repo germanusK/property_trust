@@ -62,7 +62,8 @@
               <div class="reply-form">
                 <h4>Make Enquiry</h4>
                 <p>We are available to clarify your worries</p>
-                <form action="">
+                <form action="{{route('post_message')}}" method="POST">
+                  @csrf
                   <div class="row">
                     <div class="col-md-6 form-group">
                       <input name="name" type="text" class="form-control" placeholder="Your Name*">

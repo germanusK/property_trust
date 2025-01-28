@@ -88,129 +88,21 @@
 
           <div class="row gy-4 portfolio-container">
 
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/app-1.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">App 1</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
+            @foreach ($related as $item)
+              <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                  <a href="{{ $item->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$item->name??''}}" src="{{ $item->images->first()->img_path??'' }}" class="img-fluid" alt="{{ $item->name??'' }}"></a>
+                  <div class="portfolio-info">
+                    <h4><a href="{{route('assets.show', $item->id)}}" title="{{$item->name}}">{{$item->name}}</a></h4>
+                    <p>{{$item->address ?? $item->description}}</p>
+                  </div>
                 </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/product-1.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Product 1</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/branding-1.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Branding 1</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/books-1.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Books 1</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/app-2.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">App 2</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/product-2.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Product 2</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/branding-2.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Branding 2</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/books-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/books-2.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Books 2</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/app-3.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">App 3</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/product-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/product-3.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Product 3</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/branding-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/branding-3.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Branding 3</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
-              <div class="portfolio-wrap">
-                <a href="{{ asset('assets') }}/img/portfolio/books-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/books-3.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html" title="More Details">Books 3</a></h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+              </div><!-- End Portfolio Item -->              
+            @endforeach
 
             <div class="col-12 portfolio-item">
               <h2 class="title text-end mt-3">
-                <a href="blog-details.html" class="btn-visit">See All Property</a>
+                <a href="{{route('public.property')}}" class="btn-visit">See All Property</a>
               </h2>
             </div><!-- End Portfolio Item -->
           </div><!-- End Portfolio Container -->
