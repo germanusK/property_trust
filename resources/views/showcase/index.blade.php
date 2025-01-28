@@ -24,7 +24,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-house"></i></div>
-              <h4 class="title"><a href="void(0)" class="stretched-link">Construction</a></h4>
+              <h4 class="title"><a href="#" class="stretched-link">Construction</a></h4>
             </div>
           </div>
           <!--End Icon Box -->
@@ -32,7 +32,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-collection"></i></div>
-              <h4 class="title"><a href="void(0)" class="stretched-link">Real Estate</a></h4>
+              <h4 class="title"><a href="#" class="stretched-link">Real Estate</a></h4>
             </div>
           </div>
           <!--End Icon Box -->
@@ -40,7 +40,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-shop"></i></div>
-              <h4 class="title"><a href="void(0)" class="stretched-link">Business</a></h4>
+              <h4 class="title"><a href="#" class="stretched-link">Business</a></h4>
             </div>
           </div>
           <!--End Icon Box -->
@@ -689,10 +689,10 @@
                 <h4>Rt. CPT. Boris Nkemateh</h4>
                 <span>CEO PTG</span>
                 <div class="social">
-                  <a href="void(0)"><i class="bi bi-twitter"></i></a>
-                  <a href="void(0)"><i class="bi bi-facebook"></i></a>
-                  <a href="void(0)"><i class="bi bi-instagram"></i></a>
-                  <a href="void(0)"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div><!-- End Team Member -->
@@ -703,10 +703,10 @@
                 <h4>Rt. Gilbert Mulango</h4>
                 <span>Real Estate manager, Buea</span>
                 <div class="social">
-                  <a href="void(0)"><i class="bi bi-twitter"></i></a>
-                  <a href="void(0)"><i class="bi bi-facebook"></i></a>
-                  <a href="void(0)"><i class="bi bi-instagram"></i></a>
-                  <a href="void(0)"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div><!-- End Team Member -->
@@ -717,10 +717,10 @@
                 <h4>Rt. Jick Etienne Emeka</h4>
                 <span>Real Estate manager, Yaoundé</span>
                 <div class="social">
-                  <a href="void(0)"><i class="bi bi-twitter"></i></a>
-                  <a href="void(0)"><i class="bi bi-facebook"></i></a>
-                  <a href="void(0)"><i class="bi bi-instagram"></i></a>
-                  <a href="void(0)"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div><!-- End Team Member -->
@@ -731,10 +731,10 @@
                 <h4>Miss. Taku Bethel</h4>
                 <span>Public Relations Officer, PTG</span>
                 <div class="social">
-                  <a href="void(0)"><i class="bi bi-twitter"></i></a>
-                  <a href="void(0)"><i class="bi bi-facebook"></i></a>
-                  <a href="void(0)"><i class="bi bi-instagram"></i></a>
-                  <a href="void(0)"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div><!-- End Team Member -->
