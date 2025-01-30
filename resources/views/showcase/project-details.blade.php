@@ -34,10 +34,10 @@
 
 
               <div class="post-img">
-                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $project->images->first()->img_path??'' }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img-fluid">
+                <img title="{{$project->name}}" src="{{ $project->images->first()->img_path??'' }}" alt="{{$project->name}}" class="img-fluid">
               </div>
 
-              <h2 class="title">{{ $project->name }}</h2>
+              {{-- <h2 class="title">{{ $project->name }}</h2> --}}
 
               <div class="content">
                 <p>
@@ -122,7 +122,7 @@
               <div class="sidebar-item categories">
                 <h3 class="sidebar-title">Related Projects</h3>
                 <ul class="mt-3">
-                  @foreach ($project->service->projects as $proj)
+                  @foreach ($project->service->projects->where('id', '!=', $project->id) as $proj)
                     <li><a href="{{ route('public.project.details', $proj->id) }}">{{ $proj->name }} <span>({{ $proj->address }})</span></a></li>
                     <hr>
                   @endforeach

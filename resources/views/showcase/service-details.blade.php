@@ -44,15 +44,15 @@
                       </div>
                     @empty
                       <div class="swiper-slide">
-                        <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/product-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                        <img src="{{ asset('assets') }}/img/portfolio/product-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       </div>
 
                       <div class="swiper-slide">
-                        <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/branding-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                        <img src="{{ asset('assets') }}/img/portfolio/branding-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       </div>
 
                       <div class="swiper-slide">
-                        <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/portfolio/books-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                        <img src="{{ asset('assets') }}/img/portfolio/books-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
                       </div>
                     @endforelse
                   </div>
@@ -66,8 +66,6 @@
               <!-- <div class="post-img">
                 <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img-fluid">
               </div> -->
-
-              <h2 class="title">{{ $service->name }}</h2>
 
               <div class="content">
                 <p>
@@ -175,7 +173,7 @@
               <div class="sidebar-item categories">
                 <h3 class="sidebar-title">Services</h3>
                 <ul class="mt-3">
-                  @foreach ($services as $serv)
+                  @foreach ($services->where('id', '!=', $service->id) as $serv)
                     <li><a href="{{ route('public.services.details', $serv->id) }}">{{ $serv->name }} <span>({{ $serv->property->count() }} properties / {{ $serv->projects->count() }} projects)</span></a></li>
                     <hr class="border">
                   @endforeach

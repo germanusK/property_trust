@@ -49,7 +49,7 @@
 
           <div class="col-lg-8">
             <div class="portfolio-description">
-              <h2>{{ $property->name }}</h2>
+              {{-- <h2>{{ $property->name }}</h2> --}}
               <p>
                 {!! $property->description !!}
               </p>
@@ -88,7 +88,7 @@
 
           <div class="row gy-4 portfolio-container">
 
-            @foreach ($related as $item)
+            @foreach ($related->where('id', '!=', $property->id) as $item)
               <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
                   <a href="{{ $item->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$item->name??''}}" src="{{ $item->images->first()->img_path??'' }}" class="img-fluid" alt="{{ $item->name??'' }}"></a>
