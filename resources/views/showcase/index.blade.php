@@ -280,7 +280,7 @@
               @foreach ($service_images as $serv_image)
                 <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                   <div class="portfolio-wrap">
-                    <a href="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$serv_image->service->name??''}} image - {{$serv_image->id}}" src="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" class="img-fluid" alt="{{$serv_image->service->name}} image - {{$serv_image->id}}"></a>
+                    <a href="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$serv_image->service->name??''}} image - {{$serv_image->id}}" src="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" class="img-fluid" alt="{{$serv_image->service->name??''}} image - {{$serv_image->id}}"></a>
                     <div class="portfolio-info">
                       <h4><a href="{{ route('public.services.details', $serv_image->service_id) }}" title="More Details">{{ $serv_image->name }}</a></h4>
                       <p>{{ $serv_image->caption }}</p>
