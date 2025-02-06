@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-lg-5">
                             <div class="container-fluid p-4">
-                                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{$profile->img_url}}" alt="PROFILE IMAGE" class="img img-fluid rounded">
+                                <img title="{{$profile->name}}, PROPERTY TRUST GROUP PROFILE" src="{{$profile->img_url}}" alt="PROFILE IMAGE" class="img img-fluid rounded">
                             </div>
                         </div>
                         <div class="col-lg-7">

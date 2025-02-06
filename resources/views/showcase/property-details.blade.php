@@ -33,7 +33,7 @@
             <div class="swiper-wrapper align-items-center">
               @foreach ($property->images as $image)
                 <div class="swiper-slide">
-                  <img title="{{$property->name}}" src="{{ $image->img_path }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                  <img title="{{$property->name}}" src="{{ $image->img_path }}" alt="{{$property->name}}">
                 </div>
               @endforeach
 

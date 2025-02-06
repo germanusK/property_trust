@@ -40,19 +40,19 @@
 
                     @forelse ($service->images as $image)
                       <div class="swiper-slide">
-                        <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $image->img_path }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img img-fluid img-responsive">
+                        <img title="{{$service->name}} image - {{$image->id}}" src="{{ $image->img_path }}" alt="{{$service->name}} image - {{$image->id}}" class="img img-fluid img-responsive">
                       </div>
                     @empty
                       <div class="swiper-slide">
-                        <img src="{{ asset('assets') }}/img/portfolio/product-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                        <img src="{{ asset('assets') }}/img/portfolio/product-1.jpg" alt="Property Trust Group LTD; Alt service image 2">
                       </div>
 
                       <div class="swiper-slide">
-                        <img src="{{ asset('assets') }}/img/portfolio/branding-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                        <img src="{{ asset('assets') }}/img/portfolio/branding-1.jpg" alt="Property Trust Group LTD; Alt service image 3">
                       </div>
 
                       <div class="swiper-slide">
-                        <img src="{{ asset('assets') }}/img/portfolio/books-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                        <img src="{{ asset('assets') }}/img/portfolio/books-1.jpg" alt="Property Trust Group LTD; Alt service image 4">
                       </div>
                     @endforelse
                   </div>
@@ -62,10 +62,6 @@
                 <div class="swiper-button-next"></div>
 
               </div>
-
-              <!-- <div class="post-img">
-                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/blog/blog-1.jpg" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img-fluid">
-              </div> -->
 
               <div class="content">
                 <p>
@@ -127,7 +123,7 @@
                     @forelse ($service->property as $ass)
                     <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                       <div class="portfolio-wrap">
-                        <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
+                        <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$ass->name}}" src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="{{$ass->name}}"></a>
                         <div class="portfolio-info">
                           <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
                           <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>
@@ -139,7 +135,7 @@
                       @foreach ($service->images as $image)
                         <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                           <div class="portfolio-wrap">
-                            <a href="{{ $image->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $image->img_path }}" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
+                            <a href="{{ $image->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$service->name}} image-{{$image->id}}" src="{{ $image->img_path }}" class="img-fluid" alt="{{$service->name}} image-{{$image->id}}"></a>
                             {{-- <div class="portfolio-info">
                               <h4><a href="portfolio-details.html" title="More Details">{{ $service->name }}</a></h4>
                               <p>Lorem ipsum, dolor sit amet consectetur</p>

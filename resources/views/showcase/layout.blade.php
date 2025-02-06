@@ -100,7 +100,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="{{ route('public.home') }}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('img/logo1.jpg') }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+        <img title="Construction, Business and Logistics" src="{{ asset('img/logo1.jpg') }}" alt="Property Trust Group LTD">
         <!-- <h1>Property Trust Group<span>.</span></h1> -->
       </a>
       <nav id="navbar" class="navbar">

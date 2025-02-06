@@ -172,7 +172,7 @@
         <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
 
-            @forelse ($categories as $categ)
+            @foreach ($categories as $categ)
               <div class="swiper-slide">
                 <div class="testimonial-wrap">
                   <div class="testimonial-item bg-light">
@@ -189,349 +189,7 @@
                 </div>
               </div><!-- End testimonial item -->
               
-            @empty
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <div class="d-flex align-items-center">
-                      <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
-                      <div>
-                        <h3>Category Name</h3>
-                        <div class="stars">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <i class="bi bi-quote quote-icon-left"></i>
-                      Category Description/details
-                      <i class="bi bi-quote quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-              
-            @endforelse
+            @endforeach
 
           </div>
           <div class="swiper-pagination"></div>
@@ -622,7 +280,7 @@
               @foreach ($service_images as $serv_image)
                 <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                   <div class="portfolio-wrap">
-                    <a href="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" src="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"></a>
+                    <a href="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$serv_image->service->name}} image - {{$serv_image->id}}" src="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" class="img-fluid" alt="{{$serv_image->service->name}} image - {{$serv_image->id}}"></a>
                     <div class="portfolio-info">
                       <h4><a href="{{ route('public.services.details', $serv_image->service_id) }}" title="More Details">{{ $serv_image->name }}</a></h4>
                       <p>{{ $serv_image->caption }}</p>
@@ -666,7 +324,7 @@
           
             <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
               <div class="member">
-                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ $profile->img_url??'' }}" alt="NO PROFILE IMAGE FOUND" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                <img title="Property Trust Group LTD;  {{$profile->position??$profile->name}}" src="{{ $profile->img_url??'' }}" alt="NO PROFILE IMAGE FOUND" class="img-fluid" alt="Property Trust Group LTD;  {{$profile->position??$profile->name}}">
                 <a href="{{route('public.team_profile', $profile->id)}}"><h4>{{$profile->name??''}}</h4></a>
                 <span>{{$profile->position}}</span>
                 <div class="social">
@@ -685,7 +343,7 @@
   
             <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
               <div class="member">
-                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/team/team-1.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                <img title="Property Trust Group LTD;  CEO PTG" src="{{ asset('assets') }}/img/team/team-1.jpg" class="img-fluid" alt="Property Trust Group LTD;  CEO PTG">
                 <h4>Rt. CPT. Boris Nkemateh</h4>
                 <span>CEO PTG</span>
                 <div class="social">
@@ -699,7 +357,7 @@
   
             <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
               <div class="member">
-                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/team/team-2.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                <img title="Property Trust Group LTD; Real Estate manager, Buea" src="{{ asset('assets') }}/img/team/team-2.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate manager, Buea">
                 <h4>Rt. Gilbert Mulango</h4>
                 <span>Real Estate manager, Buea</span>
                 <div class="social">
@@ -713,7 +371,7 @@
   
             <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
               <div class="member">
-                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/team/team-3.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                <img title="Property Trust Group LTD; Real Estate manager, Yaoundé" src="{{ asset('assets') }}/img/team/team-3.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate manager, Yaoundé">
                 <h4>Rt. Jick Etienne Emeka</h4>
                 <span>Real Estate manager, Yaoundé</span>
                 <div class="social">
@@ -727,7 +385,7 @@
   
             <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
               <div class="member">
-                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets') }}/img/team/team-4.jpg" class="img-fluid" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                <img title="Property Trust Group LTD; Public Relations Officer, PTG" src="{{ asset('assets') }}/img/team/team-4.jpg" class="img-fluid" alt="Property Trust Group LTD; Public Relations Officer, PTG">
                 <h4>Miss. Taku Bethel</h4>
                 <span>Public Relations Officer, PTG</span>
                 <div class="social">
@@ -762,7 +420,7 @@
   
                 @for ($i = 101; $i <= 133; $i++)
                   <div class="swiper-slide container-fluid d-flex flex-column justify-content-center" style="max-height: 80vh !important; overflow: hidden;">
-                    <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"class="img-fluid w-100 rounded" src="{{ asset('assets/img/slider_images/slide-'.$i.'.jpg') }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                    <img title="Property Trust Group LTD; Our Legacy - {{$i}}" class="img-fluid w-100 rounded" src="{{ asset('assets/img/slider_images/slide-'.$i.'.jpg') }}" alt="Property Trust Group LTD; Our Legacy - {{$i}}">
                   </div>
                 @endfor
   
@@ -794,7 +452,7 @@
           <div class="col-lg-6">
             <div class="content ps-0 ps-lg-5">
               <div class="position-relative mt-4">
-                <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('img/hero.jpeg') }}" class="img-fluid rounded-4" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                <img title="Property Trust Group LTD; About Us" src="{{ asset('img/hero.jpeg') }}" class="img-fluid rounded-4" alt="Property Trust Group LTD; About Us">
                 <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="play-btn"></a>
               </div>
             </div>
@@ -811,7 +469,7 @@
         <div class="row gy-4 align-items-center">
 
           <div class="col-lg-6">
-            <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets/img/stats.jpg') }}" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics" class="img-fluid">
+            <img title="Property Trust Group LTD; Our Branches"src="{{ asset('assets/img/stats.jpg') }}" alt="Property Trust Group LTD; Our Branches" class="img-fluid">
           </div>
 
           <div class="col-lg-6">
@@ -965,7 +623,7 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets/img/testimonials/bertrand.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                    <img title="Property Trust Group LTD; Testimony 1" src="{{ asset('assets/img/testimonials/bertrand.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Testimony 1">
                     <div>
                       <h3>NK Bertrand</h3>
                       <h4>First-Time Buyer</h4>
@@ -987,7 +645,7 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets/img/testimonials/ayuk-magareth.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                    <img title="Property Trust Group LTD; Testimoy 2"src="{{ asset('assets/img/testimonials/ayuk-magareth.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Testimoy 2">
                     <div>
                       <h3>Ayuk Magareth</h3>
                       <h4>Land Investor</h4>
@@ -1009,7 +667,7 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets/img/testimonials/Nestor.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                    <img title="Property Trust Group LTD; Testimony 3"src="{{ asset('assets/img/testimonials/Nestor.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Testimony 3">
                     <div>
                       <h3>Mr Boanong Nestor</h3>
                       <h4>Commercial Property Owner</h4>
@@ -1031,7 +689,7 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets/img/testimonials/atem-family.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                    <img title="Property Trust Group LTD; Testimony 4" src="{{ asset('assets/img/testimonials/atem-family.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Testimony 4">
                     <div>
                       <h3>The ATEM’s Family</h3>
                       <h4>Family Home Buyer</h4>
@@ -1053,7 +711,7 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets/img/testimonials/jenny-b.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                    <img title="Property Trust Group LTD; Testimony 5"src="{{ asset('assets/img/testimonials/jenny-b.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Testimony 5">
                     <div>
                       <h3>Jenny B</h3>
                       <h4>Construction Client</h4>
@@ -1075,7 +733,7 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets/img/testimonials/Eseme.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                    <img title="Property Trust Group LTD; Testimony 6"src="{{ asset('assets/img/testimonials/Eseme.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Testimony 6">
                     <div>
                       <h3>Mr Eseme Matrose</h3>
                       <h4>Out-of-Town Investor</h4>
@@ -1097,7 +755,7 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets/img/testimonials/Stephanie.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                    <img title="Property Trust Group LTD; Testimony 7"src="{{ asset('assets/img/testimonials/Stephanie.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Testimony 7">
                     <div>
                       <h3>Magha Stephanie</h3>
                       <h4>Returning Client</h4>
@@ -1119,7 +777,7 @@
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
                   <div class="d-flex align-items-center">
-                    <img title="Property Trust Group LTD; Real Estate, Construction, Business and Logistics"src="{{ asset('assets/img/testimonials/Schneider.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Real Estate, Construction, Business and Logistics">
+                    <img title="Property Trust Group LTD; Testimony 8"src="{{ asset('assets/img/testimonials/Schneider.jpg') }}" class="testimonial-img flex-shrink-0" alt="Property Trust Group LTD; Testimony 8">
                     <div>
                       <h3>Asong Schneider</h3>
                       <h4>Property Seller</h4>
