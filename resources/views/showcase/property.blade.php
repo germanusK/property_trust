@@ -17,7 +17,7 @@
       <nav>
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a {{route('public.home')}}>Home</a></li>
             <li>Property</li>
           </ol>
         </div>
@@ -76,7 +76,7 @@
             @foreach ($assets->items() as $ass)
               <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
-                  <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$ass->name}}" src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="{{$ass->name}}"></a>
+                  <a rel="nofollow" href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$ass->name}}" src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="{{$ass->name}}"></a>
                   <div class="portfolio-info">
                     <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
                     <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>
@@ -88,9 +88,9 @@
             
             <div class="col-12 portfolio-item">
               <h2 class="title text-end mt-3">
-                <a href="#"><span class="bi bi-arrow-left-square mx-2"></span></a>
+                <a href="#" rel="nofollow"><span class="bi bi-arrow-left-square mx-2"></span></a>
                 <span class="bi bi-arrow-down-square-fill mx-2"></span>
-                <a href="#"><span class="bi bi-arrow-right-square mx-2"></span></a>
+                <a href="#" rel="nofollow"><span class="bi bi-arrow-right-square mx-2"></span></a>
               </h2>
             </div><!-- End Portfolio Item -->
 

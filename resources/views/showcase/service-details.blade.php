@@ -17,7 +17,7 @@
       <nav>
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a {{route('public.home')}}>Home</a></li>
             <li>{{ $service->name }}</li>
           </ol>
         </div>
@@ -123,7 +123,7 @@
                     @forelse ($service->property as $ass)
                     <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                       <div class="portfolio-wrap">
-                        <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$ass->name}}" src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="{{$ass->name}}"></a>
+                        <a rel="nofollow" href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$ass->name}}" src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="{{$ass->name}}"></a>
                         <div class="portfolio-info">
                           <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
                           <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>
@@ -135,7 +135,7 @@
                       @foreach ($service->images as $image)
                         <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                           <div class="portfolio-wrap">
-                            <a href="{{ $image->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$service->name}} image-{{$image->id}}" src="{{ $image->img_path }}" class="img-fluid" alt="{{$service->name}} image-{{$image->id}}"></a>
+                            <a rel="nofollow" href="{{ $image->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$service->name}} image-{{$image->id}}" src="{{ $image->img_path }}" class="img-fluid" alt="{{$service->name}} image-{{$image->id}}"></a>
                             {{-- <div class="portfolio-info">
                               <h4><a href="portfolio-details.html" title="More Details">{{ $service->name }}</a></h4>
                               <p>Lorem ipsum, dolor sit amet consectetur</p>

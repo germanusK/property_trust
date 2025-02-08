@@ -100,7 +100,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="{{ route('public.home') }}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img title="Construction, Business and Logistics" src="{{ asset('img/logo1.jpg') }}" alt="Property Trust Group LTD">
+        <img src="{{ asset('img/logo1.jpg') }}" alt="Property Trust Group LTD">
         <!-- <h1>Property Trust Group<span>.</span></h1> -->
       </a>
       <nav id="navbar" class="navbar">
@@ -176,13 +176,13 @@
           <p>Leading most decorated real estate company that invests in and manages diverse portfolio of businesses across various 06 subsidiaries. Our portfolio includes a wide range of businesses met across various industries cutting across real estate, consulting and finance; our portfolio includes land sales/acquisition, investment, construction, rentals, borehole, electricity, transport and logistics, interior decors, staff/pop, business consultation.</p>
           <div class="social-links d-flex mt-4">
             <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="youtube"><i class="bi bi-youtube"></i></a>
-            <a href="https://twitter.com/ptrustgroup/status/1683360424031297537?s=46&t=2ItHQJHSl4cknkDUHt1jRg" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a rel="nofollow" href="https://twitter.com/ptrustgroup/status/1683360424031297537?s=46&t=2ItHQJHSl4cknkDUHt1jRg" class="twitter"><i class="bi bi-twitter"></i></a>
             <a href="https://www.facebook.com/bpropertytrust?mibextid=2JQ9oc" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="https://instagram.com/propertytrustgroup?igshid=OGQ5ZDc2ODk2ZA==" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/property-trust-group/" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.tiktok.com/@nkemboris1" class="tiktok"><i class="bi bi-tiktok"></i></a>
-            <a href="https://t.me/Property_Trust" class="telegram"><i class="bi bi-telegram"></i></a>
-            <a href="https://wa.link/n6lrc2" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+            <a rel="nofollow" href="https://instagram.com/propertytrustgroup?igshid=OGQ5ZDc2ODk2ZA==" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a rel="nofollow" href="https://www.linkedin.com/company/property-trust-group/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a rel="nofollow" href="https://www.tiktok.com/@nkemboris1" class="tiktok"><i class="bi bi-tiktok"></i></a>
+            <a rel="nofollow" href="https://t.me/Property_Trust" class="telegram"><i class="bi bi-telegram"></i></a>
+            <a rel="nofollow" href="https://wa.link/n6lrc2" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
 
@@ -214,9 +214,9 @@
             Douala: <b>Logpom Carrefou Andem, Opposite Neptune</b> <br>
             Yaoundé: <b>Totouli, Odza</b> <br>
             Limbe: <b>Espoir Junction Mile1</b> <br>
-            <a href="tel:237-652-078-411"><strong>Phone:</strong> (+237) 652 078 411/653 507 633</a><br>
-            <a href="https://wa.link/n6lrc2"><strong>Whatsapp:</strong> (+237) 652 078 411/653 507 633</a><br>
-            <a href="mailto:bpropertytrust@gmail.com"><strong>Email:</strong> bpropertytrust@gmail.com</a><br>
+            <a rel="nofollow" href="tel:237-652-078-411"><strong>Phone:</strong> (+237) 652 078 411/653 507 633</a><br>
+            <a rel="nofollow" href="https://wa.link/n6lrc2"><strong>Whatsapp:</strong> (+237) 652 078 411/653 507 633</a><br>
+            <a rel="nofollow" href="mailto:bpropertytrust@gmail.com"><strong>Email:</strong> bpropertytrust@gmail.com</a><br>
           </p>
         </div>
 
@@ -232,7 +232,7 @@
   </footer><!-- End Footer -->
   <!-- End Footer -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a rel="nofollow" href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   {{-- <div id="preloader"></div> --}}
 

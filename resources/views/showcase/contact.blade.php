@@ -17,7 +17,7 @@
       <nav>
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{{route('public.home')}}">Home</a></li>
             <li>Contact Us</li>
           </ol>
         </div>
@@ -115,7 +115,7 @@
             <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div class="icon-box">
                 <div class="icon"><i class="bi bi-1-square-fill"></i></div>
-                <h4 class="title"><a href="#" class="stretched-link">Buea (Head Quarter)</a></h4>
+                <h4 class="title"><a href="#" class="stretched-link" rel="nofollow">Buea (Head Quarter)</a></h4>
                 <p>Opposite Heartland Molyko</p>
               </div>
             </div>
@@ -124,7 +124,7 @@
             <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
               <div class="icon-box">
                 <div class="icon"><i class="bi bi-2-square-fill"></i></div>
-                <h4 class="title"><a href="#" class="stretched-link">Douala</a></h4>
+                <h4 class="title"><a href="#" class="stretched-link" rel="nofollow">Douala</a></h4>
                 <p>Logpom Carrefou Andem, Opposite Neptune</p>
               </div>
             </div>
@@ -133,7 +133,7 @@
             <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
               <div class="icon-box">
                 <div class="icon"><i class="bi bi-3-square-fill"></i></div>
-                <h4 class="title"><a href="#" class="stretched-link">Yaoundé</a></h4>
+                <h4 class="title"><a href="#" class="stretched-link" rel="nofollow">Yaoundé</a></h4>
                 <p>Totouli, Odza</p>
               </div>
             </div>
@@ -142,7 +142,7 @@
             <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
               <div class="icon-box">
                 <div class="icon"><i class="bi bi-4-square-fill"></i></div>
-                <h4 class="title"><a href="#" class="stretched-link">Limbe</a></h4>
+                <h4 class="title"><a href="#" class="stretched-link" rel="nofollow">Limbe</a></h4>
                 <p>Espoir Junction Mile1</p>
               </div>
             </div>
@@ -163,7 +163,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-youtube"></i></div>
-              <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="stretched-link" title="youtube"></a>
+              <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="stretched-link" rel="nofollow" title="youtube"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -171,7 +171,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-whatsapp"></i></div>
-              <a href="https://wa.link/n6lrc2" class="stretched-link" title="whatsapp"></a>
+              <a href="https://wa.link/n6lrc2" class="stretched-link" rel="nofollow" title="whatsapp"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -179,7 +179,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-facebook"></i></div>
-              <a href="https://www.facebook.com/bpropertytrust?mibextid=2JQ9oc" class="stretched-link" title="facebook"></a>
+              <a href="https://www.facebook.com/bpropertytrust?mibextid=2JQ9oc" class="stretched-link" rel="nofollow" title="facebook"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -187,7 +187,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-instagram"></i></div>
-              <a href="https://instagram.com/propertytrustgroup?igshid=OGQ5ZDc2ODk2ZA==" class="stretched-link" title="instagram"></a>
+              <a href="https://instagram.com/propertytrustgroup?igshid=OGQ5ZDc2ODk2ZA==" class="stretched-link" rel="nofollow" title="instagram"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -195,7 +195,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-telegram"></i></div>
-              <a href="#" class="stretched-link" title="telegram"></a>
+              <a href="#" class="stretched-link" rel="nofollow" title="telegram"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -203,7 +203,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-twitter"></i></div>
-              <a href="https://twitter.com/ptrustgroup/status/1683360424031297537?s=46&t=2ItHQJHSl4cknkDUHt1jRg" class="stretched-link" title="twitter"></a>
+              <a href="https://twitter.com/ptrustgroup/status/1683360424031297537?s=46&t=2ItHQJHSl4cknkDUHt1jRg" class="stretched-link" rel="nofollow" title="twitter"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -211,7 +211,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-tiktok"></i></div>
-              <a href="https://www.tiktok.com/@nkemboris1" class="stretched-link" title="tiktok"></a>
+              <a href="https://www.tiktok.com/@nkemboris1" class="stretched-link" rel="nofollow" title="tiktok"></a>
             </div>
           </div>
           <!--End Icon Box -->
@@ -219,7 +219,7 @@
           <div class="col-xs-6 col-sm-4 col-md-4 col-xl-2" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-linkedin"></i></div>
-              <a href="#" class="stretched-link" title="linkedin"></a>
+              <a href="#" class="stretched-link" rel="nofollow" title="linkedin"></a>
             </div>
           </div>
           <!--End Icon Box -->

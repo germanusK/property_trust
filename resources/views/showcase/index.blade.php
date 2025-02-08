@@ -7,7 +7,7 @@
           <h2><span>PROPERTY TRUST GROUP</span></h2>
           <p class="h4">Real Estate, Construction & Business</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started d-none d-md-inline">Get Started</a>
+            <a rel="nofollow" href="#about" class="btn-get-started d-none d-md-inline">Get Started</a>
             <a href="https://www.youtube.com/channel/UCAWwEEqgckiFiuoKQuLKPoA" class="btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
           </div>
         </div>
@@ -24,7 +24,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-house"></i></div>
-              <h4 class="title"><a href="#" class="stretched-link">Construction</a></h4>
+              <h4 class="title"><a rel="nofollow" href="#" class="stretched-link">Construction</a></h4>
             </div>
           </div>
           <!--End Icon Box -->
@@ -32,7 +32,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-collection"></i></div>
-              <h4 class="title"><a href="#" class="stretched-link">Real Estate</a></h4>
+              <h4 class="title"><a rel="nofollow" href="#" class="stretched-link">Real Estate</a></h4>
             </div>
           </div>
           <!--End Icon Box -->
@@ -40,7 +40,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-shop"></i></div>
-              <h4 class="title"><a href="#" class="stretched-link">Business</a></h4>
+              <h4 class="title"><a rel="nofollow" href="#" class="stretched-link">Business</a></h4>
             </div>
           </div>
           <!--End Icon Box -->
@@ -269,7 +269,7 @@
                 {{-- @dd($ass->images) --}}
                 <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                   <div class="portfolio-wrap">
-                    <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$ass->name}}" src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="{{$ass->name}}"></a>
+                    <a rel="nofollow" href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$ass->name}}" src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="{{$ass->name}}"></a>
                     <div class="portfolio-info">
                       <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
                       <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>
@@ -334,7 +334,7 @@
                   @if($profile->media_links != null)
                     @foreach (json_decode($profile->media_links) as $key => $link)
                       @if($link != null and $key != 'whatsapp_phone')
-                        <a href="{{$link}}"><i class="bi bi-{{$key}}"></i></a>
+                        <a rel="nofollow" href="{{$link}}"><i class="bi bi-{{$key}}"></i></a>
                       @endif
                     @endforeach
                   @endif
@@ -350,10 +350,10 @@
                 <h4>Rt. CPT. Boris Nkemateh</h4>
                 <span>CEO PTG</span>
                 <div class="social">
-                  <a href="#"><i class="bi bi-twitter"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                  <a href="#"><i class="bi bi-instagram"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-twitter"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-facebook"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-instagram"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div><!-- End Team Member -->
@@ -364,10 +364,10 @@
                 <h4>Rt. Gilbert Mulango</h4>
                 <span>Real Estate manager, Buea</span>
                 <div class="social">
-                  <a href="#"><i class="bi bi-twitter"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                  <a href="#"><i class="bi bi-instagram"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-twitter"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-facebook"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-instagram"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div><!-- End Team Member -->
@@ -378,10 +378,10 @@
                 <h4>Rt. Jick Etienne Emeka</h4>
                 <span>Real Estate manager, Yaoundé</span>
                 <div class="social">
-                  <a href="#"><i class="bi bi-twitter"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                  <a href="#"><i class="bi bi-instagram"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-twitter"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-facebook"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-instagram"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div><!-- End Team Member -->
@@ -392,10 +392,10 @@
                 <h4>Miss. Taku Bethel</h4>
                 <span>Public Relations Officer, PTG</span>
                 <div class="social">
-                  <a href="#"><i class="bi bi-twitter"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                  <a href="#"><i class="bi bi-instagram"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-twitter"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-facebook"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-instagram"></i></a>
+                  <a rel="nofollow" href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div><!-- End Team Member -->

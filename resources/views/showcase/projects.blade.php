@@ -17,7 +17,7 @@
       <nav>
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a {{route('public.home')}}>Home</a></li>
             <li>Projects</li>
           </ol>
         </div>
@@ -54,9 +54,9 @@
 
         <div class="blog-pagination">
           <ul class="justify-content-center">
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
+            <li><a rel="nofollow" href="#">1</a></li>
+            <li class="active"><a rel="nofollow" href="#">2</a></li>
+            <li><a rel="nofollow" href="#">3</a></li>
           </ul>
         </div><!-- End blog pagination -->
 

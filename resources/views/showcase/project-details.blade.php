@@ -98,7 +98,7 @@
                     @foreach ($project->images as $img)
                       <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                         <div class="portfolio-wrap">
-                          <a href="{{ $img->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$project->name}} image-{{$img->id}}" src="{{ $img->img_path }}" class="img-fluid" alt="{{$project->name}} image-{{$img->id}}"></a>
+                          <a rel="nofollow" href="{{ $img->img_path }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$project->name}} image-{{$img->id}}" src="{{ $img->img_path }}" class="img-fluid" alt="{{$project->name}} image-{{$img->id}}"></a>
                           {{-- <div class="portfolio-info">
                             <h4><a title="More Details"></a></h4>
                           </div> --}}

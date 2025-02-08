@@ -91,7 +91,7 @@
             @foreach ($related->where('id', '!=', $property->id) as $item)
               <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                 <div class="portfolio-wrap">
-                  <a href="{{ $item->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$item->name??''}}" src="{{ $item->images->first()->img_path??'' }}" class="img-fluid" alt="{{ $item->name??'' }}"></a>
+                  <a rel="nofollow" href="{{ $item->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$item->name??''}}" src="{{ $item->images->first()->img_path??'' }}" class="img-fluid" alt="{{ $item->name??'' }}"></a>
                   <div class="portfolio-info">
                     <h4><a href="{{route('assets.show', $item->id)}}" title="{{$item->name}}">{{$item->name}}</a></h4>
                     <p>{{$item->address ?? $item->description}}</p>
