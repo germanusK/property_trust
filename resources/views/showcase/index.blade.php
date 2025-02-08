@@ -241,67 +241,70 @@
       </section><!-- End Recent Blog Posts Section -->      
     @endif
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio sections-bg">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
-          <h2>Property</h2>
-          <p>Get The Best From Our Vast Property Collection</p>
-        </div>
+    @if($assets->count() > 0)
+      <!-- ======= Portfolio Section ======= -->
+      <section id="portfolio" class="portfolio sections-bg">
+        <div class="container" data-aos="fade-up">
 
-        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+          <div class="section-header">
+            <h2>Property</h2>
+            <p>Get The Best From Our Vast Property Collection</p>
+          </div>
 
-          {{-- <div>
-            <ul class="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-product">Product</li>
-              <li data-filter=".filter-branding">Branding</li>
-              <li data-filter=".filter-books">Books</li>
-            </ul><!-- End Portfolio Filters -->
-          </div> --}}
-          <div class="row gy-4 portfolio-container">
+          <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
 
-            @forelse ($assets as $ass)
-              {{-- @dd($ass->images) --}}
-              <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-wrap">
-                  <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$ass->name}}" src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="{{$ass->name}}"></a>
-                  <div class="portfolio-info">
-                    <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
-                    <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>
-                    <p>{!! $ass->description !!}</p>
-                  </div>
-                </div>
-              </div><!-- End Portfolio Item -->
-              
-            @empty
-              @foreach ($service_images as $serv_image)
+            {{-- <div>
+              <ul class="portfolio-flters">
+                <li data-filter="*" class="filter-active">All</li>
+                <li data-filter=".filter-app">App</li>
+                <li data-filter=".filter-product">Product</li>
+                <li data-filter=".filter-branding">Branding</li>
+                <li data-filter=".filter-books">Books</li>
+              </ul><!-- End Portfolio Filters -->
+            </div> --}}
+            <div class="row gy-4 portfolio-container">
+
+              @foreach ($assets as $ass)
+                {{-- @dd($ass->images) --}}
                 <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                   <div class="portfolio-wrap">
-                    <a href="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$serv_image->service->name??''}} image - {{$serv_image->id}}" src="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" class="img-fluid" alt="{{$serv_image->service->name??''}} image - {{$serv_image->id}}"></a>
+                    <a href="{{ $ass->images->first()->img_path??'' }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$ass->name}}" src="{{ $ass->images->first()->img_path??'' }}" class="img-fluid" alt="{{$ass->name}}"></a>
                     <div class="portfolio-info">
-                      <h4><a href="{{ route('public.services.details', $serv_image->service_id) }}" title="More Details">{{ $serv_image->name }}</a></h4>
-                      <p>{{ $serv_image->caption }}</p>
+                      <h4><a href="{{ route('assets.show', $ass->id) }}" title="More Details">{{ $ass->name }}</a></h4>
+                      <small class="text-secondary mb-2 d-block text-sm border-bottom border-1">town: <i>{{optional($ass->town)->name??null}}</i> | address: <i>{{$ass->address??null}}</i> | price: <i>{{$ass->price??0}} XFA</i></small>
+                      <p>{!! $ass->description !!}</p>
                     </div>
                   </div>
                 </div><!-- End Portfolio Item -->
+                
+              {{-- @empty
+                @foreach ($service_images as $serv_image)
+                  <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap">
+                      <a href="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" data-gallery="portfolio-gallery-app" class="glightbox"><img title="{{$serv_image->service->name??''}} image - {{$serv_image->id}}" src="{{ $serv_image->img_path ?? asset('assets/img/portfolio/app-1.jpg') }}" class="img-fluid" alt="{{$serv_image->service->name??''}} image - {{$serv_image->id}}"></a>
+                      <div class="portfolio-info">
+                        <h4><a href="{{ route('public.services.details', $serv_image->service_id) }}" title="More Details">{{ $serv_image->name }}</a></h4>
+                        <p>{{ $serv_image->caption }}</p>
+                      </div>
+                    </div>
+                  </div><!-- End Portfolio Item -->
+                @endforeach --}}
               @endforeach
-            @endforelse
 
-            <div class="col-12 portfolio-item">
-              <h2 class="title text-end mt-3">
-                <a href="{{ route('public.property') }}" class="btn-visit">See All Property</a>
-              </h2>
-            </div><!-- End Portfolio Item -->
+              <div class="col-12 portfolio-item">
+                <h2 class="title text-end mt-3">
+                  <a href="{{ route('public.property') }}" class="btn-visit">See All Property</a>
+                </h2>
+              </div><!-- End Portfolio Item -->
 
-          </div><!-- End Portfolio Container -->
+            </div><!-- End Portfolio Container -->
+
+          </div>
 
         </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
+      </section><!-- End Portfolio Section -->      
+    @endif
 
 
     <!-- -------------------------------

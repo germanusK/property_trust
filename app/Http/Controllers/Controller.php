@@ -33,11 +33,11 @@ class Controller extends BaseController
     function _index(){
         // return '---------------------------';
         // get latest/trending items 
-        $assets = Asset::orderBy('id', 'DESC')->take(24)->get();
+        $assets = Asset::orderBy('id', 'DESC')->take(12)->get();
         $data['team'] = Team::where('status', 1)->where('mount', 1)->get();
         $data['assets'] = $assets;
         $data['projects'] = \App\Models\Project::inRandomOrder()->take(6)->get();
-        $data['service_images'] = \App\Models\Service::join('service_images', ['service_images.service_id'=>'services.id'])->select(['service_images.*', 'services.name', 'services.caption'])->inRandomOrder()->take(12)->get();
+        // $data['service_images'] = \App\Models\Service::join('service_images', ['service_images.service_id'=>'services.id'])->select(['service_images.*', 'services.name', 'services.caption'])->inRandomOrder()->take(12)->get();
         return view('showcase.index', $data);
     }
 
