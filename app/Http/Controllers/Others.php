@@ -14,7 +14,8 @@ class Others extends Controller
     //
 
     function about(){
-        return view('about');
+        $data['title'] = "About";
+        return view('about', $data);
     }
 
     // subscription validator/handler
@@ -49,6 +50,7 @@ class Others extends Controller
 
     public function team_profile($id) {
         $data['profile'] = Team::find($id);
+        $data['title'] = $data['profile']->position;
         $data['qrcode'] = QrCode::size(100, 100)->generate(route('public.team_profile', $id));
         return view('showcase.team_profile', $data);
     }

@@ -12,14 +12,11 @@ use Illuminate\Support\Facades\Validator;
 
 class VisitBooker extends Controller
 {
-
-
     //
     function index(Request $request, $id){
         $data = Asset::find($id);
         return view('book-visit', ['data'=>$data]);
     }
-
     
     function submit(Request $request){
         
@@ -67,7 +64,6 @@ class VisitBooker extends Controller
         $instance->save();
 
         $this->send_confirmation_email($instance->customer->email, 'Schedule Updated', "Your schedule for ".$instance->property->name." was updated to ".$instance->due_date. " (status: ".$instance->status.")", route('schedule.confirm', $instance->id));
-
 
         return back()->with('success', "confirm email was sent to ".$instance->customer->email);
         

@@ -21,6 +21,7 @@ public function __construct(MailService $mailService)
         $this->mailService = $mailService;
     }
     public function index(Request $request){
+        $data['title'] = "Property";
         $data['projects'] = Project::inRandomOrder()->take(3)->get();
         $data['assets'] = Asset::orderBy('id', 'DESC')->paginate(60);
         return view('showcase.property', $data);
@@ -35,6 +36,7 @@ public function __construct(MailService $mailService)
     public function projects()
     {
         # code...
+        $data['title'] = "Projects";
         $data['projects'] = Project::orderBy('id', 'DESC')->paginate(24);
         return view('showcase.projects', $data);
     }
@@ -43,6 +45,7 @@ public function __construct(MailService $mailService)
     {
         # code...
         $data['project'] = Project::find($id);
+        $data['title'] = $data['project']->name;
         return view('showcase.project-details', $data);
     }
 
@@ -50,6 +53,7 @@ public function __construct(MailService $mailService)
     {
         # code...
         $data['service'] = Service::find($service_id);
+        $data['title'] = $data['service']->name;
         return view('showcase.service-details', $data);
     }
 

@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Property Trust Group</title>
+  <title>{{$title??''}} &commat;Property Trust Group</title>
+  <link rel="canonical" href="{{ url()->current() }}" />
 
   <meta name="description" content="Leading most decorated real estate Company that invests in and manages diverse portfolio of businesses across various 06 subsidiaries. 
           Our portfolio includes land sales/acquisition, investment, construction, rentals, borehole, electricity, transport and logistics, interior decors, staff/pop, business consultation.">

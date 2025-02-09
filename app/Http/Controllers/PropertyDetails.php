@@ -21,6 +21,7 @@ class PropertyDetails extends Controller
     function index(Request $request, $id){
         
         $data['property'] = Asset::find($id);
+        $data['title'] = $data['property']->name;
         $data['related'] = Asset::where('service_id', $data['property']->service_id)->where('town_id', $data['property']->town_id)->orderBy('id', 'DESC')->get();
         return view('showcase.property-details', $data);
     }
