@@ -104,10 +104,7 @@ class Property extends Controller
             # code to perform update...
             $valid = Validator::make($request->all(), [
                 'name'=>'required',
-                'category'=>'required',
-                'price'=>'required',
                 'town_id'=>'required',
-                'grade'=>'required|in:1,2,3,4',
             ]);
             if ($valid->fails()) {
                 session()->flash('error', $valid->errors()->first());
@@ -119,7 +116,7 @@ class Property extends Controller
                 session()->flash('error', "Asset could not be found");
                 return back()->withInput();
             }
-            $prop->update(['name' => $request->name, 'town_id'=>$request->town_id, 'address'=>$request->address, 'price' => $request->price, 'description' => $request->description ?? '', 'town_id'=>$request->town_id]);
+            $prop->update(['name' => $request->name, 'town_id'=>$request->town_id, 'address'=>$request->address, 'price' => $request->price, 'description' => $request->description ?? '']);
             return back()->with('success', "Operation complete");
         } catch (\Throwable $th) {
             //throw $th;
