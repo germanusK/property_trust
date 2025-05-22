@@ -104,7 +104,6 @@ class Property extends Controller
             # code to perform update...
             $valid = Validator::make($request->all(), [
                 'name'=>'required',
-                'group'=>'required|in:RE,GC,ARCH,CONS',
                 'category'=>'required',
                 'price'=>'required',
                 'town_id'=>'required',
